@@ -31,17 +31,28 @@ CENTRO = (43.247102, -8.736950)
 CASA = (43.247028, -8.736777)
 
 # anchos en metros de cada nivel y pixeles de lado
-NIVELES = [(160, 2000), (480, 2000), (1500, 2000), (5000, 2000), (30000, 3500)]
+NIVELES = [(160, 2000), (480, 2000), (1500, 2000), (5000, 2000), (16000, 2400), (80000, 3500)]
+# cada nivel es un cuadrado de `ancho` metros centrado en CENTRO: un viewport de cualquier proporcion (de 360x640 a 2560x1080) queda cubierto
+# si su ancho visible en metros (y el desplazamiento de la camara) cabe dentro; el ultimo nivel es mas ancho que el mayor encuadre final.
+
+# Tejados de la casa en pixeles del nivel 0 (2000 x 2000, 160 m): trazados a mano sobre la ortofoto (casa grande en L, casita de la
+# piscina, edificio de piedra pequeno y la propia piscina). Es el contorno que se dibuja un momento con la tinta de la mesa.
+TEJADOS = {
+    'casa-grande': [(1100, 1000), (1140, 948), (1258, 948), (1258, 1140), (1228, 1180), (1200, 1258), (1172, 1262), (1068, 1205), (1100, 1140), (1130, 1075)],
+    'casita': [(800, 888), (955, 888), (955, 1075), (800, 1078)],
+    'edificio-piedra': [(725, 668), (865, 668), (865, 775), (725, 775)],
+    'piscina': [(700, 862), (810, 862), (810, 955), (700, 955)],
+}
 
 # Rotulos (OSM/Nominatim, leidos el 2026-10-25). `min` solo cuando lo dice la casa (DATOS).
 LUGARES = [
-    {'id': 'casa', 'nombre': 'Casa Entremuros', 'lat': CASA[0], 'lon': CASA[1], 'desde': 0, 'hasta': 3},
-    {'id': 'cances', 'nombre': 'Cances', 'lat': 43.2473, 'lon': -8.7340, 'desde': 1, 'hasta': 3, 'nota': 'caserio de Cances Grande (nodo de OSM)'},
-    {'id': 'malpica', 'nombre': 'Malpica', 'lat': 43.3252843, 'lon': -8.8292583, 'desde': 4, 'hasta': 4, 'min': '10 min'},
-    {'id': 'sisargas', 'nombre': 'Islas Sisargas', 'lat': 43.3596458, 'lon': -8.8445827, 'desde': 4, 'hasta': 4},
-    {'id': 'razo', 'nombre': 'Razo', 'lat': 43.2904055, 'lon': -8.7062144, 'desde': 4, 'hasta': 4, 'min': '15 min'},
-    {'id': 'baldaio', 'nombre': 'Baldaio', 'lat': 43.2962117, 'lon': -8.6842333, 'desde': 4, 'hasta': 4, 'min': '15 min'},
-    {'id': 'carballo', 'nombre': 'Carballo', 'lat': 43.2134123, 'lon': -8.6891286, 'desde': 3, 'hasta': 4},
+    {'id': 'casa', 'nombre': 'Casa Entremuros', 'lat': CASA[0], 'lon': CASA[1]},
+    {'id': 'cances', 'nombre': 'Cances', 'lat': 43.2473, 'lon': -8.7340, 'nota': 'caserio de Cances Grande (nodo de OSM)'},
+    {'id': 'malpica', 'nombre': 'Malpica', 'lat': 43.3252843, 'lon': -8.8292583, 'min': '10 min'},
+    {'id': 'sisargas', 'nombre': 'Islas Sisargas', 'lat': 43.3596458, 'lon': -8.8445827},
+    {'id': 'razo', 'nombre': 'Razo', 'lat': 43.2904055, 'lon': -8.7062144, 'min': '15 min'},
+    {'id': 'baldaio', 'nombre': 'Baldaio', 'lat': 43.2962117, 'lon': -8.6842333, 'min': '15 min'},
+    {'id': 'carballo', 'nombre': 'Carballo', 'lat': 43.2134123, 'lon': -8.6891286},
 ]
 
 
@@ -80,28 +91,40 @@ def descargar(ancho_m, px):
     raise SystemExit('no se pudo descargar ' + url)
 
 
-def rellenar_sin_datos(im):
-    """El WMS devuelve blanco o negro puro donde no hay ortofoto (mar abierto). Se rellena con el azul del mar de alrededor
-    (convolucion normalizada a baja resolucion), para que el zoom final no tenga rectangulos vacios."""
+def mar_sintetico(a, sin):
+    """Niveles muy anchos: el WMS mezcla ortofoto y satelite y deja el mar en teselas grises o vacias. El mar se repinta entero:
+    turquesa junto a la costa y azul marino mar adentro (un degradado por distancia a la tierra); la tierra no se toca."""
+    r, g, b = a[..., 0].astype(int), a[..., 1].astype(int), a[..., 2].astype(int)
+    mar = ((sin > 0) | ((a.max(axis=2) < 125) & (a.max(axis=2) - a.min(axis=2) < 32) & (b >= g - 8))).astype(np.uint8)
+    mar = cv2.morphologyEx(mar, cv2.MORPH_OPEN, np.ones((5, 5), np.uint8))
+    mar = cv2.morphologyEx(mar, cv2.MORPH_CLOSE, np.ones((9, 9), np.uint8))
+    n, lab, st, _ = cv2.connectedComponentsWithStats(mar)
+    grande = np.zeros_like(mar)
+    for i in range(1, n):
+        if st[i, cv2.CC_STAT_AREA] > 40000:
+            grande[lab == i] = 1
+    dist = cv2.distanceTransform(grande, cv2.DIST_L2, 5)
+    t = np.clip(dist / 16.0, 0, 1)[..., None]
+    col = np.array([34, 116, 142], np.float32) * (1 - t) + np.array([8, 34, 62], np.float32) * t
+    m = cv2.GaussianBlur(grande.astype(np.float32), (0, 0), 2.2)[..., None]
+    out = a.astype(np.float32) * (1 - m) + col * m
+    return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
+
+
+def rellenar_sin_datos(im, ancho_m=0):
+    """El WMS devuelve blanco o negro puro donde no hay ortofoto (mar abierto). Se rellena con el azul marino del mar real de la
+    propia imagen, con bordes blandos, para que el zoom final no tenga rectangulos vacios ni parches de otro color."""
     a = np.array(im)
-    sin = ((a >= 250).all(axis=2) | (a <= 3).all(axis=2)).astype(np.uint8)
+    sin = (((a >= 248).all(axis=2)) | ((a <= 6).all(axis=2))).astype(np.uint8)
     if sin.sum() < 500:
         return im
     sin = cv2.morphologyEx(sin, cv2.MORPH_CLOSE, np.ones((9, 9), np.uint8))
-    sin = cv2.dilate(sin, np.ones((21, 21), np.uint8))
-    pequeno = 8
-    h, w = sin.shape
-    mar = ((a[..., 2].astype(int) > a[..., 0].astype(int) + 18) & (a[..., 2] < 140)).astype(np.uint8)   # azul de mar con datos
-    v = ((1 - sin) * mar).astype(np.float32)
-    a_s = cv2.resize(a.astype(np.float32), (w // pequeno, h // pequeno), interpolation=cv2.INTER_AREA)
-    v_s = cv2.resize(v, (w // pequeno, h // pequeno), interpolation=cv2.INTER_AREA)
-    num = cv2.GaussianBlur(a_s * v_s[..., None], (0, 0), 30)
-    den = cv2.GaussianBlur(v_s, (0, 0), 30)[..., None] + 1e-6
-    relleno = cv2.resize(num / den, (w, h), interpolation=cv2.INTER_CUBIC)
-    # mar abierto: un poco mas oscuro y sin textura
-    relleno *= np.array([0.62, 0.86, 1.06], np.float32)[None, None, :]
-    m = cv2.GaussianBlur(sin.astype(np.float32), (0, 0), 7)[..., None]
-    out = a.astype(np.float32) * (1 - m) + relleno * m
+    sin = cv2.dilate(sin, np.ones((15, 15), np.uint8))
+    if ancho_m >= 50000:
+        return mar_sintetico(a, sin)
+    col = np.array([9, 36, 66], np.float32)
+    m = cv2.GaussianBlur(sin.astype(np.float32), (0, 0), 9)[..., None]
+    out = a.astype(np.float32) * (1 - m) + col[None, None, :] * m
     return Image.fromarray(np.clip(out, 0, 255).astype(np.uint8))
 
 
@@ -161,7 +184,7 @@ def main():
         if '--cache' in sys.argv and os.path.exists(ruta):
             im = Image.open(ruta).convert('RGB')
         else:
-            im = rellenar_sin_datos(descargar(ancho, px))
+            im = rellenar_sin_datos(descargar(ancho, px), ancho)
             guardar(im, k)
         imagenes.append(im)
     niveles = []
@@ -182,6 +205,15 @@ def main():
         'niveles': niveles, 'lugares': lugares,
         'casa_xy': [{'nivel': k, 'x': round(pix_de(CASA[0], CASA[1], a, p)[0] / p, 5), 'y': round(pix_de(CASA[0], CASA[1], a, p)[1] / p, 5)} for k, (a, p) in enumerate(NIVELES)],
     }
+    # encuadre final del zoom: lo que la casa quiere ensenar (la casa, Malpica, las Sisargas, Razo, Baldaio y Carballo)
+    pts = [(l['lat'], l['lon']) for l in LUGARES if l['id'] in ('casa', 'malpica', 'sisargas', 'razo', 'baldaio', 'carballo')]
+    la0, la1 = min(p[0] for p in pts), max(p[0] for p in pts)
+    lo0, lo1 = min(p[1] for p in pts), max(p[1] for p in pts)
+    datos['encuadre_final'] = {'lat': [round(la0, 6), round(la1, 6)], 'lon': [round(lo0, 6), round(lo1, 6)],
+                               'centro_m': [round(((lo0 + lo1) / 2 - CENTRO[1]) * MLON, 1), round(((la0 + la1) / 2 - CENTRO[0]) * MLAT, 1)],
+                               'ancho_m': round((lo1 - lo0) * MLON, 1), 'alto_m': round((la1 - la0) * MLAT, 1)}
+    datos['tejados_nivel0_px'] = TEJADOS
+    datos['casa_m'] = [round((CASA[1] - CENTRO[1]) * MLON, 2), round((CASA[0] - CENTRO[0]) * MLAT, 2)]
     if '--verificar' in sys.argv:
         print('verificando cruces...')
         datos['cruces'] = verificar(imagenes)

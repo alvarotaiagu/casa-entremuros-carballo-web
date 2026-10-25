@@ -88,9 +88,9 @@
   var brillo = el.querySelector('.cortina-brillo');
   var cantos = el.querySelectorAll('.cortina-canto');
 
-  var T_LUZ = 1100;        // la luz recorre la losa
-  var T_ABRE = 1250;       // empiezan a separarse las losas
-  var D_ABRE = 1000;       // duración de la apertura
+  var T_LUZ = 1000;        // la luz recorre la losa
+  var T_ABRE = 1050;       // empiezan a separarse las losas
+  var D_ABRE = 950;       // duración de la apertura
   var PARALAJE = 0.15;
   var t0 = 0;
   var fin = false;

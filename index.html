@@ -55,7 +55,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..600&family=Hedvig+Letters+Serif&family=Pinyon+Script&display=swap">
 <link rel="stylesheet" href="css/estilos.css?v=9f85a0ac">
-<link rel="stylesheet" href="css/mesa.css?v=7d6e92f0">
+<link rel="stylesheet" href="css/mesa.css?v=f95d3ee7">
 <link rel="stylesheet" href="css/lugares.css?v=6a0e9645">
 <link rel="stylesheet" href="css/obra.css?v=4ecd2d19">
 <link rel="stylesheet" href="css/faros.css?v=20fbb6ff">
@@ -93,25 +93,27 @@
 <body>
 <!-- Cortina «La placa» (agente Mesa). Va justo después de <body>. Autónoma: lleva su CSS crítico y su red de seguridad. -->
 <style>
-  /* La losa de granito de la entrada se parte por la junta ENTRE | MUROS y se abre como una puerta corredera. */
+  /* La losa de granito de la entrada se parte por la junta ENTRE | MUROS y se abre como una puerta corredera.
+     Todo lo que se mueve va por transform (compositor): la luz rasante destapa el relieve deslizando una capa, sin repintar. */
   .cortina { position: fixed; inset: 0; z-index: 9999; pointer-events: none; overflow: hidden;
-    --luz: -30; /* posición de la luz rasante, en vw (la mueve cortina.js) */
+    --luz: -25; /* posición de la luz rasante, en vw (la mueve cortina.js) */
     --pw: min(94vw, calc(86svh * 1340 / 1100), 1560px); /* ancho de la imagen de la placa, con su margen de sombra */
-    --corte: .4716; /* fracción de la imagen donde está la junta (img/mesa/placa.json) */ }
+    --corte: .4716; /* fracción de la imagen donde está la junta (img/mesa/placa.json) */
+    --plumas: 9vw; /* borde blando de la luz */ }
   .cortina[hidden], html.cortina-fuera .cortina { display: none !important; }
   .cortina-losa { position: absolute; top: 0; bottom: 0; width: 50.05%; will-change: transform; }
   .cortina-izq { left: 0; }
   .cortina-der { right: 0; }
-  .cortina-cara { position: absolute; inset: 0; overflow: hidden; background: var(--granito-2, #8F8473) url("img/mesa/granito-1024.webp") 0 0 / 512px 512px; }
-  .cortina-cara::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 40%, rgba(24,20,14,.34) 100%); }
+  .cortina-cara { position: absolute; inset: 0; overflow: hidden; background: var(--granito-2, #8F8473) url("img/mesa/granito-512.webp") 0 0 / 512px 512px; }
+  .cortina-cara::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 40%, rgba(24,20,14,.34) 100%); pointer-events: none; }
   .cortina-placa { position: absolute; top: 50%; width: var(--pw); aspect-ratio: 1340 / 1100; translate: 0 -50%; will-change: transform; }
   .cortina-izq .cortina-placa { left: calc(100% - var(--corte) * var(--pw)); }
   .cortina-der .cortina-placa { left: calc(-1 * var(--corte) * var(--pw)); }
   .cortina-placa img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
-  /* La luz rasante: la capa con el relieve fuerte se destapa de izquierda a derecha (en vw de pantalla). */
-  .cortina-rasante { position: absolute; inset: 0; --x0: calc(50vw - var(--corte) * var(--pw)); /* borde izquierdo de la imagen en pantalla */
-    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(var(--luz) * 1vw - 12vw - var(--x0)), transparent calc(var(--luz) * 1vw + 10vw - var(--x0)));
-    mask-image: linear-gradient(90deg, #000 0, #000 calc(var(--luz) * 1vw - 12vw - var(--x0)), transparent calc(var(--luz) * 1vw + 10vw - var(--x0))); }
+  /* la capa con el relieve fuerte (luz rasante) está tapada hasta que pasa la luz: se desliza de izquierda a derecha */
+  .cortina-ras { position: absolute; left: 0; top: 0; bottom: 0; width: calc(50vw + var(--plumas)); overflow: hidden; transform: translate3d(-101%, 0, 0); will-change: transform;
+    -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - var(--plumas)), transparent); mask-image: linear-gradient(90deg, #000 calc(100% - var(--plumas)), transparent); }
+  .cortina-ras-in { position: absolute; left: 0; top: 0; width: 50vw; height: 100%; will-change: transform; transform: translate3d(101%, 0, 0); }
   /* canto cortado: un filo claro y la sombra que cae sobre lo que queda detrás al abrirse */
   .cortina-canto { position: absolute; top: 0; bottom: 0; width: 3px; opacity: 0; background: linear-gradient(180deg, rgba(255,244,222,.5), rgba(255,244,222,.18)); }
   .cortina-izq .cortina-canto { right: 0; }
@@ -119,7 +121,7 @@
   .cortina-sombra { position: absolute; top: 0; bottom: 0; width: clamp(40px, 7vw, 110px); opacity: 0; }
   .cortina-izq .cortina-sombra { left: 100%; background: linear-gradient(90deg, rgba(30,22,12,.5), rgba(30,22,12,0)); }
   .cortina-der .cortina-sombra { right: 100%; background: linear-gradient(270deg, rgba(30,22,12,.5), rgba(30,22,12,0)); }
-  .cortina-brillo { position: absolute; top: 0; bottom: 0; left: 0; width: 26vw; opacity: 0; mix-blend-mode: screen; will-change: transform;
+  .cortina-brillo { position: absolute; top: 0; bottom: 0; left: 0; width: 26vw; opacity: 0; mix-blend-mode: screen; will-change: transform, opacity;
     background: linear-gradient(90deg, rgba(255,226,170,0), rgba(255,232,184,.34) 55%, rgba(255,226,170,0)); }
   html.con-cortina { overflow: hidden; }
   @media (prefers-reduced-motion: reduce) { .cortina { display: none !important; } html.con-cortina { overflow: auto; } }
@@ -127,20 +129,16 @@
 <div id="cortina" class="cortina" aria-hidden="true">
   <div class="cortina-losa cortina-izq">
     <div class="cortina-cara">
-      <div class="cortina-placa">
-        <img class="cortina-base" src="img/mesa/placa-base-lg.webp" srcset="img/mesa/placa-base-sm.webp 750w, img/mesa/placa-base-lg.webp 1340w" sizes="(max-width: 760px) 94vw, 1340px" width="1340" height="1100" alt="" fetchpriority="high" decoding="async">
-        <div class="cortina-rasante"><img src="img/mesa/placa-rasante-lg.webp" srcset="img/mesa/placa-rasante-sm.webp 750w, img/mesa/placa-rasante-lg.webp 1340w" sizes="(max-width: 760px) 94vw, 1340px" width="1340" height="1100" alt="" decoding="async"></div>
-      </div>
+      <div class="cortina-placa"><picture><source media="(max-width: 760px)" type="image/avif" srcset="img/mesa/placa-base-sm.avif"><source media="(max-width: 760px)" type="image/webp" srcset="img/mesa/placa-base-sm.webp"><source type="image/avif" srcset="img/mesa/placa-base-lg.avif"><img class="cortina-base" src="img/mesa/placa-base-lg.webp" width="1340" height="1100" alt="" fetchpriority="high" decoding="async"></picture></div>
+      <div class="cortina-ras"><div class="cortina-ras-in"><div class="cortina-placa"><picture><source media="(max-width: 760px)" type="image/avif" srcset="img/mesa/placa-rasante-sm.avif"><source media="(max-width: 760px)" type="image/webp" srcset="img/mesa/placa-rasante-sm.webp"><source type="image/avif" srcset="img/mesa/placa-rasante-lg.avif"><img src="img/mesa/placa-rasante-lg.webp" width="1340" height="1100" alt="" fetchpriority="low" decoding="async"></picture></div></div></div>
     </div>
     <div class="cortina-canto"></div>
     <div class="cortina-sombra"></div>
   </div>
   <div class="cortina-losa cortina-der">
     <div class="cortina-cara">
-      <div class="cortina-placa">
-        <img class="cortina-base" src="img/mesa/placa-base-lg.webp" srcset="img/mesa/placa-base-sm.webp 750w, img/mesa/placa-base-lg.webp 1340w" sizes="(max-width: 760px) 94vw, 1340px" width="1340" height="1100" alt="" decoding="async">
-        <div class="cortina-rasante"><img src="img/mesa/placa-rasante-lg.webp" srcset="img/mesa/placa-rasante-sm.webp 750w, img/mesa/placa-rasante-lg.webp 1340w" sizes="(max-width: 760px) 94vw, 1340px" width="1340" height="1100" alt="" decoding="async"></div>
-      </div>
+      <div class="cortina-placa"><picture><source media="(max-width: 760px)" type="image/avif" srcset="img/mesa/placa-base-sm.avif"><source media="(max-width: 760px)" type="image/webp" srcset="img/mesa/placa-base-sm.webp"><source type="image/avif" srcset="img/mesa/placa-base-lg.avif"><img src="img/mesa/placa-base-lg.webp" width="1340" height="1100" alt="" decoding="async"></picture></div>
+      <div class="cortina-ras"><div class="cortina-ras-in"><div class="cortina-placa"><picture><source media="(max-width: 760px)" type="image/avif" srcset="img/mesa/placa-rasante-sm.avif"><source media="(max-width: 760px)" type="image/webp" srcset="img/mesa/placa-rasante-sm.webp"><source type="image/avif" srcset="img/mesa/placa-rasante-lg.avif"><img src="img/mesa/placa-rasante-lg.webp" width="1340" height="1100" alt="" decoding="async"></picture></div></div></div>
     </div>
     <div class="cortina-canto"></div>
     <div class="cortina-sombra"></div>
@@ -153,7 +151,7 @@
   (function () {
     var d = document.documentElement;
     try { if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('con-cortina'); } catch (e) {}
-    setTimeout(function () { d.classList.remove('con-cortina'); d.classList.add('cortina-fuera'); }, 6000);
+    setTimeout(function () { d.classList.remove('con-cortina'); d.classList.add('cortina-fuera'); }, 4500);
   })();
 </script>
 <a class="saltar" href="#principal">Saltar al contenido</a>
@@ -700,8 +698,8 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
 <!-- los módulos (cada uno en su archivo; si falta alguno, construir.mjs quita su etiqueta y se queda el respaldo del HTML) -->
-<script src="js/cortina.js?v=92903557" defer></script>
-<script src="js/mesa.js?v=73f14b45" defer></script>
+<script src="js/cortina.js?v=74a72618" defer></script>
+<script src="js/mesa.js?v=3bf0f452" defer></script>
 <script src="js/lugares.js?v=0d9dd2bb" defer></script>
 <script src="js/obra.js?v=33d28264" defer></script>
 <script src="js/faros.js?v=a3871aa5" defer></script>

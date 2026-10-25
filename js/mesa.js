@@ -67,59 +67,9 @@
     };
   }
 
-  /* ---------- texturas generadas con semilla fija (canvas → dataURL): la trama del lino y las vetas del pino ---------- */
-  var cacheTex = {};
-  function texLino() {
-    if (cacheTex.lino) return cacheTex.lino;
-    var n = 192, c = document.createElement('canvas'); c.width = c.height = n;
-    var x = c.getContext('2d'), r = rng(1109), i;
-    x.fillStyle = '#EFE8DA'; x.fillRect(0, 0, n, n);
-    for (i = 0; i < n; i += 2) {                       // hilos de urdimbre y trama, con su grosor desigual
-      x.fillStyle = 'rgba(' + (r() > .5 ? '120,100,70' : '255,252,244') + ',' + (0.05 + r() * 0.09) + ')';
-      x.fillRect(0, i, n, 1 + (r() > .7 ? 1 : 0));
-      x.fillStyle = 'rgba(' + (r() > .5 ? '120,100,70' : '255,252,244') + ',' + (0.04 + r() * 0.08) + ')';
-      x.fillRect(i, 0, 1 + (r() > .75 ? 1 : 0), n);
-    }
-    for (i = 0; i < 70; i++) {                         // nudillos del hilo (slubs)
-      var y = r() * n, l = 6 + r() * 24, xx = r() * n;
-      x.fillStyle = 'rgba(110,90,60,' + (0.06 + r() * 0.08) + ')'; x.fillRect(xx, y, l, 1.4);
-    }
-    return (cacheTex.lino = c.toDataURL('image/png'));
-  }
-  function texPino() {
-    if (cacheTex.pino) return cacheTex.pino;
-    var W = 680, H = 640, c = document.createElement('canvas'); c.width = W; c.height = H;
-    var x = c.getContext('2d'), r = rng(1919), p = paleta(), i, j;
-    var tablas = 4, ancho = W / tablas;
-    for (i = 0; i < tablas; i++) {
-      var g = x.createLinearGradient(i * ancho, 0, (i + 1) * ancho, 0);
-      var dl = (r() - .5) * 26;
-      g.addColorStop(0, shade(p.pino, dl - 6)); g.addColorStop(.5, shade(p.pino, dl + 5)); g.addColorStop(1, shade(p.pino, dl - 4));
-      x.fillStyle = g; x.fillRect(i * ancho, 0, ancho, H);
-      for (j = 0; j < 150; j++) {                      // vetas: trazos largos y ondulados a lo largo de la tabla (envuelven en vertical)
-        var px = i * ancho + 4 + r() * (ancho - 8), py = r() * H, len = 120 + r() * 420, amp = 0.8 + r() * 2.2, fase = r() * 6.28;
-        x.strokeStyle = r() > .22 ? 'rgba(120,76,32,' + (0.05 + r() * 0.13) + ')' : 'rgba(255,236,196,' + (0.05 + r() * 0.1) + ')';
-        x.lineWidth = 0.5 + r() * 1.6;
-        for (var k = -1; k <= 1; k++) {
-          x.beginPath();
-          for (var s = 0; s <= len; s += 12) {
-            var yy = py + s + k * H, xx = px + Math.sin(fase + s / 70) * amp;
-            if (s === 0) x.moveTo(xx, yy); else x.lineTo(xx, yy);
-          }
-          x.stroke();
-        }
-      }
-      var nudo = { x: i * ancho + ancho * (0.3 + r() * 0.4), y: r() * H };       // un nudo por tabla, con sus anillos
-      for (j = 7; j >= 1; j--) {
-        x.strokeStyle = 'rgba(96,58,22,' + (0.1 + (7 - j) * 0.035) + ')'; x.lineWidth = 1.1;
-        x.beginPath(); x.ellipse(nudo.x, nudo.y, 3 + j * 2.3, 6 + j * 5.6, 0, 0, 6.283); x.stroke();
-      }
-      x.fillStyle = 'rgba(78,44,16,.55)'; x.beginPath(); x.ellipse(nudo.x, nudo.y, 3.4, 7.5, 0, 0, 6.283); x.fill();
-      x.fillStyle = 'rgba(78,44,16,.5)'; x.fillRect(i * ancho - 1, 0, 2, H);           // la junta entre tablas
-      x.fillStyle = 'rgba(255,236,200,.28)'; x.fillRect(i * ancho + 1, 0, 1.2, H);
-    }
-    return (cacheTex.pino = c.toDataURL('image/jpeg', 0.86));
-  }
+  /* ---------- texturas: la trama del lino y las vetas del pino se generan una vez (scripts/placa.py --arte) y se leen de img/mesa/ ---------- */
+  function texLino() { return urlR('img/mesa/lino-192.webp'); }
+  function texPino() { return urlR('img/mesa/pino-680.webp'); }
   function shade(hex, d) {
     var n = parseInt(hex.slice(1), 16), r = clamp((n >> 16) + d, 0, 255), g = clamp(((n >> 8) & 255) + d, 0, 255), b = clamp((n & 255) + d, 0, 255);
     return 'rgb(' + (r | 0) + ',' + (g | 0) + ',' + (b | 0) + ')';
@@ -137,11 +87,13 @@
   var DEFS_ID = 'emz';
   function ensureDefs(p) {
     if (!document.getElementById(DEFS_ID + '-defs')) {
+      var _t0 = performance.now();
       var h = document.createElementNS(NS, 'svg');
       h.setAttribute('id', DEFS_ID + '-defs'); h.setAttribute('width', '0'); h.setAttribute('height', '0'); h.setAttribute('aria-hidden', 'true'); h.setAttribute('focusable', 'false');
       h.style.cssText = 'position:absolute;width:0;height:0;overflow:hidden;pointer-events:none';
-      h.innerHTML = '<defs>' + defs(DEFS_ID, p || paleta()) + '</defs>';
+      h.innerHTML = '<defs>' + defs(DEFS_ID, p || paleta()) + simbolos(DEFS_ID, p || paleta()) + '</defs>';
       (document.body || document.documentElement).appendChild(h);
+      (M._t = M._t || []).push(['defs', Math.round(performance.now() - _t0)]);
     }
     return DEFS_ID;
   }
@@ -314,15 +266,15 @@
   /* ---------- guirnalda de eucalipto y cardos a lo largo del camino de mesa (coordenadas de mesa: x = a lo ancho, y = a lo largo) ---------- */
   function guirnalda(id, p, rnd, y0, y1) {
     var sombra = '', hojas = '', tallos = '', adornos = '', i, j;
-    var n = Math.round((y1 - y0) / 24);
+    var n = Math.round((y1 - y0) / 34);
     for (i = 0; i < n; i++) {
       var by = y0 + (i + rnd()) * (y1 - y0) / n, bx = (rnd() - .5) * 46;
       var dir = rnd() < .5 ? -1 : 1, ang = (rnd() - .5) * 1.1 + (dir < 0 ? Math.PI : 0) + Math.PI / 2;     // a lo largo del camino, con abanico
       var len = 70 + rnd() * 70, curv = (rnd() - .5) * 46;
       var ex = bx + Math.cos(ang) * len, ey = by + Math.sin(ang) * len;
       var cx = (bx + ex) / 2 + Math.cos(ang + 1.57) * curv, cy = (by + ey) / 2 + Math.sin(ang + 1.57) * curv;
-      tallos += '<path d="M' + f1(bx) + ' ' + f1(by) + 'Q' + f1(cx) + ' ' + f1(cy) + ' ' + f1(ex) + ' ' + f1(ey) + '" fill="none" stroke="#5C6E4A" stroke-width="2.2" stroke-linecap="round" class="tallo"/>';
-      var m = Math.round(len / 13);
+      var tallo = '<path d="M' + f1(bx) + ' ' + f1(by) + 'Q' + f1(cx) + ' ' + f1(cy) + ' ' + f1(ex) + ' ' + f1(ey) + '" fill="none" stroke="#5C6E4A" stroke-width="2.2" stroke-linecap="round" class="tallo"/>', hojasSp = '';
+      var m = Math.round(len / 16);
       for (j = 1; j <= m; j++) {
         var t = j / m, px = (1 - t) * (1 - t) * bx + 2 * (1 - t) * t * cx + t * t * ex, py = (1 - t) * (1 - t) * by + 2 * (1 - t) * t * cy + t * t * ey;
         var tx = 2 * (1 - t) * (cx - bx) + 2 * t * (ex - cx), ty = 2 * (1 - t) * (cy - by) + 2 * t * (ey - cy), tl = Math.hypot(tx, ty) || 1;
@@ -330,9 +282,10 @@
         var rl = (7.5 + rnd() * 6) * (1.1 - t * .35), lx = px + nx * rl * .85, ly = py + ny * rl * .85;
         var rot = Math.atan2(ny, nx) * 57.3 + 90;
         var col = p.eucalipto[Math.floor(rnd() * p.eucalipto.length)];
-        sombra += '<ellipse cx="' + f1(lx + 5) + '" cy="' + f1(ly + 8) + '" rx="' + f1(rl * .88) + '" ry="' + f1(rl) + '" transform="rotate(' + f1(rot) + ' ' + f1(lx + 5) + ' ' + f1(ly + 8) + ')"/>';
-        hojas += '<g class="hoja" transform="translate(' + f1(lx) + ' ' + f1(ly) + ') rotate(' + f1(rot) + ')"><ellipse rx="' + f1(rl * .88) + '" ry="' + f1(rl) + '" fill="' + col + '" stroke="' + mezcla(col, '#2a3a24', .35) + '" stroke-width=".7"/><path d="M0 ' + f1(rl * .85) + 'V' + f1(-rl * .8) + '" stroke="' + mezcla(col, '#ffffff', .4) + '" stroke-width=".7" opacity=".7"/><ellipse cx="' + f1(-rl * .25) + '" cy="' + f1(-rl * .3) + '" rx="' + f1(rl * .3) + '" ry="' + f1(rl * .4) + '" fill="#fff" opacity=".13"/></g>';
+        if (j % 2) sombra += '<ellipse cx="' + f1(lx + 5) + '" cy="' + f1(ly + 8) + '" rx="' + f1(rl * .88) + '" ry="' + f1(rl) + '" transform="rotate(' + f1(rot) + ' ' + f1(lx + 5) + ' ' + f1(ly + 8) + ')"/>';
+        hojasSp += '<g class="hoja" transform="translate(' + f1(lx) + ' ' + f1(ly) + ') rotate(' + f1(rot) + ')"><ellipse rx="' + f1(rl * .88) + '" ry="' + f1(rl) + '" fill="' + col + '" stroke="' + mezcla(col, '#2a3a24', .35) + '" stroke-width=".7"/><path d="M0 ' + f1(rl * .85) + 'V' + f1(-rl * .8) + '" stroke="' + mezcla(col, '#ffffff', .4) + '" stroke-width=".7" opacity=".7"/></g>';
       }
+      tallos += '<g class="sp">' + tallo + '<g class="sp-h">' + hojasSp + '</g></g>';
     }
     for (i = 0; i < 9; i++) {       // cardos azules (los de la guirnalda de IG 19)
       var ty2 = y0 + 30 + rnd() * (y1 - y0 - 60), tx2 = (rnd() - .5) * 60, r = 8 + rnd() * 4;
@@ -340,7 +293,7 @@
       for (j = 0; j < 14; j++) adornos += '<path d="M0 0L' + f1(Math.cos(j * .449) * (r + 6)) + ' ' + f1(Math.sin(j * .449) * (r + 6)) + '" stroke="#4E62A8" stroke-width="1.4" stroke-linecap="round"/>';
       adornos += '<circle r="' + f1(r) + '" fill="#6B7FBD" stroke="#4A5C9E" stroke-width=".8"/><circle cx="-2" cy="-2.5" r="' + f1(r * .45) + '" fill="#9BAAD6" opacity=".7"/></g>';
     }
-    return { sombra: '<g fill="#3a2810" opacity=".15">' + sombra + '</g>', cuerpo: '<g class="guirnalda-tallos">' + tallos + '</g><g class="guirnalda-hojas">' + hojas + '</g><g class="guirnalda-cardos">' + adornos + '</g>' };
+    return { sombra: '<g fill="#3a2810" opacity=".15">' + sombra + '</g>', cuerpo: '<g class="guirnalda-tallos">' + tallos + '</g><g class="guirnalda-cardos">' + adornos + '</g>' };
   }
 
   /* ---------- silla blanca de respaldo de rejilla (vista desde arriba, metida bajo la mesa) ---------- */
@@ -524,12 +477,21 @@
       '<g id="' + id + '-s-vaso">' + vaso(id, p, 24) + '</g>';
   }
 
-  function crearEscena(host, op) {
-    var p = paleta(), id = ensureDefs(p), rnd = rng(77), i, j;
-    if (!document.getElementById(id + '-s-mat')) {
-      var d = document.querySelector('#' + id + '-defs defs');
-      d.insertAdjacentHTML('beforeend', simbolos(id, p));
-    }
+  /* reparte el trabajo en tareas cortas (una por fotograma): en un móvil lento no hay tareas largas que congelen la cortina */
+  function trocear(pasos, fin) {
+    var i = 0;
+    (function paso() {
+      if (i >= pasos.length) { fin(); return; }
+      var f = pasos[i++], hecho = false;
+      var correr = function () { if (hecho) return; hecho = true; var t0 = performance.now(); try { f(); } catch (e) { console.error(e); } (M._t = M._t || []).push(['paso', Math.round(performance.now() - t0), Math.round(performance.now())]); paso(); };
+      if (document.hidden) { setTimeout(correr, 0); return; }
+      requestAnimationFrame(function () { setTimeout(correr, 0); });
+      setTimeout(correr, 150);
+    })();
+  }
+
+  function crearEscena(host, op, hecho) {
+    var p = paleta(), id = ensureDefs(p), rnd = rng(77), i;
     // la portada ocupa la pantalla entera cuando la web la monta (antes del cambio de clase la columna puede ser la mitad)
     var sec = host.closest ? host.closest('section') : null;
     var W = (sec && sec.clientWidth) || document.documentElement.clientWidth || innerWidth, H = innerHeight;
@@ -542,48 +504,12 @@
     var objetivo = (vertical ? 0.4 : 0.47) * vbH, bienvenida = filas[0];
     filas.forEach(function (v) { if (Math.abs(v - objetivo) < Math.abs(bienvenida - objetivo)) bienvenida = v; });
 
-    var svg = elSVG('svg', { viewBox: '0 0 ' + vbW + ' ' + vbH, class: 'mesa-svg', preserveAspectRatio: vertical ? 'xMidYMid slice' : 'xMaxYMid slice', role: 'group', 'aria-label': 'La mesa larga de la casa, puesta: platos, copas, velas y flores. Platos, copas y velas se pueden recolocar con el dedo, el ratón o las flechas del teclado.' });
+    var svg = elSVG('svg', { viewBox: '0 0 ' + vbW + ' ' + vbH, class: 'mesa-svg', 'data-mesa': '1', preserveAspectRatio: vertical ? 'xMidYMid slice' : 'xMaxYMid slice', role: 'group', 'aria-label': 'La mesa larga de la casa, puesta: platos, copas, velas y flores. Platos, copas y velas se pueden recolocar con el dedo, el ratón o las flechas del teclado.' });
     var sid = uid('es');
-    var h = '';
-    h += '<defs><clipPath id="' + sid + '-mesa"><rect x="' + (-ANCHO_MESA) + '" y="-600" width="' + (ANCHO_MESA * 2) + '" height="' + (vbH + 1200) + '"/></clipPath><clipPath id="' + sid + '-camino"><rect class="cam-clip" x="-140" y="-600" width="280" height="' + (vbH + 1200) + '"/></clipPath></defs>';
-    // sillas (debajo de la mesa)
-    h += '<g class="m-sillas" transform="translate(' + xc + ' 0)">';
-    filas.forEach(function (v) { [-1, 1].forEach(function (s) { h += '<g class="silla" data-lado="' + s + '" transform="translate(' + (s * 366) + ' ' + f1(v + (rnd() - .5) * 8) + ')"><g class="ent">' + silla(id, p, s) + '</g></g>'; }); });
-    h += '</g>';
-    // la mesa
-    h += '<g class="m-mesa" transform="translate(' + xc + ' 0)">';
-    h += '<rect x="' + (-ANCHO_MESA - 22) + '" y="-600" width="22" height="' + (vbH + 1200) + '" fill="url(#' + id + '-sombraL)"/>';
-    h += '<rect x="' + ANCHO_MESA + '" y="-600" width="64" height="' + (vbH + 1200) + '" fill="url(#' + id + '-sombraR)"/>';
-    h += '<rect x="' + (-ANCHO_MESA) + '" y="-600" width="' + (ANCHO_MESA * 2) + '" height="' + (vbH + 1200) + '" fill="' + p.pino + '"/>';
-    h += '<rect x="' + (-ANCHO_MESA) + '" y="-600" width="' + (ANCHO_MESA * 2) + '" height="' + (vbH + 1200) + '" fill="url(#' + id + '-pino)"/>';
-    h += '<rect x="' + (-ANCHO_MESA) + '" y="-600" width="7" height="' + (vbH + 1200) + '" fill="rgba(255,238,198,.45)"/><rect x="' + (-ANCHO_MESA + 7) + '" y="-600" width="2" height="' + (vbH + 1200) + '" fill="rgba(90,52,16,.25)"/>';
-    h += '<rect x="' + (ANCHO_MESA - 9) + '" y="-600" width="9" height="' + (vbH + 1200) + '" fill="rgba(70,38,10,.42)"/><rect x="' + (ANCHO_MESA - 11) + '" y="-600" width="2" height="' + (vbH + 1200) + '" fill="rgba(255,230,180,.25)"/>';
-    // camino de lino (se despliega a lo largo con un recorte)
-    var pts = [], yy, camL = '', camR = '';
-    for (yy = -600; yy <= vbH + 600; yy += 50) { camL += (camL ? 'L' : 'M') + f1(-119 + (rnd() - .5) * 2.6) + ' ' + yy; }
-    for (yy = vbH + 600; yy >= -600; yy -= 50) { camR += 'L' + f1(119 + (rnd() - .5) * 2.6) + ' ' + yy; }
-    var camino = camL + camR + 'Z';
-    h += '<g class="m-camino" clip-path="url(#' + sid + '-camino)"><path d="' + camino + '" transform="translate(5 4)" fill="#3a2810" opacity=".16"/><path d="' + camino + '" fill="#EDE7DA"/><path d="' + camino + '" fill="url(#' + id + '-lino)"/>';
-    h += '<rect x="-119" y="-600" width="238" height="' + (vbH + 1200) + '" fill="url(#' + id + '-servG)" opacity=".8"/>';
-    h += '<path d="M-111 -600V' + (vbH + 600) + 'M111 -600V' + (vbH + 600) + '" stroke="rgba(120,100,70,.3)" stroke-width=".9" stroke-dasharray="4 3" fill="none"/>';
-    for (yy = filas[0] - 135; yy < vbH + 300; yy += PASO_FILA * 2) h += '<path d="M-119 ' + yy + 'H119" stroke="rgba(120,100,70,.18)" stroke-width="1.4"/><path d="M-119 ' + (yy + 1.6) + 'H119" stroke="rgba(255,255,255,.55)" stroke-width="1"/>';
-    h += '</g>';
-    // luz de ventana: dos barras claras y la sombra del parteluz
-    h += '<g clip-path="url(#' + sid + '-mesa)" class="m-luz" style="pointer-events:none"><g transform="rotate(-19) translate(-380 -300)">' +
-      '<rect x="0" y="0" width="190" height="' + (vbH * 2 + 900) + '" fill="url(#' + id + '-ban)"/><rect x="215" y="0" width="34" height="' + (vbH * 2 + 900) + '" fill="url(#' + id + '-banO)"/>' +
-      '<rect x="300" y="0" width="190" height="' + (vbH * 2 + 900) + '" fill="url(#' + id + '-ban)"/><rect x="520" y="0" width="34" height="' + (vbH * 2 + 900) + '" fill="url(#' + id + '-banO)"/></g></g>';
-    h += '</g>';
-    svg.innerHTML = h;
+    var piezas = [], velas = [], servicios = [], cierre = { welcome: null, tarjeta: null, tarjetaG: null };
+    var esc = { svg: svg, xc: xc, vbW: vbW, vbH: vbH, vertical: vertical, filas: filas, bienvenida: bienvenida, piezas: piezas, velas: velas, servicios: servicios, id: id, p: p, rnd: rnd, sid: sid };
+    var gSil, tg, estaticos, moviles;
 
-    // ---- capa de piezas (encima de la mesa) ----
-    var tg = elSVG('g', { class: 'm-piezas', transform: 'translate(' + xc + ' 0)' });
-    var estaticos = elSVG('g', { class: 'm-servicio' }), moviles = elSVG('g', { class: 'm-moviles' });
-    var guir = guirnalda(id, p, rnd, filas[0] - 220, filas[filas.length - 1] + 260);
-    var gSom = elSVG('g', { class: 'm-guirnalda-sombra' }, guir.sombra), gGui = elSVG('g', { class: 'm-guirnalda' }, guir.cuerpo);
-    tg.appendChild(estaticos); tg.appendChild(gSom); tg.appendChild(gGui); tg.appendChild(moviles);
-    svg.appendChild(tg);
-
-    var piezas = [], velas = [], servicios = [], cierre = { welcome: null, tarjeta: null };
     function hacerMovil(tipo, x, y, inner, o) {
       o = o || {};
       var g = elSVG('g', { class: 'mov mov-' + tipo, transform: 'translate(' + f1(x) + ' ' + f1(y) + ')', tabindex: '0', role: 'button', 'data-tipo': tipo, 'aria-label': o.etiqueta || tipo });
@@ -598,34 +524,76 @@
       return pz;
     }
 
-    var nSet = 0;
-    filas.forEach(function (v, fi) {
+    var pasos = [];
+    // 1 · la mesa de pino y el camino de lino (lo primero que se ve)
+    pasos.push(function () {
+      var alto = vbH + 1200;
+      var h = '<defs><clipPath id="' + sid + '-mesa"><rect x="' + (-ANCHO_MESA) + '" y="-600" width="' + (ANCHO_MESA * 2) + '" height="' + alto + '"/></clipPath><clipPath id="' + sid + '-camino"><rect class="cam-clip" x="-140" y="-600" width="280" height="' + alto + '"/></clipPath></defs>';
+      h += '<g class="m-sillas" transform="translate(' + xc + ' 0)"></g>';
+      h += '<g class="m-mesa" transform="translate(' + xc + ' 0)">';
+      h += '<rect x="' + (-ANCHO_MESA - 22) + '" y="-600" width="22" height="' + alto + '" fill="url(#' + id + '-sombraL)"/>';
+      h += '<rect x="' + ANCHO_MESA + '" y="-600" width="64" height="' + alto + '" fill="url(#' + id + '-sombraR)"/>';
+      h += '<rect x="' + (-ANCHO_MESA) + '" y="-600" width="' + (ANCHO_MESA * 2) + '" height="' + alto + '" fill="' + p.pino + '"/>';
+      h += '<rect x="' + (-ANCHO_MESA) + '" y="-600" width="' + (ANCHO_MESA * 2) + '" height="' + alto + '" fill="url(#' + id + '-pino)"/>';
+      h += '<rect x="' + (-ANCHO_MESA) + '" y="-600" width="7" height="' + alto + '" fill="rgba(255,238,198,.45)"/><rect x="' + (-ANCHO_MESA + 7) + '" y="-600" width="2" height="' + alto + '" fill="rgba(90,52,16,.25)"/>';
+      h += '<rect x="' + (ANCHO_MESA - 9) + '" y="-600" width="9" height="' + alto + '" fill="rgba(70,38,10,.42)"/><rect x="' + (ANCHO_MESA - 11) + '" y="-600" width="2" height="' + alto + '" fill="rgba(255,230,180,.25)"/>';
+      var yy, camL = '', camR = '';
+      for (yy = -600; yy <= vbH + 600; yy += 50) camL += (camL ? 'L' : 'M') + f1(-119 + (rnd() - .5) * 2.6) + ' ' + yy;
+      for (yy = vbH + 600; yy >= -600; yy -= 50) camR += 'L' + f1(119 + (rnd() - .5) * 2.6) + ' ' + yy;
+      var camino = camL + camR + 'Z';
+      h += '<g class="m-camino" clip-path="url(#' + sid + '-camino)"><path d="' + camino + '" transform="translate(5 4)" fill="#3a2810" opacity=".16"/><path d="' + camino + '" fill="#EDE7DA"/><path d="' + camino + '" fill="url(#' + id + '-lino)"/>';
+      h += '<rect x="-119" y="-600" width="238" height="' + alto + '" fill="url(#' + id + '-servG)" opacity=".8"/>';
+      h += '<path d="M-111 -600V' + (vbH + 600) + 'M111 -600V' + (vbH + 600) + '" stroke="rgba(120,100,70,.3)" stroke-width=".9" stroke-dasharray="4 3" fill="none"/>';
+      for (yy = filas[0] - 135; yy < vbH + 300; yy += PASO_FILA * 2) h += '<path d="M-119 ' + yy + 'H119" stroke="rgba(120,100,70,.18)" stroke-width="1.4"/><path d="M-119 ' + (yy + 1.6) + 'H119" stroke="rgba(255,255,255,.55)" stroke-width="1"/>';
+      h += '</g>';
+      h += '<g clip-path="url(#' + sid + '-mesa)" class="m-luz" style="pointer-events:none"><g transform="rotate(-19) translate(-380 -300)">' +
+        '<rect x="0" y="0" width="190" height="' + (vbH * 2 + 900) + '" fill="url(#' + id + '-ban)"/><rect x="215" y="0" width="34" height="' + (vbH * 2 + 900) + '" fill="url(#' + id + '-banO)"/>' +
+        '<rect x="300" y="0" width="190" height="' + (vbH * 2 + 900) + '" fill="url(#' + id + '-ban)"/><rect x="520" y="0" width="34" height="' + (vbH * 2 + 900) + '" fill="url(#' + id + '-banO)"/></g></g>';
+      h += '</g>';
+      svg.innerHTML = h;
+      gSil = $('.m-sillas', svg);
+      tg = elSVG('g', { class: 'm-piezas', transform: 'translate(' + xc + ' 0)' });
+      estaticos = elSVG('g', { class: 'm-servicio' });
+      moviles = elSVG('g', { class: 'm-moviles' });
+      var gSom = elSVG('g', { class: 'm-guirnalda-sombra' }), gGui = elSVG('g', { class: 'm-guirnalda' });
+      tg.appendChild(estaticos); tg.appendChild(gSom); tg.appendChild(gGui); tg.appendChild(moviles);
+      svg.appendChild(tg);
+      esc.tg = tg; esc.estaticos = estaticos; esc.moviles = moviles; esc.guirnalda = gGui; esc.guirnaldaSombra = gSom;
+      esc.camino = $('.m-camino', svg); esc.camClip = $('.cam-clip', svg);
+      svg.style.opacity = '0';
+      host.appendChild(svg);
+    });
+    // 2 · las sillas
+    pasos.push(function () {
+      var hs = '';
+      filas.forEach(function (v) { [-1, 1].forEach(function (s) { hs += '<g class="silla" data-lado="' + s + '" transform="translate(' + (s * 366) + ' ' + f1(v + (rnd() - .5) * 8) + ')"><g class="ent">' + silla(id, p, s) + '</g></g>'; }); });
+      gSil.innerHTML = hs;
+      esc.sillas = $$('.silla', svg);
+    });
+    // 3… · los servicios, dos filas por tarea
+    function servicioFila(v, fi) {
       [-1, 1].forEach(function (s) {
-        nSet++;
         var px = s * 205 + (rnd() - .5) * 6, py = v + (rnd() - .5) * 6, th = s < 0 ? 90 : -90;
         var esBien = (v === bienvenida && s < 0);
         var srv = elSVG('g', { class: 'servicio', 'data-lado': s, 'data-fila': fi, transform: 'translate(' + f1(px) + ' ' + f1(py) + ')' });
-        // el servicio se dibuja en el marco del comensal (sentado abajo) y se gira hacia su lado de la mesa
-        var inner = '<g transform="rotate(' + th + ')">' +
+        srv.innerHTML = '<g transform="rotate(' + th + ')">' +
           '<g class="s-mat"><g class="ent"><use href="#' + id + '-s-mat"/></g></g>' +
           '<g transform="translate(' + f1(-R_PLATO * .5) + ' ' + f1(R_PLATO * .46) + ') rotate(' + f1(-16 + (rnd() - .5) * 8) + ')"><g class="s-serv"><g class="ent"><use href="#' + id + '-s-serv"/></g></g></g>' +
           '<g transform="translate(' + (-(R_PLATO + 30)) + ' -75)"><g class="s-cub"><g class="ent"><use href="#' + id + '-s-tenedor"/></g></g></g>' +
           '<g transform="translate(' + (R_PLATO + 30) + ' -75)"><g class="s-cub"><g class="ent"><use href="#' + id + '-s-cuchillo"/></g></g></g>' +
           '</g>';
-        srv.innerHTML = inner;
         estaticos.appendChild(srv);
         servicios.push(srv);
-        // el plato (movible); si es el de la bienvenida lleva la servilleta larga, el ramito y la tarjeta
         var etq = esBien ? 'Plato de bienvenida, con una tarjeta. ' : 'Plato. ';
         var cuerpo;
         if (esBien) {
+          var ramito = '', k;
+          for (k = 0; k < 9; k++) { var y = 24 - k * 6.2, l = 12 - k * .8; ramito += '<path d="M0 ' + f1(y) + 'L' + f1(-l) + ' ' + f1(y - 7) + '" stroke="#5A7C46" stroke-width="2.2" stroke-linecap="round"/><path d="M0 ' + f1(y) + 'L' + f1(l) + ' ' + f1(y - 7) + '" stroke="#6B8E52" stroke-width="2.2" stroke-linecap="round"/>'; }
           cuerpo = '<use href="#' + id + '-s-plato2"/>' +
             '<g class="b-serv" transform="rotate(7)"><rect x="-26" y="-67" width="54" height="134" rx="3" fill="#3a2810" opacity=".16" transform="translate(5 7)"/><rect x="-27" y="-68" width="54" height="136" rx="3" fill="#EAE5DA" stroke="rgba(120,105,80,.4)" stroke-width=".9"/><rect x="-27" y="-68" width="54" height="136" rx="3" fill="url(#' + id + '-lino)" opacity=".9"/><rect x="-27" y="-68" width="54" height="136" rx="3" fill="url(#' + id + '-servG)"/><path d="M-9 -68V68" stroke="rgba(110,95,70,.25)" stroke-width="1.2"/><path d="M-7.4 -68V68" stroke="rgba(255,255,255,.65)" stroke-width="1"/></g>' +
-            '<g class="b-rama" transform="translate(-6 -16) rotate(-28)"><path d="M0 28V-30" stroke="#4D6B3C" stroke-width="1.6" stroke-linecap="round"/>' + (function () { var t = '', k; for (k = 0; k < 9; k++) { var y = 24 - k * 6.2, l = 12 - k * .8; t += '<path d="M0 ' + f1(y) + 'L' + f1(-l) + ' ' + f1(y - 7) + '" stroke="#5A7C46" stroke-width="2.2" stroke-linecap="round"/><path d="M0 ' + f1(y) + 'L' + f1(l) + ' ' + f1(y - 7) + '" stroke="#6B8E52" stroke-width="2.2" stroke-linecap="round"/>'; } return t; })() + '</g>' +
+            '<g class="b-rama" transform="translate(-6 -16) rotate(-28)"><path d="M0 28V-30" stroke="#4D6B3C" stroke-width="1.6" stroke-linecap="round"/>' + ramito + '</g>' +
             '<g class="b-tarjeta" transform="translate(4 24) rotate(-7)"></g>';
-        } else {
-          cuerpo = '<use href="#' + id + '-s-' + (fi % 2 ? 'plato' : 'plato') + '"/>';
-        }
+        } else cuerpo = '<use href="#' + id + '-s-plato"/>';
         var pzP = hacerMovil('plato', px, py, cuerpo, { r: R_PLATO * 1.1, etiqueta: etq + 'Arrastra o usa las flechas para moverlo.', lado: s });
         pzP.fila = fi; pzP.esBienvenida = esBien;
         if (esBien) {
@@ -634,35 +602,40 @@
           cierre.tarjeta = tarjetaEn(gT, id, p, 'Bienvenidos', { w: 128, h: 52, fs: 34 });
           cierre.tarjetaG = gT;
         }
-        // copas: la de agua (arriba a la derecha del comensal) y el vaso
         var lc = function (a, b) { return s < 0 ? [px + (-b), py + a] : [px + b, py - a]; };
         var c1 = lc(R_PLATO * .98, -R_PLATO * 1.02), c2 = lc(R_PLATO * .22, -R_PLATO * 1.36);
         var pzc = hacerMovil('copa', c1[0], c1[1], '<use href="#' + id + '-s-copa"/>', { r: 24, etiqueta: 'Copa. Arrastra o usa las flechas para moverla.', lado: s });
         var pzv = hacerMovil('copa', c2[0], c2[1], '<use href="#' + id + '-s-vaso"/>', { r: 27, etiqueta: 'Vaso. Arrastra o usa las flechas para moverlo.', lado: s });
         pzc.fila = pzv.fila = fi;
       });
+    }
+    for (i = 0; i < filas.length; i += 2) (function (a) { pasos.push(function () { for (var k = a; k < Math.min(a + 2, filas.length); k++) servicioFila(filas[k], k); }); })(i);
+    // el centro de mesa: velas y jarritas con hortensias entre servicios
+    pasos.push(function () {
+      filas.forEach(function (v, fi) {
+        var yy = v + PASO_FILA / 2, ciclo = ((fi % 3) + 3) % 3;
+        if (ciclo === 1) {
+          var pj = hacerMovil('jarra', (rnd() - .5) * 24, yy, hortensias(id, p, rnd, 46), { r: 58, etiqueta: 'Jarrita con hortensias. Arrastra o usa las flechas para moverla.' });
+          pj.fila = fi;
+        } else {
+          var vl = hacerMovil('vela', (ciclo === 0 ? 1 : -1) * (14 + rnd() * 10), yy, vela(id, p), { r: 30, etiqueta: 'Vela encendida. Intro la apaga; arrastra o usa las flechas para moverla.' });
+          vl.fila = fi; vl.enc = true; vl.llama = $('.llama', vl.g); vl.halo = $('.halo', vl.g); vl.fuego = $('.fuego', vl.g); vl.nucleo = $('.nucleo', vl.g);
+          vl.g.setAttribute('aria-pressed', 'true');
+          velas.push(vl);
+        }
+      });
     });
-
-    // centro de mesa: velas y jarritas con hortensias entre servicios
-    filas.forEach(function (v, fi) {
-      var yy = v + PASO_FILA / 2, ciclo = ((fi % 3) + 3) % 3;
-      if (ciclo === 1) {
-        var pj = hacerMovil('jarra', (rnd() - .5) * 24, yy, hortensias(id, p, rnd, 46), { r: 58, etiqueta: 'Jarrita con hortensias. Arrastra o usa las flechas para moverla.' });
-        pj.fila = fi;
-      } else {
-        var vl = hacerMovil('vela', (ciclo === 0 ? 1 : -1) * (14 + rnd() * 10), yy, vela(id, p), { r: 30, etiqueta: 'Vela encendida. Intro la apaga; arrastra o usa las flechas para moverla.' });
-        vl.fila = fi; vl.enc = true; vl.llama = $('.llama', vl.g); vl.halo = $('.halo', vl.g); vl.fuego = $('.fuego', vl.g); vl.nucleo = $('.nucleo', vl.g);
-        vl.g.setAttribute('aria-pressed', 'true');
-        velas.push(vl);
-      }
+    // la guirnalda
+    pasos.push(function () {
+      var guir = guirnalda(id, p, rnd, filas[0] - 220, filas[filas.length - 1] + 260);
+      esc.guirnaldaSombra.innerHTML = guir.sombra;
+      esc.guirnalda.innerHTML = guir.cuerpo;
     });
-
-    host.appendChild(svg);
-    return {
-      svg: svg, tg: tg, xc: xc, vbW: vbW, vbH: vbH, vertical: vertical, filas: filas, bienvenida: bienvenida, piezas: piezas, velas: velas,
-      servicios: servicios, estaticos: estaticos, moviles: moviles, camino: $('.m-camino', svg), camClip: $('.cam-clip', svg),
-      guirnalda: gGui, guirnaldaSombra: gSom, sillas: $$('.silla', svg), tarjeta: cierre.tarjeta, tarjetaG: cierre.tarjetaG, bienvenidaPieza: cierre.welcome, id: id, p: p, rnd: rnd
-    };
+    trocear(pasos, function () {
+      esc.tarjeta = cierre.tarjeta; esc.tarjetaG = cierre.tarjetaG; esc.bienvenidaPieza = cierre.welcome;
+      hecho(esc);
+    });
+    return esc;
   }
 
   /* =====================================================================
@@ -842,7 +815,8 @@
       if (op.alPoner) op.alPoner();
     };
     if (!gs || op.movimiento === false || op.yaPuesta || reducido()) { esc.svg.classList.add('puesta'); ctrl.puesta = true; esc.velas.forEach(function (v) { v.enc = true; }); fin(); if (gs && op.yaPuesta && op.movimiento !== false && !reducido()) ctrl.encenderTodas(); return null; }
-    var tl = gs.timeline({ defaults: { overwrite: false }, onComplete: fin });
+    var _t1 = performance.now();
+    var tl = gs.timeline({ defaults: { overwrite: false }, onComplete: fin, paused: true });
     ctrl.tl = tl;
     var q = function (sel, r) { return $$(sel, r || esc.svg); };
     var ents = function (sel) { return q(sel + ' > .ent'); };
@@ -851,7 +825,7 @@
     var copas = esc.piezas.filter(function (z) { return z.tipo === 'copa'; });
     var jarras = esc.piezas.filter(function (z) { return z.tipo === 'jarra'; });
     var velas = esc.velas;
-    var hojas = q('.guirnalda-hojas .hoja', esc.svg), tallos = q('.tallo', esc.svg), cardos = q('.cardo', esc.svg);
+    var lotes = q('.m-guirnalda .sp-h', esc.svg), tallos = q('.m-guirnalda .tallo', esc.svg), cardos = q('.cardo', esc.svg);
     var lifts = platos.map(function (z) { return z.ent.querySelector('.lift'); });
     // estado de partida (lo que no se ve en el paso 1 no está pintado antes de que le toque)
     gs.set(sillas, { opacity: 0, x: function (i, el) { return (+el.parentNode.getAttribute('data-lado') || 1) * 26; } });
@@ -865,12 +839,14 @@
     velas.forEach(function (z) { gs.set(z.ent, { opacity: 0, y: -8 }); gs.set(z.llama, { opacity: 0 }); gs.set([z.fuego, z.nucleo], { scale: 0, transformOrigin: '50% 90%' }); });
     gs.set(tallos, { strokeDasharray: 1, strokeDashoffset: 1 });
     tallos.forEach(function (t) { t.setAttribute('pathLength', '1'); });
-    gs.set(hojas, { scale: 0 });
+    gs.set(lotes, { opacity: 0 });
     gs.set(cardos, { scale: 0 });
     gs.set(esc.guirnaldaSombra, { opacity: 0 });
     var tj = esc.tarjetaG;
     if (tj) { gs.set(tj, { opacity: 0, y: -10 }); esc.tarjeta.poner(0); }
 
+    // los estados de partida ya están puestos; las animaciones se montan en otra tarea (en un móvil lento, dos tareas cortas en vez de una larga)
+    trocear([function () {
     // 1. las sillas se arriman y se despliega el camino de lino
     tl.to(sillas, { opacity: 1, x: 0, duration: .9, ease: 'power3.out', stagger: .04 }, 0);
     tl.to(esc.camClip, { attr: { height: esc.vbH + 1200 }, duration: 1.15, ease: 'power2.inOut', autoRound: false }, .05);
@@ -885,7 +861,7 @@
     // 4. el centro: la guirnalda se dibuja, hoja a hoja
     tl.to(esc.guirnaldaSombra, { opacity: 1, duration: 1.1 }, 1.2);
     tl.to(tallos, { strokeDashoffset: 0, duration: .9, ease: 'power1.inOut', stagger: .035, autoRound: false }, 1.2);
-    tl.to(hojas, { scale: 1, duration: .55, ease: 'power2.out', stagger: { each: .006, from: 'start' } }, 1.4);
+    tl.to(lotes, { opacity: 1, duration: .6, ease: 'power1.out', stagger: .035 }, 1.45);
     tl.to(cardos, { scale: 1, duration: .6, ease: 'power2.out', stagger: .08 }, 2.3);
     // 5. las hortensias, las velas, y se encienden
     jarras.forEach(function (z, i) {
@@ -902,14 +878,18 @@
       tl.add(function () { esc.tarjeta.escribir(1.9); }, 3.1);
       tl.to({}, { duration: 1.9 }, 3.1);
     }
+    }], function () { ctrl.tlListo = true; if (ctrl.visible !== false) tl.play(); });
+    (M._t = M._t || []).push(['ponerLaMesa', Math.round(performance.now() - _t1), Math.round(performance.now())]);
     return tl;
   }
 
   /* =====================================================================
-     8. «DEL PLATO AL MAR»: al bajar, la cámara sube. Una sola sección fijada con scrub.
-        mesa dibujada → su mesa real (IG 19) → la fachada, con la mesa tras una ventana (IG 14) → la ortofoto PNOA centrada en la casa
-        → zoom aéreo continuo y exacto (5 niveles encajados, mismo centro y misma proyección) hasta el valle de Cances y la costa.
-        Fotos de IG: no se finge que una contenga a la otra; es un zoom con desenfoque de movimiento.
+     8. «DEL PLATO AL MAR»: al bajar, la cámara SUBE, siempre en cenital, sin cambiar de eje:
+        la mesa dibujada se encoge y alrededor aparece la sala (suelo de piedra y muros, en el mismo trazo de tinta) → bajo el tejado
+        de la casa grande de la ortofoto PNOA (el punto de la transición es la propia casa: img/aire/casa.json) → zoom aéreo
+        continuo y exacto (seis niveles encajados, mismo centro y misma proyección) hasta el valle de Cances y la costa.
+        Una sola cámara (ppm = píxeles por metro y centro en metros): la mesa, la sala, la ortofoto y los rótulos salen de ella,
+        así que cada rótulo cae donde está de verdad y cada nivel cubre la pantalla (con el desplazamiento de la cámara incluido).
      ===================================================================== */
   var RAIZ = (function () {
     try { var s = document.currentScript && document.currentScript.src; if (s) return new URL('../', s).href; } catch (e) {}
@@ -941,53 +921,85 @@
     return '<picture><source type="image/avif" srcset="' + urlR(b + '.avif') + '"><source type="image/webp" srcset="' + urlR(b + '.webp') + '"><img src="' + urlR(b + '.jpg') + '" alt="" decoding="async" ' + (extra || '') + '></picture>';
   }
 
-  var VENTANA = { x0: .0302, x1: .1079, y0: .289, y1: .421 };               // la ventana con balcón de la fachada (IG 14), en fracción de la foto
-  var PLATO_FOTO = { x: .228, y: .346, d: .2 };                              // el cuenco de la izquierda de la mesa de IG 19, en fracción de la foto
-  var LUGARES_VER = {   // rango de zoom (metros visibles en el lado grande) donde se enseña cada rótulo: [aparece completo, desaparece, aparece, completo]
-    casa: [0, 0, 2600, 5200], cances: [150, 600, 3200, 6500], carballo: [6500, 12000, 99999, 99999], malpica: [9000, 15000, 99999, 99999],
-    sisargas: [9000, 15000, 99999, 99999], razo: [9000, 15000, 99999, 99999], baldaio: [9000, 15000, 99999, 99999]
+  var MU = 1 / 680;               // metros por unidad de la mesa dibujada (la mesa mide 1 m de ancho)
+  var PA = .34, PC = .93;         // fin de la subida (la mesa ya es un punto bajo el tejado) y fin del zoom (el resto es el cierre)
+  var VIS_LUGAR = {               // cuándo se ve cada rótulo: [fase, entra0, entra1, sale0, sale1]; fase 'p' (progreso total) o 'v' (progreso del zoom aéreo)
+    casa: ['p', .33, .41, 2, 3], cances: ['v', .05, .14, .4, .52], carballo: ['v', .64, .78, 2, 3], malpica: ['v', .64, .78, 2, 3],
+    sisargas: ['v', .64, .78, 2, 3], razo: ['v', .64, .78, 2, 3], baldaio: ['v', .64, .78, 2, 3]
   };
-  function banda(w, r) {   // 1 dentro de [r0,r1], con rampas
-    var a = clamp((w - r[0]) / Math.max(1, r[1] - r[0]), 0, 1), b = 1 - clamp((w - r[2]) / Math.max(1, r[3] - r[2]), 0, 1);
-    if (r[0] === 0 && r[1] === 0) a = 1;
-    return smooth(a) * smooth(b);
+  var easeIO = function (t) { return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
+
+  /* ---------- la sala: suelo de losas, muros de piedra y la mesa vista desde arriba, en metros ---------- */
+  function salaHTML(id, p) {
+    var rnd = rng(909), i, j, s = '';
+    var nx = 8, ny = 6, x0 = -3.2, y0 = -2.45, w = 6.4 / nx, h = 4.9 / ny, V = [];
+    for (j = 0; j <= ny; j++) { V.push([]); for (i = 0; i <= nx; i++) V[j].push([x0 + i * w + (i === 0 || i === nx ? 0 : (rnd() - .5) * w * .34), y0 + j * h + (j === 0 || j === ny ? 0 : (rnd() - .5) * h * .34)]); }
+    s += '<rect x="-3.95" y="-3.2" width="7.9" height="6.4" fill="#3a2810" opacity=".16" transform="translate(.16 .2)"/>';
+    for (j = 0; j < ny; j++) for (i = 0; i < nx; i++) {
+      var q = [V[j][i], V[j][i + 1], V[j + 1][i + 1], V[j + 1][i]];
+      s += '<polygon points="' + q.map(function (a) { return f2(a[0]) + ',' + f2(a[1]); }).join(' ') + '" fill="' + mezcla('#CFC6B6', rnd() > .5 ? '#E2DACB' : '#B4A995', rnd() * .7) + '" stroke="rgba(43,40,35,.4)" stroke-width=".022" stroke-linejoin="round"/>';
+    }
+    // muros de piedra: un marco grueso con sus juntas, la puerta al sur y una ventana al este
+    s += '<path fill-rule="evenodd" d="M-3.8 -3.05H3.8V3.05H-3.8ZM-3.2 -2.45V2.45H3.2V-2.45Z" fill="' + p.granito2 + '" stroke="rgba(43,40,35,.6)" stroke-width=".03"/>';
+    for (i = -3.6; i < 3.7; i += .55) s += '<path d="M' + f2(i) + ' -3.05V-2.45M' + f2(i + .2) + ' 2.45V3.05" stroke="rgba(43,40,35,.35)" stroke-width=".018"/>';
+    for (j = -2.8; j < 2.9; j += .55) s += '<path d="M-3.8 ' + f2(j) + 'H-3.2M3.2 ' + f2(j + .15) + 'H3.8" stroke="rgba(43,40,35,.35)" stroke-width=".018"/>';
+    s += '<rect x="-.55" y="2.43" width="1.1" height=".64" fill="' + p.lino2 + '" stroke="rgba(43,40,35,.5)" stroke-width=".025"/><path d="M-.55 2.45A1.1 1.1 0 0 1 .55 3.55" fill="none" stroke="rgba(43,40,35,.45)" stroke-width=".02" stroke-dasharray=".06 .05"/>';
+    s += '<rect x="3.2" y="-.7" width=".6" height="1.4" fill="#DCEBEF" stroke="rgba(43,40,35,.5)" stroke-width=".025"/><path d="M3.5 -.7V.7" stroke="rgba(43,40,35,.4)" stroke-width=".02"/>';
+    s += '<rect x="-.75" y="-2.45" width="1.5" height=".5" fill="#6E6558" stroke="rgba(43,40,35,.6)" stroke-width=".025"/><rect x="-.5" y="-2.43" width="1" height=".26" fill="#E8A24A" opacity=".8"/>';
+    // la mesa larga, con su camino de lino, doce platos, sillas y velas encendidas
+    s += '<g class="sala-mesa"><rect x="-.5" y="-1.5" width="1" height="3" fill="#3a2810" opacity=".2" transform="translate(.08 .1)"/><rect x="-.5" y="-1.5" width="1" height="3" fill="' + p.pino + '" stroke="' + p.pinoOsc + '" stroke-width=".02"/>';
+    for (i = 1; i < 4; i++) s += '<path d="M' + f2(-.5 + i * .25) + ' -1.5V1.5" stroke="rgba(120,76,32,.3)" stroke-width=".012"/>';
+    s += '<rect x="-.17" y="-1.5" width=".34" height="3" fill="#EDE7DA" stroke="rgba(120,100,70,.4)" stroke-width=".012"/>';
+    for (j = 0; j < 6; j++) [-1, 1].forEach(function (sd) {
+      var yy = -1 + j * .4;
+      s += '<rect x="' + f2(sd * .74 - .21) + '" y="' + f2(yy - .21) + '" width=".42" height=".42" rx=".1" fill="' + p.silla + '" stroke="#CFC8B6" stroke-width=".012"/>';
+      s += '<circle cx="' + f2(sd * .3) + '" cy="' + f2(yy) + '" r=".145" fill="' + p.esparto + '"/><circle cx="' + f2(sd * .3) + '" cy="' + f2(yy) + '" r=".11" fill="' + p.loza + '" stroke="' + p.lozaAzul + '" stroke-width=".012"/>';
+    });
+    [-.75, 0, .75].forEach(function (yy) { s += '<circle cx="0" cy="' + yy + '" r=".05" fill="' + p.laton + '"/><circle cx="0" cy="' + yy + '" r=".16" fill="url(#' + id + '-halo)"/>'; });
+    s += '</g>';
+    return s;
   }
 
   function crearZoom(host, esc, ctrl, op, aire) {
-    var gs = G(), st = ST();
+    var _tz = performance.now();
+    var gs = G(), st = ST(), id = esc.id, p = esc.p;
     var sec = host.closest('section') || host.parentNode;
     var texto = sec ? sec.querySelector('.portada-texto') : null;
-    var capa = document.createElement('div');
-    capa.className = 'mz-zoom';
-    capa.setAttribute('aria-hidden', 'true');
-    capa.innerHTML =
-      '<div class="mz-aire"></div>' +
-      '<div class="mz-fachada"><div class="mz-f-img"></div><div class="mz-ventana"><div class="mz-v-img"></div><div class="mz-vidrio"></div></div></div>' +
-      '<div class="mz-foto"></div>' +
-      '<svg class="mz-lineas" width="100%" height="100%"></svg><div class="mz-lugares"></div>' +
-      '<p class="mz-cred" lang="es">Ortofoto: PNOA © IGN, CC BY 4.0</p>';
-    host.appendChild(capa);
-    var elAire = $('.mz-aire', capa), elFach = $('.mz-fachada', capa), elFoto = $('.mz-foto', capa), elVent = $('.mz-ventana', capa);
-    var lineas = $('.mz-lineas', capa), lugaresEl = $('.mz-lugares', capa), cred = $('.mz-cred', capa);
     var niv = aire.niveles, lugs = aire.lugares;
+    var lonC = aire.centro.lon, latC = aire.centro.lat, MLON = aire.metros_por_grado.lon, MLAT = aire.metros_por_grado.lat;
+    var baseCapa = document.createElement('div');
+    baseCapa.className = 'mz-zoom mz-base'; baseCapa.setAttribute('data-mesa', '1'); baseCapa.setAttribute('aria-hidden', 'true');
+    baseCapa.innerHTML = '<div class="mz-aire"></div><svg class="mz-sala" width="1" height="1" overflow="visible" focusable="false"><g class="mz-sala-g">' + salaHTML(id, p) + '</g></svg>';
+    var topCapa = document.createElement('div');
+    topCapa.className = 'mz-zoom mz-top'; topCapa.setAttribute('data-mesa', '1'); topCapa.setAttribute('aria-hidden', 'true');
+    topCapa.innerHTML = '<svg class="mz-lineas" width="100%" height="100%"></svg><div class="mz-lugares"></div><p class="mz-cierre">Cances, a diez minutos de la playa de Malpica</p><p class="mz-cred" lang="es">Ortofoto: PNOA © IGN, CC BY 4.0</p>';
+    host.insertBefore(baseCapa, esc.svg);
+    host.appendChild(topCapa);
+    var elAire = $('.mz-aire', baseCapa), salaG = $('.mz-sala-g', baseCapa), salaMesa = $('.sala-mesa', baseCapa);
+    var lineas = $('.mz-lineas', topCapa), lugaresEl = $('.mz-lugares', topCapa), cred = $('.mz-cred', topCapa), cierre = $('.mz-cierre', topCapa);
     var imgNiv = [];
-    // los cinco niveles de la ortofoto (se cargan cuando la sección se acerca)
     niv.forEach(function (n, k) {
       var d = document.createElement('div');
       d.className = 'mz-nivel'; d.dataset.nivel = k;
       d.style.width = d.style.height = n.px + 'px';
-      d.innerHTML = aireHTML(k, 'loading="lazy"');
       elAire.appendChild(d);
       imgNiv.push(d);
     });
-    // lugares, líneas y minutos (solo los que dice la casa: Malpica 10 min, Razo y Baldaio 15 min)
+    // el contorno de los tejados, en píxeles del nivel 0: se dibuja un momento con la tinta de la mesa y se va
+    var tejG = [];
+    var tej = aire.tejados_nivel0_px || {};
+    var tejSVG = '<svg class="mz-tej" viewBox="0 0 ' + niv[0].px + ' ' + niv[0].px + '" width="100%" height="100%" focusable="false">';
+    Object.keys(tej).forEach(function (k) { tejSVG += '<polygon class="mz-tj" pathLength="1" points="' + tej[k].map(function (q) { return q[0] + ',' + q[1]; }).join(' ') + '"/>'; });
+    imgNiv[0].insertAdjacentHTML('beforeend', tejSVG + '</svg>');
+    var tejEls = $$('.mz-tj', imgNiv[0]);
+    // lugares y líneas (los minutos, solo los que dice la casa: Malpica 10 min, Razo y Baldaio 15 min)
     var pLug = {};
     lugs.forEach(function (l) {
       var d = document.createElement('div');
       d.className = 'mz-lugar mz-' + l.id + (l.id === 'casa' ? ' es-casa' : '');
-      d.innerHTML = '<i class="mz-punto"></i><span class="mz-nombre">' + l.nombre + (l.min ? '<b class="mz-min"> · ' + l.min + '</b>' : '') + '</span>';
+      d.innerHTML = '<i class="mz-punto"></i><span class="mz-nombre">' + l.nombre + (l.min ? '<b class="mz-min">' + l.min + '</b>' : '') + '</span>';
       lugaresEl.appendChild(d);
-      pLug[l.id] = { d: d, l: l };
+      pLug[l.id] = { d: d, l: l, w: 0, hw: 7, mx: (l.lon - lonC) * MLON, my: (l.lat - latC) * MLAT };
     });
     var lns = {};
     lugs.forEach(function (l) {
@@ -997,172 +1009,206 @@
       lineas.appendChild(ln);
       lns[l.id] = ln;
     });
-    // fotos
-    var okFoto = false;
-    fotoPicture('mesa-larga-otono', '', '100vw', 'fetchpriority="low"').then(function (h) { elFoto.innerHTML = h; $('.mz-foto', capa); okFoto = true; });
-    fotoPicture('mesa-larga-otono', '', '30vw', 'loading="lazy"').then(function (h) { $('.mz-v-img', capa).innerHTML = h; });
-    fotoPicture('fachada', '', '100vw', 'loading="lazy"').then(function (h) { $('.mz-f-img', capa).innerHTML = h; });
-
-    var g = { vw: 0, vh: 0, S0: 0, dT: 0, K0: 1, Kc: 1, Kend: 1, F1: 1, px: 0, py: 0, Z: 1, T0x: 0, T0y: 0, ancho: 0, maxd: 0 };
-    var escenaWrap = esc.svg;
-    function medir() {
-      var r = host.getBoundingClientRect();
-      g.vw = r.width; g.vh = r.height; g.maxd = Math.max(g.vw, g.vh); g.S0 = g.maxd;
-      var m = esc.svg.getScreenCTM();
-      var pz = esc.bienvenidaPieza;
-      if (m && pz) {
-        var pt = esc.svg.createSVGPoint(); pt.x = esc.xc + pz.bx; pt.y = pz.by;
-        var q = pt.matrixTransform(m);
-        g.px = q.x - r.left; g.py = q.y - r.top;
-        g.dPlato = 2 * R_PLATO * m.a;
-      } else { g.px = g.vw * .6; g.py = g.vh * .5; g.dPlato = Math.min(g.vw, g.vh) * .2; }
-      g.dT = Math.min(g.vw, g.vh) * (esc.vertical ? .78 : .62);       // el plato, al acabar la primera zoom
-      g.Z = clamp(g.dT / g.dPlato, 1.6, 7);
-      var wa = (VENTANA.x1 - VENTANA.x0) / (VENTANA.y1 - VENTANA.y0);
-      g.wa = wa;
-      g.dFoto = PLATO_FOTO.d * g.S0;
-      g.K0 = g.dT / g.dFoto;
-      g.Kc = Math.min(g.vw, g.vh) / g.S0;
-      g.winH = (esc.vertical ? .42 : .5) * g.vh;
-      g.Kend = g.winH / g.S0;
-      var wH = (VENTANA.y1 - VENTANA.y0) * g.S0;
-      g.F1 = g.winH / wH;
-      g.wcx = (VENTANA.x0 + VENTANA.x1) / 2; g.wcy = (VENTANA.y0 + VENTANA.y1) / 2;
-      // tamaños de las capas cuadradas, centradas en la pantalla
-      [elFoto, elFach].forEach(function (e) { e.style.width = e.style.height = g.S0 + 'px'; e.style.left = (g.vw - g.S0) / 2 + 'px'; e.style.top = (g.vh - g.S0) / 2 + 'px'; });
-      elVent.style.left = VENTANA.x0 * 100 + '%'; elVent.style.top = VENTANA.y0 * 100 + '%';
-      elVent.style.width = (VENTANA.x1 - VENTANA.x0) * 100 + '%'; elVent.style.height = (VENTANA.y1 - VENTANA.y0) * 100 + '%';
-      lineas.setAttribute('viewBox', '0 0 ' + g.vw + ' ' + g.vh);
-      escenaWrap.style.transformOrigin = g.px + 'px ' + g.py + 'px';
+    // las imágenes pesadas (seis niveles de ortofoto) se piden DESPUÉS de la carga y a baja prioridad: con el primer scroll, o con el navegador ocioso
+    var cargadas = false;
+    function cargarCapas() {
+      if (cargadas) return;
+      cargadas = true;
+      ['scroll', 'wheel', 'touchstart', 'keydown'].forEach(function (n) { removeEventListener(n, cargarCapas); });
+      imgNiv.forEach(function (d, k) { d.insertAdjacentHTML('afterbegin', aireHTML(k, 'fetchpriority="low"')); });
     }
-    var easeIO = function (t) { return t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2; };
-    var ultimoP = -1;
+    addEventListener('scroll', cargarCapas, { passive: true, once: true }); addEventListener('wheel', cargarCapas, { passive: true, once: true });
+    addEventListener('touchstart', cargarCapas, { passive: true, once: true }); addEventListener('keydown', cargarCapas, { once: true });
+    var llegoLoad = function () { (window.requestIdleCallback || function (f) { return setTimeout(f, 1500); })(cargarCapas, { timeout: 5000 }); };
+    if (document.readyState === 'complete') llegoLoad(); else addEventListener('load', llegoLoad, { once: true });
+    ctrl.cargarCapas = cargarCapas;
 
-    function render(p) {
-      p = clamp(p, 0, 1);
-      ultimoP = p;
-      var a = easeIO(seg(p, 0, .21));
-      // A · la mesa se acerca al plato de la bienvenida
-      var S = lerp(1, g.Z, a), Tx = (g.vw / 2 - g.px) * a, Ty = (g.vh / 2 - g.py) * a;
-      escenaWrap.style.transform = 'translate3d(' + f1(Tx) + 'px,' + f1(Ty) + 'px,0) scale(' + f2(S) + ')';
-      var oEsc = 1 - smooth(seg(p, .17, .26));
-      escenaWrap.style.opacity = f2(oEsc);
-      escenaWrap.style.visibility = oEsc <= 0.001 ? 'hidden' : 'visible';
-      if (texto) { var ot = 1 - smooth(seg(p, 0, .07)); texto.style.opacity = f2(ot); texto.style.visibility = ot <= 0.01 ? 'hidden' : ''; }
-      // B · se funde con su mesa real
-      var fB = smooth(seg(p, .15, .25));
-      var t1 = easeIO(seg(p, .22, .36)), t2 = easeIO(seg(p, .34, .46));
-      var K = g.K0 * Math.pow(g.Kc / g.K0, t1) * lerp(1, g.Kend / g.Kc, t2);
-      var tx = -(PLATO_FOTO.x - .5) * g.S0 * K * (1 - t1), ty = -(PLATO_FOTO.y - .5) * g.S0 * K * (1 - t1);
-      var ih = lerp(0, (1 - g.wa) / 2 * g.S0, t2);
-      var oFoto = fB * (1 - smooth(seg(p, .452, .475)));
-      elFoto.style.transform = 'translate3d(' + f1(tx) + 'px,' + f1(ty) + 'px,0) scale(' + f2(K * 1000) / 1000 + ')';
-      elFoto.style.clipPath = 'inset(0 ' + f1(ih) + 'px 0 ' + f1(ih) + 'px)';
-      elFoto.style.opacity = f2(oFoto);
-      elFoto.style.filter = 'blur(' + f1(5 * Math.sin(Math.PI * seg(p, .22, .36))) + 'px)';
-      elFoto.style.visibility = oFoto <= .001 ? 'hidden' : 'visible';
-      // C · la fachada: la mesa queda tras la ventana, y la cámara se aleja
-      var oF = smooth(seg(p, .28, .37)) * (1 - smooth(seg(p, .54, .62)));
-      var u = easeIO(seg(p, .47, .62));
-      var F = g.F1 * Math.pow(.62 / g.F1, u);
-      var fx = -(g.wcx - .5) * g.S0 * F * (1 - u), fy = -(g.wcy - .5) * g.S0 * F * (1 - u);
-      elFach.style.transform = 'translate3d(' + f1(fx) + 'px,' + f1(fy) + 'px,0) scale(' + f2(F * 1000) / 1000 + ')';
-      elFach.style.opacity = f2(oF);
-      elFach.style.visibility = oF <= .001 ? 'hidden' : 'visible';
-      elFach.style.filter = 'blur(' + f1(4 * Math.sin(Math.PI * seg(p, .47, .62))) + 'px)';
-      elVent.style.setProperty('--vidrio', f2(smooth(seg(p, .4, .52))));
-      // D · la ortofoto: aparece mientras la fachada se va, y se aleja sin saltos
-      var oA = smooth(seg(p, .52, .62));
-      var q = easeIO(seg(p, .5, 1));
-      var W0 = 105, W1 = 27000;
-      var Wv = W0 * Math.pow(W1 / W0, q);
-      var ppm = g.maxd / Wv;
-      elAire.style.opacity = f2(oA);
-      elAire.style.visibility = oA <= .001 ? 'hidden' : 'visible';
-      var cx = g.vw / 2, cy = g.vh / 2;
-      var casa = aire.casa_xy;
-      for (var k = 0; k < niv.length; k++) {
-        var side = niv[k].ancho_m * ppm, r = side / g.maxd;
-        var o = k === niv.length - 1 ? 1 : smooth(seg(r, 1.02, 1.36));
-        var d = imgNiv[k];
-        if (o <= .001) { d.style.visibility = 'hidden'; continue; }
-        var dx = -(casa[k].x - .5) * side, dy = -(casa[k].y - .5) * side;
-        d.style.visibility = 'visible';
-        d.style.opacity = f2(o);
-        d.style.transform = 'translate3d(' + f1(cx + dx - niv[k].px / 2) + 'px,' + f1(cy + dy - niv[k].px / 2) + 'px,0) scale(' + (side / niv[k].px).toFixed(5) + ')';
-        d.style.zIndex = String(niv.length - k);
+    var Xh = { x: aire.casa_m[0], y: aire.casa_m[1] };               // la casa grande, en metros desde el centro: aquí estaba la mesa
+    var EF = aire.encuadre_final;
+    var g = { vw: 0, vh: 0, cx: 0, cy: 0, maxd: 0, P0: { x: 0, y: 0 }, ppm0: 1, ppmA: 1, ppmF: 1, camF: { x: 0, y: 0 } };
+    var escenaWrap = esc.svg, ultimoP = -1, cam = null;
+
+    function medir() {
+      g.vw = baseCapa.clientWidth || innerWidth; g.vh = baseCapa.clientHeight || innerHeight;
+      g.cx = g.vw / 2; g.cy = g.vh / 2; g.maxd = Math.max(g.vw, g.vh);
+      var previo = escenaWrap.style.transform;
+      escenaWrap.style.transform = 'none';
+      var m = escenaWrap.getScreenCTM(), r = baseCapa.getBoundingClientRect();
+      if (m) {
+        var pt = escenaWrap.createSVGPoint(); pt.x = esc.xc; pt.y = esc.vbH / 2;
+        var q = pt.matrixTransform(m);
+        g.P0 = { x: q.x - r.left, y: q.y - r.top };
+        g.ppm0 = m.a / MU;
+      } else { g.P0 = { x: g.cx, y: g.cy }; g.ppm0 = 400; }
+      escenaWrap.style.transform = previo;
+      escenaWrap.style.transformOrigin = g.P0.x + 'px ' + g.P0.y + 'px';
+      g.ppmA = Math.min(g.ppm0 * .6, 1.6 * g.maxd / niv[0].ancho_m);                                // la casa grande y su patio llenan la pantalla
+      // el encuadre final: la casa, Malpica, las Sisargas, Razo, Baldaio y Carballo, con un 32 % de aire y sitio abajo para la frase
+      g.ppmF = Math.min(g.vw / (EF.ancho_m * 1.32), g.vh / (EF.alto_m * 1.4));
+      g.camF = { x: EF.centro_m[0], y: EF.centro_m[1] - 0.045 * g.vh / g.ppmF };
+      Object.keys(pLug).forEach(function (k) { var q = pLug[k], dot = q.d.querySelector('.mz-punto'); q.w = q.d.offsetWidth || 120; q.hw = (dot && dot.offsetWidth ? dot.offsetWidth : 14) / 2; });
+    }
+    // la cámara: ppm (px por metro) y centro (metros), en función del progreso
+    function camara(pr) {
+      var uA = easeIO(seg(pr, 0, PA)), v = easeIO(seg(pr, PA, PC)), ppm, cx, cy;
+      if (pr < PA) {
+        ppm = Math.exp(lerp(Math.log(g.ppm0), Math.log(g.ppmA), uA));
+        var e1 = easeIO(seg(pr, 0, .22)), Sx = lerp(g.P0.x, g.cx, e1), Sy = lerp(g.P0.y, g.cy, e1);
+        cx = Xh.x - (Sx - g.cx) / ppm; cy = Xh.y + (Sy - g.cy) / ppm;
+      } else {
+        ppm = Math.exp(lerp(Math.log(g.ppmA), Math.log(g.ppmF), v));
+        var w = smooth(seg(v, .1, 1));
+        cx = Xh.x + (g.camF.x - Xh.x) * w; cy = Xh.y + (g.camF.y - Xh.y) * w;
       }
-      elAire.style.filter = oA < 1 ? 'blur(' + f1(5 * (1 - oA)) + 'px)' : '';
-      cred.style.opacity = f2(oA > .5 ? (oA - .5) * 2 : 0);
-      // rótulos y minutos
-      var ps = {};
+      return { ppm: ppm, x: cx, y: cy, v: v };
+    }
+    var aPx = function (c, X, Y) { return { x: g.cx + (X - c.x) * c.ppm, y: g.cy - (Y - c.y) * c.ppm }; };
+
+    function render(pr) {
+      pr = clamp(pr, 0, 1);
+      ultimoP = pr;
+      var c = camara(pr); cam = c;
+      var fs = c.ppm / g.ppm0, Sh = aPx(c, Xh.x, Xh.y);
+      // 1 · la mesa dibujada se encoge hacia su sitio bajo el tejado
+      escenaWrap.style.transform = 'translate3d(' + f1(Sh.x - g.P0.x) + 'px,' + f1(Sh.y - g.P0.y) + 'px,0) scale(' + (fs).toFixed(5) + ')';
+      var oEsc = smooth(seg(fs, .2, .55));
+      escenaWrap.style.opacity = f2(oEsc);
+      escenaWrap.style.visibility = oEsc <= .002 ? 'hidden' : 'visible';
+      if (texto) { var ot = 1 - smooth(seg(pr, 0, .07)); texto.style.opacity = f2(ot); texto.style.visibility = ot <= .01 ? 'hidden' : ''; }
+      // 2 · la sala aparece alrededor (suelo, muros) y se va cuando entra la ortofoto; la mesa pequeña de la sala toma el relevo de la grande
+      var oSala = smooth(seg(pr, .04, .13)) * (1 - smooth(seg(pr, .3, .4)));
+      salaG.setAttribute('transform', 'translate(' + f1(Sh.x) + ' ' + f1(Sh.y) + ') scale(' + c.ppm.toFixed(4) + ')');
+      salaG.style.opacity = f2(oSala); salaG.style.visibility = oSala <= .002 ? 'hidden' : 'visible';
+      salaMesa.style.opacity = f2(1 - oEsc);
+      // 3 · la ortofoto: aparece bajo el tejado (la casa), y se aleja sin saltos
+      var oA = smooth(seg(pr, .24, .36));
+      elAire.style.opacity = f2(oA);
+      elAire.style.visibility = oA <= .002 ? 'hidden' : 'visible';
+      var hx = g.vw / 2 / c.ppm, hy = g.vh / 2 / c.ppm, hm = Math.max(hx, hy), cubierto = false;
+      for (var k = 0; k < niv.length; k++) {
+        var W = niv[k].ancho_m, d = imgNiv[k];
+        var holgura = (W / 2 - Math.max(Math.abs(c.x) + hx, Math.abs(c.y) + hy)) / hm;       // >0: el nivel cubre toda la pantalla (la posición de la cámara incluida)
+        var o = k === niv.length - 1 ? 1 : smooth(seg(holgura, 0, .12));
+        if (cubierto || o <= .001 || (W * c.ppm / g.maxd > 40 && k > 0)) { d.style.visibility = 'hidden'; d.dataset.o = '0'; continue; }
+        var sc = W * c.ppm / niv[k].px, L = g.cx + (-W / 2 - c.x) * c.ppm, T = g.cy - (W / 2 - c.y) * c.ppm;
+        d.style.visibility = 'visible'; d.style.opacity = f2(o); d.dataset.o = f2(o);
+        d.style.transform = 'translate3d(' + f1(L) + 'px,' + f1(T) + 'px,0) scale(' + sc.toFixed(6) + ')';
+        d.style.zIndex = String(niv.length - k);
+        if (o >= .999) cubierto = true;
+      }
+      // el contorno de los tejados (tinta): se dibuja y se retira
+      var tr = seg(pr, .28, .39), ot2 = 1 - smooth(seg(pr, .45, .56));
+      tejEls.forEach(function (e) { e.style.strokeDashoffset = f2(1 - tr); e.style.opacity = f2(ot2 * (tr > 0 ? 1 : 0)); });
+      // 4 · rótulos y líneas, sobre la misma cámara
+      var pos = {};
       lugs.forEach(function (l) {
-        var x = cx + (l.lon - aire.casa.lon) * aire.metros_por_grado.lon * ppm, y = cy - (l.lat - aire.casa.lat) * aire.metros_por_grado.lat * ppm;
-        var vis = banda(Wv, LUGARES_VER[l.id] || [0, 0, 1, 1]) * oA;
-        var dd = pLug[l.id].d;
-        var dentro = x > -60 && x < g.vw + 60 && y > -40 && y < g.vh + 40;
-        if (vis < .02 || !dentro) { dd.style.opacity = 0; dd.style.visibility = 'hidden'; }
-        else { dd.style.visibility = 'visible'; dd.style.opacity = f2(vis); dd.style.transform = 'translate3d(' + f1(x) + 'px,' + f1(y) + 'px,0)'; }
-        ps[l.id] = { x: x, y: y, vis: vis };
+        var q = pLug[l.id], a = aPx(c, q.mx, q.my), vr = VIS_LUGAR[l.id] || ['v', 2, 3, 4, 5];
+        var fase = vr[0] === 'p' ? pr : c.v;
+        var vis = smooth(seg(fase, vr[1], vr[2])) * (1 - smooth(seg(fase, vr[3], vr[4])));
+        var mg = q.hw + 4, dentro = a.x > mg && a.x < g.vw - mg && a.y > mg && a.y < g.vh - mg;
+        pos[l.id] = { a: a, vis: vis };
+        var el = q.d;
+        if (vis < .02 || !dentro) { el.style.opacity = 0; el.style.visibility = 'hidden'; return; }
+        q.w = el.offsetWidth || q.w;
+        var cabeDer = a.x - q.hw + q.w <= g.vw - 8, cabeIzq = a.x + q.hw - q.w >= 8;
+        var izq = cabeDer ? false : (cabeIzq ? true : (g.vw - a.x) < a.x);        // el texto va al lado donde cabe
+        el.classList.toggle('izq', izq);
+        el.style.visibility = 'visible'; el.style.opacity = f2(vis);
+        el.style.transform = 'translate3d(' + f2(izq ? a.x - q.w + q.hw : a.x - q.hw) + 'px,' + f2(a.y - q.hw) + 'px,0)';
       });
+      var lv = smooth(seg(c.v, .76, .92));
       lugs.forEach(function (l) {
         var ln = lns[l.id]; if (!ln) return;
-        var a2 = ps.casa, b2 = ps[l.id], v = smooth(seg(Wv, 9000, 20000)) * oA * (b2 ? 1 : 0);
-        if (!b2 || v < .02) { ln.style.opacity = 0; return; }
-        ln.setAttribute('x1', f1(a2.x)); ln.setAttribute('y1', f1(a2.y)); ln.setAttribute('x2', f1(b2.x)); ln.setAttribute('y2', f1(b2.y));
-        ln.style.opacity = f2(v); ln.style.strokeDashoffset = f2(1 - v);
+        var A = pos.casa.a, B = pos[l.id].a;
+        if (lv < .02) { ln.style.opacity = 0; return; }
+        ln.setAttribute('x1', f1(A.x)); ln.setAttribute('y1', f1(A.y)); ln.setAttribute('x2', f1(B.x)); ln.setAttribute('y2', f1(B.y));
+        ln.style.opacity = f2(lv); ln.style.strokeDashoffset = f2(1 - lv);
       });
-      capa.dataset.p = f2(p);
-      host.dataset.zoomP = f2(p);
+      var oC = smooth(seg(pr, .93, .985));
+      cierre.style.opacity = f2(oC); cierre.style.visibility = oC <= .01 ? 'hidden' : 'visible';
+      cred.style.opacity = f2(oA > .5 ? (oA - .5) * 2 : 0);
+      baseCapa.dataset.p = f2(pr);
+      host.dataset.zoomP = f2(pr);
+      if (pr > 0 && !cargadas) cargarCapas();
     }
     ctrl.zoom = {
       render: render,
-      // para pruebas: dónde cae la casa y qué escala tiene cada nivel con el zoom en p (centro y escala, en píxeles de pantalla)
-      sonda: function (p) {
-        render(p);
-        return imgNiv.map(function (d, k) {
-          var r = d.getBoundingClientRect(), hr = host.getBoundingClientRect();
-          return { nivel: k, visible: d.style.visibility !== 'hidden', opacidad: +d.style.opacity || 0, ancho: r.width, casaX: r.left - hr.left + aire.casa_xy[k].x * r.width, casaY: r.top - hr.top + aire.casa_xy[k].y * r.height };
+      niveles: niv, medir: medir, geom: g,
+      // para pruebas: lo que se ve con el zoom en p (rectángulos en píxeles de la pantalla)
+      sonda: function (pr) {
+        render(pr);
+        var hr = baseCapa.getBoundingClientRect();
+        var niveles = imgNiv.map(function (d, k) {
+          var r = d.getBoundingClientRect();
+          return { nivel: k, visible: d.style.visibility === 'visible' && getComputedStyle(elAire).visibility === 'visible', opacidad: +d.dataset.o || 0, left: r.left - hr.left, top: r.top - hr.top, w: r.width, h: r.height };
         });
-      },
-      niveles: niv, medir: medir, geom: g
+        var etq = lugs.map(function (l) {
+          var q = pLug[l.id], r = q.d.getBoundingClientRect(), dot = q.d.querySelector('.mz-punto').getBoundingClientRect();
+          return { id: l.id, visible: q.d.style.visibility === 'visible' && +q.d.style.opacity > .5, left: r.left - hr.left, top: r.top - hr.top, w: r.width, h: r.height, ax: dot.left - hr.left + dot.width / 2, ay: dot.top - hr.top + dot.height / 2, fx: l.x, fy: l.y };
+        });
+        return { vw: g.vw, vh: g.vh, niveles: niveles, etiquetas: etq, aireOpac: +elAire.style.opacity, escenaOpac: +escenaWrap.style.opacity, salaOpac: +salaG.style.opacity, ppm: cam.ppm, cam: { x: cam.x, y: cam.y }, v: cam.v };
+      }
     };
     medir();
     render(0);
-    // el ScrollTrigger: una sola sección fijada, ≤ 3 pantallas en escritorio y ≤ 1,8 en móvil
-    var trig = null, anchoV = innerWidth, altoV = innerHeight;
-    if (st && gs && sec) {
-      var pant = function () { return esc.vertical ? 1.75 : 2.9; };
-      trig = st.create({
-        trigger: sec, start: 'top top', end: function () { return '+=' + Math.round(innerHeight * pant()); }, pin: true, pinSpacing: true, anticipatePin: 1, invalidateOnRefresh: true,
-        onRefresh: function () { medir(); render(ultimoP < 0 ? 0 : ultimoP); },
-        onUpdate: function (self) { render(self.progress); },
-        onToggle: function (self) { ctrl.visible = self.isActive || ctrl.visible; }
-      });
-      ctrl.pantallas = pant();
+    (M._t = M._t || []).push(['zoom-previo', Math.round(performance.now() - _tz), Math.round(performance.now())]);
+    // La sección queda «fijada» con CSS (sticky), sin ScrollTrigger: fijar con JS obliga a medir toda la página (cientos de ms en un móvil lento).
+    // La sección crece a (1 + pantallas) alturas de pantalla (≤ 3 en escritorio, ≤ 1,8 en móvil) y la mesa y el titular se quedan pegados arriba.
+    var anchoV = innerWidth, altoV = innerHeight, pendiente = false;
+    var pant = function () { return esc.vertical ? 1.75 : 2.9; };
+    ctrl.pantallas = pant();
+    if (sec) { sec.style.setProperty('--mz-pant', String(ctrl.pantallas)); sec.classList.add('mesa-con-pin'); }
+    function progresoScroll() {
+      if (!sec) return 0;
+      var r = sec.getBoundingClientRect(), total = Math.max(1, sec.offsetHeight - g.vh);
+      return clamp(-r.top / total, 0, 1);
     }
+    function alScroll() {
+      if (pendiente || ctrl.destruido) return;
+      pendiente = true;
+      requestAnimationFrame(function () {
+        pendiente = false;
+        var q = progresoScroll();
+        if (Math.abs(q - ultimoP) > 0.0003) render(q);
+        ctrl.visible = true;
+      });
+    }
+    addEventListener('scroll', alScroll, { passive: true });
+    ctrl.zoomProgreso = progresoScroll;
+    render(progresoScroll());
     // el resize de la barra del móvil no rehace nada
     var onResize = function () {
       if (innerWidth === anchoV && Math.abs(innerHeight - altoV) < 160) return;
       anchoV = innerWidth; altoV = innerHeight;
-      medir(); render(ultimoP < 0 ? 0 : ultimoP);
+      ctrl.pantallas = pant();
+      if (sec) sec.style.setProperty('--mz-pant', String(ctrl.pantallas));
+      medir(); render(progresoScroll());
     };
     addEventListener('resize', onResize);
-    return { destruir: function () { removeEventListener('resize', onResize); if (trig) trig.kill(true); escenaWrap.style.transform = escenaWrap.style.opacity = escenaWrap.style.visibility = ''; if (texto) { texto.style.opacity = ''; texto.style.visibility = ''; } if (capa.parentNode) capa.parentNode.removeChild(capa); } };
+    ctrl.zoom.destruir = function () {
+      removeEventListener('resize', onResize);
+      ['scroll', 'wheel', 'touchstart', 'keydown'].forEach(function (n) { removeEventListener(n, cargarCapas); });
+      removeEventListener('scroll', alScroll);
+      if (sec) { sec.classList.remove('mesa-con-pin'); sec.style.removeProperty('--mz-pant'); }
+      escenaWrap.style.transform = escenaWrap.style.opacity = escenaWrap.style.visibility = '';
+      if (texto) { texto.style.opacity = ''; texto.style.visibility = ''; }
+      [baseCapa, topCapa].forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
+    };
+    return ctrl.zoom;
   }
 
-  /* la versión sobria: tres imágenes fijas (mesa, fachada, valle) en lugar del zoom */
+  /* la versión sobria: tres imágenes fijas (su mesa, la casa vista desde arriba y el valle) en lugar del zoom */
   function crearTres(host, aire) {
     var cont = document.createElement('div');
-    cont.className = 'mz-tres';
-    var casa = aire && aire.casa_xy ? aire.casa_xy[3] : { x: .5, y: .5 };
+    cont.className = 'mz-tres'; cont.setAttribute('data-mesa', '1');
+    var cxy = aire && aire.casa_xy ? aire.casa_xy : null;
+    var c0 = cxy ? cxy[0] : { x: .5, y: .5 }, c3 = cxy ? cxy[3] : { x: .5, y: .5 };
     cont.innerHTML =
       '<figure class="mz-t-fig"><div class="mz-t-img" data-foto="mesa"></div><figcaption>La mesa de la casa, puesta con flores y velas <span class="num">Instagram, octubre de 2023</span></figcaption></figure>' +
-      '<figure class="mz-t-fig"><div class="mz-t-img" data-foto="fachada"></div><figcaption>La casa grande y el patio, vistos desde arriba <span class="num">Instagram</span></figcaption></figure>' +
-      '<figure class="mz-t-fig"><div class="mz-t-img mz-t-valle">' + aireHTML(3, 'loading="lazy"') + '<i class="mz-punto" style="left:' + f1(casa.x * 100) + '%;top:' + f1(casa.y * 100) + '%"></i><span class="mz-nombre mz-t-casa" style="left:' + f1(casa.x * 100) + '%;top:' + f1(casa.y * 100) + '%">Casa Entremuros</span></div><figcaption>El valle de Cances, a diez minutos de Malpica <span class="num">Ortofoto: PNOA © IGN, CC BY 4.0</span></figcaption></figure>';
+      '<figure class="mz-t-fig"><div class="mz-t-img mz-t-valle mz-t-casa-aire">' + aireHTML(0, 'loading="lazy"') + '<i class="mz-punto" style="left:' + f1(c0.x * 100) + '%;top:' + f1(c0.y * 100) + '%"></i><span class="mz-nombre mz-t-nombre" style="left:' + f1(c0.x * 100) + '%;top:' + f1(c0.y * 100) + '%">Casa Entremuros</span></div><figcaption>La casa y su patio, vistos desde arriba <span class="num">Ortofoto: PNOA © IGN, CC BY 4.0</span></figcaption></figure>' +
+      '<figure class="mz-t-fig"><div class="mz-t-img mz-t-valle">' + aireHTML(3, 'loading="lazy"') + '<i class="mz-punto" style="left:' + f1(c3.x * 100) + '%;top:' + f1(c3.y * 100) + '%"></i><span class="mz-nombre mz-t-nombre" style="left:' + f1(c3.x * 100) + '%;top:' + f1(c3.y * 100) + '%">Casa Entremuros</span></div><figcaption>El valle de Cances, a diez minutos de la playa de Malpica <span class="num">Ortofoto: PNOA © IGN, CC BY 4.0</span></figcaption></figure>';
     host.appendChild(cont);
     fotoPicture('mesa-larga-otono', 'La mesa larga de pino de la casa, puesta', '(max-width: 899px) 100vw, 33vw', 'loading="lazy"').then(function (h) { $('[data-foto="mesa"]', cont).innerHTML = h; });
-    fotoPicture('fachada', 'La fachada de piedra de la casa grande y el patio', '(max-width: 899px) 100vw, 33vw', 'loading="lazy"').then(function (h) { $('[data-foto="fachada"]', cont).innerHTML = h; });
     return { destruir: function () { if (cont.parentNode) cont.parentNode.removeChild(cont); } };
   }
 
@@ -1293,7 +1339,7 @@
   };
 
   /* la ramita del foco del teclado (#foco-rama: 38 × 23 px) */
-  M.foco = function (el) {
+  M.foco = M.focoRama = function (el) {
     var nodo = typeof el === 'string' ? $(el) : el;
     if (!nodo) return null;
     var p = paleta();
@@ -1389,49 +1435,66 @@
     var densidad = op.densidad === 'sobria' ? 'sobria' : 'mesa';
     var sobria = densidad === 'sobria';
     var mov = op.movimiento !== false && !reducido() && !!gs;
-    var ctrl = { visible: true, limpiar: [], destruido: false, puesta: false, mov: mov, densidad: densidad, zoom: null, tl: null };
-    el.innerHTML = '';
+    var ctrl = { visible: true, limpiar: [], destruido: false, puesta: false, mov: mov, densidad: densidad, zoom: null, tl: null, listo: false };
+    var esc = null, io = null, listaAlListo = [];
+    // el respaldo (la foto de su mesa) se queda a la vista mientras se dibuja la mesa, y se retira cuando la mesa ya está encima
+    var respaldo = Array.prototype.slice.call(el.children);
     el.classList.add('mesa-portada');
     el.classList.toggle('mesa-sobria', sobria || !mov);
-    var esc = crearEscena(el, op);
-    ctrl.escena = esc;
     var espacio = document.createElement('div');
-    espacio.className = 'mz-espacio'; espacio.setAttribute('aria-hidden', 'true');
+    espacio.className = 'mz-espacio'; espacio.setAttribute('aria-hidden', 'true'); espacio.setAttribute('data-mesa', '1');
     el.appendChild(espacio);
-    ctrl.limpiar.push(activarRecolocar(esc, ctrl));
-    llamas(esc, ctrl);
-    var io = null;
-    if ('IntersectionObserver' in window) {
-      io = new IntersectionObserver(function (es) {
-        es.forEach(function (e) {
-          ctrl.visible = e.isIntersecting;
-          if (e.isIntersecting) ctrl.reanudar();
-          else if (gs) { gs.killTweensOf(esc.velas.map(function (v) { return v.halo; })); esc.velas.forEach(function (v) { v.parpadeando = false; }); }
-          if (ctrl.tl) { if (e.isIntersecting) ctrl.tl.resume(); else ctrl.tl.pause(); }
-        });
-      }, { threshold: 0 });
-      io.observe(el);
-    }
-    // los datos aéreos son necesarios para el zoom y para la imagen del valle de la versión sobria
     var promesaAire = cargarJSON('img/aire/aire.json').catch(function () { return null; });
-    ctrl.tl = ponerLaMesa(esc, ctrl, op);
-    if (!mov) esc.velas.forEach(function (v) { v.enc = true; });
-    if (mov && !sobria) {
-      promesaAire.then(function (aire) {
-        if (ctrl.destruido || !aire) return;
-        ctrl.zoom = crearZoom(el, esc, ctrl, op, aire);
-        el.classList.add('mesa-con-zoom');
-      });
-    } else {
-      promesaAire.then(function (aire) { if (!ctrl.destruido) ctrl.tres = crearTres(el, aire); });
+    var opEntrada = sobria ? Object.assign({}, op, { movimiento: false }) : op;
+
+    function escenaLista(e) {
+      if (ctrl.destruido) return;
+      esc = e; ctrl.escena = e;
+      ctrl.limpiar.push(activarRecolocar(esc, ctrl));
+      llamas(esc, ctrl);
+      if ('IntersectionObserver' in window) {
+        io = new IntersectionObserver(function (es) {
+          es.forEach(function (x) {
+            ctrl.visible = x.isIntersecting;
+            if (x.isIntersecting) ctrl.reanudar();
+            else if (gs) { gs.killTweensOf(esc.velas.map(function (v) { return v.halo; })); esc.velas.forEach(function (v) { v.parpadeando = false; }); }
+            if (ctrl.tl && ctrl.tlListo) { if (x.isIntersecting) ctrl.tl.resume(); else ctrl.tl.pause(); }
+          });
+        }, { threshold: 0 });
+        io.observe(el);
+      }
+      // la mesa dibujada aparece sobre el respaldo (suave) y se pone sola
+      esc.svg.style.transition = mov ? 'opacity .5s ease' : 'none';
+      esc.svg.style.opacity = '1';
+      setTimeout(function () { esc.svg.style.transition = ''; respaldo.forEach(function (n) { if (n.parentNode === el) el.removeChild(n); }); }, mov ? 650 : 0);
+      ctrl.tl = ponerLaMesa(esc, ctrl, opEntrada);
+      if (!mov) esc.velas.forEach(function (v) { v.enc = true; });
+      if (mov && !sobria) {
+        promesaAire.then(function (aire) {
+          if (ctrl.destruido || !aire) return;
+          setTimeout(function () {       // en otra tarea: ni la mesa ni el zoom hacen una tarea larga
+            if (ctrl.destruido) return;
+            ctrl.zoom = crearZoom(el, esc, ctrl, op, aire);
+            el.classList.add('mesa-con-zoom');
+          }, 120);
+        });
+      } else {
+        promesaAire.then(function (aire) { if (!ctrl.destruido) ctrl.tres = crearTres(el, aire); });
+      }
+      ctrl.listo = true;
+      el.dataset.escena = '1';
+      listaAlListo.splice(0).forEach(function (f) { f(); });
     }
+    crearEscena(el, op, escenaLista);
+
     // si la pantalla cambia de formato (apaisada ↔ vertical), la mesa se rehace; el resize de la barra del móvil no hace nada
-    var an = innerWidth, al = innerHeight, formato = esc.vertical;
+    var an = innerWidth, al = innerHeight, formato = null;
     var onResize = function () {
       if (innerWidth === an && Math.abs(innerHeight - al) < 160) return;
       an = innerWidth; al = innerHeight;
-      var r = el.getBoundingClientRect();
-      var vert = r.width / r.height < 1.05;
+      if (!esc) return;
+      var vert = el.getBoundingClientRect().width / Math.max(1, el.getBoundingClientRect().height) < 1.05;
+      if (formato === null) formato = esc.vertical;
       if (vert !== formato) { formato = vert; ctrl.reiniciar && ctrl.reiniciar(); }
     };
     addEventListener('resize', onResize);
@@ -1449,15 +1512,16 @@
       if (io) io.disconnect();
       if (gs) gs.killTweensOf($$('*', el));
       ctrl.limpiar.forEach(function (f) { try { f(); } catch (e) {} });
+      $$('[data-mesa]', el).forEach(function (n) { if (n.parentNode) n.parentNode.removeChild(n); });
       el.classList.remove('mesa-portada', 'mesa-con-zoom', 'mesa-sobria');
-      delete el.dataset.montado;
+      delete el.dataset.montado; delete el.dataset.escena;
     }
     var inst = {
       destruir: function () { if (ctrl.reemplazo) ctrl.reemplazo.destruir(); else limpiarTodo(); },
-      get escena() { return (ctrl.reemplazo || inst)._esc || esc; },
+      get escena() { return ctrl.reemplazo ? ctrl.reemplazo.escena : esc; },
       get zoom() { return ctrl.reemplazo ? ctrl.reemplazo.zoom : ctrl.zoom; },
       get puesta() { return ctrl.puesta; },
-      _esc: esc,
+      alEstarLista: function (f) { if (ctrl.listo) f(); else listaAlListo.push(f); },
       _ctrl: ctrl
     };
     M._ultima = inst;
@@ -1475,4 +1539,6 @@
   E['mesa-pie'].montar = function (el, op) { return montarPie(typeof el === 'string' ? $(el) : el, op || {}); };
   E.mesaPie = E['mesa-pie'];
   M.version = '2026-10-25';
+  // se calientan los dibujos compartidos cuando el navegador está ocioso, para que montar la mesa no tenga que hacerlo
+  (window.requestIdleCallback || function (f) { return setTimeout(f, 400); })(function () { try { ensureDefs(paleta()); } catch (e) {} }, { timeout: 1500 });
 })();

@@ -18,29 +18,32 @@
 .mesa-svg .mov:focus-visible .aro { opacity: 1; }
 .mesa-svg .mov .lift { pointer-events: none; }
 
-/* ---------- el zoom «del plato al mar» (capas sobre la mesa; todo lo mueve js/mesa.js con el scroll) ---------- */
-.mz-zoom { position: absolute; left: 0; top: 0; width: 100%; height: 100svh; overflow: hidden; pointer-events: none; z-index: 2; contain: layout paint; }
-.mz-aire, .mz-fachada, .mz-foto { position: absolute; }
-.mz-aire { inset: 0; background: #0e2338; visibility: hidden; }
+/* ---------- el zoom «del plato al mar»: una sola cámara cenital (la mesa, la sala, la ortofoto y los rótulos salen de ella) ---------- */
+[data-modulo="mesa"].mesa-portada { grid-column: 1 / -1 !important; width: 100% !important; }
+.mesa-svg { z-index: 2; }
+.mz-zoom { position: absolute; left: 0; top: 0; width: 100%; height: 100svh; overflow: hidden; pointer-events: none; contain: layout paint; }
+.mz-base { z-index: 1; }
+.mz-top { z-index: 3; }
+.mz-aire { position: absolute; inset: 0; background: #0a2442; visibility: hidden; opacity: 0; }
 .mz-nivel { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform, opacity; visibility: hidden; }
-.mz-nivel img { display: block; width: 100%; height: 100%; max-width: none; }
-.mz-fachada, .mz-foto { transform-origin: 50% 50%; will-change: transform, opacity; visibility: hidden; background: var(--granito, #B6AA98); }
-.mz-fachada { overflow: visible; }
-.mz-f-img, .mz-v-img, .mz-foto { overflow: hidden; }
-.mz-f-img { position: absolute; inset: 0; }
-.mz-f-img img, .mz-v-img img, .mz-foto img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; }
-.mz-ventana { position: absolute; overflow: hidden; box-shadow: 0 0 0 3px rgba(48, 34, 20, .55), inset 0 0 0 2px rgba(40, 28, 16, .45); background: #2b2823; }
-.mz-v-img { position: absolute; inset: 0; }
-.mz-vidrio { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255, 255, 255, .34), rgba(255, 255, 255, 0) 42%, rgba(20, 30, 40, .28)); opacity: var(--vidrio, 0); }
+.mz-nivel > picture > img { display: block; width: 100%; height: 100%; max-width: none; }
+.mz-tej { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; }
+.mz-tj { fill: rgba(243, 238, 229, .08); stroke: #2B2823; stroke-width: 3.2; stroke-linejoin: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; }
+.mz-sala { position: absolute; left: 0; top: 0; overflow: visible; }
+.mz-sala-g { visibility: hidden; opacity: 0; }
 .mz-lineas { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
-.mz-linea { stroke: rgba(255, 255, 255, .88); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .55)); }
+.mz-linea { stroke: rgba(255, 255, 255, .9); stroke-width: 1.8; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .6)); }
 .mz-lugares { position: absolute; inset: 0; }
-.mz-lugar { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: .55rem; will-change: transform, opacity; opacity: 0; visibility: hidden; margin: -7px 0 0 -7px; white-space: nowrap; }
+.mz-lugar { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: .55rem; will-change: transform, opacity; opacity: 0; visibility: hidden; white-space: nowrap; }
+.mz-lugar.izq { flex-direction: row-reverse; }
 .mz-punto { flex: none; display: block; width: 14px; height: 14px; border-radius: 50%; background: var(--blanco, #FBF9F4); box-shadow: 0 0 0 3px rgba(18, 24, 34, .6), 0 0 0 7px rgba(255, 255, 255, .28); }
 .mz-nombre { font: 600 .8rem/1 var(--f-texto, system-ui, sans-serif); letter-spacing: .09em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 14px rgba(0, 0, 0, .6); }
-.mz-min { font-weight: 500; letter-spacing: .04em; padding: .22rem .5rem; margin-left: .15rem; background: rgba(12, 20, 30, .62); border: 1px solid rgba(255, 255, 255, .35); border-radius: 99px; text-shadow: none; }
+.mz-min { font-weight: 500; letter-spacing: .04em; padding: .22rem .5rem; margin-left: .55rem; background: rgba(12, 20, 30, .62); border: 1px solid rgba(255, 255, 255, .35); border-radius: 99px; text-shadow: none; }
+.mz-min::before { content: "· "; }
+.mz-lugar.izq .mz-min { margin-left: 0; margin-right: .55rem; }
 .mz-lugar.es-casa .mz-punto { background: var(--teja, #A9503A); box-shadow: 0 0 0 3px #fff, 0 0 0 9px rgba(169, 80, 58, .4); width: 16px; height: 16px; }
 .mz-lugar.es-casa .mz-nombre { font-size: .95rem; }
+.mz-cierre { position: absolute; left: 0; right: 0; bottom: clamp(26px, 7vh, 80px); margin: 0 auto; padding: 0 var(--lado, 5vw); text-align: center; font: 400 clamp(1.2rem, 2.6vw, 2rem)/1.2 var(--f-titulo, Georgia, serif); color: #fff; text-shadow: 0 1px 4px rgba(0, 0, 0, .75), 0 0 28px rgba(0, 0, 0, .55); opacity: 0; visibility: hidden; text-wrap: balance; }
 .mz-cred { position: absolute; right: clamp(10px, 2vw, 22px); bottom: clamp(8px, 1.6vh, 18px); margin: 0; font: 500 .72rem/1.2 var(--f-texto, system-ui, sans-serif); color: rgba(255, 255, 255, .92); text-shadow: 0 1px 2px rgba(0, 0, 0, .8); opacity: 0; z-index: 3; }
 
 /* ---------- la versión sobria: la mesa quieta y tres imágenes fijas ---------- */
@@ -48,11 +51,12 @@
 .mz-t-fig { margin: 0; }
 .mz-t-img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--granito, #B6AA98); }
 .mz-t-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mz-t-img.mz-t-valle { aspect-ratio: 1 / 1; }
 .mz-t-valle .mz-punto { position: absolute; transform: translate(-50%, -50%); background: var(--teja, #A9503A); box-shadow: 0 0 0 3px #fff, 0 0 0 9px rgba(169, 80, 58, .4); }
-.mz-t-valle .mz-t-casa { position: absolute; transform: translate(14px, -50%); }
+.mz-t-valle .mz-t-nombre { position: absolute; transform: translate(14px, -50%); }
 .mz-t-fig figcaption { margin-top: .7rem; font-size: .92rem; line-height: 1.45; color: var(--tinta-2, #5E574D); }
 .mz-t-fig figcaption .num { display: block; font-size: .78rem; margin-top: .25rem; }
-@media (max-width: 760px) { .mz-tres { grid-template-columns: 1fr; } .mz-t-img { aspect-ratio: 5 / 4; } }
+@media (max-width: 760px) { .mz-tres { grid-template-columns: 1fr; } .mz-t-img { aspect-ratio: 5 / 4; } .mz-t-img.mz-t-valle { aspect-ratio: 1 / 1; } }
 
 /* ---------- las ramas del centro de mesa (junto a los titulares) y la ramita del foco ---------- */
 [data-rama] svg.mesa-rama, #foco-rama svg { display: block; overflow: visible; }
@@ -76,3 +80,8 @@ svg.mesa-cubierto { display: block; overflow: visible; }
 @media (prefers-reduced-motion: reduce) {
   .mesa-svg .mov .aro { transition: none; }
 }
+
+/* ---------- la sección del zoom se «fija» con CSS (sticky): la mesa y el titular se quedan arriba mientras se recorre el zoom ---------- */
+.portada.mesa-con-pin { height: calc(100svh * (1 + var(--mz-pant, 2.9))) !important; min-height: 0 !important; }
+.portada.mesa-con-pin [data-modulo="mesa"].mesa-portada { position: sticky; top: 0; height: 100svh !important; }
+.portada.mesa-con-pin .portada-texto { position: sticky !important; top: 0; margin-top: -100svh; height: 100svh; }
