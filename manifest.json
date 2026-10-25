@@ -1,0 +1,13 @@
+{
+  "name": "Casa Entremuros · Cances Grande, Carballo",
+  "short_name": "Casa Entremuros",
+  "lang": "es",
+  "start_url": "./",
+  "display": "browser",
+  "background_color": "#F3EEE5",
+  "theme_color": "#F3EEE5",
+  "icons": [
+    { "src": "marca/icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "marca/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ]
+}

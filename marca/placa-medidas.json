@@ -1,0 +1,52 @@
+{
+ "foto": "ref/fotos/instagram/0221_BD5OhMYwNK2_1.jpg",
+ "esquinas_foto": [
+  [
+   64.0,
+   285.0
+  ],
+  [
+   662.0,
+   279.0
+  ],
+  [
+   658.0,
+   763.0
+  ],
+  [
+   72.0,
+   753.0
+  ]
+ ],
+ "tamano": [
+  1240,
+  1000
+ ],
+ "medidas": {
+  "casa": {
+   "paredes_cubiertas_5px": 0.762,
+   "distancia_media_px": 3.07,
+   "banda_con_pared": 0.202
+  },
+  "entremuros": {
+   "paredes_cubiertas_5px": 0.658,
+   "distancia_media_px": 4.34,
+   "banda_con_pared": 0.205
+  },
+  "punto": {
+   "iou_grabcut": 0.181
+  },
+  "vieira": {
+   "iou_grabcut": 0.939,
+   "ranuras_desfase_medio_px": 0.85
+  },
+  "abanico-izq": {
+   "iou_grabcut": 0.885,
+   "ranuras_desfase_medio_px": 0.0
+  },
+  "abanico-der": {
+   "iou_grabcut": 0.913,
+   "ranuras_desfase_medio_px": 0.0
+  }
+ }
+}

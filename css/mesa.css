@@ -1,0 +1,78 @@
+/* ------------------------------------------------------------------
+   Casa Entremuros · módulo Mesa: la portada (la mesa dibujada y el zoom «del plato al mar»), las ramas,
+   la tarjeta, el cubierto y el pie. La cortina «La placa» lleva su CSS crítico dentro de partes/cortina.html.
+   Tokens de :root con var(--x, valor).
+   ------------------------------------------------------------------ */
+
+/* ---------- la portada ---------- */
+[data-modulo="mesa"].mesa-portada { position: relative; min-height: 100svh !important; overflow: hidden; background: transparent; }
+[data-modulo="mesa"].mesa-portada.mesa-sobria { overflow: visible; }
+.mz-espacio { height: 100svh; pointer-events: none; }
+.mesa-svg { position: absolute; left: 0; top: 0; width: 100%; height: 100svh; display: block; touch-action: pan-y; -webkit-user-select: none; user-select: none; will-change: transform, opacity; }
+.mesa-sobria .mesa-svg { will-change: auto; }
+/* las piezas que se pueden recolocar */
+.mesa-svg .mov { cursor: grab; outline: none; -webkit-tap-highlight-color: transparent; }
+.mesa-svg.arrastrando, .mesa-svg.arrastrando .mov { cursor: grabbing; }
+.mesa-svg .mov .hit { pointer-events: all; }
+.mesa-svg .mov .aro { stroke: var(--teja, #A9503A); stroke-width: 2.6; stroke-dasharray: 7 5; opacity: 0; pointer-events: none; transition: opacity .12s ease; }
+.mesa-svg .mov:focus-visible .aro { opacity: 1; }
+.mesa-svg .mov .lift { pointer-events: none; }
+
+/* ---------- el zoom «del plato al mar» (capas sobre la mesa; todo lo mueve js/mesa.js con el scroll) ---------- */
+.mz-zoom { position: absolute; left: 0; top: 0; width: 100%; height: 100svh; overflow: hidden; pointer-events: none; z-index: 2; contain: layout paint; }
+.mz-aire, .mz-fachada, .mz-foto { position: absolute; }
+.mz-aire { inset: 0; background: #0e2338; visibility: hidden; }
+.mz-nivel { position: absolute; left: 0; top: 0; transform-origin: 0 0; will-change: transform, opacity; visibility: hidden; }
+.mz-nivel img { display: block; width: 100%; height: 100%; max-width: none; }
+.mz-fachada, .mz-foto { transform-origin: 50% 50%; will-change: transform, opacity; visibility: hidden; background: var(--granito, #B6AA98); }
+.mz-fachada { overflow: visible; }
+.mz-f-img, .mz-v-img, .mz-foto { overflow: hidden; }
+.mz-f-img { position: absolute; inset: 0; }
+.mz-f-img img, .mz-v-img img, .mz-foto img { display: block; width: 100%; height: 100%; max-width: none; object-fit: cover; }
+.mz-ventana { position: absolute; overflow: hidden; box-shadow: 0 0 0 3px rgba(48, 34, 20, .55), inset 0 0 0 2px rgba(40, 28, 16, .45); background: #2b2823; }
+.mz-v-img { position: absolute; inset: 0; }
+.mz-vidrio { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255, 255, 255, .34), rgba(255, 255, 255, 0) 42%, rgba(20, 30, 40, .28)); opacity: var(--vidrio, 0); }
+.mz-lineas { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.mz-linea { stroke: rgba(255, 255, 255, .88); stroke-width: 1.6; stroke-linecap: round; stroke-dasharray: 1; stroke-dashoffset: 1; opacity: 0; filter: drop-shadow(0 1px 2px rgba(0, 0, 0, .55)); }
+.mz-lugares { position: absolute; inset: 0; }
+.mz-lugar { position: absolute; left: 0; top: 0; display: flex; align-items: center; gap: .55rem; will-change: transform, opacity; opacity: 0; visibility: hidden; margin: -7px 0 0 -7px; white-space: nowrap; }
+.mz-punto { flex: none; display: block; width: 14px; height: 14px; border-radius: 50%; background: var(--blanco, #FBF9F4); box-shadow: 0 0 0 3px rgba(18, 24, 34, .6), 0 0 0 7px rgba(255, 255, 255, .28); }
+.mz-nombre { font: 600 .8rem/1 var(--f-texto, system-ui, sans-serif); letter-spacing: .09em; text-transform: uppercase; color: #fff; text-shadow: 0 1px 3px rgba(0, 0, 0, .9), 0 0 14px rgba(0, 0, 0, .6); }
+.mz-min { font-weight: 500; letter-spacing: .04em; padding: .22rem .5rem; margin-left: .15rem; background: rgba(12, 20, 30, .62); border: 1px solid rgba(255, 255, 255, .35); border-radius: 99px; text-shadow: none; }
+.mz-lugar.es-casa .mz-punto { background: var(--teja, #A9503A); box-shadow: 0 0 0 3px #fff, 0 0 0 9px rgba(169, 80, 58, .4); width: 16px; height: 16px; }
+.mz-lugar.es-casa .mz-nombre { font-size: .95rem; }
+.mz-cred { position: absolute; right: clamp(10px, 2vw, 22px); bottom: clamp(8px, 1.6vh, 18px); margin: 0; font: 500 .72rem/1.2 var(--f-texto, system-ui, sans-serif); color: rgba(255, 255, 255, .92); text-shadow: 0 1px 2px rgba(0, 0, 0, .8); opacity: 0; z-index: 3; }
+
+/* ---------- la versión sobria: la mesa quieta y tres imágenes fijas ---------- */
+.mz-tres { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(14px, 2.2vw, 30px); padding: clamp(28px, 5vw, 64px) var(--lado, 5vw); background-color: var(--lino, #F3EEE5); position: relative; z-index: 3; }
+.mz-t-fig { margin: 0; }
+.mz-t-img { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--granito, #B6AA98); }
+.mz-t-img img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.mz-t-valle .mz-punto { position: absolute; transform: translate(-50%, -50%); background: var(--teja, #A9503A); box-shadow: 0 0 0 3px #fff, 0 0 0 9px rgba(169, 80, 58, .4); }
+.mz-t-valle .mz-t-casa { position: absolute; transform: translate(14px, -50%); }
+.mz-t-fig figcaption { margin-top: .7rem; font-size: .92rem; line-height: 1.45; color: var(--tinta-2, #5E574D); }
+.mz-t-fig figcaption .num { display: block; font-size: .78rem; margin-top: .25rem; }
+@media (max-width: 760px) { .mz-tres { grid-template-columns: 1fr; } .mz-t-img { aspect-ratio: 5 / 4; } }
+
+/* ---------- las ramas del centro de mesa (junto a los titulares) y la ramita del foco ---------- */
+[data-rama] svg.mesa-rama, #foco-rama svg { display: block; overflow: visible; }
+[data-rama] svg.mesa-rama { filter: drop-shadow(1.5px 2.4px 1.2px rgba(58, 40, 16, .22)); }
+
+/* ---------- la tarjeta con el nombre y el cubierto de Reserva ---------- */
+svg.mesa-tarjeta { display: block; overflow: visible; }
+svg.mesa-cubierto { display: block; overflow: visible; }
+
+/* ---------- el pie: la mesa completa, la placa y el lema ---------- */
+.mesa-pie .mp { display: grid; justify-items: center; gap: clamp(20px, 3.4vw, 40px); width: 100%; }
+.mp-mesa { position: relative; width: min(100%, 1100px); aspect-ratio: 3 / 1; overflow: hidden; border-radius: 3px; box-shadow: 0 22px 44px -26px rgba(30, 20, 8, .6); background: var(--lino-2, #E9E1D3); }
+.mp-svg, .mp-velas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.mp-velas { pointer-events: none; }
+.mp-slot { position: absolute; filter: drop-shadow(5px 7px 4px rgba(58, 40, 16, .3)); }
+.mp-slot svg { display: block; width: 100%; height: 100%; overflow: visible; }
+.mp-placa { margin: 0; width: clamp(220px, 32vw, 330px); }
+.mp-placa img { display: block; width: 100%; height: auto; }
+.mp-lema { margin: 0; max-width: 34ch; text-align: center; font-family: var(--f-titulo, Georgia, serif); font-size: clamp(1.05rem, 1.8vw, 1.4rem); line-height: 1.4; text-wrap: balance; color: inherit; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mesa-svg .mov .aro { transition: none; }
+}

@@ -1,0 +1,29 @@
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- ============ cabecera fija (desde que se abre la cortina): «Casa Entremuros» con las letras de su placa, las paradas y el teléfono ============ -->
+<header class="cab" id="cab">
+  <div class="cab__in">
+    <a class="marca" href="./" aria-label="Casa Entremuros, a la portada"><!--marca-cabecera--></a>
+    <nav class="cab__nav" aria-label="Principal">
+      <a href="#casa">La casa</a>
+      <a href="#habitaciones">Habitaciones</a>
+      <a href="#antes-y-despues">Antes y después</a>
+      <a href="#alrededores">Alrededores</a>
+      <a href="#reservar">Reservar</a>
+    </nav>
+    <a class="cab__tel" href="tel:{{telefono_tel}}"><span class="vh">Teléfono: </span>{{telefono}}</a>
+    <button class="cab__menu" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil"><span class="vh">Menú</span><i></i><i></i></button>
+  </div>
+  <div class="menu-movil" id="menu-movil" aria-hidden="true">
+    <nav aria-label="Menú">
+      <a href="#casa"><small>Piedra del siglo XIX en el valle de Cances</small>La casa</a>
+      <a href="#habitaciones"><small>Seis habitaciones, seis lugares</small>Habitaciones</a>
+      <a href="#dentro"><small>La lareira, el horno, el jardín</small>Dentro y fuera</a>
+      <a href="#antes-y-despues"><small>Cómo se destapó la piedra</small>Antes y después</a>
+      <a href="#alrededores"><small>Los faros de la costa</small>Alrededores</a>
+      <a href="#reservar"><small>La mesa para…</small>Reservar</a>
+      <a href="#llegar"><small>Cances Grande · Carballo</small>Cómo llegar</a>
+    </nav>
+    <p class="menu-movil__tel"><a href="tel:{{telefono_tel}}">{{telefono}}</a> · <a href="mailto:{{correo}}">{{correo}}</a></p>
+  </div>
+</header>

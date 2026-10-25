@@ -1,0 +1,4152 @@
+[
+ {
+  "nombre": "placa",
+  "codigo": "0221_1",
+  "nota": "EL LETRERO: placa de granito de la entrada (frontal, la mejor). Es la marca. Con la placa oficial azul al lado.",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0221_BD5OhMYwNK2_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "placa-b",
+  "codigo": "0216_1",
+  "nota": "el mismo letrero, otra toma (720)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0216_BFKFAoNwNDU_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "placa-c",
+  "codigo": "0157_1",
+  "nota": "el mismo letrero, otra toma (720)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0157_Bwgw04QDW7l_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "placa-recorte",
+  "codigo": "0221_1",
+  "nota": "SOLO el letrero de piedra (sin las placas oficiales de al lado), recortado de la foto frontal; respaldo del pie y de la 404 mientras no haya marca/placa.svg",
+  "anchos": [
+   480,
+   610
+  ],
+  "ancho": 610,
+  "alto": 505,
+  "origen": "fotos/instagram/0221_BD5OhMYwNK2_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": {
+   "left": 60,
+   "top": 270,
+   "width": 610,
+   "height": 505
+  }
+ },
+ {
+  "nombre": "vieira-recorte",
+  "codigo": "0221_1",
+  "nota": "la vieira del letrero, recortada; solo para el favicon mientras no haya marca/placa.svg",
+  "anchos": [
+   215
+  ],
+  "ancho": 215,
+  "alto": 215,
+  "origen": "fotos/instagram/0221_BD5OhMYwNK2_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": {
+   "left": 258,
+   "top": 448,
+   "width": 215,
+   "height": 215
+  }
+ },
+ {
+  "nombre": "fachada",
+  "codigo": "0014_1",
+  "nota": "la casa grande y la de la galeria de madera (solaina) con el patio enlosado, luz de tarde. LA MEJOR (927)",
+  "anchos": [
+   480,
+   800,
+   927
+  ],
+  "ancho": 927,
+  "alto": 927,
+  "origen": "fotos/instagram/0014_C1hubIyMIZN_1.jpg",
+  "origenAncho": 927,
+  "origenAlto": 927,
+  "recorte": null
+ },
+ {
+  "nombre": "fachada-b",
+  "codigo": "0141_1",
+  "nota": "fachada de la casa grande con la escalera",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 809,
+  "origen": "fotos/instagram/0141_BxqEZSUiK2D_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 809,
+  "recorte": null
+ },
+ {
+  "nombre": "fachada-c",
+  "codigo": "0005_1",
+  "nota": "la casa y el patio en vertical (2268x4032 de origen)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 2560,
+  "origen": "fotos/instagram/0005_DSazHrvjnPu_1.jpg",
+  "origenAncho": 2268,
+  "origenAlto": 4032,
+  "recorte": null
+ },
+ {
+  "nombre": "fachada-d",
+  "codigo": "0060_1",
+  "nota": "fachada y patio",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0060_CPETR7ZDm2l_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "fachada-e",
+  "codigo": "0219_1",
+  "nota": "fachada y patio (2016)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 613,
+  "origen": "fotos/instagram/0219_BEDWv0FwNCf_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 613,
+  "recorte": null
+ },
+ {
+  "nombre": "aerea-2015",
+  "codigo": "0248_1",
+  "nota": "vista aerea 2015: casa grande, casita, alpendre de teja, piscina, campo (320 px, solo para localizar)",
+  "anchos": [
+   320
+  ],
+  "ancho": 320,
+  "alto": 300,
+  "origen": "fotos/instagram/0248_7sB1YDwNH7_1.jpg",
+  "origenAncho": 320,
+  "origenAlto": 300,
+  "recorte": null
+ },
+ {
+  "nombre": "casita",
+  "codigo": "0141_2",
+  "nota": "la casita de la piscina (antiguo gallinero), blanca, hoy",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 809,
+  "origen": "fotos/instagram/0141_BxqEZSUiK2D_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 809,
+  "recorte": null
+ },
+ {
+  "nombre": "casita-b",
+  "codigo": "0113_4",
+  "nota": "la casita despues (891)",
+  "anchos": [
+   480,
+   800,
+   891
+  ],
+  "ancho": 891,
+  "alto": 666,
+  "origen": "fotos/instagram/0113_CCZAIs5DpPK_4.jpg",
+  "origenAncho": 891,
+  "origenAlto": 666,
+  "recorte": null
+ },
+ {
+  "nombre": "casita-c",
+  "codigo": "0113_5",
+  "nota": "la casita despues",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 809,
+  "origen": "fotos/instagram/0113_CCZAIs5DpPK_5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 809,
+  "recorte": null
+ },
+ {
+  "nombre": "casita-d",
+  "codigo": "0113_6",
+  "nota": "la casita despues",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 807,
+  "origen": "fotos/instagram/0113_CCZAIs5DpPK_6.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 807,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-larga-otono",
+  "codigo": "0019_2",
+  "nota": "mesa larga de pino casi cenital, platos azul grisaceo, guirnalda verde con velas. LA MEJOR REFERENCIA DE MESA LCP: AVIF a calidad 38; en móvil se pide por sizes a 70vw (800 px).",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0019_CzCXVUGshQC_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-larga-otono-b",
+  "codigo": "0019_1",
+  "nota": "la misma mesa, otro angulo",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0019_CzCXVUGshQC_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-navidad-1",
+  "codigo": "0004_1",
+  "nota": "Navidad 2025: servilletas rojas, bajoplatos rojos, platos festoneados, velas",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0004_DSqJketDk0j_1.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-navidad-2",
+  "codigo": "0004_2",
+  "nota": "Navidad 2025",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0004_DSqJketDk0j_2.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-navidad-3",
+  "codigo": "0004_3",
+  "nota": "Navidad 2025",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0004_DSqJketDk0j_3.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-navidad-4",
+  "codigo": "0004_4",
+  "nota": "Navidad 2025: plato con servilleta roja y rama de abeto",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0004_DSqJketDk0j_4.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-navidad-5",
+  "codigo": "0004_5",
+  "nota": "Navidad 2025: LA TARJETA con el nombre escrito a mano en el plato (720)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0004_DSqJketDk0j_5.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-navidad-6",
+  "codigo": "0004_6",
+  "nota": "la mesa larga entera en la cocina-comedor, Navidad 2025",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0004_DSqJketDk0j_6.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-chimenea",
+  "codigo": "0007_1",
+  "nota": "mesa redonda puesta delante de la lareira encendida, flores amarillas, vela",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0007_DSTCsOTjkmR_1.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-blanca",
+  "codigo": "0199_1",
+  "nota": "mesa larga con mantel blanco y camino de ramas verdes (2017)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0199_BPz-ND1hNc7_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-chimenea-b",
+  "codigo": "0069_1",
+  "nota": "mesa puesta junto a la chimenea (2021; no afirmar el servicio de chef)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0069_CM-i1TMjQcg_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-jardin-0011",
+  "codigo": "0011_1",
+  "nota": "mesita en el jardin con libro y te (primavera)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1800,
+  "origen": "fotos/instagram/0011_DIKFZpDsG2s_1.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1800,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-jardin-0021-1",
+  "codigo": "0021_1",
+  "nota": "mesita en el jardin con libro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0021_CwDvXe4MwU1_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-jardin-0021-2",
+  "codigo": "0021_2",
+  "nota": "mesita en el jardin (720)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 900,
+  "origen": "fotos/instagram/0021_CwDvXe4MwU1_2.jpg",
+  "origenAncho": 720,
+  "origenAlto": 900,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-jardin-0021-3",
+  "codigo": "0021_3",
+  "nota": "mesita en el jardin",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0021_CwDvXe4MwU1_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-jardin-0021-4",
+  "codigo": "0021_4",
+  "nota": "mesita en el jardin",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0021_CwDvXe4MwU1_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "mesa-jardin-0046",
+  "codigo": "0046_1",
+  "nota": "mesa con mantel blanco bajo el arce",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0046_CUHl1dtM-Mj_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "salon",
+  "codigo": "0013_1",
+  "nota": "el salon con la lareira encendida",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0013_C3-fHr0sLcE_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "salon-b",
+  "codigo": "0065_1",
+  "nota": "el salon en panoramica (@raul_lorenzo_filmmaker)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 678,
+  "origen": "fotos/instagram/0065_CNnlX8ije9y_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 678,
+  "recorte": null
+ },
+ {
+  "nombre": "salon-c",
+  "codigo": "0080_1",
+  "nota": "el salon con las butacas de mimbre",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 722,
+  "origen": "fotos/instagram/0080_CFeyGUyj1AA_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 722,
+  "recorte": null
+ },
+ {
+  "nombre": "cocina",
+  "codigo": "0081_2",
+  "nota": "la cocina despues: piedra vista, vigas, isla, el horno antiguo",
+  "anchos": [
+   480,
+   800,
+   1025
+  ],
+  "ancho": 1025,
+  "alto": 683,
+  "origen": "fotos/instagram/0081_CFWlrYTjrjr_2.jpg",
+  "origenAncho": 1025,
+  "origenAlto": 683,
+  "recorte": null
+ },
+ {
+  "nombre": "cocina-0104-1",
+  "codigo": "0104_1",
+  "nota": "la cocina despues",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 702,
+  "origen": "fotos/instagram/0104_CDI_jIejp0K_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 702,
+  "recorte": null
+ },
+ {
+  "nombre": "cocina-0104-2",
+  "codigo": "0104_2",
+  "nota": "la cocina despues",
+  "anchos": [
+   480,
+   800,
+   1049
+  ],
+  "ancho": 1049,
+  "alto": 860,
+  "origen": "fotos/instagram/0104_CDI_jIejp0K_2.jpg",
+  "origenAncho": 1049,
+  "origenAlto": 860,
+  "recorte": null
+ },
+ {
+  "nombre": "cocina-0104-3",
+  "codigo": "0104_3",
+  "nota": "el horno antiguo y la placa",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 724,
+  "origen": "fotos/instagram/0104_CDI_jIejp0K_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 724,
+  "recorte": null
+ },
+ {
+  "nombre": "cocina-0104-4",
+  "codigo": "0104_4",
+  "nota": "cocina y comedor",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 930,
+  "origen": "fotos/instagram/0104_CDI_jIejp0K_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 930,
+  "recorte": null
+ },
+ {
+  "nombre": "cocina-0055",
+  "codigo": "0055_1",
+  "nota": "la cocina",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 701,
+  "origen": "fotos/instagram/0055_CQIigGSjCqn_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 701,
+  "recorte": null
+ },
+ {
+  "nombre": "comedor",
+  "codigo": "0081_4",
+  "nota": "el comedor de la cocina, despues",
+  "anchos": [
+   480,
+   800,
+   991
+  ],
+  "ancho": 991,
+  "alto": 659,
+  "origen": "fotos/instagram/0081_CFWlrYTjrjr_4.jpg",
+  "origenAncho": 991,
+  "origenAlto": 659,
+  "recorte": null
+ },
+ {
+  "nombre": "comedor-b",
+  "codigo": "0032_1",
+  "nota": "el comedor, despues (726)",
+  "anchos": [
+   480,
+   726
+  ],
+  "ancho": 726,
+  "alto": 726,
+  "origen": "fotos/instagram/0032_Ctr6aoMMJqJ_1.jpg",
+  "origenAncho": 726,
+  "origenAlto": 726,
+  "recorte": null
+ },
+ {
+  "nombre": "chimenea",
+  "codigo": "0234_1",
+  "nota": "el fuego (747)",
+  "anchos": [
+   480,
+   747
+  ],
+  "ancho": 747,
+  "alto": 747,
+  "origen": "fotos/instagram/0234_BAr-cnZwNDC_1.jpg",
+  "origenAncho": 747,
+  "origenAlto": 747,
+  "recorte": null
+ },
+ {
+  "nombre": "chimenea-b",
+  "codigo": "0246_1",
+  "nota": "el fuego (720, 2015)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0246_-WBsIoQNCb_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "chimenea-c",
+  "codigo": "0040_1",
+  "nota": "la chimenea de Navidad (1047x1074)",
+  "anchos": [
+   480,
+   800,
+   1047
+  ],
+  "ancho": 1047,
+  "alto": 1074,
+  "origen": "fotos/instagram/0040_CmzbwWCsMOA_1.jpg",
+  "origenAncho": 1047,
+  "origenAlto": 1074,
+  "recorte": null
+ },
+ {
+  "nombre": "detalle-lavanda-1",
+  "codigo": "0006_1",
+  "nota": "lavanda en un cubo esmaltado en el alfeizar de piedra",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0006_DSXNdbmjevN_1.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "detalle-lavanda-2",
+  "codigo": "0006_2",
+  "nota": "lavanda y lechera antigua",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1439,
+  "origen": "fotos/instagram/0006_DSXNdbmjevN_2.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1439,
+  "recorte": null
+ },
+ {
+  "nombre": "detalle-lavanda-3",
+  "codigo": "0006_3",
+  "nota": "lavanda en un cubo esmaltado",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0006_DSXNdbmjevN_3.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "aparador-1",
+  "codigo": "0008_1",
+  "nota": "aparador blanco con la loza de Navidad",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0008_DR7p4p9DjqF_1.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "aparador-2",
+  "codigo": "0008_2",
+  "nota": "aparador blanco con la loza",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1440,
+  "origen": "fotos/instagram/0008_DR7p4p9DjqF_2.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1440,
+  "recorte": null
+ },
+ {
+  "nombre": "aparador-3",
+  "codigo": "0008_3",
+  "nota": "tazas en el aparador (720)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0008_DR7p4p9DjqF_3.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "flores-hortensia",
+  "codigo": "0161_1",
+  "nota": "hortensia blanca (720)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0161_BvRRM9nnC9L_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "flores-0208",
+  "codigo": "0208_1",
+  "nota": "centro de flores (decoracion de mesa)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0208_BKvVMFKB3_b_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "flores-0030",
+  "codigo": "0030_1",
+  "nota": "hierbas de San Juan en la jarra de loza azul y blanca",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0030_Ct1p9FVMAu7_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "flores-0137",
+  "codigo": "0137_1",
+  "nota": "flores y eucalipto en un jarron",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0137_By-PIitIW8y_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-rio-anllons",
+  "codigo": "0105_1",
+  "nota": "Rio Anllons, despues (reforma 2019): pared de piedra picada, tonos neutros (791)",
+  "anchos": [
+   480,
+   791
+  ],
+  "ancho": 791,
+  "alto": 791,
+  "origen": "fotos/instagram/0105_CC9N1WljfAb_1.jpg",
+  "origenAncho": 791,
+  "origenAlto": 791,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-rio-anllons-puerta",
+  "codigo": "0028_1",
+  "nota": "rotulo de la puerta de Rio Anllons (408x726)",
+  "anchos": [
+   408
+  ],
+  "ancho": 408,
+  "alto": 726,
+  "origen": "fotos/instagram/0028_CvJzcE-OFJi_1.jpg",
+  "origenAncho": 408,
+  "origenAlto": 726,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-rio-anllons-0090",
+  "codigo": "0090_1",
+  "nota": "Rio Anllons, la habitacion y el bano (560x293)",
+  "anchos": [
+   480,
+   560
+  ],
+  "ancho": 560,
+  "alto": 293,
+  "origen": "fotos/instagram/0090_CEhpcicDCx5_1.jpg",
+  "origenAncho": 560,
+  "origenAlto": 293,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-refuxo",
+  "codigo": "0101_1",
+  "nota": "Refuxo de Verdes: cama con dosel de hierro (@viajocomoquiero)",
+  "anchos": [
+   480,
+   800,
+   1000
+  ],
+  "ancho": 1000,
+  "alto": 667,
+  "origen": "fotos/instagram/0101_CDitt2nDeHq_1.jpg",
+  "origenAncho": 1000,
+  "origenAlto": 667,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-refuxo-b",
+  "codigo": "0131_1",
+  "nota": "Refuxo de Verdes: cama con dosel",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 755,
+  "origen": "fotos/instagram/0131_B031XPuC3Rq_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 755,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-ponte-lubians",
+  "codigo": "0112_1",
+  "nota": "Ponte Lubians, la mas grande, cama de 1,80, vigas (750)",
+  "anchos": [
+   480,
+   750
+  ],
+  "ancho": 750,
+  "alto": 750,
+  "origen": "fotos/instagram/0112_CCehPtFjVm2_1.jpg",
+  "origenAncho": 750,
+  "origenAlto": 750,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-ponte-lubians-b",
+  "codigo": "0112_2",
+  "nota": "Ponte Lubians, vista hacia las ventanas (750)",
+  "anchos": [
+   480,
+   750
+  ],
+  "ancho": 750,
+  "alto": 750,
+  "origen": "fotos/instagram/0112_CCehPtFjVm2_2.jpg",
+  "origenAncho": 750,
+  "origenAlto": 750,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-ponte-lubians-c",
+  "codigo": "0066_1",
+  "nota": "Ponte Lubians, vigas (1080x565)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0066_CNevQ_tjPf9_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-fervenza",
+  "codigo": "0150_4",
+  "nota": "Fervenza de San Paio, despues: pared de piedra picada, espejo",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1081,
+  "origen": "fotos/instagram/0150_Bw-TdWHHnuJ_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1081,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-fervenza-b",
+  "codigo": "0099_2",
+  "nota": "Fervenza de San Paio, dos camas de 0,90, despues (1080x807)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 807,
+  "origen": "fotos/instagram/0099_CDs3uwsA8R4_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 807,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-fervenza-c",
+  "codigo": "0151_1",
+  "nota": "dormitorio con cabecero blanco y piedra (1080x963), sin identificar",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 963,
+  "origen": "fotos/instagram/0151_Bw5M-5inOH__1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 963,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-fervenza-puerta",
+  "codigo": "0079_1",
+  "nota": "rotulo de puerta (540x840)",
+  "anchos": [
+   480,
+   540
+  ],
+  "ancho": 540,
+  "alto": 840,
+  "origen": "fotos/instagram/0079_CGGEtcCi7ss_1.jpg",
+  "origenAncho": 540,
+  "origenAlto": 840,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-razo",
+  "codigo": "0050_1",
+  "nota": "Razo: cama de 1,50 en la casita de la piscina",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0050_CQ-tTXmsA5N_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-razo-b",
+  "codigo": "0050_2",
+  "nota": "Razo: ventana con vistas",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0050_CQ-tTXmsA5N_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-razo-c",
+  "codigo": "0050_3",
+  "nota": "Razo: ventana abierta al jardin y la piscina (822x975)",
+  "anchos": [
+   480,
+   822
+  ],
+  "ancho": 822,
+  "alto": 975,
+  "origen": "fotos/instagram/0050_CQ-tTXmsA5N_3.jpg",
+  "origenAncho": 822,
+  "origenAlto": 975,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-razo-d",
+  "codigo": "0085_1",
+  "nota": "Razo: cuatro vistas de la habitacion y el bano (collage)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0085_CE_dgMQD_5Z_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-razo-puerta",
+  "codigo": "0025_1",
+  "nota": "rotulo de la puerta de la casita (408x726)",
+  "anchos": [
+   408
+  ],
+  "ancho": 408,
+  "alto": 726,
+  "origen": "fotos/instagram/0025_CvwWXhDrRy8_1.jpg",
+  "origenAncho": 408,
+  "origenAlto": 726,
+  "recorte": null
+ },
+ {
+  "nombre": "hab-baldaio-puerta",
+  "codigo": "0135_1",
+  "nota": "rotulo de la puerta de Baldaio (720). Sin foto de la habitacion",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0135_BzPr0_OjrTr_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "dormitorio-0039",
+  "codigo": "0039_1",
+  "nota": "dormitorio sin identificar (gris, cabecero tapizado)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0039_Cq_cxLuMFcG_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "dormitorio-0042",
+  "codigo": "0042_1",
+  "nota": "dormitorio sin identificar (cabecero blanco, estampado floral)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0042_CfR-8qUsr2M_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "dormitorio-0064",
+  "codigo": "0064_1",
+  "nota": "dormitorio sin identificar (piedra, lampara y cojin de cuadros)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0064_CN0f4M6DgTK_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "dormitorio-0136",
+  "codigo": "0136_1",
+  "nota": "dormitorio sin identificar (cabecero blanco, 1080x608)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 608,
+  "origen": "fotos/instagram/0136_BzBjmV2o_Ps_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 608,
+  "recorte": null
+ },
+ {
+  "nombre": "tocador",
+  "codigo": "0093_1",
+  "nota": "tocador de madera restaurado",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0093_CEOcJ8TDLcz_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-rio-anllons-1",
+  "codigo": "0145_1",
+  "nota": "bano de Rio Anllons (piedra restaurada)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0145_BxRgctEHdRF_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-rio-anllons-2",
+  "codigo": "0145_2",
+  "nota": "bano de Rio Anllons: lavabo de piedra y tocador blanco",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0145_BxRgctEHdRF_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-rio-anllons-3",
+  "codigo": "0145_3",
+  "nota": "bano de Rio Anllons: banera exenta",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0145_BxRgctEHdRF_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-rio-anllons-4",
+  "codigo": "0145_4",
+  "nota": "bano de Rio Anllons: ducha",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0145_BxRgctEHdRF_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-rio-anllons-5",
+  "codigo": "0145_5",
+  "nota": "bano de Rio Anllons, antes (719)",
+  "anchos": [
+   480,
+   719
+  ],
+  "ancho": 719,
+  "alto": 719,
+  "origen": "fotos/instagram/0145_BxRgctEHdRF_5.jpg",
+  "origenAncho": 719,
+  "origenAlto": 719,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0091",
+  "codigo": "0091_1",
+  "nota": "bano con lavabo verde oscuro y espejo ovalado",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0091_CEY0ZibjwtF_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0067",
+  "codigo": "0067_1",
+  "nota": "bano con banera, velas y champan",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0067_CNQfGHoDquC_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0068",
+  "codigo": "0068_1",
+  "nota": "bano con banera blanca",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0068_CNFUMgNDBlo_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0152",
+  "codigo": "0152_1",
+  "nota": "bano con lavabo de piedra",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0152_Bw1GP_bHbDe_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0154",
+  "codigo": "0154_1",
+  "nota": "bano con lavabo de madera y banera",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0154_BwwK2UnnUru_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0139",
+  "codigo": "0139_1",
+  "nota": "bano con lavabo de piedra tallada",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0139_Bx7H-KeieZU_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0110",
+  "codigo": "0110_1",
+  "nota": "bano de Fervenza de San Paio: ducha y banera retro (821x642)",
+  "anchos": [
+   480,
+   821
+  ],
+  "ancho": 821,
+  "alto": 642,
+  "origen": "fotos/instagram/0110_CCmUKPiD7aj_1.jpg",
+  "origenAncho": 821,
+  "origenAlto": 642,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0155",
+  "codigo": "0155_1",
+  "nota": "bano con banera y azulejo amarillo",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0155_BwupekcH0_d_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "bano-0134",
+  "codigo": "0134_1",
+  "nota": "grifo de la banera",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0134_B0jXPBqiOam_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre",
+  "codigo": "0027_1",
+  "nota": "el alpendre: porche de madera y piedra, sofas de mimbre, vista a la piscina",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0027_CvRgPowMCBz_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre-0001-2",
+  "codigo": "0001_2",
+  "nota": "el alpendre por dentro, sofa y cojines",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0001_DXulYOKjur-_2.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre-0001-4",
+  "codigo": "0001_4",
+  "nota": "el alpendre y la piscina",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0001_DXulYOKjur-_4.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre-0037",
+  "codigo": "0037_1",
+  "nota": "el alpendre con la piscina",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0037_CtOVhUBMokg_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre-0128",
+  "codigo": "0128_1",
+  "nota": "el alpendre con la mesa larga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0128_B1bKGAZij_x_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre-0148-4",
+  "codigo": "0148_4",
+  "nota": "el alpendre, mesa y sillas",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0148_BxFBOHtHciY_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre-0148-5",
+  "codigo": "0148_5",
+  "nota": "la lareira exterior encendida",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0148_BxFBOHtHciY_5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre-juegos-1",
+  "codigo": "0097_1",
+  "nota": "futbolin y cama elastica bajo el alpendre (1000x750; @viajocomoquiero)",
+  "anchos": [
+   480,
+   800,
+   1000
+  ],
+  "ancho": 1000,
+  "alto": 750,
+  "origen": "fotos/instagram/0097_CD3XNl-D88S_1.jpg",
+  "origenAncho": 1000,
+  "origenAlto": 750,
+  "recorte": null
+ },
+ {
+  "nombre": "alpendre-juegos-2",
+  "codigo": "0097_2",
+  "nota": "cama elastica y mesas bajo el alpendre",
+  "anchos": [
+   480,
+   800,
+   1000
+  ],
+  "ancho": 1000,
+  "alto": 750,
+  "origen": "fotos/instagram/0097_CD3XNl-D88S_2.jpg",
+  "origenAncho": 1000,
+  "origenAlto": 750,
+  "recorte": null
+ },
+ {
+  "nombre": "piscina",
+  "codigo": "0140_1",
+  "nota": "piscina de agua salada con su valla de madera y el valle",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0140_Bxw_nVqCCOa_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "piscina-0094",
+  "codigo": "0094_1",
+  "nota": "piscina y casita (750)",
+  "anchos": [
+   480,
+   750
+  ],
+  "ancho": 750,
+  "alto": 750,
+  "origen": "fotos/instagram/0094_CEJWxvuDxGY_1.jpg",
+  "origenAncho": 750,
+  "origenAlto": 750,
+  "recorte": null
+ },
+ {
+  "nombre": "piscina-0117",
+  "codigo": "0117_1",
+  "nota": "piscina, alpendre y tumbonas (971x918; @viajocomoquiero)",
+  "anchos": [
+   480,
+   800,
+   971
+  ],
+  "ancho": 971,
+  "alto": 918,
+  "origen": "fotos/instagram/0117_CCHHPqADVoJ_1.jpg",
+  "origenAncho": 971,
+  "origenAlto": 918,
+  "recorte": null
+ },
+ {
+  "nombre": "piscina-0002-5",
+  "codigo": "0002_5",
+  "nota": "la piscina desde arriba",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0002_DXcmbKBjngI_5.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "piscina-0002-6",
+  "codigo": "0002_6",
+  "nota": "la piscina y el tejado del alpendre",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0002_DXcmbKBjngI_6.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "piscina-0001-6",
+  "codigo": "0001_6",
+  "nota": "la piscina y el alpendre",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0001_DXulYOKjur-_6.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "piscina-0001-7",
+  "codigo": "0001_7",
+  "nota": "la piscina y el campo",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0001_DXulYOKjur-_7.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "limonada",
+  "codigo": "0000_1",
+  "nota": "limonada junto a la piscina (verano)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1215
+  ],
+  "ancho": 1215,
+  "alto": 2160,
+  "origen": "fotos/instagram/0000_DYzYzO3NQj__1.jpg",
+  "origenAncho": 1215,
+  "origenAlto": 2160,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0002-1",
+  "codigo": "0002_1",
+  "nota": "el jardin con el olivo y la hamaca",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0002_DXcmbKBjngI_1.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0002-2",
+  "codigo": "0002_2",
+  "nota": "el jardin, el olivo y la piscina",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0002_DXcmbKBjngI_2.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0002-3",
+  "codigo": "0002_3",
+  "nota": "arce rojo y la piscina",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0002_DXcmbKBjngI_3.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0002-4",
+  "codigo": "0002_4",
+  "nota": "el olivo y la valla de la piscina",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1920,
+  "origen": "fotos/instagram/0002_DXcmbKBjngI_4.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1920,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-1",
+  "codigo": "0144_1",
+  "nota": "jardin rehecho 2019: arce rojo y cesped",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-2",
+  "codigo": "0144_2",
+  "nota": "jardin rehecho 2019",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-3",
+  "codigo": "0144_3",
+  "nota": "jardin rehecho 2019: la cabana",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-4",
+  "codigo": "0144_4",
+  "nota": "jardin rehecho 2019: banco de hierro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-5",
+  "codigo": "0144_5",
+  "nota": "jardin rehecho 2019",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-6",
+  "codigo": "0144_6",
+  "nota": "jardin rehecho 2019: el carro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_6.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-7",
+  "codigo": "0144_7",
+  "nota": "jardin rehecho 2019",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_7.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-8",
+  "codigo": "0144_8",
+  "nota": "jardin rehecho 2019",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_8.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-9",
+  "codigo": "0144_9",
+  "nota": "jardin rehecho 2019",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_9.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0144-10",
+  "codigo": "0144_10",
+  "nota": "jardin rehecho 2019",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0144_BxWr8denhux_10.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0062",
+  "codigo": "0062_1",
+  "nota": "el banquito con vistas y la casa al fondo",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0062_COkzglDDSZm_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-0011-4",
+  "codigo": "0011_4",
+  "nota": "el cesped bajo los arboles (primavera)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1280,
+   1440
+  ],
+  "ancho": 1440,
+  "alto": 1800,
+  "origen": "fotos/instagram/0011_DIKFZpDsG2s_4.jpg",
+  "origenAncho": 1440,
+  "origenAlto": 1800,
+  "recorte": null
+ },
+ {
+  "nombre": "arces-1",
+  "codigo": "0077_1",
+  "nota": "arces en otono, camino de piedra",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0077_CGXe0z9jaYJ_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "arces-2",
+  "codigo": "0077_2",
+  "nota": "arces en otono",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0077_CGXe0z9jaYJ_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "arces-3",
+  "codigo": "0077_3",
+  "nota": "arce de otono",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0077_CGXe0z9jaYJ_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-noche-1",
+  "codigo": "0086_1",
+  "nota": "jardin iluminado de noche (1080x565)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0086_CE43ymOjIJ9_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-noche-2",
+  "codigo": "0086_2",
+  "nota": "jardin iluminado de noche",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0086_CE43ymOjIJ9_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-noche-3",
+  "codigo": "0086_3",
+  "nota": "jardin iluminado de noche",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0086_CE43ymOjIJ9_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-noche-0120",
+  "codigo": "0120_1",
+  "nota": "jardin iluminado: olivo y focos",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 577,
+  "origen": "fotos/instagram/0120_CBjTWOTjayO_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 577,
+  "recorte": null
+ },
+ {
+  "nombre": "jardin-noche-0115",
+  "codigo": "0115_1",
+  "nota": "la casa de noche con la luna",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 810,
+  "origen": "fotos/instagram/0115_CCPD42BjFf8_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 810,
+  "recorte": null
+ },
+ {
+  "nombre": "huerto",
+  "codigo": "0033_1",
+  "nota": "bancal del huerto (408x726)",
+  "anchos": [
+   408
+  ],
+  "ancho": 408,
+  "alto": 726,
+  "origen": "fotos/instagram/0033_CtoCeZ_rmnX_1.jpg",
+  "origenAncho": 408,
+  "origenAlto": 726,
+  "recorte": null
+ },
+ {
+  "nombre": "cabana",
+  "codigo": "0153_1",
+  "nota": "la cabana-tipi de los ninos (1080x689)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 689,
+  "origen": "fotos/instagram/0153_BwyvUjan4X0_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 689,
+  "recorte": null
+ },
+ {
+  "nombre": "cabana-b",
+  "codigo": "0088_1",
+  "nota": "la cabana entre los arboles",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0088_CEtYh44jopR_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "cabana-juguete",
+  "codigo": "0186_1",
+  "nota": "casita de juguete (720)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0186_BVRtHIAjohz_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "campo",
+  "codigo": "0053_1",
+  "nota": "campo de cesped con la canasta",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0053_CQdQbl0DcIh_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "primavera-0215",
+  "codigo": "0215_1",
+  "nota": "primavera",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0215_BG3wIcpwNA6_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "otono-0018",
+  "codigo": "0018_1",
+  "nota": "otono: cojines naranjas y crisantemo en el alpendre",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0018_CzGnaMZsWwO_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "invierno-0127-3",
+  "codigo": "0127_3",
+  "nota": "arbol de luces en el jardin",
+  "anchos": [
+   480,
+   800,
+   922
+  ],
+  "ancho": 922,
+  "alto": 922,
+  "origen": "fotos/instagram/0127_B6ddX4JCOyl_3.jpg",
+  "origenAncho": 922,
+  "origenAlto": 922,
+  "recorte": null
+ },
+ {
+  "nombre": "invierno-0200",
+  "codigo": "0200_1",
+  "nota": "jardin nevado (2017)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0200_BPhPqx5Bcwo_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fachada-1",
+  "codigo": "0116_1",
+  "nota": "fachada en cinco tiempos: tiempo 1 (ruina, con un coche rojo delante)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 720,
+  "origen": "fotos/instagram/0116_CCJ44Q3DLPA_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fachada-2",
+  "codigo": "0116_2",
+  "nota": "fachada en cinco tiempos: tiempo 2",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 720,
+  "origen": "fotos/instagram/0116_CCJ44Q3DLPA_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fachada-3",
+  "codigo": "0116_3",
+  "nota": "fachada en cinco tiempos: tiempo 3",
+  "anchos": [
+   480,
+   800,
+   1050
+  ],
+  "ancho": 1050,
+  "alto": 699,
+  "origen": "fotos/instagram/0116_CCJ44Q3DLPA_3.jpg",
+  "origenAncho": 1050,
+  "origenAlto": 699,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fachada-4",
+  "codigo": "0116_4",
+  "nota": "fachada en cinco tiempos: tiempo 4 (640x479)",
+  "anchos": [
+   480,
+   640
+  ],
+  "ancho": 640,
+  "alto": 479,
+  "origen": "fotos/instagram/0116_CCJ44Q3DLPA_4.jpg",
+  "origenAncho": 640,
+  "origenAlto": 479,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fachada-5",
+  "codigo": "0116_5",
+  "nota": "fachada en cinco tiempos: tiempo 5 (hoy; 1000x667)",
+  "anchos": [
+   480,
+   800,
+   1000
+  ],
+  "ancho": 1000,
+  "alto": 667,
+  "origen": "fotos/instagram/0116_CCJ44Q3DLPA_5.jpg",
+  "origenAncho": 1000,
+  "origenAlto": 667,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-cocina-antes",
+  "codigo": "0081_1",
+  "nota": "cocina antes: paredes verdes",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 719,
+  "origen": "fotos/instagram/0081_CFWlrYTjrjr_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 719,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-comedor-antes",
+  "codigo": "0081_3",
+  "nota": "comedor antes: paredes verdes",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 718,
+  "origen": "fotos/instagram/0081_CFWlrYTjrjr_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 718,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-comedor-antes-b",
+  "codigo": "0032_3",
+  "nota": "comedor antes (726)",
+  "anchos": [
+   480,
+   726
+  ],
+  "ancho": 726,
+  "alto": 726,
+  "origen": "fotos/instagram/0032_Ctr6aoMMJqJ_3.jpg",
+  "origenAncho": 726,
+  "origenAlto": 726,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fervenza-1",
+  "codigo": "0150_1",
+  "nota": "Fervenza de San Paio, antes (474)",
+  "anchos": [
+   474
+  ],
+  "ancho": 474,
+  "alto": 474,
+  "origen": "fotos/instagram/0150_Bw-TdWHHnuJ_1.jpg",
+  "origenAncho": 474,
+  "origenAlto": 474,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fervenza-2",
+  "codigo": "0150_2",
+  "nota": "Fervenza de San Paio, durante: la piedra al aire",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1081,
+  "origen": "fotos/instagram/0150_Bw-TdWHHnuJ_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1081,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fervenza-3",
+  "codigo": "0150_3",
+  "nota": "Fervenza de San Paio, durante",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1081,
+  "origen": "fotos/instagram/0150_Bw-TdWHHnuJ_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1081,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-fervenza-antes",
+  "codigo": "0099_1",
+  "nota": "Fervenza de San Paio, antes (350x262)",
+  "anchos": [
+   350
+  ],
+  "ancho": 350,
+  "alto": 262,
+  "origen": "fotos/instagram/0099_CDs3uwsA8R4_1.jpg",
+  "origenAncho": 350,
+  "origenAlto": 262,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-rio-anllons-antes",
+  "codigo": "0105_2",
+  "nota": "Rio Anllons antes de 2019 (paredes pardas)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0105_CC9N1WljfAb_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-casita-antes-1",
+  "codigo": "0113_1",
+  "nota": "casita de la piscina antes (color salmon; 350x262)",
+  "anchos": [
+   350
+  ],
+  "ancho": 350,
+  "alto": 262,
+  "origen": "fotos/instagram/0113_CCZAIs5DpPK_1.jpg",
+  "origenAncho": 350,
+  "origenAlto": 262,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-casita-antes-2",
+  "codigo": "0113_2",
+  "nota": "casita antes",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 809,
+  "origen": "fotos/instagram/0113_CCZAIs5DpPK_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 809,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-casita-antes-3",
+  "codigo": "0113_3",
+  "nota": "casita antes",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 807,
+  "origen": "fotos/instagram/0113_CCZAIs5DpPK_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 807,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-casita-obras-1",
+  "codigo": "0159_1",
+  "nota": "casita en obras (320x298)",
+  "anchos": [
+   320
+  ],
+  "ancho": 320,
+  "alto": 298,
+  "origen": "fotos/instagram/0159_BvkPfFOnQ14_1.jpg",
+  "origenAncho": 320,
+  "origenAlto": 298,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-casita-obras-2",
+  "codigo": "0159_2",
+  "nota": "casita en obras",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1006,
+  "origen": "fotos/instagram/0159_BvkPfFOnQ14_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1006,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-casita-obras-3",
+  "codigo": "0159_3",
+  "nota": "casita en obras",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1004,
+  "origen": "fotos/instagram/0159_BvkPfFOnQ14_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1004,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-piscina-1",
+  "codigo": "0057_1",
+  "nota": "piscina y porche (500x375)",
+  "anchos": [
+   500
+  ],
+  "ancho": 500,
+  "alto": 375,
+  "origen": "fotos/instagram/0057_CPakUe3jjk4_1.jpg",
+  "origenAncho": 500,
+  "origenAlto": 375,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-piscina-2",
+  "codigo": "0057_2",
+  "nota": "piscina y porche",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 810,
+  "origen": "fotos/instagram/0057_CPakUe3jjk4_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 810,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-alpendre-1",
+  "codigo": "0054_1",
+  "nota": "alpendre: teja nueva",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0054_CQQTigNjbu1_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-alpendre-2",
+  "codigo": "0054_2",
+  "nota": "alpendre por dentro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0054_CQQTigNjbu1_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-alpendre-3",
+  "codigo": "0054_3",
+  "nota": "alpendre en obras",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0054_CQQTigNjbu1_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-alpendre-4",
+  "codigo": "0054_4",
+  "nota": "alpendre, antes y despues",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0054_CQQTigNjbu1_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-jardin-1",
+  "codigo": "0158_1",
+  "nota": "jardin: tierra",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0158_BvoBc9WnQ31_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-jardin-2",
+  "codigo": "0158_2",
+  "nota": "jardin: tierra",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0158_BvoBc9WnQ31_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-jardin-3",
+  "codigo": "0158_3",
+  "nota": "jardin: terreno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0158_BvoBc9WnQ31_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-jardin-4",
+  "codigo": "0158_4",
+  "nota": "jardin: cesped nuevo",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0158_BvoBc9WnQ31_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-jardin-5",
+  "codigo": "0158_5",
+  "nota": "jardin: cesped y setos",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0158_BvoBc9WnQ31_5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-jardin-6",
+  "codigo": "0158_6",
+  "nota": "jardin: el muro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0158_BvoBc9WnQ31_6.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-mueble-1",
+  "codigo": "0146_1",
+  "nota": "mesilla antes y despues (restaurada por Monica)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0146_BxNyxxPH4eZ_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-mueble-2",
+  "codigo": "0160_1",
+  "nota": "cabecero antes y despues",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0160_BvTiF9SnTUK_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-mueble-3",
+  "codigo": "0156_1",
+  "nota": "tocador restaurado",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0156_BwrScFnHEr0_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-mueble-4",
+  "codigo": "0156_2",
+  "nota": "tocador antes",
+  "anchos": [
+   480,
+   747
+  ],
+  "ancho": 747,
+  "alto": 747,
+  "origen": "fotos/instagram/0156_BwrScFnHEr0_2.jpg",
+  "origenAncho": 747,
+  "origenAlto": 747,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-mueble-5",
+  "codigo": "0156_3",
+  "nota": "taburete antes (restaurado)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0156_BwrScFnHEr0_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-2019-1",
+  "codigo": "0163_1",
+  "nota": "obras de 2019: pared de piedra",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0163_BvMGTsrnTUQ_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-2019-2",
+  "codigo": "0163_2",
+  "nota": "obras de 2019",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0163_BvMGTsrnTUQ_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "obra-2019-3",
+  "codigo": "0163_3",
+  "nota": "obras de 2019: terreno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0163_BvMGTsrnTUQ_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-nariga-1",
+  "codigo": "0023_1",
+  "nota": "faro de Punta Nariga al atardecer",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0023_Cv5f8AMs2Vw_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-nariga-2",
+  "codigo": "0023_2",
+  "nota": "atardecer en Punta Nariga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0023_Cv5f8AMs2Vw_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-nariga-3",
+  "codigo": "0023_3",
+  "nota": "atardecer en el mar",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0023_Cv5f8AMs2Vw_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-nariga-4",
+  "codigo": "0102_1",
+  "nota": "faro de Punta Nariga (diseno de Cesar Portela)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0102_CDelt8cDRDo_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-nariga-5",
+  "codigo": "0102_2",
+  "nota": "escultura y atardecer en Nariga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0102_CDelt8cDRDo_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-nariga-6",
+  "codigo": "0102_3",
+  "nota": "faro de Punta Nariga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0102_CDelt8cDRDo_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-nariga-7",
+  "codigo": "0102_4",
+  "nota": "atardecer con el faro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0102_CDelt8cDRDo_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-malpica-0195",
+  "codigo": "0195_1",
+  "nota": "Malpica y las Sisargas (1080x608)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 608,
+  "origen": "fotos/instagram/0195_BS8ZyFBjN9j_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 608,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-malpica-0212",
+  "codigo": "0212_1",
+  "nota": "Malpica (900)",
+  "anchos": [
+   480,
+   800,
+   900
+  ],
+  "ancho": 900,
+  "alto": 900,
+  "origen": "fotos/instagram/0212_BI-zdp7D_9F_1.jpg",
+  "origenAncho": 900,
+  "origenAlto": 900,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-malpica-0124",
+  "codigo": "0124_1",
+  "nota": "Malpica al atardecer",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0124_CASkUQKDOjV_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-malpica-0213",
+  "codigo": "0213_1",
+  "nota": "Malpica (1080x608)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 608,
+  "origen": "fotos/instagram/0213_BI-CAUQjIMk_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 608,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seaia-1",
+  "codigo": "0103_1",
+  "nota": "playa de Seaia (1047x1067)",
+  "anchos": [
+   480,
+   800,
+   1047
+  ],
+  "ancho": 1047,
+  "alto": 1067,
+  "origen": "fotos/instagram/0103_CDOOyILjKPk_1.jpg",
+  "origenAncho": 1047,
+  "origenAlto": 1067,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seaia-2",
+  "codigo": "0103_2",
+  "nota": "playa de Seaia",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1101,
+  "origen": "fotos/instagram/0103_CDOOyILjKPk_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1101,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seaia-3",
+  "codigo": "0103_3",
+  "nota": "playa de Seaia",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1101,
+  "origen": "fotos/instagram/0103_CDOOyILjKPk_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1101,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seaia-4",
+  "codigo": "0103_4",
+  "nota": "playa de Seaia",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1100,
+  "origen": "fotos/instagram/0103_CDOOyILjKPk_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1100,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seaia-5",
+  "codigo": "0103_5",
+  "nota": "playa de Seaia",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1100,
+  "origen": "fotos/instagram/0103_CDOOyILjKPk_5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1100,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seiruga-1",
+  "codigo": "0106_1",
+  "nota": "playa de Seiruga (Barizo)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0106_CC6owjWD7i__1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seiruga-2",
+  "codigo": "0106_2",
+  "nota": "Seiruga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0106_CC6owjWD7i__2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seiruga-3",
+  "codigo": "0106_3",
+  "nota": "Seiruga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0106_CC6owjWD7i__3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seiruga-4",
+  "codigo": "0106_4",
+  "nota": "Seiruga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0106_CC6owjWD7i__4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seiruga-5",
+  "codigo": "0106_5",
+  "nota": "Seiruga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0106_CC6owjWD7i__5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seiruga-6",
+  "codigo": "0106_6",
+  "nota": "Seiruga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 566,
+  "origen": "fotos/instagram/0106_CC6owjWD7i__6.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 566,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-seiruga-7",
+  "codigo": "0106_7",
+  "nota": "Seiruga",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0106_CC6owjWD7i__7.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-sanmiro-1",
+  "codigo": "0059_1",
+  "nota": "San Miro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0059_CPFjqIZjUDD_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-sanmiro-2",
+  "codigo": "0059_2",
+  "nota": "San Miro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0059_CPFjqIZjUDD_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-sanmiro-3",
+  "codigo": "0059_3",
+  "nota": "San Miro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0059_CPFjqIZjUDD_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-torradas-1",
+  "codigo": "0075_1",
+  "nota": "playas cercanas en invierno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0075_CH5-T82jwSC_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-torradas-2",
+  "codigo": "0075_2",
+  "nota": "playas cercanas en invierno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0075_CH5-T82jwSC_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-torradas-3",
+  "codigo": "0075_3",
+  "nota": "playas cercanas en invierno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0075_CH5-T82jwSC_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-torradas-4",
+  "codigo": "0075_4",
+  "nota": "playas cercanas en invierno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0075_CH5-T82jwSC_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-torradas-5",
+  "codigo": "0075_5",
+  "nota": "playas cercanas en invierno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0075_CH5-T82jwSC_5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-razo",
+  "codigo": "0189_1",
+  "nota": "Razo (720x529)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 529,
+  "origen": "fotos/instagram/0189_BVHMkXmDlFz_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 529,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-insua",
+  "codigo": "0133_1",
+  "nota": "Ensenada da Insua (1080x608)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 608,
+  "origen": "fotos/instagram/0133_B0nNO99iT6H_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 608,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-refuxo",
+  "codigo": "0121_1",
+  "nota": "Refuxo de Verdes: puente de madera sobre el rio (@viajocomoquiero)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0121_CBIcXvJjo5J_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-entrecruces-1",
+  "codigo": "0076_1",
+  "nota": "Fervenza de Entrecruces: camino",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0076_CGfGMeYD8Zc_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-entrecruces-2",
+  "codigo": "0076_2",
+  "nota": "Fervenza de Entrecruces: arroyo",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0076_CGfGMeYD8Zc_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-entrecruces-3",
+  "codigo": "0076_3",
+  "nota": "Fervenza de Entrecruces: rio",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0076_CGfGMeYD8Zc_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-entrecruces-4",
+  "codigo": "0076_4",
+  "nota": "Fervenza de Entrecruces: la fervenza",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0076_CGfGMeYD8Zc_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-entrecruces-5",
+  "codigo": "0076_5",
+  "nota": "Fervenza de Entrecruces: molino",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0076_CGfGMeYD8Zc_5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-entrecruces-6",
+  "codigo": "0076_6",
+  "nota": "Fervenza de Entrecruces: bosque",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0076_CGfGMeYD8Zc_6.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-entrecruces-7",
+  "codigo": "0076_7",
+  "nota": "Fervenza de Entrecruces: seta",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1351,
+  "origen": "fotos/instagram/0076_CGfGMeYD8Zc_7.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-laxe-1",
+  "codigo": "0029_1",
+  "nota": "Laxe, la bahia (1080x778)",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 778,
+  "origen": "fotos/instagram/0029_CvCKa4PMK0J_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 778,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-laxe-2",
+  "codigo": "0029_2",
+  "nota": "Laxe, la cruz",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 779,
+  "origen": "fotos/instagram/0029_CvCKa4PMK0J_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 779,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-laxe-3",
+  "codigo": "0029_3",
+  "nota": "capilla de Santa Rosa",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 778,
+  "origen": "fotos/instagram/0029_CvCKa4PMK0J_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 778,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-laxe-4",
+  "codigo": "0029_4",
+  "nota": "capilla de Santa Rosa",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 778,
+  "origen": "fotos/instagram/0029_CvCKa4PMK0J_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 778,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-montebranco-1",
+  "codigo": "0089_1",
+  "nota": "mirador de Monte Branco",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0089_CEl1P4hDSH9_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-montebranco-2",
+  "codigo": "0089_2",
+  "nota": "mirador de Monte Branco",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0089_CEl1P4hDSH9_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-montebranco-3",
+  "codigo": "0089_3",
+  "nota": "mirador de Monte Branco",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 565,
+  "origen": "fotos/instagram/0089_CEl1P4hDSH9_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-caldeiras-1",
+  "codigo": "0052_1",
+  "nota": "Caldeiras do Castro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0052_CQnmFqPsFKd_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-caldeiras-2",
+  "codigo": "0052_2",
+  "nota": "Caldeiras do Castro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0052_CQnmFqPsFKd_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-caldeiras-3",
+  "codigo": "0052_3",
+  "nota": "Caldeiras do Castro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0052_CQnmFqPsFKd_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-maceira-1",
+  "codigo": "0143_1",
+  "nota": "Ponte Maceira",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0143_BxcLr99Cw5M_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-maceira-2",
+  "codigo": "0143_2",
+  "nota": "Ponte Maceira",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0143_BxcLr99Cw5M_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-maceira-3",
+  "codigo": "0143_3",
+  "nota": "Ponte Maceira",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0143_BxcLr99Cw5M_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-camino-faros-1",
+  "codigo": "0047_1",
+  "nota": "O Camino dos Faros: el Traski de Malpica",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0047_CTZcFFMMp7h_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-camino-faros-2",
+  "codigo": "0047_2",
+  "nota": "O Camino dos Faros: el Traski",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0047_CTZcFFMMp7h_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-pindo",
+  "codigo": "0061_1",
+  "nota": "Monte Pindo (480)",
+  "anchos": [
+   480
+  ],
+  "ancho": 480,
+  "alto": 480,
+  "origen": "fotos/instagram/0061_CO3KLW0D_XA_1.jpg",
+  "origenAncho": 480,
+  "origenAlto": 480,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-ezaro",
+  "codigo": "0181_1",
+  "nota": "Ezaro",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1350,
+  "origen": "fotos/instagram/0181_BZtJi05jleu_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-buno-1",
+  "codigo": "0100_1",
+  "nota": "olleria de Buno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0100_CDmXay5jPLR_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-buno-2",
+  "codigo": "0100_2",
+  "nota": "olleria de Buno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0100_CDmXay5jPLR_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-buno-3",
+  "codigo": "0100_3",
+  "nota": "olleria de Buno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0100_CDmXay5jPLR_3.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-buno-4",
+  "codigo": "0100_4",
+  "nota": "olleria de Buno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0100_CDmXay5jPLR_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-buno-5",
+  "codigo": "0100_5",
+  "nota": "olleria de Buno",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0100_CDmXay5jPLR_5.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-fisterra",
+  "codigo": "0177_1",
+  "nota": "Fisterra, la bota del peregrino",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0177_BaOQCinDYyX_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-anllons-1",
+  "codigo": "0222_1",
+  "nota": "el rio Anllons en Carballo (720)",
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 720,
+  "origen": "fotos/instagram/0222_BDpyUBFwNDW_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": null
+ },
+ {
+  "nombre": "lugar-anllons-2",
+  "codigo": "0236_1",
+  "nota": "el rio Anllons en Carballo",
+  "anchos": [
+   480,
+   800,
+   1024,
+   1080
+  ],
+  "ancho": 1080,
+  "alto": 1080,
+  "origen": "fotos/instagram/0236_BASLtofwNDA_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": null
+ }
+]

@@ -1,0 +1,121 @@
+{
+ "sisargas": {
+  "ancho": 560,
+  "alto": 315,
+  "origen": "0195_BS8ZyFBjN9j_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 608
+ },
+ "nariga": {
+  "ancho": 560,
+  "alto": 700,
+  "origen": "0023_Cv5f8AMs2Vw_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350
+ },
+ "malpica-sisargas": {
+  "ancho": 560,
+  "alto": 315,
+  "origen": "0195_BS8ZyFBjN9j_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 608
+ },
+ "nariga-torre": {
+  "ancho": 560,
+  "alto": 700,
+  "origen": "0102_CDelt8cDRDo_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350
+ },
+ "seaia": {
+  "ancho": 560,
+  "alto": 571,
+  "origen": "0103_CDOOyILjKPk_1.jpg",
+  "origenAncho": 1047,
+  "origenAlto": 1067
+ },
+ "seiruga": {
+  "ancho": 560,
+  "alto": 293,
+  "origen": "0106_CC6owjWD7i__1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565
+ },
+ "san-miro": {
+  "ancho": 560,
+  "alto": 700,
+  "origen": "0059_CPFjqIZjUDD_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350
+ },
+ "insua": {
+  "ancho": 560,
+  "alto": 315,
+  "origen": "0133_B0nNO99iT6H_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 608
+ },
+ "laxe": {
+  "ancho": 560,
+  "alto": 403,
+  "origen": "0029_CvCKa4PMK0J_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 778
+ },
+ "monte-branco": {
+  "ancho": 560,
+  "alto": 293,
+  "origen": "0089_CEl1P4hDSH9_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565
+ },
+ "refuxo": {
+  "ancho": 479,
+  "alto": 479,
+  "origen": "0229_BCBHQ8fQNB0_1.jpg",
+  "origenAncho": 479,
+  "origenAlto": 479
+ },
+ "castriz": {
+  "ancho": 408,
+  "alto": 726,
+  "origen": "0031_CtwJinpuo3x_1.jpg",
+  "origenAncho": 408,
+  "origenAlto": 726
+ },
+ "caldeiras": {
+  "ancho": 560,
+  "alto": 560,
+  "origen": "0052_CQnmFqPsFKd_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080
+ },
+ "ruta-auga": {
+  "ancho": 408,
+  "alto": 726,
+  "origen": "0024_Cv1t_9ROtkK_1.jpg",
+  "origenAncho": 408,
+  "origenAlto": 726
+ },
+ "ponte-maceira": {
+  "ancho": 560,
+  "alto": 560,
+  "origen": "0143_BxcLr99Cw5M_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080
+ },
+ "pindo": {
+  "ancho": 480,
+  "alto": 480,
+  "origen": "0061_CO3KLW0D_XA_1.jpg",
+  "origenAncho": 480,
+  "origenAlto": 480
+ },
+ "fisterra-bota": {
+  "ancho": 560,
+  "alto": 560,
+  "origen": "0177_BaOQCinDYyX_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080
+ }
+}

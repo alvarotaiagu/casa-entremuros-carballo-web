@@ -1,0 +1,11 @@
+{
+ "lat": 43.247028,
+ "lon": -8.736777,
+ "centro_encuadre": {
+  "lat": 43.247102,
+  "lon": -8.73695
+ },
+ "certeza": "alta, sin confirmar por la casa",
+ "como": "Localizada en la ortofoto PNOA comparandola con la vista aerea de 2015 (IG 248, ref/fotos/instagram/0248_7sB1YDwNH7_1.jpg): la piscina rectangular con su terraza de piedra, la casita de teja a cuatro aguas junto a ella, la casa grande de teja en L con su patio, el pequeno edificio de piedra con tejado de teja y el cesped con la pista, todo en la misma disposicion (la foto de IG esta tomada desde el lado opuesto). Hay otra piscina en el caserio (mas al este); esta es la que cuadra con IG 248. El nodo de OSM de Cances Grande (43.24730, -8.73401) es el caserio, no la casa. Pendiente: que la casa confirme el punto.",
+ "punto_marcado": "casa grande (el tejado de teja en L del extremo este del conjunto)"
+}

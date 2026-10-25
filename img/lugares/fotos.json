@@ -1,0 +1,222 @@
+{
+ "lg-rio-anllons-hab": {
+  "anchos": [
+   480,
+   791
+  ],
+  "ancho": 791,
+  "alto": 593,
+  "origen": "0105_CC9N1WljfAb_1.jpg",
+  "origenAncho": 791,
+  "origenAlto": 791,
+  "recorte": {
+   "x": 0,
+   "y": 60,
+   "w": 791,
+   "h": 593
+  },
+  "ig": 105,
+  "alt": "La habitación Río Anllóns: cama doble con colcha dorada, pared de piedra vista, lámpara de cristal y tocador blanco",
+  "nota": "IG 105 (2020): la habitación después del cambio de 2019",
+  "credito": null,
+  "soloRotulo": false
+ },
+ "lg-refuxo-de-verdes-hab": {
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "0131_B031XPuC3Rq_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 755,
+  "recorte": {
+   "x": 40,
+   "y": 0,
+   "w": 1007,
+   "h": 755
+  },
+  "ig": 131,
+  "alt": "La habitación Refuxo de Verdes: cama con dosel de hierro y cortinas blancas, pared de piedra y suelo de madera",
+  "nota": "IG 131 (2019)",
+  "credito": null,
+  "soloRotulo": false
+ },
+ "lg-ponte-lubians-hab": {
+  "anchos": [
+   480,
+   753
+  ],
+  "ancho": 753,
+  "alto": 565,
+  "origen": "0066_CNevQ_tjPf9_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": {
+   "x": 190,
+   "y": 0,
+   "w": 753,
+   "h": 565
+  },
+  "ig": 66,
+  "alt": "La habitación Ponte Lubiáns: la más grande de la casa, cama de 1,80 con cabecero blanco, vigas de madera y pared de piedra",
+  "nota": "IG 66 (2021)",
+  "credito": null,
+  "soloRotulo": false
+ },
+ "lg-fervenza-de-san-paio-hab": {
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "0099_CDs3uwsA8R4_2.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 807,
+  "recorte": {
+   "x": 2,
+   "y": 0,
+   "w": 1076,
+   "h": 807
+  },
+  "ig": 99,
+  "alt": "La habitación Fervenza de San Paio: dos camas de 90 cm con ropa de cama de plumas grises, pared de piedra picada y espejo antiguo",
+  "nota": "IG 99 (2020): después de la reforma",
+  "credito": null,
+  "soloRotulo": false
+ },
+ "lg-razo-hab": {
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "0050_CQ-tTXmsA5N_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1351,
+  "recorte": {
+   "x": 0,
+   "y": 250,
+   "w": 1080,
+   "h": 810
+  },
+  "ig": 50,
+  "alt": "La habitación Razo, en la casita de la piscina: cama con cabecero de madera clara y cojines con borlas",
+  "nota": "IG 50 (2021)",
+  "credito": null,
+  "soloRotulo": false
+ },
+ "lg-baldaio-hab": {
+  "anchos": [
+   480,
+   720
+  ],
+  "ancho": 720,
+  "alto": 540,
+  "origen": "0135_BzPr0_OjrTr_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 720,
+  "recorte": {
+   "x": 0,
+   "y": 0,
+   "w": 720,
+   "h": 540
+  },
+  "ig": 135,
+  "alt": "La puerta de madera de la habitación Baldaio, con su rótulo",
+  "nota": "IG 135 (2019, miniatura del vídeo): solo el rótulo de la puerta; falta la foto de la habitación",
+  "credito": null,
+  "soloRotulo": true
+ },
+ "lg-refuxo-de-verdes-lugar": {
+  "anchos": [
+   480,
+   800
+  ],
+  "ancho": 800,
+  "alto": 600,
+  "origen": "0121_CBIcXvJjo5J_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1080,
+  "recorte": {
+   "x": 0,
+   "y": 270,
+   "w": 1080,
+   "h": 810
+  },
+  "ig": 121,
+  "alt": "El Refuxo de Verdes: pasarela de madera con barandilla sobre el río Anllóns, entre árboles",
+  "nota": "IG 121 (2020), foto de @viajocomoquiero",
+  "credito": "@viajocomoquiero",
+  "soloRotulo": false
+ },
+ "lg-razo-lugar": {
+  "anchos": [
+   480,
+   705
+  ],
+  "ancho": 705,
+  "alto": 529,
+  "origen": "0189_BVHMkXmDlFz_1.jpg",
+  "origenAncho": 720,
+  "origenAlto": 529,
+  "recorte": {
+   "x": 0,
+   "y": 0,
+   "w": 705,
+   "h": 529
+  },
+  "ig": 189,
+  "alt": "La playa de Razo: arena clara, hierbas de duna y el mar al fondo",
+  "nota": "IG 189 (2017)",
+  "credito": null,
+  "soloRotulo": false
+ },
+ "lg-fervenza-de-san-paio-lugar": {
+  "anchos": [
+   480,
+   747
+  ],
+  "ancho": 747,
+  "alto": 560,
+  "origen": "0076_CGfGMeYD8Zc_4.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 1350,
+  "recorte": {
+   "x": 100,
+   "y": 0,
+   "w": 747,
+   "h": 560
+  },
+  "ig": 76,
+  "alt": "La fervenza de Entrecruces, entre rocas y helechos, con un hilo de agua que baja por la garganta",
+  "nota": "IG 76 (2020): «Fervenza de Entrecruces»",
+  "credito": null,
+  "soloRotulo": false
+ },
+ "lg-rio-anllons-lugar": {
+  "anchos": [
+   480,
+   753
+  ],
+  "ancho": 753,
+  "alto": 565,
+  "origen": "0089_CEl1P4hDSH9_1.jpg",
+  "origenAncho": 1080,
+  "origenAlto": 565,
+  "recorte": {
+   "x": 100,
+   "y": 0,
+   "w": 753,
+   "h": 565
+  },
+  "ig": 89,
+  "alt": "La ría de Corme e Laxe con la desembocadura del Anllóns, vista desde el mirador de Monte Branco",
+  "nota": "IG 89 (2020): mirador de Monte Branco",
+  "credito": null,
+  "soloRotulo": false
+ }
+}

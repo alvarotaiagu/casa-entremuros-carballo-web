@@ -1,0 +1,24 @@
+<!-- ============ reservar · «La mesa para…» (módulo Reserva, js/reserva.js; DEMOSTRACIÓN). El HTML de dentro es el respaldo ============ -->
+<section class="sec reservar s-lino" id="reservar" aria-labelledby="reservar-tit">
+  <div class="env">
+    <header class="sec-cab">
+      <p class="eyebrow">Reservar</p>
+      <h2 id="reservar-tit">La mesa para… <em>los que seáis</em><span class="rama" data-rama="5" aria-hidden="true"></span></h2>
+      <p class="sec-cab__txt">Elige las fechas y cuántos sois: se pone un cubierto por cada uno y, al final, una tarjeta con tu nombre en el plato, como las de Mónica. Si lo prefieres, llama al <a class="enlace" href="tel:{{telefono_tel}}">{{telefono}}</a> o escribe a <a class="enlace" href="mailto:{{correo}}">{{correo}}</a>.</p>
+    </header>
+    <div class="reservar__modulo" data-modulo="reserva">
+      <div class="reservar__respaldo">
+        <p class="demo" role="note"><b>Demostración.</b> Así funcionará la reserva directa: las noches libres son de ejemplo, los precios son supuestos y no se envía, se guarda ni se cobra nada.</p>
+        <dl class="datos">
+          <div><dt>Se alquila</dt><dd>La casa entera, hasta {{plazas}} personas <span class="sup">supuesto</span></dd></div>
+          <div><dt>Temporada baja</dt><dd>Desde <b class="cifra">{{tarifa_baja_8}} €</b> la noche (hasta 8 personas) · {{tarifa_baja_12}} € hasta 12 <span class="sup">por confirmar</span></dd></div>
+          <div><dt>Temporada alta</dt><dd>Julio <b class="cifra">{{tarifa_alta_julio}} €</b> · agosto {{tarifa_alta_agosto}} € · Semana Santa y puentes {{tarifa_alta_puentes}} € <span class="sup">por confirmar</span></dd></div>
+          <div><dt>Entrada y salida</dt><dd>Desde las {{entrada}} · antes de las {{salida}} <span class="sup">por confirmar</span></dd></div>
+          <div><dt>Fianza</dt><dd>{{fianza}} €, que se devuelve a las 72 horas de la salida</dd></div>
+          <div><dt>Para reservar</dt><dd>El {{reserva_pct}} % por transferencia; el resto, el día de entrada</dd></div>
+        </dl>
+        <p class="reservar__acc"><a class="btn btn--marca" href="tel:{{telefono_tel}}">Llamar al {{telefono}}</a> <a class="btn btn--hueco" href="mailto:{{correo}}">Escribir</a></p>
+      </div>
+    </div>
+  </div>
+</section>

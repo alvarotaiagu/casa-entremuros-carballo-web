@@ -1,0 +1,1156 @@
+{
+ "generado": "2026-10-25",
+ "nota": "Característica de cada faro: Libro de Faros del Instituto Hidrográfico de la Marina (oficial). Si la Wikipedia difiere, gana el Libro y se anota en `discrepancias`.",
+ "libro_de_faros": {
+  "edicion": "07/02/2023",
+  "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+  "autor": "Instituto Hidrográfico de la Marina (Armada)"
+ },
+ "caja": {
+  "sur": 42.84,
+  "norte": 43.4,
+  "oeste": -9.34,
+  "este": -8.64,
+  "ancho_m": 56879,
+  "alto_m": 61921,
+  "lat_ref": 43.120000000000005
+ },
+ "casa": {
+  "nombre": "Casa Entremuros",
+  "lat": 43.247298,
+  "lon": -8.7340081,
+  "fuente": "OpenStreetMap: el lugar «Cances Grande» (hamlet). El punto exacto de la casa está por confirmar (PENDIENTES).",
+  "exacto": false,
+  "x": 49240,
+  "y": 16885
+ },
+ "lugares": [
+  {
+   "nombre": "Malpica",
+   "lat": 43.3226285,
+   "lon": -8.8106696,
+   "x": 43011,
+   "y": 8555,
+   "osm": "node/2431612654",
+   "tipo": "town"
+  },
+  {
+   "nombre": "O Porto de Corme",
+   "lat": 43.2647014,
+   "lon": -8.963221,
+   "x": 30615,
+   "y": 14961,
+   "osm": "node/6186196648",
+   "tipo": "village"
+  },
+  {
+   "nombre": "Laxe",
+   "lat": 43.2219125,
+   "lon": -9.0059393,
+   "x": 27144,
+   "y": 19692,
+   "osm": "node/484297182",
+   "tipo": "village"
+  },
+  {
+   "nombre": "Camariñas",
+   "lat": 43.1310578,
+   "lon": -9.1825585,
+   "x": 12793,
+   "y": 29738,
+   "osm": "node/257518272",
+   "tipo": "town"
+  },
+  {
+   "nombre": "Muxía",
+   "lat": 43.1068451,
+   "lon": -9.2184819,
+   "x": 9874,
+   "y": 32415,
+   "osm": "node/286179589",
+   "tipo": "town"
+  },
+  {
+   "nombre": "Fisterra",
+   "lat": 42.9064771,
+   "lon": -9.263789,
+   "x": 6193,
+   "y": 54571,
+   "osm": "node/272443612",
+   "tipo": "village"
+  },
+  {
+   "nombre": "Carballo",
+   "lat": 43.2134123,
+   "lon": -8.6891286,
+   "x": 52887,
+   "y": 20632,
+   "osm": "node/264683073",
+   "tipo": "town"
+  },
+  {
+   "nombre": "Ponteceso",
+   "lat": 43.2428181,
+   "lon": -8.9005051,
+   "x": 35711,
+   "y": 17380,
+   "osm": "node/278388082",
+   "tipo": "village"
+  },
+  {
+   "nombre": "Cances Grande",
+   "lat": 43.247298,
+   "lon": -8.7340081,
+   "x": 49240,
+   "y": 16885,
+   "osm": "node/6116646783",
+   "tipo": "hamlet"
+  }
+ ],
+ "faros": [
+  {
+   "id": "sisargas",
+   "nombre": "Illas Sisargas",
+   "nombre_libro": "Faro Sisargas · ISLAS SISARGAS",
+   "municipio": "Malpica de Bergantiños",
+   "lat": 43.3599,
+   "lon": -8.84457,
+   "x": 40256,
+   "y": 4434,
+   "posicion_osm_comprobada": {
+    "elemento": "way/179215196",
+    "nombre": "Faro das Illas Sisargas",
+    "distancia_m": 5
+   },
+   "caracteristica": {
+    "ihm": "Fl(3)W 15s",
+    "es": "GpD(3) B 15s",
+    "tipo": "destellos",
+    "grupo": "3",
+    "color": "blanco",
+    "periodo_s": 15,
+    "fases_s": [
+     0.2,
+     2.8,
+     0.2,
+     2.8,
+     0.2,
+     8.8
+    ],
+    "destellos": 3,
+    "texto_es": "Tres destellos blancos seguidos y una pausa larga, cada 15 segundos.",
+    "desfase_s": 4.9,
+    "max_inicios_por_segundo": 0.333
+   },
+   "altura_torre_m": 11,
+   "altura_focal_m": 110,
+   "alcance_mn": 23,
+   "alcance_km": 42.6,
+   "descripcion_libro": "Torre octogonal de sillería y casa blanca",
+   "estado_libro": "Apagada (T)",
+   "nota_estado": "El Libro de Faros (edición 07/02/2023) la anota como «Apagada (T)»: apagada temporalmente. No he podido confirmar si hoy luce; el resto de fuentes la describen en servicio.",
+   "giratorio": false,
+   "giratorio_fuente": null,
+   "rumbo_mar_deg": 350,
+   "etiqueta": "e",
+   "anio": {
+    "texto": "El primer faro de la isla se encendió el 29 de julio de 1853; el actual se construyó entre 1911 y 1915.",
+    "fuente": "wikipedia"
+   },
+   "nota": null,
+   "casa": {
+    "linea_recta_km": 15.4,
+    "carretera": null,
+    "metodo": "Línea recta: fórmula del haversine entre el lugar de Cances Grande (OSM) y la posición del Libro de Faros. Carretera: OSRM (router.project-osrm.org, perfil coche, sin tráfico), ruta calculada el 2026-10-25. Las Sisargas son una isla: solo línea recta."
+   },
+   "fuentes": [
+    {
+     "tipo": "oficial",
+     "nombre": "Libro de Faros y Señales de Niebla, Instituto Hidrográfico de la Marina (Armada). Costa NW, edición 07/02/2023",
+     "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+     "numero_nacional": "03730",
+     "numero_internacional": "D-1728",
+     "uso": "característica, fases, alturas, alcance, posición"
+    },
+    {
+     "tipo": "segunda",
+     "nombre": "Wikipedia en castellano: Faro de las islas Sisargas",
+     "url": "https://es.wikipedia.org/wiki/Faro_de_las_islas_Sisargas",
+     "ficha_luz": "[(L0 2 oc 2 8)2 veces]L0 2 oc 8 8",
+     "coincide_con_el_libro": true,
+     "uso": "segunda comprobación y años"
+    }
+   ],
+   "discrepancias": [],
+   "foto": {
+    "nombre": "sisargas",
+    "alt": "Las islas Sisargas vistas desde la costa de Malpica, con tojo en flor en primer plano",
+    "ig": 195,
+    "fecha": "2017-04-16"
+   }
+  },
+  {
+   "id": "nariga",
+   "nombre": "Punta Nariga",
+   "nombre_libro": "Punta Nariga",
+   "municipio": "Malpica de Bergantiños",
+   "lat": 43.32068,
+   "lon": -8.91007,
+   "x": 34934,
+   "y": 8770,
+   "posicion_osm_comprobada": {
+    "elemento": "way/840409639",
+    "nombre": "Faro de Punta Nariga",
+    "distancia_m": 2
+   },
+   "caracteristica": {
+    "ihm": "Fl(3+1)W 20s",
+    "es": "GpD(3+1) B 20s",
+    "tipo": "destellos",
+    "grupo": "3+1",
+    "color": "blanco",
+    "periodo_s": 20,
+    "fases_s": [
+     0.1,
+     2.4,
+     0.1,
+     2.4,
+     0.1,
+     7.4,
+     0.1,
+     7.4
+    ],
+    "destellos": 4,
+    "texto_es": "Tres destellos y uno, cada 20 segundos: tres destellos seguidos y, tras una pausa, uno más; luego vuelta a empezar.",
+    "desfase_s": 14.3,
+    "max_inicios_por_segundo": 0.4
+   },
+   "altura_torre_m": 39,
+   "altura_focal_m": 55,
+   "alcance_mn": 22,
+   "alcance_km": 40.7,
+   "descripcion_libro": "Torre cilíndrica de sillería sobre edificio",
+   "estado_libro": null,
+   "nota_estado": null,
+   "giratorio": false,
+   "giratorio_fuente": null,
+   "rumbo_mar_deg": 315,
+   "etiqueta": "w",
+   "anio": {
+    "texto": "Diseñado por César Portela. La casa dice «construido en 1995» (IG 102); la Wikipedia, que «entró en funcionamiento en 1998».",
+    "fuente": "ig+wikipedia"
+   },
+   "nota": null,
+   "casa": {
+    "linea_recta_km": 16.4,
+    "carretera": {
+     "km": 21.7,
+     "min_osrm": 37,
+     "hasta_m_del_faro": 40,
+     "origen_m_de_la_casa": 2
+    },
+    "metodo": "Línea recta: fórmula del haversine entre el lugar de Cances Grande (OSM) y la posición del Libro de Faros. Carretera: OSRM (router.project-osrm.org, perfil coche, sin tráfico), ruta calculada el 2026-10-25. Los minutos de OSRM (min_osrm) salen bastante más lentos que los que da la casa (Malpica: 14 frente a «diez minutos»; Nariga: 37 frente a «20 minutos», IG 23), así que la web enseña los km y no esos minutos."
+   },
+   "fuentes": [
+    {
+     "tipo": "oficial",
+     "nombre": "Libro de Faros y Señales de Niebla, Instituto Hidrográfico de la Marina (Armada). Costa NW, edición 07/02/2023",
+     "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+     "numero_nacional": "03735",
+     "numero_internacional": "D-1729",
+     "uso": "característica, fases, alturas, alcance, posición"
+    },
+    {
+     "tipo": "segunda",
+     "nombre": "Wikipedia en castellano: Faro de Punta Nariga",
+     "url": "https://es.wikipedia.org/wiki/Faro_de_Punta_Nariga",
+     "ficha_luz": "GpD(3+1) B 20s 55m 22M",
+     "coincide_con_el_libro": true,
+     "uso": "segunda comprobación y años"
+    }
+   ],
+   "discrepancias": [],
+   "foto": {
+    "nombre": "nariga",
+    "alt": "El faro de Punta Nariga con el sol poniéndose sobre el mar",
+    "ig": 23,
+    "fecha": "2023-08-13"
+   }
+  },
+  {
+   "id": "roncudo",
+   "nombre": "Punta Roncudo",
+   "nombre_libro": "Punta do Roncudo · RÍA DE CORME Y LAXE",
+   "municipio": "Ponteceso",
+   "lat": 43.27493,
+   "lon": -8.99052,
+   "x": 28397,
+   "y": 13829,
+   "posicion_osm_comprobada": {
+    "elemento": "way/842032876",
+    "nombre": "Faro do Roncudo",
+    "distancia_m": 2
+   },
+   "caracteristica": {
+    "ihm": "FlW 6s",
+    "es": "D B 6s",
+    "tipo": "destellos",
+    "grupo": null,
+    "color": "blanco",
+    "periodo_s": 6,
+    "fases_s": [
+     1,
+     5
+    ],
+    "destellos": 1,
+    "texto_es": "Un destello de un segundo cada 6 segundos.",
+    "desfase_s": 1.7,
+    "max_inicios_por_segundo": 0.167
+   },
+   "altura_torre_m": 11,
+   "altura_focal_m": 38,
+   "alcance_mn": 10,
+   "alcance_km": 18.5,
+   "descripcion_libro": "Torre cilíndrica blanca",
+   "estado_libro": null,
+   "nota_estado": null,
+   "giratorio": false,
+   "giratorio_fuente": null,
+   "rumbo_mar_deg": 275,
+   "etiqueta": "w",
+   "anio": null,
+   "nota": null,
+   "casa": {
+    "linea_recta_km": 21,
+    "carretera": {
+     "km": 27.9,
+     "min_osrm": 36,
+     "hasta_m_del_faro": 67,
+     "origen_m_de_la_casa": 2
+    },
+    "metodo": "Línea recta: fórmula del haversine entre el lugar de Cances Grande (OSM) y la posición del Libro de Faros. Carretera: OSRM (router.project-osrm.org, perfil coche, sin tráfico), ruta calculada el 2026-10-25. Los minutos de OSRM (min_osrm) salen bastante más lentos que los que da la casa (Malpica: 14 frente a «diez minutos»; Nariga: 37 frente a «20 minutos», IG 23), así que la web enseña los km y no esos minutos."
+   },
+   "fuentes": [
+    {
+     "tipo": "oficial",
+     "nombre": "Libro de Faros y Señales de Niebla, Instituto Hidrográfico de la Marina (Armada). Costa NW, edición 07/02/2023",
+     "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+     "numero_nacional": "03750",
+     "numero_internacional": "D-1730",
+     "uso": "característica, fases, alturas, alcance, posición"
+    },
+    {
+     "tipo": "segunda",
+     "nombre": "Wikipedia en castellano: Baliza de Punta Roncudo",
+     "url": "https://es.wikipedia.org/wiki/Baliza_de_Punta_Roncudo",
+     "ficha_luz": "Fl W 6s",
+     "coincide_con_el_libro": true,
+     "uso": "segunda comprobación y años"
+    }
+   ],
+   "discrepancias": [],
+   "foto": null
+  },
+  {
+   "id": "laxe",
+   "nombre": "Laxe (Punta Laxe)",
+   "nombre_libro": "Punta Laxe · RÍA DE CORME Y LAXE",
+   "municipio": "Laxe",
+   "lat": 43.23215,
+   "lon": -9.01123,
+   "x": 26714,
+   "y": 18560,
+   "posicion_osm_comprobada": {
+    "elemento": "way/659792435",
+    "nombre": "Faro de Laxe",
+    "distancia_m": 2
+   },
+   "caracteristica": {
+    "ihm": "Fl(5)W 20s",
+    "es": "GpD(5) B 20s",
+    "tipo": "destellos",
+    "grupo": "5",
+    "color": "blanco",
+    "periodo_s": 20,
+    "fases_s": [
+     0.1,
+     2.4,
+     0.1,
+     2.4,
+     0.1,
+     2.4,
+     0.1,
+     2.4,
+     0.1,
+     9.9
+    ],
+    "destellos": 5,
+    "texto_es": "Cinco destellos seguidos y una pausa larga, cada 20 segundos.",
+    "desfase_s": 1.9,
+    "max_inicios_por_segundo": 0.4
+   },
+   "altura_torre_m": 11,
+   "altura_focal_m": 66,
+   "alcance_mn": 20,
+   "alcance_km": 37,
+   "descripcion_libro": "Torreta cilíndrica blanca",
+   "estado_libro": null,
+   "nota_estado": null,
+   "giratorio": false,
+   "giratorio_fuente": null,
+   "rumbo_mar_deg": 0,
+   "etiqueta": "w",
+   "anio": null,
+   "nota": null,
+   "casa": {
+    "linea_recta_km": 22.5,
+    "carretera": {
+     "km": 29.1,
+     "min_osrm": 37,
+     "hasta_m_del_faro": 36,
+     "origen_m_de_la_casa": 2
+    },
+    "metodo": "Línea recta: fórmula del haversine entre el lugar de Cances Grande (OSM) y la posición del Libro de Faros. Carretera: OSRM (router.project-osrm.org, perfil coche, sin tráfico), ruta calculada el 2026-10-25. Los minutos de OSRM (min_osrm) salen bastante más lentos que los que da la casa (Malpica: 14 frente a «diez minutos»; Nariga: 37 frente a «20 minutos», IG 23), así que la web enseña los km y no esos minutos."
+   },
+   "fuentes": [
+    {
+     "tipo": "oficial",
+     "nombre": "Libro de Faros y Señales de Niebla, Instituto Hidrográfico de la Marina (Armada). Costa NW, edición 07/02/2023",
+     "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+     "numero_nacional": "03760",
+     "numero_internacional": "D-1732",
+     "uso": "característica, fases, alturas, alcance, posición"
+    },
+    {
+     "tipo": "segunda",
+     "nombre": "Wikipedia en castellano: Faro de Punta Lage",
+     "url": "https://es.wikipedia.org/wiki/Faro_de_Punta_Lage",
+     "ficha_luz": "[(L 0 1 oc 2 4)4 veces]L 0 1 oc 9 9",
+     "coincide_con_el_libro": true,
+     "uso": "segunda comprobación y años"
+    },
+    {
+     "tipo": "tercera",
+     "nombre": "turismo.gal, Faro de Laxe: «cinco destellos en 20 segundos», alcance de 22 millas",
+     "url": "https://www.turismo.gal/recurso/-/detalle/7541/faro-de-laxe",
+     "nota": "Coincide en los cinco destellos cada 20 s; el alcance de 22 M difiere del Libro (20 M): gana el Libro."
+    }
+   ],
+   "discrepancias": [
+    "turismo.gal da 22 millas de alcance; el Libro de Faros y la Wikipedia, 20. Gana el Libro de Faros."
+   ],
+   "foto": null
+  },
+  {
+   "id": "vilan",
+   "nombre": "Cabo Vilán",
+   "nombre_libro": "Cabo Villano",
+   "municipio": "Camariñas",
+   "lat": 43.16035,
+   "lon": -9.21138,
+   "x": 10451,
+   "y": 26499,
+   "posicion_osm_comprobada": {
+    "elemento": "way/152247693",
+    "nombre": "Faro do Cabo Vilán",
+    "distancia_m": 1
+   },
+   "caracteristica": {
+    "ihm": "Fl(2)W 15s",
+    "es": "GpD(2) B 15s",
+    "tipo": "destellos",
+    "grupo": "2",
+    "color": "blanco",
+    "periodo_s": 15,
+    "fases_s": [
+     0.5,
+     3.5,
+     0.5,
+     10.5
+    ],
+    "destellos": 2,
+    "texto_es": "Dos destellos blancos de medio segundo, cada 15 segundos.",
+    "desfase_s": 13.6,
+    "max_inicios_por_segundo": 0.25
+   },
+   "altura_torre_m": 25,
+   "altura_focal_m": 104,
+   "alcance_mn": 28,
+   "alcance_km": 51.9,
+   "descripcion_libro": "Torre octogonal de sillería cúpula gris",
+   "estado_libro": null,
+   "nota_estado": null,
+   "giratorio": false,
+   "giratorio_fuente": null,
+   "rumbo_mar_deg": 305,
+   "etiqueta": "e",
+   "anio": {
+    "texto": "El faro actual se encendió el 15 de enero de 1896; el primitivo, el 10 de julio de 1854.",
+    "fuente": "wikipedia"
+   },
+   "nota": null,
+   "casa": {
+    "linea_recta_km": 39.9,
+    "carretera": {
+     "km": 61.5,
+     "min_osrm": 59,
+     "hasta_m_del_faro": 259,
+     "origen_m_de_la_casa": 2
+    },
+    "metodo": "Línea recta: fórmula del haversine entre el lugar de Cances Grande (OSM) y la posición del Libro de Faros. Carretera: OSRM (router.project-osrm.org, perfil coche, sin tráfico), ruta calculada el 2026-10-25. Los minutos de OSRM (min_osrm) salen bastante más lentos que los que da la casa (Malpica: 14 frente a «diez minutos»; Nariga: 37 frente a «20 minutos», IG 23), así que la web enseña los km y no esos minutos."
+   },
+   "fuentes": [
+    {
+     "tipo": "oficial",
+     "nombre": "Libro de Faros y Señales de Niebla, Instituto Hidrográfico de la Marina (Armada). Costa NW, edición 07/02/2023",
+     "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+     "numero_nacional": "03800",
+     "numero_internacional": "D-1736",
+     "uso": "característica, fases, alturas, alcance, posición"
+    },
+    {
+     "tipo": "segunda",
+     "nombre": "Wikipedia en castellano: Faro de cabo Villano",
+     "url": "https://es.wikipedia.org/wiki/Faro_de_cabo_Villano",
+     "ficha_luz": "Fl(2) W 15s y L 0 5 oc 3 5 L 0 5 oc 10 5",
+     "coincide_con_el_libro": false,
+     "uso": "segunda comprobación y años"
+    }
+   ],
+   "discrepancias": [
+    "En la misma ficha de la Wikipedia el campo «Fases» dice «GpD (2) B 5 s» (5 s), que contradice su propia línea «Luz» (15 s). Gana el Libro de Faros: Fl(2)W 15s."
+   ],
+   "foto": null
+  },
+  {
+   "id": "barca",
+   "nombre": "Punta da Barca (Muxía)",
+   "nombre_libro": "Punta de la Barca · RÍA DE CAMARIÑAS",
+   "municipio": "Muxía",
+   "lat": 43.11305,
+   "lon": -9.2197,
+   "x": 9775,
+   "y": 31729,
+   "posicion_osm_comprobada": {
+    "elemento": "way/1305757350",
+    "nombre": "Faro da Barca",
+    "distancia_m": 3
+   },
+   "caracteristica": {
+    "ihm": "OcW 4s",
+    "es": "Oc B 4s",
+    "tipo": "ocultaciones",
+    "grupo": null,
+    "color": "blanco",
+    "periodo_s": 4,
+    "fases_s": [
+     3,
+     1
+    ],
+    "destellos": 1,
+    "texto_es": "Luz blanca fija que se apaga un segundo cada 4 segundos (una ocultación, no un destello).",
+    "desfase_s": 0.9,
+    "max_inicios_por_segundo": 0.25
+   },
+   "altura_torre_m": 11,
+   "altura_focal_m": 13,
+   "alcance_mn": 10,
+   "alcance_km": 18.5,
+   "descripcion_libro": "Torre troncocónica blanca",
+   "estado_libro": null,
+   "nota_estado": null,
+   "giratorio": false,
+   "giratorio_fuente": null,
+   "rumbo_mar_deg": 340,
+   "etiqueta": "e",
+   "anio": null,
+   "nota": null,
+   "casa": {
+    "linea_recta_km": 42.1,
+    "carretera": {
+     "km": 63.4,
+     "min_osrm": 57,
+     "hasta_m_del_faro": 63,
+     "origen_m_de_la_casa": 2
+    },
+    "metodo": "Línea recta: fórmula del haversine entre el lugar de Cances Grande (OSM) y la posición del Libro de Faros. Carretera: OSRM (router.project-osrm.org, perfil coche, sin tráfico), ruta calculada el 2026-10-25. Los minutos de OSRM (min_osrm) salen bastante más lentos que los que da la casa (Malpica: 14 frente a «diez minutos»; Nariga: 37 frente a «20 minutos», IG 23), así que la web enseña los km y no esos minutos."
+   },
+   "fuentes": [
+    {
+     "tipo": "oficial",
+     "nombre": "Libro de Faros y Señales de Niebla, Instituto Hidrográfico de la Marina (Armada). Costa NW, edición 07/02/2023",
+     "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+     "numero_nacional": "03810",
+     "numero_internacional": "D-1737",
+     "uso": "característica, fases, alturas, alcance, posición"
+    },
+    {
+     "tipo": "segunda",
+     "nombre": "Wikipedia en castellano: Baliza de Punta de la Barca",
+     "url": "https://es.wikipedia.org/wiki/Baliza_de_Punta_de_la_Barca",
+     "ficha_luz": "una lámpara emite un destello de luz blanca cada 4 segundos",
+     "coincide_con_el_libro": false,
+     "uso": "segunda comprobación y años"
+    }
+   ],
+   "discrepancias": [
+    "La Wikipedia dice «un destello de luz blanca cada 4 segundos»; el Libro de Faros la clasifica como luz de ocultaciones (OcW 4s): encendida 3 s y apagada 1 s. Gana el Libro de Faros."
+   ],
+   "foto": null
+  },
+  {
+   "id": "tourinan",
+   "nombre": "Cabo Touriñán",
+   "nombre_libro": "Cabo Toriñana",
+   "municipio": "Muxía",
+   "lat": 43.05337,
+   "lon": -9.29815,
+   "x": 3401,
+   "y": 38329,
+   "posicion_osm_comprobada": {
+    "elemento": "way/660132866",
+    "nombre": "Faro Novo de Cabo Touriñán",
+    "distancia_m": 2
+   },
+   "caracteristica": {
+    "ihm": "Fl(2+1)W 15s",
+    "es": "GpD(2+1) B 15s",
+    "tipo": "destellos",
+    "grupo": "2+1",
+    "color": "blanco",
+    "periodo_s": 15,
+    "fases_s": [
+     0.2,
+     2.2,
+     0.2,
+     6.1,
+     0.2,
+     6.1
+    ],
+    "destellos": 3,
+    "texto_es": "Dos destellos y uno, cada 15 segundos.",
+    "desfase_s": 0.5,
+    "max_inicios_por_segundo": 0.417
+   },
+   "altura_torre_m": 14,
+   "altura_focal_m": 65,
+   "alcance_mn": 24,
+   "alcance_km": 44.4,
+   "descripcion_libro": "Torre cilíndrica blanca",
+   "estado_libro": null,
+   "nota_estado": null,
+   "giratorio": false,
+   "giratorio_fuente": null,
+   "rumbo_mar_deg": 310,
+   "etiqueta": "e",
+   "anio": null,
+   "nota": "El faro más occidental de la España peninsular, según la Wikipedia.",
+   "casa": {
+    "linea_recta_km": 50.6,
+    "carretera": {
+     "km": 75.6,
+     "min_osrm": 78,
+     "hasta_m_del_faro": 39,
+     "origen_m_de_la_casa": 2
+    },
+    "metodo": "Línea recta: fórmula del haversine entre el lugar de Cances Grande (OSM) y la posición del Libro de Faros. Carretera: OSRM (router.project-osrm.org, perfil coche, sin tráfico), ruta calculada el 2026-10-25. Los minutos de OSRM (min_osrm) salen bastante más lentos que los que da la casa (Malpica: 14 frente a «diez minutos»; Nariga: 37 frente a «20 minutos», IG 23), así que la web enseña los km y no esos minutos."
+   },
+   "fuentes": [
+    {
+     "tipo": "oficial",
+     "nombre": "Libro de Faros y Señales de Niebla, Instituto Hidrográfico de la Marina (Armada). Costa NW, edición 07/02/2023",
+     "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+     "numero_nacional": "03880",
+     "numero_internacional": "D-1740",
+     "uso": "característica, fases, alturas, alcance, posición"
+    },
+    {
+     "tipo": "segunda",
+     "nombre": "Wikipedia en castellano: Faro Toriñana",
+     "url": "https://es.wikipedia.org/wiki/Faro_Tori%C3%B1ana",
+     "ficha_luz": "L 0 2 oc 2 2 L 0 2 oc 6 1 L 0 2 oc 6 1",
+     "coincide_con_el_libro": true,
+     "uso": "segunda comprobación y años"
+    }
+   ],
+   "discrepancias": [],
+   "foto": null
+  },
+  {
+   "id": "fisterra",
+   "nombre": "Cabo Fisterra",
+   "nombre_libro": "Cabo Finisterre",
+   "municipio": "Fisterra",
+   "lat": 42.88237,
+   "lon": -9.27193,
+   "x": 5531,
+   "y": 57237,
+   "posicion_osm_comprobada": {
+    "elemento": "way/463985750",
+    "nombre": "Faro de Finisterre",
+    "distancia_m": 6
+   },
+   "caracteristica": {
+    "ihm": "FlW 5s",
+    "es": "D B 5s",
+    "tipo": "destellos",
+    "grupo": null,
+    "color": "blanco",
+    "periodo_s": 5,
+    "fases_s": [
+     0.3,
+     4.7
+    ],
+    "destellos": 1,
+    "texto_es": "Un destello de 0,3 segundos cada 5 segundos.",
+    "desfase_s": 0.7,
+    "max_inicios_por_segundo": 0.2
+   },
+   "altura_torre_m": 17,
+   "altura_focal_m": 143,
+   "alcance_mn": 23,
+   "alcance_km": 42.6,
+   "descripcion_libro": "Torre octogonal de sillería y casa blanca",
+   "estado_libro": null,
+   "nota_estado": null,
+   "giratorio": true,
+   "giratorio_fuente": "Wikipedia en castellano: «La linterna … gira en el sentido contrario a las agujas del reloj y emite actualmente un destello de luz blanca cada 5 segundos».",
+   "rumbo_mar_deg": 185,
+   "etiqueta": "e",
+   "anio": {
+    "texto": "En funcionamiento desde 1853; electrificado en 1931.",
+    "fuente": "wikipedia"
+   },
+   "nota": null,
+   "casa": {
+    "linea_recta_km": 59.6,
+    "carretera": {
+     "km": 77,
+     "min_osrm": 71,
+     "hasta_m_del_faro": 253,
+     "origen_m_de_la_casa": 2
+    },
+    "metodo": "Línea recta: fórmula del haversine entre el lugar de Cances Grande (OSM) y la posición del Libro de Faros. Carretera: OSRM (router.project-osrm.org, perfil coche, sin tráfico), ruta calculada el 2026-10-25. Los minutos de OSRM (min_osrm) salen bastante más lentos que los que da la casa (Malpica: 14 frente a «diez minutos»; Nariga: 37 frente a «20 minutos», IG 23), así que la web enseña los km y no esos minutos."
+   },
+   "fuentes": [
+    {
+     "tipo": "oficial",
+     "nombre": "Libro de Faros y Señales de Niebla, Instituto Hidrográfico de la Marina (Armada). Costa NW, edición 07/02/2023",
+     "url": "https://armada.defensa.gob.es/ihm/XML/LF/LF_ESPANA_COSTA%20NW.xml",
+     "numero_nacional": "03900",
+     "numero_internacional": "D-1742",
+     "uso": "característica, fases, alturas, alcance, posición"
+    },
+    {
+     "tipo": "segunda",
+     "nombre": "Wikipedia en castellano: Faro de Finisterre",
+     "url": "https://es.wikipedia.org/wiki/Faro_de_Finisterre",
+     "ficha_luz": "Fl W 5s y L0,3 oc4,7",
+     "coincide_con_el_libro": false,
+     "uso": "segunda comprobación y años"
+    }
+   ],
+   "discrepancias": [
+    "Otras páginas (turismo, hoteles) dan 31 millas de alcance y 138 o 140 m de altura; el texto de la Wikipedia habla de «unos 120 m». El Libro de Faros y la ficha de la Wikipedia dicen 23 millas y 143 m de altura focal. Gana el Libro de Faros."
+   ],
+   "foto": null
+  }
+ ],
+ "camino_de_los_faros": {
+  "texto": "Son 8 etapas en 200km que recorren toda la costa desde Malpica hasta Finisterre",
+  "ig": 47,
+  "fecha_larga": "septiembre de 2021",
+  "nota": "O Camiño dos Faros: 8 etapas y 200 km de Malpica a Fisterra (IG 47)."
+ },
+ "dice_casa_nariga": {
+  "texto": "A 20 minutos de la casa se encuentra el Faro Nariga",
+  "ig": 23,
+  "fecha_larga": "agosto de 2023"
+ },
+ "recomendaciones": [
+  {
+   "id": "malpica",
+   "lugar": "Malpica y las islas Sisargas",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "Atardeceres con las Islas Sisargas de fondo",
+     "ig": 212,
+     "fecha": "2016-08-11",
+     "fecha_larga": "agosto de 2016",
+     "enlace": "https://www.instagram.com/p/BI-zdp7D_9F/"
+    },
+    {
+     "texto": "Playa de Malpica a 10 minutos de la Casa Entremuros",
+     "ig": 213,
+     "fecha": "2016-08-11",
+     "fecha_larga": "agosto de 2016",
+     "enlace": "https://www.instagram.com/p/BI-CAUQjIMk/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "malpica-sisargas",
+    "alt": "Las islas Sisargas desde la costa de Malpica",
+    "ig": 195,
+    "fecha": "2017-04-16",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "nariga",
+   "lugar": "Faro de Punta Nariga",
+   "faro": "nariga",
+   "frases": [
+    {
+     "texto": "lo más espectacular podras disfrutar de un atardecer que no olvidarás",
+     "ig": 102,
+     "fecha": "2020-08-04",
+     "fecha_larga": "agosto de 2020",
+     "enlace": "https://www.instagram.com/p/CDelt8cDRDo/"
+    }
+   ],
+   "dice_casa": {
+    "texto": "A 20 minutos de la casa",
+    "ig": 23,
+    "fecha_larga": "agosto de 2023"
+   },
+   "foto": {
+    "nombre": "nariga-torre",
+    "alt": "La torre del faro de Punta Nariga sobre su base triangular",
+    "ig": 102,
+    "fecha": "2020-08-04",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "seaia",
+   "lugar": "Playa de Seaia",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "esta playa cuenta con un merendero con mesas de piedra y barbacoa donde puedes ir a pasar el día y comer allí.",
+     "ig": 103,
+     "fecha": "2020-07-29",
+     "fecha_larga": "julio de 2020",
+     "enlace": "https://www.instagram.com/p/CDOOyILjKPk/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "seaia",
+    "alt": "La playa de Seaia con un sendero entre las dunas",
+    "ig": 103,
+    "fecha": "2020-07-29",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "seiruga",
+   "lugar": "Barizo y la playa de Seiruga",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "La playa de Seiruga se encuentra en Barizo en un entorno paisajístico espectacular, además tiene una ría para que los más pequeños se puedan bañar tranquilamente",
+     "ig": 106,
+     "fecha": "2020-07-21",
+     "fecha_larga": "julio de 2020",
+     "enlace": "https://www.instagram.com/p/CC6owjWD7i_/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "seiruga",
+    "alt": "La playa de Seiruga, con la ría que llega hasta la arena",
+    "ig": 106,
+    "fecha": "2020-07-21",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "san-miro",
+   "lugar": "San Miro",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "Para acceder a ella hay una pasarela de madera.",
+     "ig": 59,
+     "fecha": "2021-05-20",
+     "fecha_larga": "mayo de 2021",
+     "enlace": "https://www.instagram.com/p/CPFjqIZjUDD/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "san-miro",
+    "alt": "La pasarela de madera que baja a la playa de San Miro",
+    "ig": 59,
+    "fecha": "2021-05-20",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "insua",
+   "lugar": "Ensenada da Insua",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "un entorno espectacular",
+     "ig": 133,
+     "fecha": "2019-08-01",
+     "fecha_larga": "agosto de 2019",
+     "enlace": "https://www.instagram.com/p/B0nNO99iT6H/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "insua",
+    "alt": "La ensenada da Insua, con el agua en calma y el monte al fondo",
+    "ig": 133,
+    "fecha": "2019-08-01",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "laxe",
+   "lugar": "Laxe y la capilla de Santa Rosa",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "una ermita pequeña y muy bonita desde donde tenéis unas vistas espectaculares del pueblo",
+     "ig": 29,
+     "fecha": "2023-07-23",
+     "fecha_larga": "julio de 2023",
+     "enlace": "https://www.instagram.com/p/CvCKa4PMK0J/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "laxe",
+    "alt": "Laxe vista desde el mirador de Santa Rosa, con su puerto y su playa",
+    "ig": 29,
+    "fecha": "2023-07-23",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "monte-branco",
+   "lugar": "Mirador de Monte Branco",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "Y además desde aquí se ven unos atardeceres de ensueño",
+     "ig": 89,
+     "fecha": "2020-09-01",
+     "fecha_larga": "septiembre de 2020",
+     "enlace": "https://www.instagram.com/p/CEl1P4hDSH9/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "monte-branco",
+    "alt": "La entrada de la ría de Corme y Laxe desde el mirador de Monte Branco",
+    "ig": 89,
+    "fecha": "2020-09-01",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "refuxo",
+   "lugar": "Refuxo de Verdes",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "un paraje de gran belleza",
+     "ig": 121,
+     "fecha": "2020-06-07",
+     "fecha_larga": "junio de 2020",
+     "enlace": "https://www.instagram.com/p/CBIcXvJjo5J/"
+    }
+   ],
+   "dice_casa": {
+    "texto": "Desde Casa Entremuros hay solo 10 minutos en coche",
+    "ig": 121,
+    "fecha_larga": "junio de 2020"
+   },
+   "foto": {
+    "nombre": "refuxo",
+    "alt": "El río Anllóns a su paso por el Refuxo de Verdes, con la pasarela de madera",
+    "ig": 229,
+    "fecha": "2016-02-20",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "castriz",
+   "lugar": "Fervenza de Castriz",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "Esta ubicada en una preciosa zona con pasarelas de madera que rodean el río hasta la cascada y algunos molinos antiguos restaurados.",
+     "ig": 31,
+     "fecha": "2023-06-21",
+     "fecha_larga": "junio de 2023",
+     "enlace": "https://www.instagram.com/p/CtwJinpuo3x/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "castriz",
+    "alt": "Escaleras y pasarela junto a un molino restaurado en la fervenza de Castriz",
+    "ig": 31,
+    "fecha": "2023-06-21",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "caldeiras",
+   "lugar": "Caldeiras do Castro",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "El río Castro desciende formando pequeñas piscinas naturales donde puedes darte un baño y una cascada de 8 m.",
+     "ig": 52,
+     "fecha": "2021-06-27",
+     "fecha_larga": "junio de 2021",
+     "enlace": "https://www.instagram.com/p/CQnmFqPsFKd/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "caldeiras",
+    "alt": "La cascada y la poza de las Caldeiras do Castro",
+    "ig": 52,
+    "fecha": "2021-06-27",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "ruta-auga",
+   "lugar": "Ruta da Auga, en Zas",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "Ruta de unos 10 km circular, de dificultad fácil con muy pocos desniveles.",
+     "ig": 24,
+     "fecha": "2023-08-12",
+     "fecha_larga": "agosto de 2023",
+     "enlace": "https://www.instagram.com/p/Cv1t_9ROtkK/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "ruta-auga",
+    "alt": "Poste con las flechas de la Ruta da Auga de Zas",
+    "ig": 24,
+    "fecha": "2023-08-12",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "ponte-maceira",
+   "lugar": "Ponte Maceira",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "Ponte Maceira es un pueblo muy bonito y antiguo por donde pasa el Camino de Santiago, tiene un gran puente de piedra por donde cruza el rio Tambre y varios molinos.",
+     "ig": 143,
+     "fecha": "2019-05-14",
+     "fecha_larga": "mayo de 2019",
+     "enlace": "https://www.instagram.com/p/BxcLr99Cw5M/"
+    }
+   ],
+   "dice_casa": {
+    "texto": "Desde nuestra casa llegas en 40 minutos",
+    "ig": 143,
+    "fecha_larga": "mayo de 2019"
+   },
+   "foto": {
+    "nombre": "ponte-maceira",
+    "alt": "El puente de piedra de Ponte Maceira sobre el río Tambre",
+    "ig": 143,
+    "fecha": "2019-05-14",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "pindo",
+   "lugar": "Monte Pindo",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "A los amantes del senderismo no os podéis perder la ruta del Monte Pindo",
+     "ig": 61,
+     "fecha": "2021-05-14",
+     "fecha_larga": "mayo de 2021",
+     "enlace": "https://www.instagram.com/p/CO3KLW0D_XA/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "pindo",
+    "alt": "Vista desde el Monte Pindo sobre la playa de Carnota",
+    "ig": 61,
+    "fecha": "2021-05-14",
+    "credito": "Foto de @casaentremuros"
+   }
+  },
+  {
+   "id": "ezaro",
+   "lugar": "Ézaro",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "Si vienes a Galicia tienes que visitar la @cascada_de_ezaro",
+     "ig": 181,
+     "fecha": "2017-10-01",
+     "fecha_larga": "octubre de 2017",
+     "enlace": "https://www.instagram.com/p/BZtJi05jleu/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": null
+  },
+  {
+   "id": "buno",
+   "lugar": "Buño y su olería",
+   "faro": null,
+   "frases": [
+    {
+     "texto": "La artesanía en Galicia ocupa un lugar muy importante",
+     "ig": 100,
+     "fecha": "2020-08-07",
+     "fecha_larga": "agosto de 2020",
+     "enlace": "https://www.instagram.com/p/CDmXay5jPLR/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": null
+  },
+  {
+   "id": "fisterra",
+   "lugar": "Fisterra",
+   "faro": "fisterra",
+   "frases": [
+    {
+     "texto": "una bota de peregrino sobre una roca en el mismo Cabo Finisterre",
+     "ig": 177,
+     "fecha": "2017-10-14",
+     "fecha_larga": "octubre de 2017",
+     "enlace": "https://www.instagram.com/p/BaOQCinDYyX/"
+    }
+   ],
+   "dice_casa": null,
+   "foto": {
+    "nombre": "fisterra-bota",
+    "alt": "La bota de bronce del peregrino sobre una roca en Fisterra",
+    "ig": 177,
+    "fecha": "2017-10-14",
+    "credito": "Foto de @casaentremuros"
+   }
+  }
+ ],
+ "atribucion": "Costa y pueblos: © colaboradores de OpenStreetMap (ODbL). Característica de los faros: Libro de Faros, Instituto Hidrográfico de la Marina (edición 07/02/2023).",
+ "destellos_max_por_segundo": 3,
+ "destellos_max_global_por_segundo": 3
+}

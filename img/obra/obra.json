@@ -1,0 +1,1009 @@
+{
+ "generado": "2026-10-25",
+ "imagenes": {
+  "fachada-1": {
+   "anchos": [
+    441,
+    588
+   ],
+   "ancho": 588,
+   "alto": 552,
+   "origen": "pruebas/obra-trabajo/fachada-0116_1.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "fachada-2": {
+   "anchos": [
+    441,
+    588
+   ],
+   "ancho": 588,
+   "alto": 552,
+   "origen": "pruebas/obra-trabajo/fachada-0116_2.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "fachada-3": {
+   "anchos": [
+    441,
+    588
+   ],
+   "ancho": 588,
+   "alto": 552,
+   "origen": "pruebas/obra-trabajo/fachada-0116_3.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "fachada-4": {
+   "anchos": [
+    441,
+    588
+   ],
+   "ancho": 588,
+   "alto": 552,
+   "origen": "pruebas/obra-trabajo/fachada-0116_4.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "fachada-5": {
+   "anchos": [
+    441,
+    588
+   ],
+   "ancho": 588,
+   "alto": 552,
+   "origen": "pruebas/obra-trabajo/fachada-0116_5.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "comedor-antes": {
+   "anchos": [
+    623,
+    831
+   ],
+   "ancho": 831,
+   "alto": 537,
+   "origen": "pruebas/obra-trabajo/comedor-0081_3.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "comedor-despues": {
+   "anchos": [
+    623,
+    831
+   ],
+   "ancho": 831,
+   "alto": 537,
+   "origen": "pruebas/obra-trabajo/comedor-0081_4.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "bano-antes": {
+   "anchos": [
+    491,
+    655
+   ],
+   "ancho": 655,
+   "alto": 599,
+   "origen": "pruebas/obra-trabajo/bano-0145_5.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "bano-despues": {
+   "anchos": [
+    491,
+    655
+   ],
+   "ancho": 655,
+   "alto": 599,
+   "origen": "pruebas/obra-trabajo/bano-0145_1.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "casita-antes": {
+   "anchos": [
+    351,
+    468
+   ],
+   "ancho": 468,
+   "alto": 517,
+   "origen": "pruebas/obra-trabajo/casita-0113_3.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "casita-obra": {
+   "anchos": [
+    351,
+    468
+   ],
+   "ancho": 468,
+   "alto": 517,
+   "origen": "pruebas/obra-trabajo/casita-0159_3.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "casita-despues": {
+   "anchos": [
+    351,
+    468
+   ],
+   "ancho": 468,
+   "alto": 517,
+   "origen": "pruebas/obra-trabajo/casita-0113_5.png",
+   "recorte": null,
+   "alineada": true
+  },
+  "cocina-antes": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 719,
+   "origen": "ref/fotos/instagram/0081_CFWlrYTjrjr_1.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "cocina-despues": {
+   "anchos": [
+    480,
+    800,
+    1025
+   ],
+   "ancho": 1025,
+   "alto": 683,
+   "origen": "ref/fotos/instagram/0081_CFWlrYTjrjr_2.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "cocina-horno": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 724,
+   "origen": "ref/fotos/instagram/0104_CDI_jIejp0K_3.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "alpendre-antes": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 538,
+   "origen": "ref/fotos/instagram/0054_CQQTigNjbu1_4.jpg",
+   "recorte": [
+    0,
+    0,
+    1080,
+    538
+   ],
+   "alineada": false
+  },
+  "alpendre-obra-1": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 538,
+   "origen": "ref/fotos/instagram/0054_CQQTigNjbu1_3.jpg",
+   "recorte": [
+    0,
+    0,
+    1080,
+    538
+   ],
+   "alineada": false
+  },
+  "alpendre-obra-2": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 538,
+   "origen": "ref/fotos/instagram/0054_CQQTigNjbu1_3.jpg",
+   "recorte": [
+    0,
+    542,
+    1080,
+    538
+   ],
+   "alineada": false
+  },
+  "alpendre-despues": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 538,
+   "origen": "ref/fotos/instagram/0054_CQQTigNjbu1_4.jpg",
+   "recorte": [
+    0,
+    542,
+    1080,
+    538
+   ],
+   "alineada": false
+  },
+  "piscina-antes": {
+   "anchos": [
+    480,
+    500
+   ],
+   "ancho": 500,
+   "alto": 375,
+   "origen": "ref/fotos/instagram/0057_CPakUe3jjk4_1.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "piscina-despues": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 810,
+   "origen": "ref/fotos/instagram/0057_CPakUe3jjk4_2.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "fervenza-antes": {
+   "anchos": [
+    474
+   ],
+   "ancho": 474,
+   "alto": 474,
+   "origen": "ref/fotos/instagram/0150_Bw-TdWHHnuJ_1.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "fervenza-obra-1": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1081,
+   "origen": "ref/fotos/instagram/0150_Bw-TdWHHnuJ_2.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "fervenza-obra-2": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1081,
+   "origen": "ref/fotos/instagram/0150_Bw-TdWHHnuJ_3.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "fervenza-despues": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1081,
+   "origen": "ref/fotos/instagram/0150_Bw-TdWHHnuJ_4.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "anllons-antes": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0105_CC9N1WljfAb_2.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "anllons-despues": {
+   "anchos": [
+    480,
+    791
+   ],
+   "ancho": 791,
+   "alto": 791,
+   "origen": "ref/fotos/instagram/0105_CC9N1WljfAb_1.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "jardin-antes": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0158_BvoBc9WnQ31_1.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "jardin-obra": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0158_BvoBc9WnQ31_2.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "jardin-despues": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0158_BvoBc9WnQ31_4.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "obras-2": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0163_BvMGTsrnTUQ_2.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "obras-3": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0163_BvMGTsrnTUQ_3.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "tocador-antes": {
+   "anchos": [
+    480,
+    747
+   ],
+   "ancho": 747,
+   "alto": 747,
+   "origen": "ref/fotos/instagram/0156_BwrScFnHEr0_2.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "tocador-despues": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0156_BwrScFnHEr0_1.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "mesilla": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0146_BxNyxxPH4eZ_1.jpg",
+   "recorte": null,
+   "alineada": false
+  },
+  "cabecero": {
+   "anchos": [
+    480,
+    800,
+    1080
+   ],
+   "ancho": 1080,
+   "alto": 1080,
+   "origen": "ref/fotos/instagram/0160_BvTiF9SnTUK_1.jpg",
+   "recorte": null,
+   "alineada": false
+  }
+ },
+ "alineacion": {
+  "fachada": {
+   "ref": "0116_3",
+   "recorte": [
+    296,
+    100,
+    884,
+    652
+   ],
+   "salida": [
+    588,
+    552
+   ],
+   "fotos": {
+    "0116_1": {
+     "metodo": "puntos",
+     "puntos": 7,
+     "rms": 2.52,
+     "dejar_uno_fuera_rms": 7.07,
+     "prueba_x_px": [
+      0.7,
+      10.1,
+      12
+     ],
+     "prueba_x_rms": 9.04,
+     "escala_min": 0.704,
+     "escala_max": 1.086,
+     "huecos_px": 6659
+    },
+    "0116_2": {
+     "metodo": "sift",
+     "emparejamientos": 860,
+     "buenos": 587,
+     "rms": 0.81,
+     "cruzada_rms": 0.77,
+     "escala_min": 0.906,
+     "escala_max": 1.047,
+     "huecos_px": 0
+    },
+    "0116_3": {
+     "metodo": "ref",
+     "escala_min": 1,
+     "escala_max": 1,
+     "huecos_px": 0
+    },
+    "0116_4": {
+     "metodo": "sift",
+     "emparejamientos": 95,
+     "buenos": 21,
+     "rms": 1.37,
+     "cruzada_rms": 1.49,
+     "escala_min": 1.841,
+     "escala_max": 2.93,
+     "huecos_px": 1010
+    },
+    "0116_5": {
+     "metodo": "sift",
+     "emparejamientos": 304,
+     "buenos": 160,
+     "rms": 0.73,
+     "cruzada_rms": 0.76,
+     "escala_min": 0.948,
+     "escala_max": 1.006,
+     "huecos_px": 0
+    }
+   }
+  },
+  "comedor": {
+   "ref": "0081_4",
+   "recorte": [
+    160,
+    122,
+    991,
+    659
+   ],
+   "salida": [
+    831,
+    537
+   ],
+   "fotos": {
+    "0081_3": {
+     "metodo": "semejanza",
+     "puntos": 4,
+     "rms": 2.07,
+     "escala_min": 0.923,
+     "escala_max": 0.923,
+     "huecos_px": 0
+    },
+    "0081_4": {
+     "metodo": "ref",
+     "escala_min": 1,
+     "escala_max": 1,
+     "huecos_px": 0
+    }
+   }
+  },
+  "bano": {
+   "ref": "0145_5",
+   "recorte": [
+    0,
+    0,
+    655,
+    599
+   ],
+   "salida": [
+    655,
+    599
+   ],
+   "fotos": {
+    "0145_5": {
+     "metodo": "ref",
+     "escala_min": 1,
+     "escala_max": 1,
+     "huecos_px": 0
+    },
+    "0145_1": {
+     "metodo": "afin",
+     "puntos": 4,
+     "rms": 0,
+     "escala_min": 0.683,
+     "escala_max": 0.683,
+     "huecos_px": 0
+    }
+   }
+  },
+  "casita": {
+   "ref": "0113_5",
+   "recorte": [
+    127,
+    46,
+    595,
+    563
+   ],
+   "salida": [
+    468,
+    517
+   ],
+   "fotos": {
+    "0113_3": {
+     "metodo": "puntos",
+     "puntos": 10,
+     "rms": 3.37,
+     "dejar_uno_fuera_rms": 5.03,
+     "escala_min": 0.727,
+     "escala_max": 1.345,
+     "huecos_px": 0
+    },
+    "0159_3": {
+     "metodo": "puntos",
+     "puntos": 10,
+     "rms": 4.07,
+     "dejar_uno_fuera_rms": 6.19,
+     "escala_min": 0.445,
+     "escala_max": 0.554,
+     "huecos_px": 0
+    },
+    "0113_5": {
+     "metodo": "ref",
+     "escala_min": 1,
+     "escala_max": 1,
+     "huecos_px": 0
+    }
+   }
+  }
+ },
+ "fachada": {
+  "titulo": "La fachada en cinco tiempos",
+  "intro": "Cinco fotos de la misma fachada, hechas desde casi el mismo sitio y alineadas para que la casa se rehaga en el mismo encuadre mientras bajas.",
+  "nota": "La casa no dice en qué año se hizo cada foto. Solo dice que la cuarta es la de «cuando la cogimos».",
+  "fuente": "Fotos del carrusel de Instagram del 2 de julio de 2020 (IG 116), en el orden en que Mónica las publicó.",
+  "tiempos": [
+   {
+    "foto": "fachada-1",
+    "etiqueta": "Primero",
+    "titulo": "Sin tejado y con un coche rojo delante",
+    "texto": "Los muros revocados y agrietados, sin tejado, con montones blancos de material delante de la puerta.",
+    "alt": "Antes, tiempo 1 de 5: la fachada en obra, con los muros revocados y agrietados, sin tejado, montones blancos de material y un coche rojo delante."
+   },
+   {
+    "foto": "fachada-2",
+    "etiqueta": "Segundo",
+    "titulo": "La piedra al aire",
+    "texto": "El revoco quitado, el tejado nuevo y las ventanas y la puerta puestas. Un poste tapa parte de la foto.",
+    "alt": "Antes, tiempo 2 de 5: la fachada con la piedra vista, el tejado nuevo, ventanas blancas y puerta de madera; un poste cruza la foto por la derecha."
+   },
+   {
+    "foto": "fachada-3",
+    "etiqueta": "Tercero",
+    "titulo": "La entrada con tejadillo",
+    "texto": "El tejadillo sobre la puerta, la escalera con barandilla y el césped delante, con la grava del patio.",
+    "alt": "Antes, tiempo 3 de 5: la fachada de piedra con un tejadillo sobre la puerta, escalera con barandilla de hierro, césped y el patio de grava."
+   },
+   {
+    "foto": "fachada-4",
+    "etiqueta": "Cuarto",
+    "titulo": "Cuando la cogimos",
+    "texto": "«cuando la cogimos era como en la foto 4», dice Mónica. Es la más pequeña de las cinco y se ve más blanda.",
+    "alt": "Antes, tiempo 4 de 5, el de cuando cogieron la casa: la fachada de piedra con ventanas blancas, el tejadillo de la puerta y una sombrilla verde; el patio ya está enlosado."
+   },
+   {
+    "foto": "fachada-5",
+    "etiqueta": "Quinto",
+    "titulo": "Ventanas de madera y balcones",
+    "texto": "La piedra limpia, las ventanas de madera con balcón de hierro y el patio enlosado. Es el último tiempo de la serie.",
+    "alt": "Después, tiempo 5 de 5, el último de la serie: la fachada de piedra limpia con ventanas de madera y balcones de hierro, tejadillo sobre la puerta y el patio enlosado."
+   }
+  ]
+ },
+ "paradas": [
+  {
+   "id": "2010",
+   "etiqueta": "2010",
+   "sub": "Marzo",
+   "titulo": "Se meten en la aventura",
+   "texto": "La casa ya llevaba trece años funcionando como turismo rural cuando la cogieron. Después le hicieron «muchos cambios».",
+   "cita": {
+    "texto": "Este año en Marzo hizo 10 años que nos metimos en esta aventura del turismo rural sin contar y aunque los comienzos nunca son fáciles ahora estamos muy contentos.",
+    "fuente": "IG 116 · 2 de julio de 2020"
+   },
+   "figuras": []
+  },
+  {
+   "id": "2011",
+   "etiqueta": "2011",
+   "sub": "Año 2011",
+   "titulo": "Antes de las reformas",
+   "texto": "Lo cuenta Mónica en un vídeo que publicó en diciembre de 2025.",
+   "cita": {
+    "texto": "Aquí empezó el viaje de nuestra casa rural, antes de las reformas, antes de los sueños hechos realidad… cada rincón está lleno de historia y se transformó sin perder su esencia",
+    "fuente": "IG 5 (vídeo) · 18 de diciembre de 2025"
+   },
+   "figuras": []
+  },
+  {
+   "id": "sin-ano",
+   "etiqueta": "Sin año",
+   "sub": "La casa no dice cuándo",
+   "titulo": "Lo primero: picar las paredes",
+   "texto": "Estas reformas las cuenta Mónica sin decir el año. En la cocina, lo primero fue picar la pared hasta dejar la piedra a la vista, y apareció un horno antiguo que estaba tapado.",
+   "cita": {
+    "texto": "En la restauración lo primero que hicimos fue: Picar la pared toda y dejar al descubierto la piedra tan bonita que tiene. El horno antiguo estaba tapado y lo descubrimos y la sorpresa fue que estaba intacto por dentro, es precioso.",
+    "fuente": "IG 81 · 20 de septiembre de 2020"
+   },
+   "figuras": [
+    {
+     "id": "horno",
+     "tipo": "picar",
+     "capa": "yeso",
+     "fotos": [
+      "cocina-horno"
+     ],
+     "ultimo": [
+      0.581,
+      0.566
+     ],
+     "titulo": "El horno antiguo",
+     "pie": "El yeso que se desprende es un dibujo, no una foto: no hay foto del horno tapado. El horno es el de la foto de Mónica.",
+     "cita": {
+      "texto": "conserva el horno antiguo que me encanta",
+      "fuente": "IG 104 · 27 de julio de 2020"
+     },
+     "alts": [
+      "Después: el horno antiguo en su hueco de piedra, con una pieza de barro dentro, y la pared de piedra a su alrededor."
+     ]
+    },
+    {
+     "id": "cocina",
+     "tipo": "tira",
+     "titulo": "La cocina",
+     "pie": "Las dos fotos están hechas desde sitios distintos de la cocina, así que no se superponen: van lado a lado.",
+     "fotos": [
+      {
+       "nombre": "cocina-antes",
+       "etiqueta": "Antes",
+       "alt": "Antes: la cocina con las paredes verdes, armarios de madera, una campana blanca sobre la isla y el suelo de baldosa roja."
+      },
+      {
+       "nombre": "cocina-despues",
+       "etiqueta": "Después",
+       "alt": "Después: la cocina con la pared de piedra a la vista, vigas en el techo, la isla blanca con dos taburetes y el horno antiguo en la pared."
+      }
+     ]
+    },
+    {
+     "id": "comedor",
+     "tipo": "picar",
+     "capa": "foto",
+     "fotos": [
+      "comedor-antes",
+      "comedor-despues"
+     ],
+     "etiquetas": [
+      "Antes",
+      "Después"
+     ],
+     "titulo": "El comedor de la cocina",
+     "pie": "Las fotos se han alineado por la ventana, que es lo único que coincide en las dos; el resto de la sala se ve distinto porque la segunda foto está hecha desde otro lado.",
+     "cita": {
+      "texto": "Esta ha sido la evolución de la cocina en la zona de comedor, ¿Que os parece como ha ido cambiando?",
+      "fuente": "IG 32 · 19 de junio de 2023"
+     },
+     "alts": [
+      "Antes: el comedor de la cocina con la pared verde, la ventana con marco de piedra y una mesa de madera con sillas.",
+      "Después: el mismo comedor con la pared de piedra a la vista, la ventana con marco de madera, vigas en el techo y la mesa puesta."
+     ]
+    },
+    {
+     "id": "alpendre",
+     "tipo": "tira",
+     "titulo": "El alpendre",
+     "pie": "Las cuatro fotos salen de dos collages de Mónica, partidos por la mitad; el sitio desde el que se hicieron no es exactamente el mismo.",
+     "cita": {
+      "texto": "En la reforma le cambiamos el tejado y las maderas ya que estaba muy deteriorado y limpiamos la piedra.",
+      "fuente": "IG 54 · 18 de junio de 2021"
+     },
+     "fotos": [
+      {
+       "nombre": "alpendre-antes",
+       "etiqueta": "Antes",
+       "alt": "Antes: el alpendre con el tejado viejo y el interior a oscuras, hierba delante y un poste de la luz."
+      },
+      {
+       "nombre": "alpendre-obra-1",
+       "etiqueta": "Durante",
+       "alt": "Durante: el alpendre en obra, con los muros de piedra a medio hacer y sin tejado."
+      },
+      {
+       "nombre": "alpendre-obra-2",
+       "etiqueta": "Durante",
+       "alt": "Durante: las vigas nuevas del tejado puestas sobre los muros del alpendre."
+      },
+      {
+       "nombre": "alpendre-despues",
+       "etiqueta": "Después",
+       "alt": "Después: el alpendre con el tejado nuevo de teja y la piedra limpia."
+      }
+     ]
+    },
+    {
+     "id": "piscina",
+     "tipo": "tira",
+     "titulo": "La piscina y el porche",
+     "pie": "Fotos hechas desde sitios distintos: van lado a lado.",
+     "cita": {
+      "texto": "En las mejoras de la casa otra zona que rehabilitamos fue la de la piscina y el porche, os enseño el antes y después",
+      "fuente": "IG 57 · 28 de mayo de 2021"
+     },
+     "fotos": [
+      {
+       "nombre": "piscina-antes",
+       "etiqueta": "Antes",
+       "alt": "Antes: la casa y los edificios de piedra con tejados viejos, y la piscina al fondo a la derecha. Foto pequeña, de 500 píxeles."
+      },
+      {
+       "nombre": "piscina-despues",
+       "etiqueta": "Después",
+       "alt": "Después: el porche nuevo, con un tejado grande, junto a la piscina rodeada de una valla de madera."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "2019",
+   "etiqueta": "2019",
+   "sub": "Cerrados por obras",
+   "titulo": "Varios meses de obras",
+   "texto": "A principios de 2019 la casa estuvo cerrada por obras. Las fotos de esta parada las enseñó Mónica ese año o al siguiente.",
+   "cita": {
+    "texto": "llevamos varios meses cerrados por obras y mejoras",
+    "fuente": "IG 163 · 19 de marzo de 2019"
+   },
+   "figuras": [
+    {
+     "id": "obras",
+     "tipo": "tira",
+     "titulo": "Durante las obras",
+     "pie": "Dos de las tres fotos del post de marzo de 2019; la tercera es la misma del muro abierto que sale en la habitación Fervenza de San Paio.",
+     "fotos": [
+      {
+       "nombre": "obras-2",
+       "etiqueta": "Obra",
+       "alt": "Durante las obras: un hueco abierto en un muro de piedra, con azulejos al lado, cables y escombro en el suelo."
+      },
+      {
+       "nombre": "obras-3",
+       "etiqueta": "Obra",
+       "alt": "Durante las obras: tierra removida en el jardín, con la cabaña de paja al fondo, una pequeña excavadora amarilla y una furgoneta blanca."
+      }
+     ]
+    },
+    {
+     "id": "casita",
+     "tipo": "picar",
+     "capa": "foto",
+     "fotos": [
+      "casita-antes",
+      "casita-obra",
+      "casita-despues"
+     ],
+     "etiquetas": [
+      "Antes",
+      "Durante",
+      "Después"
+     ],
+     "titulo": "La casita de la piscina, antes gallinero",
+     "pie": "Tres fotos alineadas por las ventanas y los faroles de la pared.",
+     "cita": {
+      "texto": "la casita de la piscina que antiguamente era el galliñero",
+      "fuente": "IG 113 · 8 de julio de 2020"
+     },
+     "cita2": {
+      "texto": "la hemos reformado toda completamente y además ahora una de las habitaciones es adaptada",
+      "fuente": "IG 159 · 28 de marzo de 2019"
+     },
+     "alts": [
+      "Antes: la casita de la piscina, el antiguo gallinero, con las paredes de color ocre, dos ventanas con marco de piedra y el porche en el centro.",
+      "Durante: la casita con las paredes ya blancas y las ventanas y puertas nuevas, con restos de obra delante.",
+      "Después: la casita blanca con ventanas y puerta de madera, el farol junto a la puerta y el patio enlosado."
+     ]
+    },
+    {
+     "id": "anllons",
+     "tipo": "tira",
+     "titulo": "La habitación Río Anllóns",
+     "pie": "Las dos fotos están hechas desde distinto sitio y con distinta lente: no encajan y van lado a lado.",
+     "cita": {
+      "texto": "os enseño el cambio que le dimos el año pasado, picamos la piedra de las paredes que es preciosa y la puse en tonos neutros que le da más luz y amplitud",
+      "fuente": "IG 105 · 22 de julio de 2020"
+     },
+     "fotos": [
+      {
+       "nombre": "anllons-antes",
+       "etiqueta": "Antes",
+       "alt": "Antes: la habitación Río Anllóns con las paredes de color marrón, el cabecero blanco y una ventana a la derecha."
+      },
+      {
+       "nombre": "anllons-despues",
+       "etiqueta": "Después",
+       "alt": "Después: la habitación Río Anllóns con la pared de piedra a la vista, una cama con colcha beige y tonos neutros."
+      }
+     ]
+    },
+    {
+     "id": "bano",
+     "tipo": "picar",
+     "capa": "foto",
+     "fotos": [
+      "bano-antes",
+      "bano-despues"
+     ],
+     "etiquetas": [
+      "Antes",
+      "Después"
+     ],
+     "titulo": "El baño de Río Anllóns",
+     "pie": "Alineadas por la ventana. Los sanitarios y el radiador son otros, y la foto de después está hecha desde un poco más cerca.",
+     "cita": {
+      "texto": "El baño de la habitación Río Anllóns en su reforma restauramos una pared que tenía de piedra, los revestimientos en tonos neutros para que aportara luminosidad y además ahora cuenta con bañera para los que les guste un baño relajante y una amplia ducha.",
+      "fuente": "IG 145 · 10 de mayo de 2019"
+     },
+     "alts": [
+      "Antes: el baño con azulejos blancos y una cenefa naranja, una ventana de madera sobre el lavabo, un radiador y una cortina naranja.",
+      "Después: el mismo baño con la pared de piedra restaurada, la ventana de madera con marco de granito, un lavabo de piedra y una bañera exenta."
+     ]
+    },
+    {
+     "id": "fervenza",
+     "tipo": "tira",
+     "titulo": "La habitación Fervenza de San Paio",
+     "pie": "Antes, durante y después, como las enseñó Mónica. La foto del antes es la más pequeña de todas.",
+     "cita": {
+      "texto": "en su transformación picamos la pared que tiene de piedra, pintamos en un color neutro y le dimos un toque con muebles antiguos y restaurados.",
+      "fuente": "IG 99 · 10 de agosto de 2020"
+     },
+     "fotos": [
+      {
+       "nombre": "fervenza-antes",
+       "etiqueta": "Antes",
+       "alt": "Antes: la habitación Fervenza de San Paio con las paredes amarillas, dos camas y una ventana con contraventanas de madera."
+      },
+      {
+       "nombre": "fervenza-obra-1",
+       "etiqueta": "Durante",
+       "alt": "Durante: el muro de piedra al descubierto, con un hueco abierto y una escalera de tijera."
+      },
+      {
+       "nombre": "fervenza-obra-2",
+       "etiqueta": "Durante",
+       "alt": "Durante: la ventana con marco de granito y, debajo, la pared todavía con yeso verde."
+      },
+      {
+       "nombre": "fervenza-despues",
+       "etiqueta": "Después",
+       "alt": "Después: la pared de piedra picada con un espejo de marco de madera, y las dos camas."
+      }
+     ]
+    },
+    {
+     "id": "jardin",
+     "tipo": "tira",
+     "titulo": "El jardín",
+     "pie": "Del terreno de tierra y piedras al césped. Hecho, según Mónica, con el trabajo de Jardinería Varan.",
+     "cita": {
+      "texto": "me encanta el cambio de nuestro jardín gracias al trabajo de Jardineria Varan",
+      "fuente": "IG 144 · 12 de mayo de 2019"
+     },
+     "fotos": [
+      {
+       "nombre": "jardin-antes",
+       "etiqueta": "Antes",
+       "alt": "Antes: el terreno del jardín, de tierra y piedras, con un muro curvo al fondo y el tejado de una casa."
+      },
+      {
+       "nombre": "jardin-obra",
+       "etiqueta": "Durante",
+       "alt": "Durante: la tierra removida y un borde de piedra que dibuja una curva."
+      },
+      {
+       "nombre": "jardin-despues",
+       "etiqueta": "Después",
+       "alt": "Después: el mismo rincón con césped, bolas de boj y una valla de madera sobre el muro."
+      }
+     ]
+    },
+    {
+     "id": "muebles",
+     "tipo": "tira",
+     "titulo": "Los muebles que restaura Mónica",
+     "pie": "Dos de las fotos son collages hechos por ella, con su «Antes» y su «Después» escritos encima.",
+     "cita": {
+      "texto": "Soy una apasionada de la decoración y me encanta buscar ideas",
+      "fuente": "IG 160 · 22 de marzo de 2019"
+     },
+     "fotos": [
+      {
+       "nombre": "tocador-antes",
+       "etiqueta": "Antes",
+       "alt": "Antes: un tocador de madera oscura con espejo de tres hojas, sin pintar."
+      },
+      {
+       "nombre": "tocador-despues",
+       "etiqueta": "Después",
+       "alt": "Después: el mismo tocador pintado de blanco, con su taburete."
+      },
+      {
+       "nombre": "mesilla",
+       "etiqueta": "",
+       "alt": "Collage de Mónica: a la izquierda, «Antes», una mesilla de madera oscura con cuatro cajones; a la derecha, «Después», la misma mesilla pintada de blanco con la tapa natural."
+      },
+      {
+       "nombre": "cabecero",
+       "etiqueta": "",
+       "alt": "Collage de Mónica: arriba, «Después», un cabecero blanco con el respaldo tapizado; abajo, «Antes», el mismo cabecero de madera."
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "hoy",
+   "etiqueta": "Hoy",
+   "sub": "Se alquila entera",
+   "titulo": "La casa, entera",
+   "texto": "Hoy se alquila entera: la casa grande y la casita de la piscina, seis habitaciones con baño.",
+   "cita": null,
+   "figuras": []
+  }
+ ]
+}

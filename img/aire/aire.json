@@ -1,0 +1,320 @@
+{
+ "fuente": "PNOA (c) Instituto Geografico Nacional de Espana, CC BY 4.0 · https://www.ign.es/wms-inspire/pnoa-ma · LAYERS=OI.OrthoimageCoverage · EPSG:4326 · leido el 2026-10-25",
+ "centro": {
+  "lat": 43.247102,
+  "lon": -8.73695
+ },
+ "casa": {
+  "lat": 43.247028,
+  "lon": -8.736777
+ },
+ "metros_por_grado": {
+  "lat": 111097.521,
+  "lon": 81213.516
+ },
+ "niveles": [
+  {
+   "nivel": 0,
+   "ancho_m": 160,
+   "px": 2000,
+   "m_por_px": 0.08,
+   "bbox_latlon": [
+    43.2463819,
+    -8.7379351,
+    43.2478221,
+    -8.7359649
+   ],
+   "archivo": "aire-0",
+   "ratio_con_anterior": null
+  },
+  {
+   "nivel": 1,
+   "ancho_m": 480,
+   "px": 2000,
+   "m_por_px": 0.24,
+   "bbox_latlon": [
+    43.2449417,
+    -8.7399052,
+    43.2492623,
+    -8.7339948
+   ],
+   "archivo": "aire-1",
+   "ratio_con_anterior": 3.0
+  },
+  {
+   "nivel": 2,
+   "ancho_m": 1500,
+   "px": 2000,
+   "m_por_px": 0.75,
+   "bbox_latlon": [
+    43.2403512,
+    -8.7461849,
+    43.2538528,
+    -8.7277151
+   ],
+   "archivo": "aire-2",
+   "ratio_con_anterior": 3.125
+  },
+  {
+   "nivel": 3,
+   "ancho_m": 5000,
+   "px": 2000,
+   "m_por_px": 2.5,
+   "bbox_latlon": [
+    43.2245992,
+    -8.7677331,
+    43.2696048,
+    -8.7061669
+   ],
+   "archivo": "aire-3",
+   "ratio_con_anterior": 3.333
+  },
+  {
+   "nivel": 4,
+   "ancho_m": 30000,
+   "px": 3500,
+   "m_por_px": 8.5714,
+   "bbox_latlon": [
+    43.1120855,
+    -8.9216483,
+    43.3821185,
+    -8.5522517
+   ],
+   "archivo": "aire-4",
+   "ratio_con_anterior": 6.0
+  }
+ ],
+ "lugares": [
+  {
+   "id": "casa",
+   "nombre": "Casa Entremuros",
+   "lat": 43.247028,
+   "lon": -8.736777,
+   "desde": 0,
+   "hasta": 3,
+   "x": [
+    0.58781,
+    0.52927,
+    0.50937,
+    0.50281,
+    0.50047
+   ],
+   "y": [
+    0.55138,
+    0.51713,
+    0.50548,
+    0.50164,
+    0.50027
+   ]
+  },
+  {
+   "id": "cances",
+   "nombre": "Cances",
+   "lat": 43.2473,
+   "lon": -8.734,
+   "desde": 1,
+   "hasta": 3,
+   "nota": "caserio de Cances Grande (nodo de OSM)",
+   "x": [
+    1.99737,
+    0.99912,
+    0.65972,
+    0.54792,
+    0.50799
+   ],
+   "y": [
+    0.36252,
+    0.45417,
+    0.48534,
+    0.4956,
+    0.49927
+   ]
+  },
+  {
+   "id": "malpica",
+   "nombre": "Malpica",
+   "lat": 43.3252843,
+   "lon": -8.8292583,
+   "desde": 4,
+   "hasta": 4,
+   "min": "10 min",
+   "x": [
+    -46.35426,
+    -15.11809,
+    -4.49779,
+    -0.99934,
+    0.25011
+   ],
+   "y": [
+    -53.78662,
+    -17.59554,
+    -5.29057,
+    -1.23717,
+    0.21047
+   ]
+  },
+  {
+   "id": "sisargas",
+   "nombre": "Islas Sisargas",
+   "lat": 43.3596458,
+   "lon": -8.8445827,
+   "desde": 4,
+   "hasta": 4,
+   "x": [
+    -54.13269,
+    -17.7109,
+    -5.32749,
+    -1.24825,
+    0.20863
+   ],
+   "y": [
+    -77.64586,
+    -25.54862,
+    -7.83556,
+    -2.00067,
+    0.08322
+   ]
+  },
+  {
+   "id": "razo",
+   "nombre": "Razo",
+   "lat": 43.2904055,
+   "lon": -8.7062144,
+   "desde": 4,
+   "hasta": 4,
+   "min": "15 min",
+   "x": [
+    16.10091,
+    5.7003,
+    2.1641,
+    0.99923,
+    0.5832
+   ],
+   "y": [
+    -29.5682,
+    -9.52273,
+    -2.70727,
+    -0.46218,
+    0.33964
+   ]
+  },
+  {
+   "id": "baldaio",
+   "nombre": "Baldaio",
+   "lat": 43.2962117,
+   "lon": -8.6842333,
+   "desde": 4,
+   "hasta": 4,
+   "min": "15 min",
+   "x": [
+    27.25818,
+    9.41939,
+    3.35421,
+    1.35626,
+    0.64271
+   ],
+   "y": [
+    -33.59979,
+    -10.8666,
+    -3.13731,
+    -0.59119,
+    0.31813
+   ]
+  },
+  {
+   "id": "carballo",
+   "nombre": "Carballo",
+   "lat": 43.2134123,
+   "lon": -8.6891286,
+   "desde": 3,
+   "hasta": 4,
+   "x": [
+    24.7734,
+    8.59113,
+    3.08916,
+    1.27675,
+    0.62946
+   ],
+   "y": [
+    23.89276,
+    8.29759,
+    2.99523,
+    1.24857,
+    0.62476
+   ]
+  }
+ ],
+ "casa_xy": [
+  {
+   "nivel": 0,
+   "x": 0.58781,
+   "y": 0.55138
+  },
+  {
+   "nivel": 1,
+   "x": 0.52927,
+   "y": 0.51713
+  },
+  {
+   "nivel": 2,
+   "x": 0.50937,
+   "y": 0.50548
+  },
+  {
+   "nivel": 3,
+   "x": 0.50281,
+   "y": 0.50164
+  },
+  {
+   "nivel": 4,
+   "x": 0.50047,
+   "y": 0.50027
+  }
+ ],
+ "cruces": [
+  {
+   "nivel": 0,
+   "a_nivel": 1,
+   "dx_px": 0.52,
+   "dy_px": 0.45,
+   "respuesta": 0.844,
+   "error_px_nivel_k": 2.06,
+   "error_m": 0.16,
+   "comparado_a_px": 667,
+   "ancho_recorte_m": 160
+  },
+  {
+   "nivel": 1,
+   "a_nivel": 2,
+   "dx_px": -0.09,
+   "dy_px": 0.04,
+   "respuesta": 0.961,
+   "error_px_nivel_k": 0.3,
+   "error_m": 0.07,
+   "comparado_a_px": 640,
+   "ancho_recorte_m": 480
+  },
+  {
+   "nivel": 2,
+   "a_nivel": 3,
+   "dx_px": 0.05,
+   "dy_px": -0.03,
+   "respuesta": 0.963,
+   "error_px_nivel_k": 0.21,
+   "error_m": 0.16,
+   "comparado_a_px": 600,
+   "ancho_recorte_m": 1500
+  },
+  {
+   "nivel": 3,
+   "a_nivel": 4,
+   "dx_px": 0.06,
+   "dy_px": 0.09,
+   "respuesta": 0.917,
+   "error_px_nivel_k": 0.37,
+   "error_m": 0.93,
+   "comparado_a_px": 583,
+   "ancho_recorte_m": 5000
+  }
+ ]
+}

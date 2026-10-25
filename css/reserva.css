@@ -1,0 +1,312 @@
+/* ------------------------------------------------------------------
+   Casa Entremuros · reserva.css · «La mesa para…»
+   Todo bajo [data-modulo="reserva"]. Usa los tokens de la web (:root de
+   css/estilos.css) con el valor del encargo de respaldo. Tokens que lee:
+   --lino --lino-2 --blanco --tinta --tinta-2 --granito --granito-2 --teja
+   --teja-texto --hoja --hoja-2 --faro  y las letras --f-titulo (Hedvig Letters
+   Serif), --f-texto (Golos Text) y --f-nombre (Pinyon Script, solo para los
+   nombres de las tarjetas). Colores propios del módulo, medidos en sus fotos
+   de la mesa (0019_2, 0004_5): pino, esparto, loza azul grisácea, cartulina.
+   ------------------------------------------------------------------ */
+[data-modulo="reserva"] {
+  --rs-lino: var(--lino, #F3EEE5);
+  --rs-lino-2: var(--lino-2, #E9E1D3);
+  --rs-blanco: var(--blanco, #FBF9F4);
+  --rs-tinta: var(--tinta, #2B2823);
+  --rs-tinta-2: var(--tinta-2, #5E574D);
+  --rs-granito: var(--granito, #B6AA98);
+  --rs-granito-2: var(--granito-2, #8F8473);
+  --rs-teja: var(--teja, #A9503A);
+  --rs-teja-t: var(--teja-texto, color-mix(in srgb, var(--rs-teja) 84%, var(--rs-tinta)));
+  --rs-hoja: var(--hoja, #5D7347);
+  --rs-hoja-2: var(--hoja-2, #8EA273);
+  --rs-faro: var(--faro, #FFE7A6);
+  --rs-pino: #D9B684;
+  --rs-esparto: #CDB285;
+  --rs-loza: #A9BEC4;
+  --rs-carton: #D8C196;
+  --rs-linea: color-mix(in srgb, var(--rs-tinta) 16%, var(--rs-lino));
+  --rs-ease: cubic-bezier(.22, .8, .2, 1);
+  --rs-t: var(--f-titulo, var(--f-tit, 'Hedvig Letters Serif', Georgia, 'Times New Roman', serif));
+  --rs-x: var(--f-texto, var(--f-txt, 'Golos Text', system-ui, -apple-system, 'Segoe UI', sans-serif));
+  --rs-p: var(--f-nombre, var(--f-pluma, 'Pinyon Script', 'Snell Roundhand', 'Segoe Script', cursive));
+
+  display: block;
+  box-sizing: border-box;
+  max-width: 100%;
+  color: var(--rs-tinta);
+  font-family: var(--rs-x);
+  font-size: 1rem;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+}
+[data-modulo="reserva"] *, [data-modulo="reserva"] *::before, [data-modulo="reserva"] *::after { box-sizing: border-box; }
+[data-modulo="reserva"] button { font: inherit; color: inherit; cursor: pointer; }
+[data-modulo="reserva"] :focus-visible { outline: 2px solid var(--rs-tinta); outline-offset: 2px; }
+[data-modulo="reserva"] h3, [data-modulo="reserva"] h4 { margin: 0; font-weight: 400; }
+[data-modulo="reserva"] p { margin: 0; }
+
+[data-modulo="reserva"] .rs { position: relative; display: grid; gap: clamp(14px, 2.4vw, 26px); }
+
+/* ---------- aviso y pasos ---------- */
+[data-modulo="reserva"] .rs__sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+[data-modulo="reserva"] .rs__demo { background: var(--rs-blanco); border: 1px solid var(--rs-linea); border-left: 3px solid var(--rs-teja); padding: 12px 16px; font-size: .95rem; max-width: 62rem; }
+[data-modulo="reserva"] .rs__sup { display: inline-block; margin-left: 6px; padding: 2px 5px; border: 1px solid currentColor; border-radius: 3px; color: var(--rs-teja-t); font: 600 .62rem/1 var(--rs-x); letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; vertical-align: 1px; }
+[data-modulo="reserva"] .rs__demo .rs__sup { margin-left: 0; }
+[data-modulo="reserva"] .rs__pasos { display: flex; flex-wrap: wrap; margin: 0; padding: 0; list-style: none; border-bottom: 1px solid var(--rs-linea); counter-reset: paso; }
+[data-modulo="reserva"] .rs__pasos li { counter-increment: paso; flex: 1 1 0; min-width: 7.5rem; padding: 12px 14px; font: 600 .78rem/1.3 var(--rs-x); letter-spacing: .06em; text-transform: uppercase; color: var(--rs-tinta-2); }
+[data-modulo="reserva"] .rs__pasos li::before { content: counter(paso) " · "; }
+[data-modulo="reserva"] .rs__pasos li[aria-current] { color: var(--rs-tinta); box-shadow: inset 0 -3px 0 var(--rs-hoja); }
+[data-modulo="reserva"] .rs__pasos li.hecho { color: color-mix(in srgb, var(--rs-hoja) 78%, var(--rs-tinta)); }
+
+/* ---------- la mesa ---------- */
+[data-modulo="reserva"] .rs__mesa { container-type: inline-size; }
+[data-modulo="reserva"] .rs__suelo {
+  --pad: clamp(14px, 4cqw, 44px);
+  --u: clamp(40px, calc((100cqw - 2 * var(--pad)) / 9.4), 96px);
+  --g: calc(var(--u) * .5);
+  padding: calc(var(--u) * .56) var(--pad) calc(var(--u) * 1.1);
+  border-radius: 6px;
+  overflow: clip;
+  background:
+    linear-gradient(rgba(43, 40, 35, .06) 1px, transparent 1px) 0 0 / calc(var(--u) * 1.15) calc(var(--u) * 1.15),
+    linear-gradient(90deg, rgba(43, 40, 35, .06) 1px, transparent 1px) 0 0 / calc(var(--u) * 1.15) calc(var(--u) * 1.15),
+    color-mix(in srgb, var(--rs-granito) 34%, var(--rs-lino-2));
+}
+[data-modulo="reserva"] .rs__tabla { position: relative; margin: 0 auto; width: calc((var(--cols) + 2) * var(--u)); height: calc(2 * var(--u) + var(--g)); transition: width .7s var(--rs-ease), height .7s var(--rs-ease); }
+[data-modulo="reserva"] .rs__tablero {
+  position: absolute; inset: 0; border-radius: calc(var(--u) * .07);
+  background:
+    linear-gradient(180deg, transparent calc(33.3% - 1px), rgba(110, 72, 36, .3) 33.3%, transparent calc(33.3% + 1px), transparent calc(66.6% - 1px), rgba(110, 72, 36, .3) 66.6%, transparent calc(66.6% + 1px)),
+    repeating-linear-gradient(90deg, rgba(139, 98, 52, .08) 0 1px, transparent 1px 11px),
+    repeating-linear-gradient(90deg, rgba(139, 98, 52, .06) 0 2px, transparent 2px 29px),
+    linear-gradient(180deg, rgba(255, 255, 255, .14), rgba(0, 0, 0, .05)),
+    var(--rs-pino);
+  box-shadow: 0 .5rem 1.4rem rgba(43, 40, 35, .3), 0 0 0 2px rgba(120, 80, 40, .35);
+}
+[data-modulo="reserva"] .rs__sitios, [data-modulo="reserva"] .rs__centro { position: absolute; inset: 0; pointer-events: none; }
+
+/* un sitio: cuadrado u × u, la persona se sienta «abajo» del cuadrado; --rot lo gira hacia su lado */
+[data-modulo="reserva"] .rs__sitio { position: absolute; width: var(--u); height: var(--u); transform: translate(-50%, -50%) rotate(var(--rot)); }
+[data-modulo="reserva"] .rs__sitio[data-lado="lado"] { left: calc((var(--c) + 1.5) * var(--u)); top: calc(var(--fila) * (var(--u) + var(--g)) + var(--u) / 2); --rot: calc(180deg - 180deg * var(--fila)); }
+[data-modulo="reserva"] .rs__sitio[data-lado="cab0"] { left: calc(var(--u) / 2); top: 50%; --rot: 90deg; }
+[data-modulo="reserva"] .rs__sitio[data-lado="cab1"] { left: calc((var(--cols) + 1.5) * var(--u)); top: 50%; --rot: -90deg; transition: left .7s var(--rs-ease), top .7s var(--rs-ease); }
+[data-modulo="reserva"] .rs__cub { position: absolute; inset: 0; display: block; filter: drop-shadow(0 1px 1.5px rgba(43, 40, 35, .22)); }
+[data-modulo="reserva"] .rs__cub svg { display: block; width: 100%; height: 100%; overflow: visible; }
+[data-modulo="reserva"] .rs__silla { position: absolute; left: 21%; width: 58%; top: 97%; height: 46%; background: var(--rs-blanco); border: 1.5px solid #D4CDBE; border-radius: 12% 12% 46% 46% / 10% 10% 40% 40%; box-shadow: 0 2px 6px rgba(43, 40, 35, .28); overflow: hidden; }
+[data-modulo="reserva"] .rs__silla i { position: absolute; inset: 14% 12% 12%; border-radius: inherit; background: repeating-linear-gradient(45deg, rgba(150, 118, 76, .34) 0 1px, transparent 1px 4px), repeating-linear-gradient(-45deg, rgba(150, 118, 76, .34) 0 1px, transparent 1px 4px), #EFE6D2; }
+
+/* dibujo propio del cubierto */
+[data-modulo="reserva"] .c-sombra { fill: rgba(43, 40, 35, .16); }
+[data-modulo="reserva"] .c-esparto { fill: var(--rs-esparto); stroke: #B49660; stroke-width: 1; }
+[data-modulo="reserva"] .c-esparto-ln { fill: none; stroke: rgba(112, 82, 40, .5); stroke-width: .9; stroke-dasharray: 2.2 1.2; }
+[data-modulo="reserva"] .c-bajoplato { fill: var(--rs-loza); stroke: #8FA6AD; stroke-width: .8; }
+[data-modulo="reserva"] .c-plato { fill: var(--rs-blanco); stroke: #CFCABC; stroke-width: .8; }
+[data-modulo="reserva"] .c-perlas { fill: none; stroke: #fff; stroke-width: 1.5; stroke-linecap: round; stroke-dasharray: .1 2.35; }
+[data-modulo="reserva"] .c-hondo { fill: #EFEDE6; stroke: #D3CEC1; stroke-width: .7; }
+[data-modulo="reserva"] .c-hoja { fill: var(--rs-hoja); }
+[data-modulo="reserva"] .c-baya { fill: #6F6B8E; }
+[data-modulo="reserva"] .c-servilleta rect { fill: #ECE7DB; stroke: #CFC8B6; stroke-width: .8; }
+[data-modulo="reserva"] .c-servilleta path { fill: none; stroke: #D6CFBD; stroke-width: .7; }
+[data-modulo="reserva"] .c-cubierto path { fill: none; stroke: #A39E94; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+[data-modulo="reserva"] .c-copa circle:first-child { fill: rgba(205, 225, 233, .5); stroke: #9DB1B9; stroke-width: .9; }
+[data-modulo="reserva"] .c-copa circle:last-child { fill: none; stroke: rgba(255, 255, 255, .85); stroke-width: .9; }
+[data-modulo="reserva"] .c-vaso circle:first-child { fill: rgba(205, 225, 233, .42); stroke: #9DB1B9; stroke-width: .9; }
+[data-modulo="reserva"] .c-vaso circle:last-child { fill: none; stroke: rgba(255, 255, 255, .8); stroke-width: .8; }
+
+/* el vasito del niño */
+[data-modulo="reserva"] .rs__vasito { position: absolute; left: 31%; top: 1%; width: 17%; height: 17%; opacity: 0; transform: scale(.4); transition: opacity .4s, transform .5s var(--rs-ease); }
+[data-modulo="reserva"] .rs__vasito svg { display: block; width: 100%; height: 100%; }
+[data-modulo="reserva"] .rs__sitio.con-nino .rs__vasito { opacity: 1; transform: none; }
+[data-modulo="reserva"] .n-vaso { fill: color-mix(in srgb, var(--rs-teja) 32%, var(--rs-blanco)); stroke: color-mix(in srgb, var(--rs-teja) 60%, var(--rs-blanco)); stroke-width: 1; }
+[data-modulo="reserva"] .n-vaso-in { fill: none; stroke: rgba(255, 255, 255, .85); stroke-width: 1.2; }
+
+/* el centro de mesa: una ramita por columna y una vela cada dos */
+[data-modulo="reserva"] .rs__col { position: absolute; left: calc((var(--c) + 1.5) * var(--u)); top: 50%; width: var(--u); height: calc(var(--u) * .6); transform: translate(-50%, -50%); }
+[data-modulo="reserva"] .rs__col > svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+[data-modulo="reserva"] .r-tallo { fill: none; stroke: var(--rs-hoja); stroke-width: 1.6; stroke-linecap: round; }
+[data-modulo="reserva"] .r-hojas path { fill: var(--rs-hoja); opacity: .92; }
+[data-modulo="reserva"] .r-hojas path:nth-child(odd) { fill: var(--rs-hoja-2); }
+[data-modulo="reserva"] .r-flor circle { fill: #6D7FA6; }
+[data-modulo="reserva"] .rs__vela { position: absolute; left: 50%; top: 50%; width: 38%; aspect-ratio: 1; transform: translate(-50%, -50%); }
+[data-modulo="reserva"] .rs__vela svg { display: block; width: 100%; height: 100%; }
+[data-modulo="reserva"] .v-halo { fill: color-mix(in srgb, var(--rs-faro) 52%, transparent); }
+[data-modulo="reserva"] .v-cera { fill: var(--rs-blanco); stroke: #CFC8B6; stroke-width: 1; }
+[data-modulo="reserva"] .v-llama { fill: #F2B949; }
+[data-modulo="reserva"] .rs__vela .v-halo { animation: rs-llama 3.2s ease-in-out infinite; transform-origin: 50% 50%; }
+[data-modulo="reserva"][data-visible="0"] .rs__vela .v-halo { animation-play-state: paused; }
+
+/* mascotas y cunas: en el suelo, junto a la mesa */
+[data-modulo="reserva"] .rs__extra { position: absolute; left: 0; right: 0; top: calc(100% + var(--u) * .55); height: calc(var(--u) * .5); display: flex; justify-content: space-between; align-items: center; }
+[data-modulo="reserva"] .rs__cunas, [data-modulo="reserva"] .rs__cuencos { display: flex; gap: calc(var(--u) * .2); align-items: center; }
+[data-modulo="reserva"] .rs__cuna { display: block; width: calc(var(--u) * .78); }
+[data-modulo="reserva"] .rs__cuenco { display: block; width: calc(var(--u) * .5); }
+[data-modulo="reserva"] .rs__cuna svg, [data-modulo="reserva"] .rs__cuenco svg { display: block; width: 100%; height: auto; }
+[data-modulo="reserva"] .q-sombra { fill: rgba(43, 40, 35, .16); }
+[data-modulo="reserva"] .q-borde { fill: #B7664F; stroke: #8E4A38; stroke-width: 1; }
+[data-modulo="reserva"] .q-fondo { fill: #8E4A38; }
+[data-modulo="reserva"] .q-pienso circle { fill: #C79A63; }
+[data-modulo="reserva"] .u-cesta { fill: var(--rs-esparto); stroke: #B49660; stroke-width: 1.2; }
+[data-modulo="reserva"] .u-colchon { fill: #ECE7DB; }
+[data-modulo="reserva"] .u-almohada { fill: var(--rs-blanco); stroke: #D6CFBD; stroke-width: .8; }
+[data-modulo="reserva"] .rs__cuna.nuevo, [data-modulo="reserva"] .rs__cuenco.nuevo { animation: rs-posa-suelo .6s var(--rs-ease) both; }
+
+/* la leyenda de la mesa (texto equivalente, visible) */
+[data-modulo="reserva"] .rs__leyenda { margin-top: 12px; font: 400 clamp(1.3rem, 3.4vw, 1.9rem)/1.2 var(--rs-t); color: var(--rs-tinta); }
+[data-modulo="reserva"] .rs__leyenda b { font-weight: 400; }
+
+/* cómo se pone una mesa: los cubiertos se posan */
+[data-modulo="reserva"] .rs__sitio.nuevo .rs__cub { animation: rs-pone .72s var(--rs-ease) both; animation-delay: calc(var(--n, 0) * 95ms); }
+[data-modulo="reserva"] .rs__sitio.nuevo .rs__silla { animation: rs-silla .6s var(--rs-ease) both; animation-delay: calc(var(--n, 0) * 95ms); }
+[data-modulo="reserva"] .rs__col.nuevo { animation: rs-posa .7s var(--rs-ease) both; }
+[data-modulo="reserva"] .rs__sitio.sale .rs__cub, [data-modulo="reserva"] .rs__sitio.sale .rs__silla { animation: rs-quita .34s ease-in both; }
+@keyframes rs-pone {
+  from { opacity: 0; transform: translateY(-17%) scale(1.08); filter: drop-shadow(0 .5em .55em rgba(43, 40, 35, .34)); }
+  55% { opacity: 1; }
+  to { opacity: 1; transform: none; filter: drop-shadow(0 1px 1.5px rgba(43, 40, 35, .22)); }
+}
+@keyframes rs-silla { from { opacity: 0; transform: translateY(-14%); } to { opacity: 1; transform: none; } }
+@keyframes rs-posa { from { opacity: 0; transform: translate(-50%, -50%) scale(.85); } to { opacity: 1; transform: translate(-50%, -50%); } }
+@keyframes rs-posa-suelo { from { opacity: 0; transform: translateY(-30%) scale(.85); } to { opacity: 1; transform: none; } }
+@keyframes rs-quita { to { opacity: 0; transform: translateY(-10%) scale(.96); } }
+@keyframes rs-llama { 0%, 100% { opacity: .85; transform: scale(1); } 50% { opacity: 1; transform: scale(1.12); } }
+
+/* ---------- la tarjeta con el nombre (en el plato y en grande) ---------- */
+[data-modulo="reserva"] .rs__tarj { position: absolute; left: 50%; top: 50%; width: calc(var(--u) * .9); transform: translate(-50%, -50%) rotate(calc(-1 * var(--rot))); z-index: 2; pointer-events: none; }
+[data-modulo="reserva"] .rs__tarj:empty { display: none; }
+[data-modulo="reserva"] .rs__etq { --w: calc(var(--u) * .86); position: relative; display: block; width: var(--w); height: calc(var(--w) * .46); margin: 0 auto; transform: rotate(-5deg); filter: drop-shadow(0 2px 3px rgba(43, 40, 35, .35)); }
+[data-modulo="reserva"] .rs__etq::before { content: ""; position: absolute; inset: 0; background: linear-gradient(135deg, rgba(255, 255, 255, .28), rgba(0, 0, 0, .04)), var(--rs-carton); clip-path: polygon(14% 0, 100% 0, 100% 100%, 14% 100%, 0 50%); border-radius: 3px; }
+[data-modulo="reserva"] .rs__pinza { position: absolute; left: -5%; top: 4%; width: 22%; height: 15%; border-radius: 2px; background: linear-gradient(180deg, #CDAB78, #AA8650); transform: rotate(-26deg); box-shadow: 0 1px 2px rgba(43, 40, 35, .4); z-index: 1; }
+[data-modulo="reserva"] .rs__ramita { position: absolute; left: -26%; top: -48%; width: 70%; height: auto; overflow: visible; z-index: 0; }
+[data-modulo="reserva"] .t-tallo { fill: none; stroke: var(--rs-hoja); stroke-width: 1.4; stroke-linecap: round; }
+[data-modulo="reserva"] .t-hojas path { fill: var(--rs-hoja); }
+[data-modulo="reserva"] .rs__nombre { position: absolute; left: 20%; right: 6%; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font: 400 calc(var(--w) * .26)/1 var(--rs-p); color: var(--rs-tinta); white-space: nowrap; overflow: visible; }
+[data-modulo="reserva"] .rs__nombre > span { display: inline-block; transform: scale(var(--ajuste, 1)); transform-origin: center; padding: 0 .08em; }
+[data-modulo="reserva"] .rs__etq.en-blanco .rs__nombre { opacity: 0; }
+[data-modulo="reserva"] .rs__etq.escribe .rs__nombre > span { animation: rs-escribe 1.7s cubic-bezier(.45, .05, .35, 1) .35s both; }
+[data-modulo="reserva"] .rs__etq.escribe .t-tallo { stroke-dasharray: 1; animation: rs-traza 1.1s ease-out both; }
+[data-modulo="reserva"] .rs__etq.escribe .t-hojas path { animation: rs-hoja-sale .5s ease-out both; }
+[data-modulo="reserva"] .rs__etq.escribe .t-hojas path:nth-child(1) { animation-delay: .35s; }
+[data-modulo="reserva"] .rs__etq.escribe .t-hojas path:nth-child(2) { animation-delay: .5s; }
+[data-modulo="reserva"] .rs__etq.escribe .t-hojas path:nth-child(3) { animation-delay: .65s; }
+[data-modulo="reserva"] .rs__etq.escribe .t-hojas path:nth-child(4) { animation-delay: .8s; }
+[data-modulo="reserva"] .rs__etq.escribe .t-hojas path:nth-child(5) { animation-delay: .95s; }
+@keyframes rs-escribe { from { clip-path: inset(-30% 100% -30% 0); } to { clip-path: inset(-30% -4% -30% 0); } }
+@keyframes rs-traza { from { stroke-dashoffset: 1; } to { stroke-dashoffset: 0; } }
+@keyframes rs-hoja-sale { from { opacity: 0; } to { opacity: 1; } }
+
+/* ---------- el panel y el calendario ---------- */
+[data-modulo="reserva"] .rs__in { display: grid; grid-template-columns: minmax(0, 1.55fr) minmax(300px, 1fr); gap: clamp(14px, 2.4vw, 26px); align-items: start; }
+[data-modulo="reserva"] .rs__in[data-paso]:not([data-paso="fechas"]) { grid-template-columns: minmax(0, 44rem); justify-content: center; }
+[data-modulo="reserva"] .rs__cal, [data-modulo="reserva"] .rs__res { background: var(--rs-blanco); border: 1px solid var(--rs-linea); padding: clamp(16px, 3vw, 32px); }
+[data-modulo="reserva"] .rs__res { display: grid; gap: 16px; align-content: start; min-width: 0; }
+[data-modulo="reserva"] .rs__res h3 { font: 400 clamp(1.5rem, 2.6vw, 1.9rem)/1.15 var(--rs-t); }
+[data-modulo="reserva"] .rs__res h3:focus { outline: none; }
+[data-modulo="reserva"] .rs__top { display: flex; align-items: center; gap: 8px; margin-bottom: 16px; }
+[data-modulo="reserva"] .rs__top h3 { margin-right: auto; font: 400 clamp(1.4rem, 2.4vw, 1.7rem)/1.1 var(--rs-t); }
+[data-modulo="reserva"] .rs__nav { width: 44px; height: 44px; border: 1px solid color-mix(in srgb, var(--rs-tinta) 28%, var(--rs-blanco)); background: var(--rs-blanco); border-radius: 50%; font-size: 1.3rem; line-height: 1; }
+[data-modulo="reserva"] .rs__nav:disabled { opacity: .35; cursor: default; }
+[data-modulo="reserva"] .rs__meses { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+[data-modulo="reserva"] .rs__mes-tit { margin-bottom: 10px !important; font: 600 .8rem/1 var(--rs-x) !important; letter-spacing: .08em; text-transform: uppercase; }
+[data-modulo="reserva"] .rs__dias { display: grid; gap: 3px; }
+[data-modulo="reserva"] .rs__fila { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 3px; }
+[data-modulo="reserva"] .rs__semana span { padding: 4px 0 6px; text-align: center; font: 600 .68rem/1 var(--rs-x); color: var(--rs-tinta-2); }
+[data-modulo="reserva"] .rs__fila > span { display: block; min-width: 0; }
+[data-modulo="reserva"] .rs__dia { position: relative; display: block; width: 100%; aspect-ratio: 1; min-height: 38px; border: 0; padding: 0; background: var(--rs-lino); border-radius: 3px; font: 500 .92rem/1 var(--rs-x); color: var(--rs-tinta); }
+[data-modulo="reserva"] .rs__dia:hover:not([aria-disabled="true"]) { background: var(--rs-lino-2); }
+[data-modulo="reserva"] .rs__dia.alta::after { content: ""; position: absolute; left: 50%; bottom: 5px; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--rs-teja); }
+[data-modulo="reserva"] .rs__dia.pasado { background: transparent; color: color-mix(in srgb, var(--rs-tinta-2) 80%, var(--rs-blanco)); cursor: default; }
+[data-modulo="reserva"] .rs__dia.ocupado { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--rs-granito) 34%, var(--rs-lino)) 0 4px, color-mix(in srgb, var(--rs-granito) 52%, var(--rs-lino)) 4px 6px); color: var(--rs-tinta); text-decoration: line-through; text-decoration-color: rgba(43, 40, 35, .4); cursor: not-allowed; }
+[data-modulo="reserva"] .rs__dia.solo-salida { background: linear-gradient(135deg, var(--rs-lino) 50%, color-mix(in srgb, var(--rs-granito) 48%, var(--rs-lino)) 50%); }
+[data-modulo="reserva"] .rs__dia.rango { background: color-mix(in srgb, var(--rs-hoja-2) 40%, var(--rs-blanco)); border-radius: 0; }
+[data-modulo="reserva"] .rs__dia.ini, [data-modulo="reserva"] .rs__dia.fin { background: var(--rs-hoja); color: var(--rs-blanco); }
+[data-modulo="reserva"] .rs__dia.ini.alta::after, [data-modulo="reserva"] .rs__dia.fin.alta::after { background: var(--rs-blanco); }
+[data-modulo="reserva"] .rs__ley { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 16px; font-size: .86rem; color: var(--rs-tinta-2); }
+[data-modulo="reserva"] .rs__ley span { display: inline-flex; align-items: center; gap: 7px; }
+[data-modulo="reserva"] .rs__ley i { display: inline-block; width: 14px; height: 14px; border-radius: 2px; }
+[data-modulo="reserva"] .ley-sel { background: var(--rs-hoja); }
+[data-modulo="reserva"] .ley-ocu { background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--rs-granito) 34%, var(--rs-lino)) 0 4px, color-mix(in srgb, var(--rs-granito) 52%, var(--rs-lino)) 4px 6px); }
+[data-modulo="reserva"] .ley-alta { background: var(--rs-teja); border-radius: 50% !important; width: 7px !important; height: 7px !important; margin: 0 3px; }
+[data-modulo="reserva"] .rs__msg { min-height: 1.5em; margin-top: 10px; color: var(--rs-teja-t); font-size: .95rem; }
+[data-modulo="reserva"] .rs__res .rs__msg { margin-top: 0; min-height: 0; }
+
+/* resumen, contadores y desglose */
+[data-modulo="reserva"] .rs__fechas { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rs-linea); border: 1px solid var(--rs-linea); }
+[data-modulo="reserva"] .rs__fechas > div { background: var(--rs-blanco); padding: 10px 14px; }
+[data-modulo="reserva"] .rs__fechas small { display: block; font: 600 .68rem/1.3 var(--rs-x); letter-spacing: .08em; text-transform: uppercase; color: var(--rs-tinta-2); }
+[data-modulo="reserva"] .rs__fechas b { font-weight: 600; }
+[data-modulo="reserva"] .rs__conts { display: grid; }
+[data-modulo="reserva"] .rs__cont { display: grid; grid-template-columns: minmax(0, 1fr) 44px 2.2ch 44px; align-items: center; gap: 8px; padding: 10px 0; border-top: 1px solid var(--rs-linea); }
+[data-modulo="reserva"] .rs__cont:last-child { border-bottom: 1px solid var(--rs-linea); }
+[data-modulo="reserva"] .rs__cont-t { display: block; font-weight: 600; }
+[data-modulo="reserva"] .rs__cont small { display: block; color: var(--rs-tinta-2); font-size: .84rem; line-height: 1.35; }
+[data-modulo="reserva"] .rs__cont b { text-align: center; font: 400 1.7rem/1 var(--rs-t); min-width: 2.2ch; }
+[data-modulo="reserva"] .rs__cont button { width: 44px; height: 44px; border-radius: 50%; border: 1px solid color-mix(in srgb, var(--rs-tinta) 30%, var(--rs-blanco)); background: var(--rs-blanco); font-size: 1.3rem; line-height: 1; }
+[data-modulo="reserva"] .rs__cont button:disabled { opacity: .3; cursor: default; }
+[data-modulo="reserva"] .rs__desglose { display: grid; gap: 8px; padding: 14px 0; border-top: 1px solid var(--rs-linea); border-bottom: 1px solid var(--rs-linea); font-size: .95rem; }
+[data-modulo="reserva"] .rs__desglose > div { display: flex; justify-content: space-between; gap: 16px; }
+[data-modulo="reserva"] .rs__desglose > div > span:last-child { white-space: nowrap; }
+[data-modulo="reserva"] .rs__desglose .tot { padding-top: 6px; font-weight: 600; font-size: 1.1rem; }
+[data-modulo="reserva"] .rs__desglose .nada { color: var(--rs-tinta-2); }
+[data-modulo="reserva"] .rs__fino { font-size: .88rem; color: var(--rs-tinta-2); }
+[data-modulo="reserva"] .rs__fino b { color: var(--rs-tinta); }
+[data-modulo="reserva"] .rs__fino a, [data-modulo="reserva"] .rs__aviso a { color: var(--rs-teja-t); text-underline-offset: .2em; }
+[data-modulo="reserva"] .rs__aviso { padding-top: 2px; }
+[data-modulo="reserva"] .rs__btn { min-height: 48px; padding: .75rem 1.5rem; border: 0; border-radius: 999px; background: var(--rs-teja); color: var(--rs-blanco); font: 600 1rem/1.2 var(--rs-x); text-align: center; transition: background .2s; }
+[data-modulo="reserva"] .rs__btn:hover { background: color-mix(in srgb, var(--rs-teja) 82%, var(--rs-tinta)); }
+[data-modulo="reserva"] .rs__btn[aria-disabled="true"] { opacity: .55; cursor: default; }
+[data-modulo="reserva"] .rs__btn--linea { background: none; color: var(--rs-tinta); text-decoration: underline; text-underline-offset: .2em; padding-block: .5rem; }
+[data-modulo="reserva"] .rs__btn--linea:hover { background: none; color: var(--rs-teja-t); }
+
+/* formulario del nombre */
+[data-modulo="reserva"] .rs__form { display: grid; gap: 14px; }
+[data-modulo="reserva"] .rs__form label { display: grid; gap: 6px; font-weight: 600; }
+[data-modulo="reserva"] .rs__form label span { font-weight: 400; color: var(--rs-tinta-2); font-size: .9rem; }
+[data-modulo="reserva"] .rs__form input { width: 100%; padding: 12px 14px; border: 1px solid color-mix(in srgb, var(--rs-tinta) 42%, var(--rs-blanco)); border-radius: 3px; background: var(--rs-blanco); color: var(--rs-tinta); font: 400 1.15rem/1.3 var(--rs-x); }
+[data-modulo="reserva"] .rs__form input[aria-invalid="true"] { border-color: var(--rs-teja-t); box-shadow: 0 0 0 1px var(--rs-teja-t); }
+[data-modulo="reserva"] .rs__form .rs__msg { min-height: 0; margin: 0; }
+
+/* el final: la tarjeta en grande, el localizador y las notas */
+[data-modulo="reserva"] .rs__hecho { display: grid; gap: 16px; }
+[data-modulo="reserva"] .rs__tarjeta-gr { --u: clamp(190px, 26vw, 250px); display: grid; place-items: center; min-height: calc(var(--u) * .62); padding: 18px 0 8px; }
+[data-modulo="reserva"] .rs__tarjeta-gr .rs__tarj-in { display: block; width: calc(var(--u) * .9); }
+[data-modulo="reserva"] .rs__linea { font: 400 clamp(1.15rem, 2.2vw, 1.4rem)/1.35 var(--rs-t); }
+[data-modulo="reserva"] .rs__loc small { display: block; font: 600 .68rem/1.3 var(--rs-x); letter-spacing: .08em; text-transform: uppercase; color: var(--rs-tinta-2); }
+[data-modulo="reserva"] .rs__loc b { display: block; font: 600 clamp(1.4rem, 3vw, 1.9rem)/1.2 var(--rs-x); letter-spacing: .06em; color: var(--rs-teja-t); }
+[data-modulo="reserva"] .rs__info { display: grid; gap: 6px; margin: 0; padding-left: 1.1rem; font-size: .9rem; color: var(--rs-tinta-2); }
+[data-modulo="reserva"] .rs__acciones { display: flex; flex-wrap: wrap; gap: 6px 14px; align-items: center; }
+
+/* ---------- móvil: la mesa se pone en vertical y baja bajo los controles ---------- */
+@media (max-width: 899px) {
+  [data-modulo="reserva"] .rs__in { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 700px) {
+  [data-modulo="reserva"] .rs { display: flex; flex-direction: column; }
+  [data-modulo="reserva"] .rs__demo { order: 0; }
+  [data-modulo="reserva"] .rs__pasos { order: 1; }
+  [data-modulo="reserva"] .rs__in { order: 2; }
+  [data-modulo="reserva"] .rs__mesa-caja { order: 3; }
+  [data-modulo="reserva"] .rs__suelo { --pad: 14px; --u: clamp(46px, 21cqw, 84px); }
+  [data-modulo="reserva"] .rs__tabla { width: calc(2 * var(--u) + var(--g)); height: calc((var(--cols) + 2) * var(--u)); }
+  [data-modulo="reserva"] .rs__sitio[data-lado="lado"] { left: calc(var(--fila) * (var(--u) + var(--g)) + var(--u) / 2); top: calc((var(--c) + 1.5) * var(--u)); --rot: calc(90deg - 180deg * var(--fila)); }
+  [data-modulo="reserva"] .rs__sitio[data-lado="cab0"] { left: 50%; top: calc(var(--u) / 2); --rot: 180deg; }
+  [data-modulo="reserva"] .rs__sitio[data-lado="cab1"] { left: 50%; top: calc((var(--cols) + 1.5) * var(--u)); --rot: 0deg; }
+  [data-modulo="reserva"] .rs__col { left: 50%; top: calc((var(--c) + 1.5) * var(--u)); width: calc(var(--u) * .6); height: var(--u); }
+  [data-modulo="reserva"] .rs__col > svg { inset: auto; left: 50%; top: 50%; width: var(--u); height: calc(var(--u) * .6); transform: translate(-50%, -50%) rotate(90deg); }
+  [data-modulo="reserva"] .rs__extra { top: calc(100% + var(--u) * .55); left: calc(var(--u) * -.9); right: calc(var(--u) * -.9); }
+  [data-modulo="reserva"] .rs__cuna { width: calc(var(--u) * .6); }
+  [data-modulo="reserva"] .rs__cuenco { width: calc(var(--u) * .4); }
+  [data-modulo="reserva"] .rs__meses { grid-template-columns: minmax(0, 1fr); }
+  [data-modulo="reserva"] .rs__meses .rs__mes + .rs__mes { display: none; }
+  [data-modulo="reserva"] .rs__pasos li { min-width: 0; flex-basis: 50%; padding: 10px 10px; font-size: .72rem; }
+  [data-modulo="reserva"] .rs__cont { grid-template-columns: minmax(0, 1fr) 44px 2ch 44px; gap: 6px; }
+}
+@media (max-width: 359px) {
+  [data-modulo="reserva"] .rs__cal, [data-modulo="reserva"] .rs__res { padding: 12px; }
+}
+
+/* ---------- movimiento reducido: el contenido igual, el movimiento fuera ---------- */
+[data-modulo="reserva"][data-movimiento="0"] *, [data-modulo="reserva"][data-movimiento="0"] *::before, [data-modulo="reserva"][data-movimiento="0"] *::after { animation: none !important; transition: none !important; }
+@media (prefers-reduced-motion: reduce) {
+  [data-modulo="reserva"] *, [data-modulo="reserva"] *::before, [data-modulo="reserva"] *::after { animation: none !important; transition: none !important; }
+}

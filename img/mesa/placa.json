@@ -1,0 +1,22 @@
+{
+ "margen": 50,
+ "placa": [
+  1240,
+  1000
+ ],
+ "corte_x": 582,
+ "corte_frac": 0.47164,
+ "tamanos": {
+  "lg": {
+   "ancho": 1340,
+   "alto": 1100,
+   "escala": 1.0
+  },
+  "sm": {
+   "ancho": 750,
+   "alto": 616,
+   "escala": 0.56
+  }
+ },
+ "nota": "Generado por scripts/placa.py --arte. corte_frac = posicion de la junta ENTRE|MUROS dentro de la imagen (0-1). Semillas fijas."
+}

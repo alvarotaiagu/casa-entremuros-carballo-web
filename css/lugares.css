@@ -1,0 +1,163 @@
+/* ------------------------------------------------------------------
+   Casa Entremuros · «Seis lugares bajo un techo» (agente Lugares)
+   Todo cuelga de [data-modulo="lugares"]. Usa los tokens de la web con su valor por si aún no existen.
+   Dos columnas desde 900 px: la lámina fija a la izquierda y las seis habitaciones que pasan a la derecha.
+   En el móvil, la lámina se queda fija arriba (42 svh) y las habitaciones pasan por debajo.
+   svh, nunca dvh: la barra del móvil no mueve nada (checklist punto 10).
+   ------------------------------------------------------------------ */
+[data-modulo="lugares"] {
+  --lg-lino: var(--lino, #F3EEE5);
+  --lg-lino2: var(--lino-2, #E9E1D3);
+  --lg-blanco: var(--blanco, #FBF9F4);
+  --lg-tinta: var(--tinta, #2B2823);
+  --lg-tinta2: var(--tinta-2, #5E574D);
+  --lg-granito: var(--granito, #B6AA98);
+  --lg-teja: var(--teja, #A9503A);
+  --lg-teja-texto: var(--teja-texto, color-mix(in srgb, var(--teja, #A9503A) 78%, var(--tinta, #2B2823)));
+  --lg-agua: #3E5D63;
+  --lg-titulo: var(--f-titulo, 'Hedvig Letters Serif', Georgia, 'Times New Roman', serif);
+  --lg-texto: var(--f-texto, 'Golos Text', system-ui, -apple-system, 'Segoe UI', sans-serif);
+  --lg-top: calc(var(--cabecera-alto, 64px) + 12px);
+}
+[data-modulo="lugares"] .lg { position: relative; font-family: var(--lg-texto); color: var(--lg-tinta); }
+[data-modulo="lugares"] .lg-intro { max-width: 46ch; margin: 0 0 1.4rem; color: var(--lg-tinta2); font-size: 1.02rem; line-height: 1.55; }
+
+/* ---------- estructura ---------- */
+[data-modulo="lugares"] .lg-cuerpo { display: grid; grid-template-columns: minmax(0, 1fr); gap: 0; align-items: start; }
+[data-modulo="lugares"] .lg-mapa {
+  position: sticky; top: var(--lg-top); z-index: 3;
+  padding: .5rem 0 .6rem; background: var(--lg-lino);
+}
+[data-modulo="lugares"] .lg-lamina {
+  position: relative; margin-inline: auto; aspect-ratio: 1000 / 1094; --k: .3;
+  width: min(100%, calc(42svh * 1000 / 1094));
+  background: var(--lg-lino2);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, .55) inset, 0 14px 30px -16px rgba(43, 40, 35, .5), 0 2px 5px rgba(43, 40, 35, .16);
+  border-radius: 2px;
+}
+[data-modulo="lugares"] .lg-base { display: block; width: 100%; height: 100%; user-select: none; -webkit-user-drag: none; }
+[data-modulo="lugares"] .lg-sobre { position: absolute; inset: 0; width: 100%; height: 100%; overflow: hidden; pointer-events: none; }
+[data-modulo="lugares"] .lg-lista { list-style: none; margin: 0; padding: 1.2rem 0 22svh; counter-reset: lg; }
+[data-modulo="lugares"] .lg-paso { display: block; min-height: 54svh; padding-bottom: 1.8rem; }
+
+@media (min-width: 900px) {
+  [data-modulo="lugares"] .lg-cuerpo { grid-template-columns: minmax(0, 1.12fr) minmax(0, 1fr); column-gap: clamp(2rem, 4.5vw, 4.5rem); }
+  [data-modulo="lugares"] .lg-mapa { padding: 0; background: transparent; align-self: start; }
+  [data-modulo="lugares"] .lg-lamina { width: min(100%, calc((100svh - var(--lg-top) - 1.6rem) * 1000 / 1094)); }
+  [data-modulo="lugares"] .lg-lista { padding-top: 0; padding-bottom: 30svh; }
+  [data-modulo="lugares"] .lg-paso { min-height: 72svh; padding-bottom: 2.4rem; }
+}
+
+/* ---------- los rótulos y las plumas de la lámina: en píxeles de pantalla, divididos por --k (px por unidad) ---------- */
+[data-modulo="lugares"] .lg-sobre .r { font-family: var(--lg-titulo); fill: var(--lg-tinta); font-weight: 400; paint-order: stroke; stroke: var(--lg-lino2); stroke-width: calc(3.2px / var(--k)); stroke-linejoin: round; }
+[data-modulo="lugares"] .lg-sobre .r-lugar { font-size: calc(9px / var(--k)); }
+[data-modulo="lugares"] .lg-sobre .r-casa { font-size: calc(10px / var(--k)); }
+[data-modulo="lugares"] .lg-sobre .r-pob { font-size: calc(8.5px / var(--k)); fill: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-sobre .r-sec { font-size: calc(7.5px / var(--k)); fill: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-sobre .r-mar { font-size: calc(8px / var(--k)); fill: var(--lg-agua); font-variant-caps: normal; }
+[data-modulo="lugares"] .lg-sobre .r-agua { font-size: calc(7.5px / var(--k)); fill: var(--lg-agua); }
+[data-modulo="lugares"] .lg-sobre .r-titulo { font-size: calc(18px / var(--k)); }
+[data-modulo="lugares"] .lg-sobre .r-subtitulo { font-size: calc(8px / var(--k)); fill: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-sobre .r-cred { font-size: calc(6.2px / var(--k)); fill: var(--lg-tinta2); stroke-width: calc(2px / var(--k)); }
+[data-modulo="lugares"] .lg-lamina[data-t="s"] .r-sec:not(.r-esencial),
+[data-modulo="lugares"] .lg-lamina[data-t="s"] .r-agua,
+[data-modulo="lugares"] .lg-lamina[data-t="s"] .r-subtitulo,
+[data-modulo="lugares"] .lg-lamina[data-t="s"] .r-pob:not(.r-esencial) { display: none; }
+@media (min-width: 900px) {
+  [data-modulo="lugares"] .lg-sobre .r-lugar { font-size: calc(13px / var(--k)); }
+  [data-modulo="lugares"] .lg-sobre .r-casa { font-size: calc(14px / var(--k)); }
+  [data-modulo="lugares"] .lg-sobre .r-pob { font-size: calc(11.5px / var(--k)); }
+  [data-modulo="lugares"] .lg-sobre .r-sec { font-size: calc(10px / var(--k)); }
+  [data-modulo="lugares"] .lg-sobre .r-mar { font-size: calc(11px / var(--k)); }
+  [data-modulo="lugares"] .lg-sobre .r-agua { font-size: calc(10.5px / var(--k)); }
+  [data-modulo="lugares"] .lg-sobre .r-titulo { font-size: calc(26px / var(--k)); }
+  [data-modulo="lugares"] .lg-sobre .r-subtitulo { font-size: calc(11px / var(--k)); }
+  [data-modulo="lugares"] .lg-sobre .r-cred { font-size: calc(8.5px / var(--k)); }
+}
+
+[data-modulo="lugares"] .lg-sobre .lg-linea,
+[data-modulo="lugares"] .lg-sobre .lg-linea2 { fill: none; stroke: var(--lg-teja); stroke-linecap: round; stroke-linejoin: round; transition: stroke-width .5s ease, opacity .5s ease; }
+[data-modulo="lugares"] .lg-sobre .lg-linea { stroke-width: calc(2.2px / var(--k)); }
+[data-modulo="lugares"] .lg-sobre .lg-linea2 { stroke-width: calc(.9px / var(--k)); opacity: .6; }
+[data-modulo="lugares"] .lg-sobre .lg-l.is-pasada { opacity: .62; }
+[data-modulo="lugares"] .lg-sobre .lg-l.is-activa .lg-linea { stroke-width: calc(3.2px / var(--k)); }
+[data-modulo="lugares"] .lg-sobre .lg-punto { fill: var(--lg-teja); stroke: var(--lg-lino2); stroke-width: calc(1.6px / var(--k)); r: calc(3.4px / var(--k)); }
+[data-modulo="lugares"] .lg-sobre .lg-glifo { fill: var(--lg-lino); stroke: var(--lg-tinta); stroke-width: calc(1.3px / var(--k)); stroke-linecap: round; stroke-linejoin: round; }
+[data-modulo="lugares"] .lg-sobre .lg-glifo-casa { fill: var(--lg-lino); stroke: var(--lg-tinta); stroke-width: calc(1.6px / var(--k)); stroke-linejoin: round; stroke-linecap: round; }
+[data-modulo="lugares"] .lg-sobre .lg-glifo,
+[data-modulo="lugares"] .lg-sobre .lg-m { transition: opacity .4s ease; }
+[data-modulo="lugares"] .lg-sobre .r-lugar { transition: opacity .4s ease; }
+
+/* ---------- la tarjeta de cada habitación ---------- */
+[data-modulo="lugares"] .lg-tarjeta {
+  display: grid; gap: 1.1rem; padding: 1rem 1rem 1.2rem; background: var(--lg-blanco);
+  border: 1px solid rgba(43, 40, 35, .1); border-radius: 3px;
+  box-shadow: 0 16px 34px -22px rgba(43, 40, 35, .55), 0 1px 2px rgba(43, 40, 35, .08);
+}
+[data-modulo="lugares"] .lg-fotos { position: relative; padding-bottom: 14%; }
+[data-modulo="lugares"] .lg-foto-hab { margin: 0; position: relative; }
+[data-modulo="lugares"] .lg-fotos picture, [data-modulo="lugares"] .lg-fotos img { display: block; width: 100%; height: auto; }
+[data-modulo="lugares"] .lg-foto-hab img { aspect-ratio: 4 / 3; object-fit: cover; background: var(--lg-granito); border-radius: 2px; }
+[data-modulo="lugares"] .lg-foto-hab figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: .45rem .7rem; font-size: .72rem; line-height: 1.3; color: #fff; background: linear-gradient(transparent, rgba(43, 40, 35, .72)); border-radius: 0 0 2px 2px; }
+[data-modulo="lugares"] .lg-foto-lugar {
+  position: absolute; right: -.35rem; bottom: 0; width: 44%; margin: 0; padding: .32rem .32rem .25rem; background: var(--lg-blanco);
+  box-shadow: 0 8px 20px -8px rgba(43, 40, 35, .6), 0 0 0 1px rgba(43, 40, 35, .08); transform: rotate(2deg); transform-origin: 80% 100%;
+}
+[data-modulo="lugares"] .lg-foto-lugar img { aspect-ratio: 4 / 3; object-fit: cover; background: var(--lg-granito); }
+[data-modulo="lugares"] .lg-foto-lugar figcaption { margin-top: .25rem; font-size: .62rem; line-height: 1.25; color: var(--lg-tinta2); }
+
+[data-modulo="lugares"] .lg-texto { position: relative; display: grid; gap: .55rem; }
+[data-modulo="lugares"] .lg-num { position: absolute; right: 0; top: -.2rem; margin: 0; font: 400 2.4rem/1 var(--lg-titulo); color: var(--lg-granito); }
+[data-modulo="lugares"] .lg-dato { margin: 0; font-size: .74rem; letter-spacing: .12em; text-transform: uppercase; color: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-nombre { margin: 0; font: 400 clamp(1.7rem, 2.6vw, 2.3rem)/1.05 var(--lg-titulo); }
+[data-modulo="lugares"] .lg-boton { all: unset; box-sizing: border-box; cursor: pointer; color: inherit; border-bottom: 2px solid transparent; transition: border-color .25s ease; }
+[data-modulo="lugares"] .lg-boton:hover { border-bottom-color: var(--lg-teja); }
+[data-modulo="lugares"] .lg-boton[aria-pressed="true"] { border-bottom-color: var(--lg-teja); }
+[data-modulo="lugares"] .lg-boton:focus-visible { outline: 2px solid var(--lg-teja); outline-offset: 4px; border-radius: 2px; }
+[data-modulo="lugares"] .lg-lugar { margin: 0; font-size: .85rem; color: var(--lg-teja-texto); }
+[data-modulo="lugares"] .lg-lugar span::first-letter { text-transform: uppercase; }
+[data-modulo="lugares"] .lg-citas { display: grid; gap: .5rem; }
+[data-modulo="lugares"] .lg-cita { margin: 0; padding: 0 0 0 .8rem; border-left: 2px solid var(--lg-granito); }
+[data-modulo="lugares"] .lg-cita p { margin: 0; font: 400 1.04rem/1.4 var(--lg-titulo); }
+[data-modulo="lugares"] .lg-cita footer { margin-top: .2rem; font-size: .72rem; color: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-dist { margin: .2rem 0 0; font-size: .9rem; line-height: 1.45; font-variant-numeric: tabular-nums; }
+[data-modulo="lugares"] .lg-dist strong { display: block; font-weight: 600; color: var(--lg-teja-texto); }
+[data-modulo="lugares"] .lg-dist small { font-size: .74rem; color: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-lugar-dice { margin: 0; font-size: .9rem; line-height: 1.5; }
+[data-modulo="lugares"] .lg-fuente { margin: 0; font-size: .7rem; line-height: 1.4; color: var(--lg-tinta2); }
+
+[data-modulo="lugares"] .lg-notas { margin-top: 1rem; max-width: 70ch; font-size: .78rem; line-height: 1.5; color: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-notas p { margin: 0 0 .4rem; }
+[data-modulo="lugares"] .lg-atrib { opacity: .85; }
+
+@media (min-width: 900px) {
+  [data-modulo="lugares"] .lg-tarjeta { padding: 1.2rem 1.2rem 1.5rem; }
+}
+
+/* ---------- con movimiento: la tarjeta se «abre» cuando su línea llega ---------- */
+[data-modulo="lugares"] .lg--mov .lg-tarjeta { transition: opacity .6s ease, transform .8s cubic-bezier(.16, 1, .3, 1); }
+[data-modulo="lugares"] .lg--mov .lg-paso:not(.is-abierta) .lg-tarjeta { opacity: .5; transform: translateY(10px); }
+[data-modulo="lugares"] .lg--mov .lg-foto-hab img { transition: clip-path 1s cubic-bezier(.16, 1, .3, 1); }
+[data-modulo="lugares"] .lg--mov .lg-paso:not(.is-abierta) .lg-foto-hab img { clip-path: inset(0 0 100% 0); }
+[data-modulo="lugares"] .lg--mov .lg-paso.is-abierta .lg-foto-hab img { clip-path: inset(0); }
+[data-modulo="lugares"] .lg--mov .lg-foto-lugar { transition: opacity .7s ease .35s, transform .9s cubic-bezier(.16, 1, .3, 1) .35s; }
+[data-modulo="lugares"] .lg--mov .lg-paso:not(.is-abierta) .lg-foto-lugar { opacity: 0; transform: rotate(2deg) translateY(14px); }
+[data-modulo="lugares"] .lg--mov .lg-paso.is-activa .lg-tarjeta { box-shadow: 0 22px 40px -22px rgba(43, 40, 35, .6), 0 0 0 1px color-mix(in srgb, var(--lg-teja) 55%, transparent); }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-modulo="lugares"] .lg *, [data-modulo="lugares"] .lg *::before { transition-duration: .01ms !important; transition-delay: 0s !important; }
+}
+
+/* ---------- el respaldo sin JS: las seis habitaciones con foto y texto en una rejilla sencilla ---------- */
+[data-modulo="lugares"] .lg-resp:not([hidden]) { list-style: none; margin: 0; padding: 0; display: grid; gap: 1.6rem 1.4rem; grid-template-columns: minmax(0, 1fr); font-family: var(--lg-texto); color: var(--lg-tinta); }
+@media (min-width: 640px) { [data-modulo="lugares"] .lg-resp:not([hidden]) { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { [data-modulo="lugares"] .lg-resp:not([hidden]) { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+[data-modulo="lugares"] .lg-resp-item figure { margin: 0 0 .6rem; position: relative; }
+[data-modulo="lugares"] .lg-resp-item img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; background: var(--lg-granito); border-radius: 2px; }
+[data-modulo="lugares"] .lg-resp-item figcaption:not(:empty) { margin-top: .3rem; font-size: .72rem; color: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-resp-item h3 { margin: 0 0 .2rem; font: 400 1.6rem/1.1 var(--lg-titulo); }
+[data-modulo="lugares"] .lg-resp-dato { margin: 0 0 .4rem; font-size: .76rem; letter-spacing: .1em; text-transform: uppercase; color: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-resp-item blockquote { margin: 0 0 .4rem; padding-left: .7rem; border-left: 2px solid var(--lg-granito); font: 400 1rem/1.4 var(--lg-titulo); }
+[data-modulo="lugares"] .lg-resp-item cite { display: block; font: 400 .72rem var(--lg-texto); color: var(--lg-tinta2); }
+[data-modulo="lugares"] .lg-resp-dist { margin: 0; font-weight: 600; color: var(--lg-teja-texto); font-size: .9rem; }
+[data-modulo="lugares"] .lg-resp-nota:not([hidden]) { max-width: 70ch; margin: 1.2rem 0 0; font-size: .78rem; line-height: 1.5; color: var(--lg-tinta2); }

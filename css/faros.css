@@ -1,0 +1,168 @@
+/* «Los faros de la costa» (agente Faros). Todo bajo [data-modulo="faros"].
+   Tokens de la web con respaldo; --noche y --noche-2 solo se usan aquí. */
+[data-modulo="faros"] {
+  --fr-lino: var(--lino, #F3EEE5);
+  --fr-lino-2: var(--lino-2, #E9E1D3);
+  --fr-blanco: var(--blanco, #FBF9F4);
+  --fr-tinta: var(--tinta, #2B2823);
+  --fr-tinta-2: var(--tinta-2, #5E574D);
+  --fr-granito: var(--granito, #B6AA98);
+  --fr-granito-2: var(--granito-2, #8F8473);
+  --fr-teja: var(--teja, #A9503A);
+  --fr-teja-t: var(--teja-texto, color-mix(in srgb, var(--fr-teja) 84%, var(--fr-tinta)));
+  --fr-noche: var(--noche, #121822);
+  --fr-noche-2: var(--noche-2, #1E2633);
+  --fr-faro: var(--faro, #FFE7A6);
+  --fr-casa: #FFB26B;
+  --fr-texto-noche: #E6ECF5;
+  --fr-apagado-noche: #A9B8CC;           /* 7,6:1 sobre --noche */
+  --fr-linea-noche: rgba(190, 212, 240, .18);
+  --fr-linea: color-mix(in srgb, var(--fr-tinta) 16%, var(--fr-lino));
+  --fr-t: var(--f-titulo, var(--f-tit, 'Hedvig Letters Serif', Georgia, 'Times New Roman', serif));
+  --fr-x: var(--f-texto, var(--f-txt, 'Golos Text', system-ui, -apple-system, 'Segoe UI', sans-serif));
+  display: block;
+  color: var(--fr-tinta);
+  font-family: var(--fr-x);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+[data-modulo="faros"] *, [data-modulo="faros"] *::before, [data-modulo="faros"] *::after { box-sizing: border-box; }
+[data-modulo="faros"] .fr__sr { position: absolute; width: 1px; height: 1px; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; padding: 0; }
+[data-modulo="faros"] :focus-visible { outline: 2px solid var(--fr-tinta); outline-offset: 2px; }
+[data-modulo="faros"] .fr__noche :focus-visible { outline-color: var(--fr-faro); }
+
+/* ---------------------------------------------------------------- la noche */
+[data-modulo="faros"] .fr__noche {
+  background: radial-gradient(120% 90% at 20% 0%, var(--fr-noche-2) 0%, var(--fr-noche) 62%);
+  color: var(--fr-texto-noche);
+  padding: clamp(18px, 3.6vw, 44px);
+  border-radius: 3px;
+}
+[data-modulo="faros"] .fr__h { margin: 0 0 .5rem; font: 400 clamp(1.6rem, 4.2vw, 2.5rem)/1.1 var(--fr-t); letter-spacing: -.005em; color: var(--fr-faro); }
+[data-modulo="faros"] .fr__lede { margin: 0 0 1.4rem; max-width: 46rem; color: var(--fr-texto-noche); font-size: 1.02rem; }
+[data-modulo="faros"] .fr__cuerpo { display: grid; gap: 20px; grid-template-columns: minmax(0, 1fr); align-items: start; }
+@media (min-width: 900px) {
+  [data-modulo="faros"] .fr__cuerpo { grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr); gap: clamp(24px, 3.4vw, 48px); }
+}
+
+/* la escena */
+[data-modulo="faros"] .fr__escena {
+  position: relative; width: 100%; max-width: 680px; margin-inline: auto;
+  aspect-ratio: var(--ar, 0.913);
+  container-type: inline-size;
+  background: var(--fr-noche);
+  border: 1px solid var(--fr-linea-noche);
+  overflow: hidden;
+  touch-action: pan-y;
+}
+[data-modulo="faros"] .fr__lienzo { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+[data-modulo="faros"] .fr__capa { position: absolute; inset: 0; pointer-events: none; font-size: clamp(10.5px, 2.5cqw, 13.5px); line-height: 1.15; }
+[data-modulo="faros"] .fr__lugar { position: absolute; color: rgba(190, 206, 228, .6); white-space: nowrap; font-size: .92em; letter-spacing: .02em; }
+[data-modulo="faros"] .fr__lugar[data-lado="e"] { transform: translate(7px, -50%); }
+[data-modulo="faros"] .fr__lugar[data-lado="w"] { transform: translate(calc(-100% - 7px), -50%); }
+@container (max-width: 470px) {
+  [data-modulo="faros"] .fr__lugar { display: none; }
+}
+[data-modulo="faros"] .fr__casa { position: absolute; width: 0; height: 0; }
+[data-modulo="faros"] .fr__casa-nombre { position: absolute; right: 12px; top: 0; transform: translateY(-50%); white-space: nowrap; color: var(--fr-casa); font-weight: 500; text-shadow: 0 0 6px var(--fr-noche), 0 0 2px var(--fr-noche); }
+[data-modulo="faros"] .fr__faro {
+  position: absolute; width: 44px; height: 44px; margin: 0; padding: 0; border: 0; border-radius: 50%;
+  transform: translate(-50%, -50%); background: transparent; color: inherit; font: inherit; cursor: pointer;
+  pointer-events: auto; -webkit-tap-highlight-color: transparent;
+}
+[data-modulo="faros"] .fr__nombre {
+  position: absolute; top: 50%; white-space: nowrap; color: var(--fr-faro); font-weight: 500;
+  text-shadow: 0 0 6px var(--fr-noche), 0 0 3px var(--fr-noche), 0 0 2px var(--fr-noche);
+}
+[data-modulo="faros"] .fr__faro[data-lado="e"] .fr__nombre { left: calc(50% + 11px); transform: translateY(-50%); }
+[data-modulo="faros"] .fr__faro[data-lado="w"] .fr__nombre { right: calc(50% + 11px); transform: translateY(-50%); }
+[data-modulo="faros"] .fr__faro[aria-current="true"] .fr__nombre { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+[data-modulo="faros"] .fr__faro:hover .fr__nombre { text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+[data-modulo="faros"] .fr__escala { position: absolute; left: 3.5%; bottom: 3%; height: 7px; border: 1px solid rgba(190, 212, 240, .55); border-top: 0; color: var(--fr-apagado-noche); }
+[data-modulo="faros"] .fr__escala span { position: absolute; left: 0; bottom: 100%; margin-bottom: 3px; font-size: .88em; white-space: nowrap; }
+
+/* la ficha */
+[data-modulo="faros"] .fr__ficha {
+  background: rgba(255, 255, 255, .035); border: 1px solid var(--fr-linea-noche); border-left: 2px solid var(--fr-faro);
+  padding: clamp(14px, 2.4vw, 24px); min-width: 0;
+}
+[data-modulo="faros"] .fr__ficha:focus { outline: none; }
+[data-modulo="faros"] .fr__f-foto { display: block; margin: 0 0 12px; }
+[data-modulo="faros"] .fr__f-foto img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: 50% 40%; }
+[data-modulo="faros"] .fr__f-nombre { margin: 0; font: 400 clamp(1.4rem, 3.2vw, 1.9rem)/1.12 var(--fr-t); color: var(--fr-faro); }
+[data-modulo="faros"] .fr__f-sub { margin: .1rem 0 .8rem; color: var(--fr-apagado-noche); font-size: .92rem; }
+[data-modulo="faros"] .fr__f-car { margin: 0 0 .2rem; }
+[data-modulo="faros"] .fr__codigo { display: inline-block; font-variant-numeric: tabular-nums; font-weight: 600; letter-spacing: .02em; padding: .05em .45em; background: rgba(255, 231, 166, .12); color: var(--fr-faro); border-radius: 2px; }
+[data-modulo="faros"] .fr__cite-pq { color: var(--fr-apagado-noche); font-size: .82rem; }
+[data-modulo="faros"] .fr__f-expl { margin: .2rem 0 .7rem; font-size: 1.05rem; }
+[data-modulo="faros"] .fr__ciclo { display: block; width: 100%; height: auto; margin: 0 0 .9rem; overflow: visible; }
+[data-modulo="faros"] .fr__pista { fill: rgba(255, 255, 255, .09); }
+[data-modulo="faros"] .fr__on { fill: var(--fr-faro); }
+[data-modulo="faros"] .fr__cabeza { stroke: #fff; stroke-width: .9; }
+[data-modulo="faros"] .fr__eje { fill: var(--fr-apagado-noche); font-size: 6.5px; font-family: var(--fr-x); }
+[data-modulo="faros"] .fr__datos { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 16px; margin: 0 0 .8rem; }
+[data-modulo="faros"] .fr__datos > div { min-width: 0; }
+[data-modulo="faros"] .fr__datos dt { color: var(--fr-apagado-noche); font-size: .8rem; line-height: 1.25; }
+[data-modulo="faros"] .fr__datos dd { margin: 0; font-variant-numeric: tabular-nums; }
+[data-modulo="faros"] .fr__datos > div:last-child { grid-column: 1 / -1; }
+[data-modulo="faros"] .fr__f-casa, [data-modulo="faros"] .fr__nota, [data-modulo="faros"] .fr__aviso, [data-modulo="faros"] .fr__fuente { margin: .4rem 0; font-size: .9rem; }
+[data-modulo="faros"] .fr__nota, [data-modulo="faros"] .fr__fuente { color: var(--fr-apagado-noche); }
+[data-modulo="faros"] .fr__aviso { color: var(--fr-casa); border-left: 2px solid var(--fr-casa); padding-left: 10px; }
+[data-modulo="faros"] .fr__disc { margin-top: .5rem; font-size: .88rem; }
+[data-modulo="faros"] .fr__disc summary { cursor: pointer; color: var(--fr-faro); min-height: 32px; display: flex; align-items: center; }
+[data-modulo="faros"] .fr__disc ul { margin: .3rem 0 0; padding-left: 1.1rem; color: var(--fr-apagado-noche); }
+
+/* pie de la noche */
+[data-modulo="faros"] .fr__pie-noche { margin-top: 18px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: flex-start; border-top: 1px solid var(--fr-linea-noche); padding-top: 14px; }
+[data-modulo="faros"] .fr__leyenda { margin: 0; flex: 1 1 24rem; color: var(--fr-apagado-noche); font-size: .84rem; max-width: 60rem; }
+[data-modulo="faros"] .fr__pausa { min-height: 44px; padding: 0 16px; background: transparent; color: var(--fr-faro); border: 1px solid var(--fr-faro); border-radius: 2px; font: 500 .92rem var(--fr-x); cursor: pointer; }
+[data-modulo="faros"] .fr__pausa:hover { background: rgba(255, 231, 166, .1); }
+
+/* ---------------------------------------------------------------- la tabla (respaldo legible) */
+[data-modulo="faros"] .fr__tabla { margin-top: 22px; border: 1px solid var(--fr-linea); background: var(--fr-blanco); }
+[data-modulo="faros"] .fr__tabla > summary { cursor: pointer; padding: 12px 16px; min-height: 44px; display: flex; align-items: center; font-weight: 500; }
+[data-modulo="faros"] .fr__tabla-t { width: 100%; border-collapse: collapse; font-size: .92rem; font-variant-numeric: tabular-nums; }
+[data-modulo="faros"] .fr__tabla-t th, [data-modulo="faros"] .fr__tabla-t td { padding: 9px 14px; text-align: left; vertical-align: top; border-top: 1px solid var(--fr-linea); }
+[data-modulo="faros"] .fr__tabla-t thead th { font-weight: 500; color: var(--fr-tinta-2); font-size: .82rem; }
+[data-modulo="faros"] .fr__tabla-t tbody th { font-weight: 600; }
+[data-modulo="faros"] .fr__tabla-t .fr__codigo { background: var(--fr-lino-2); color: var(--fr-tinta); }
+[data-modulo="faros"] .fr__tabla-t tr.fr__sel { background: color-mix(in srgb, var(--fr-faro) 26%, var(--fr-blanco)); }
+@media (max-width: 720px) {
+  [data-modulo="faros"] .fr__tabla-t thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  [data-modulo="faros"] .fr__tabla-t, [data-modulo="faros"] .fr__tabla-t tbody, [data-modulo="faros"] .fr__tabla-t tr, [data-modulo="faros"] .fr__tabla-t td, [data-modulo="faros"] .fr__tabla-t tbody th { display: block; }
+  [data-modulo="faros"] .fr__tabla-t tr { border-top: 1px solid var(--fr-linea); padding: 8px 14px; }
+  [data-modulo="faros"] .fr__tabla-t th, [data-modulo="faros"] .fr__tabla-t td { border: 0; padding: 2px 0; }
+  [data-modulo="faros"] .fr__tabla-t td[data-label]::before { content: attr(data-label) ': '; color: var(--fr-tinta-2); font-size: .82rem; }
+}
+
+/* ---------------------------------------------------------------- de día: lo que Mónica recomienda */
+[data-modulo="faros"] .fr__dia { padding-top: clamp(40px, 7vw, 84px); }
+[data-modulo="faros"] .fr__h--dia { color: var(--fr-tinta); font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: .4rem; }
+[data-modulo="faros"] .fr__dia-lede { margin: 0 0 1.6rem; color: var(--fr-tinta-2); max-width: 40rem; }
+[data-modulo="faros"] .fr__lista { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 0 clamp(28px, 5vw, 72px); }
+@media (min-width: 820px) { [data-modulo="faros"] .fr__lista { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+[data-modulo="faros"] .fr__rec { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 14px 18px; padding: 18px 0; border-top: 1px solid var(--fr-linea); align-items: start; }
+[data-modulo="faros"] .fr__rec:not(:has(.fr__rec-foto)) { grid-template-columns: minmax(0, 1fr); }
+[data-modulo="faros"] .fr__rec-foto { margin: 0; }
+[data-modulo="faros"] .fr__pic { display: block; }
+[data-modulo="faros"] .fr__rec-foto img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; background: var(--fr-granito); }
+[data-modulo="faros"] .fr__rec--grande { grid-template-columns: minmax(0, 1fr); gap: 12px; padding-top: 22px; }
+[data-modulo="faros"] .fr__rec--grande .fr__rec-foto img { aspect-ratio: 16 / 10; }
+[data-modulo="faros"] .fr__rec--grande .fr__rec-lugar { font-size: clamp(1.5rem, 3.4vw, 2.1rem); }
+@media (min-width: 820px) {
+  [data-modulo="faros"] .fr__rec:nth-child(even):not(.fr__rec--grande) { margin-top: 0; }
+  [data-modulo="faros"] .fr__rec:nth-child(n+3):nth-child(odd) { padding-right: 0; }
+}
+[data-modulo="faros"] .fr__rec-lugar { margin: 0 0 .35rem; font: 400 1.3rem/1.15 var(--fr-t); color: var(--fr-tinta); }
+[data-modulo="faros"] .fr__cita { margin: 0 0 .5rem; padding: 0; }
+[data-modulo="faros"] .fr__cita p { margin: 0; font-family: var(--fr-t); font-size: 1.04rem; line-height: 1.4; color: var(--fr-tinta); }
+[data-modulo="faros"] .fr__cita footer { margin-top: .15rem; font-size: .8rem; color: var(--fr-tinta-2); }
+[data-modulo="faros"] .fr__cita cite { font-style: normal; }
+[data-modulo="faros"] .fr__cita cite a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+[data-modulo="faros"] .fr__rec-casa { margin: .2rem 0 .4rem; font-size: .9rem; color: var(--fr-tinta-2); }
+[data-modulo="faros"] .fr__rec .fr__cite-pq { color: var(--fr-tinta-2); }
+[data-modulo="faros"] .fr__ver { display: inline-flex; align-items: center; min-height: 44px; padding: 0; background: none; border: 0; color: var(--fr-teja-t); font: 500 .92rem var(--fr-x); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; cursor: pointer; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-modulo="faros"] * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
+}

@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Casa Entremuros · casa rural de piedra en Cances Grande, Carballo</title>
+<meta name="description" content="Casa rural de piedra del siglo XIX en el valle de Cances, entre Carballo y Malpica: se alquila entera, con seis habitaciones con baño, piscina de agua salada, jardín y alpendre con barbacoa. A diez minutos de Malpica.">
+<meta property="og:title" content="Casa Entremuros · casa rural en Cances Grande, Carballo">
+<meta property="og:description" content="Una casa de piedra del siglo XIX con la mesa puesta: seis habitaciones con baño, piscina de agua salada y jardín, a diez minutos de Malpica.">
+<link rel="preload" as="image" type="image/avif" imagesrcset="img/fotos/mesa-larga-otono-480.avif 480w, img/fotos/mesa-larga-otono-800.avif 800w, img/fotos/mesa-larga-otono-1024.avif 1024w, img/fotos/mesa-larga-otono-1080.avif 1080w" imagesizes="(max-width: 899px) 70vw, 50vw" fetchpriority="high">
+<!-- script bloqueante: clases antes del primer pintado y el puente con la cortina (partes/cortina.html, de Mesa) -->
+<script>
+(function (d) {
+  var h = d.documentElement;
+  h.classList.add('js');
+  // MANDO DE MAQUETA (no viaja al cliente): solo con ?revision
+  try {
+    var q = new URLSearchParams(location.search);
+    if (q.has('revision')) {
+      h.classList.add('revision');
+      if (q.get('densidad') === 'sobria') h.classList.add('densidad-sobria');
+    }
+  } catch (e) {}
+  // el puente con la cortina: existe desde el primer momento, cargue antes quien cargue.
+  // La cortina llama a Entremuros.abrir() cuando EMPIEZA a abrirse y a Entremuros.retirarCortina() al acabar
+  // (o lanza los eventos entremuros:cortina-abre / entremuros:cortina-fuera en document);
+  // la web y los módulos usan Entremuros.alAbrirse(fn).
+  var E = window.Entremuros = window.Entremuros || {};
+  var cola = [];
+  var avisar = function (n) { try { d.dispatchEvent(new CustomEvent(n)); } catch (e) {} };
+  E.alAbrirse = function (fn) { if (E.abierta) { try { fn(); } catch (e) { console.warn(e); } } else cola.push(fn); };
+  E.abrir = function () {
+    if (E.abierta) return;
+    E.abierta = true;
+    cola.splice(0).forEach(function (fn) { try { fn(); } catch (e) { console.warn(e); } });
+    avisar('entremuros:abierta');
+  };
+  E.retirarCortina = function () {
+    if (E.cortinaFuera) return;
+    E.cortinaFuera = true;
+    clearTimeout(window.__redCortina);
+    h.classList.remove('cortina-activa');
+    h.classList.add('cortina-fuera');
+    E.abrir();
+    avisar('entremuros:fuera');
+  };
+  d.addEventListener('entremuros:cortina-abre', function () { E.abrir(); });
+  d.addEventListener('entremuros:cortina-fuera', function () { E.retirarCortina(); });
+  // red de seguridad por si main.js o la cortina no llegan: la cortina se va sola
+  window.__redCortina = setTimeout(function () { E.retirarCortina(); }, 6500);
+})(document);
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..600&family=Hedvig+Letters+Serif&family=Pinyon+Script&display=swap">
+<link rel="stylesheet" href="css/estilos.css?v=9f85a0ac">
+<link rel="stylesheet" href="css/mesa.css?v=7d6e92f0">
+<link rel="stylesheet" href="css/lugares.css?v=6a0e9645">
+<link rel="stylesheet" href="css/obra.css?v=4ecd2d19">
+<link rel="stylesheet" href="css/faros.css?v=20fbb6ff">
+<link rel="stylesheet" href="css/reserva.css?v=c3241a87">
+<link rel="icon" href="marca/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="marca/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="marca/apple-touch-icon.png">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#F3EEE5">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:image" content="img/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<noscript><style>.cortina,#cortina{display:none!important}</style></noscript>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LodgingBusiness",
+  "name": "Casa Entremuros",
+  "description": "Casa rural de piedra del siglo XIX en el valle de Cances (Carballo), que se alquila entera: dos edificios, seis habitaciones con baño, piscina de agua salada, jardín, alpendre con barbacoa y huerto.",
+  "image": "img/og.jpg",
+  "telephone": "+34 627 777 074",
+  "email": "info@casaentremuros.com",
+  "address": { "@type": "PostalAddress", "streetAddress": "Cances Grande nº 77", "postalCode": "15107", "addressLocality": "Carballo", "addressRegion": "A Coruña", "addressCountry": "ES" },
+  "amenityFeature": [
+    { "@type": "LocationFeatureSpecification", "name": "Piscina de agua salada", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Cocina equipada", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Wifi gratis", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Aparcamiento privado", "value": true },
+    { "@type": "LocationFeatureSpecification", "name": "Barbacoa cubierta", "value": true }
+  ]
+}
+</script>
+</head>
+<body>
+<!-- Cortina «La placa» (agente Mesa). Va justo después de <body>. Autónoma: lleva su CSS crítico y su red de seguridad. -->
+<style>
+  /* La losa de granito de la entrada se parte por la junta ENTRE | MUROS y se abre como una puerta corredera. */
+  .cortina { position: fixed; inset: 0; z-index: 9999; pointer-events: none; overflow: hidden;
+    --luz: -30; /* posición de la luz rasante, en vw (la mueve cortina.js) */
+    --pw: min(94vw, calc(86svh * 1340 / 1100), 1560px); /* ancho de la imagen de la placa, con su margen de sombra */
+    --corte: .4716; /* fracción de la imagen donde está la junta (img/mesa/placa.json) */ }
+  .cortina[hidden], html.cortina-fuera .cortina { display: none !important; }
+  .cortina-losa { position: absolute; top: 0; bottom: 0; width: 50.05%; will-change: transform; }
+  .cortina-izq { left: 0; }
+  .cortina-der { right: 0; }
+  .cortina-cara { position: absolute; inset: 0; overflow: hidden; background: var(--granito-2, #8F8473) url("img/mesa/granito-1024.webp") 0 0 / 512px 512px; }
+  .cortina-cara::after { content: ""; position: absolute; inset: 0; background: radial-gradient(120% 90% at 50% 45%, rgba(0,0,0,0) 40%, rgba(24,20,14,.34) 100%); }
+  .cortina-placa { position: absolute; top: 50%; width: var(--pw); aspect-ratio: 1340 / 1100; translate: 0 -50%; will-change: transform; }
+  .cortina-izq .cortina-placa { left: calc(100% - var(--corte) * var(--pw)); }
+  .cortina-der .cortina-placa { left: calc(-1 * var(--corte) * var(--pw)); }
+  .cortina-placa img { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  /* La luz rasante: la capa con el relieve fuerte se destapa de izquierda a derecha (en vw de pantalla). */
+  .cortina-rasante { position: absolute; inset: 0; --x0: calc(50vw - var(--corte) * var(--pw)); /* borde izquierdo de la imagen en pantalla */
+    -webkit-mask-image: linear-gradient(90deg, #000 0, #000 calc(var(--luz) * 1vw - 12vw - var(--x0)), transparent calc(var(--luz) * 1vw + 10vw - var(--x0)));
+    mask-image: linear-gradient(90deg, #000 0, #000 calc(var(--luz) * 1vw - 12vw - var(--x0)), transparent calc(var(--luz) * 1vw + 10vw - var(--x0))); }
+  /* canto cortado: un filo claro y la sombra que cae sobre lo que queda detrás al abrirse */
+  .cortina-canto { position: absolute; top: 0; bottom: 0; width: 3px; opacity: 0; background: linear-gradient(180deg, rgba(255,244,222,.5), rgba(255,244,222,.18)); }
+  .cortina-izq .cortina-canto { right: 0; }
+  .cortina-der .cortina-canto { left: 0; }
+  .cortina-sombra { position: absolute; top: 0; bottom: 0; width: clamp(40px, 7vw, 110px); opacity: 0; }
+  .cortina-izq .cortina-sombra { left: 100%; background: linear-gradient(90deg, rgba(30,22,12,.5), rgba(30,22,12,0)); }
+  .cortina-der .cortina-sombra { right: 100%; background: linear-gradient(270deg, rgba(30,22,12,.5), rgba(30,22,12,0)); }
+  .cortina-brillo { position: absolute; top: 0; bottom: 0; left: 0; width: 26vw; opacity: 0; mix-blend-mode: screen; will-change: transform;
+    background: linear-gradient(90deg, rgba(255,226,170,0), rgba(255,232,184,.34) 55%, rgba(255,226,170,0)); }
+  html.con-cortina { overflow: hidden; }
+  @media (prefers-reduced-motion: reduce) { .cortina { display: none !important; } html.con-cortina { overflow: auto; } }
+</style>
+<div id="cortina" class="cortina" aria-hidden="true">
+  <div class="cortina-losa cortina-izq">
+    <div class="cortina-cara">
+      <div class="cortina-placa">
+        <img class="cortina-base" src="img/mesa/placa-base-lg.webp" srcset="img/mesa/placa-base-sm.webp 750w, img/mesa/placa-base-lg.webp 1340w" sizes="(max-width: 760px) 94vw, 1340px" width="1340" height="1100" alt="" fetchpriority="high" decoding="async">
+        <div class="cortina-rasante"><img src="img/mesa/placa-rasante-lg.webp" srcset="img/mesa/placa-rasante-sm.webp 750w, img/mesa/placa-rasante-lg.webp 1340w" sizes="(max-width: 760px) 94vw, 1340px" width="1340" height="1100" alt="" decoding="async"></div>
+      </div>
+    </div>
+    <div class="cortina-canto"></div>
+    <div class="cortina-sombra"></div>
+  </div>
+  <div class="cortina-losa cortina-der">
+    <div class="cortina-cara">
+      <div class="cortina-placa">
+        <img class="cortina-base" src="img/mesa/placa-base-lg.webp" srcset="img/mesa/placa-base-sm.webp 750w, img/mesa/placa-base-lg.webp 1340w" sizes="(max-width: 760px) 94vw, 1340px" width="1340" height="1100" alt="" decoding="async">
+        <div class="cortina-rasante"><img src="img/mesa/placa-rasante-lg.webp" srcset="img/mesa/placa-rasante-sm.webp 750w, img/mesa/placa-rasante-lg.webp 1340w" sizes="(max-width: 760px) 94vw, 1340px" width="1340" height="1100" alt="" decoding="async"></div>
+      </div>
+    </div>
+    <div class="cortina-canto"></div>
+    <div class="cortina-sombra"></div>
+  </div>
+  <div class="cortina-brillo"></div>
+</div>
+<noscript><style>.cortina { display: none !important; } html.con-cortina { overflow: auto; }</style></noscript>
+<script>
+  /* Red de seguridad: la cortina se retira SIEMPRE, aunque no llegue js/cortina.js (ni GSAP, ni nada). */
+  (function () {
+    var d = document.documentElement;
+    try { if (!matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('con-cortina'); } catch (e) {}
+    setTimeout(function () { d.classList.remove('con-cortina'); d.classList.add('cortina-fuera'); }, 6000);
+  })();
+</script>
+<a class="saltar" href="#principal">Saltar al contenido</a>
+
+<!-- ============ cabecera fija (desde que se abre la cortina): «Casa Entremuros» con las letras de su placa, las paradas y el teléfono ============ -->
+<header class="cab" id="cab">
+  <div class="cab__in">
+    <a class="marca" href="./" aria-label="Casa Entremuros, a la portada"><img class="marca__letra" src="marca/letra.svg" width="238" height="26" alt="Casa Entremuros"></a>
+    <nav class="cab__nav" aria-label="Principal">
+      <a href="#casa">La casa</a>
+      <a href="#habitaciones">Habitaciones</a>
+      <a href="#antes-y-despues">Antes y después</a>
+      <a href="#alrededores">Alrededores</a>
+      <a href="#reservar">Reservar</a>
+    </nav>
+    <a class="cab__tel" href="tel:+34627777074"><span class="vh">Teléfono: </span>627 777 074</a>
+    <button class="cab__menu" id="menu-btn" type="button" aria-expanded="false" aria-controls="menu-movil"><span class="vh">Menú</span><i></i><i></i></button>
+  </div>
+  <div class="menu-movil" id="menu-movil" aria-hidden="true">
+    <nav aria-label="Menú">
+      <a href="#casa"><small>Piedra del siglo XIX en el valle de Cances</small>La casa</a>
+      <a href="#habitaciones"><small>Seis habitaciones, seis lugares</small>Habitaciones</a>
+      <a href="#dentro"><small>La lareira, el horno, el jardín</small>Dentro y fuera</a>
+      <a href="#antes-y-despues"><small>Cómo se destapó la piedra</small>Antes y después</a>
+      <a href="#alrededores"><small>Los faros de la costa</small>Alrededores</a>
+      <a href="#reservar"><small>La mesa para…</small>Reservar</a>
+      <a href="#llegar"><small>Cances Grande · Carballo</small>Cómo llegar</a>
+    </nav>
+    <p class="menu-movil__tel"><a href="tel:+34627777074">627 777 074</a> · <a href="mailto:info@casaentremuros.com">info@casaentremuros.com</a></p>
+  </div>
+</header>
+
+<main id="principal">
+
+  <!-- ============ 2. portada · «La mesa puesta» (módulo mesa, js/mesa.js: la mesa dibujada que se pone sola y el zoom «del plato al mar»). El HTML de dentro es el respaldo ============ -->
+  <section class="portada s-lino" id="portada" aria-labelledby="portada-tit">
+    <div class="portada__mesa" data-modulo="mesa">
+      <div class="portada__foto">
+        <picture data-foto="mesa-larga-otono"><source type="image/avif" srcset="img/fotos/mesa-larga-otono-480.avif 480w, img/fotos/mesa-larga-otono-800.avif 800w, img/fotos/mesa-larga-otono-1024.avif 1024w, img/fotos/mesa-larga-otono-1080.avif 1080w" sizes="(max-width: 899px) 70vw, 50vw"><source type="image/webp" srcset="img/fotos/mesa-larga-otono-480.webp 480w, img/fotos/mesa-larga-otono-800.webp 800w, img/fotos/mesa-larga-otono-1024.webp 1024w, img/fotos/mesa-larga-otono-1080.webp 1080w" sizes="(max-width: 899px) 70vw, 50vw"><img src="img/fotos/mesa-larga-otono-800.jpg" srcset="img/fotos/mesa-larga-otono-480.jpg 480w, img/fotos/mesa-larga-otono-800.jpg 800w, img/fotos/mesa-larga-otono-1024.jpg 1024w, img/fotos/mesa-larga-otono-1080.jpg 1080w" sizes="(max-width: 899px) 70vw, 50vw" width="1080" height="1080" alt="La mesa larga de pino de la casa, puesta con platos azul grisáceo, una guirnalda verde con velas en el centro y sillas blancas alrededor" fetchpriority="high" loading="eager" decoding="async"></picture>
+      </div>
+    </div>
+    <div class="portada-texto">
+      <div class="portada-texto__caja">
+        <p class="eyebrow">Casa rural · Cances Grande, Carballo</p>
+        <h1 class="portada__tit" id="portada-tit">Una casa de piedra del siglo XIX, con la mesa puesta</h1>
+        <p class="portada__baj">Casa entera <i aria-hidden="true">·</i> hasta 12 personas <i aria-hidden="true">·</i> seis habitaciones con baño <i aria-hidden="true">·</i> piscina <i aria-hidden="true">·</i> a diez minutos de Malpica</p>
+        <div class="portada__acc">
+          <a class="btn btn--marca" href="#reservar">Ver fechas</a>
+          <a class="btn btn--hueco" href="tel:+34627777074">Llamar <span class="num">627 777 074</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 4. la casa ============ -->
+  <section class="sec casa s-lino" id="casa" aria-labelledby="casa-tit">
+    <div class="env">
+      <header class="sec-cab rev">
+        <p class="eyebrow">La casa</p>
+        <h2 id="casa-tit">Una casa de hidalgos, abierta a huéspedes <em>desde hace casi treinta años</em><span class="rama" data-rama="1" aria-hidden="true"></span></h2>
+      </header>
+      <div class="casa__rejilla">
+        <div class="casa__txt rev">
+          <p class="casa__lead">Casa Entremuros es una casa de campo rural del siglo XIX, propia de la hidalguía rural gallega. Se desconoce con exactitud el año en que se levantó.</p>
+          <p>Está en el valle de Cances, entre Carballo y Malpica, desde donde se llega a la playa de Malpica en diez minutos y a las de Razo y Baldaio en quince. Coruña y Santiago de Compostela quedan muy cerca.</p>
+          <p>Son dos edificios: la casa grande, con el salón y la cocina abajo y cuatro habitaciones dobles, y la casita de la piscina, que antiguamente era el gallinero y hoy tiene dos habitaciones. Se alquila entera.</p>
+          <p>La casa ya era casa rural, con trece años de camino, cuando Mónica la cogió en marzo de 2010. Desde entonces la cuida, la decora para cada estación y restaura ella misma los muebles.</p>
+        </div>
+        <figure class="casa__f casa__f--grande rev">
+          <button type="button" class="foto-btn" data-visor="fachada" aria-label="Ver más grande: la fachada de la casa"><picture data-foto="fachada"><source type="image/avif" srcset="img/fotos/fachada-480.avif 480w, img/fotos/fachada-800.avif 800w, img/fotos/fachada-927.avif 927w" sizes="(max-width: 899px) 100vw, 46vw"><source type="image/webp" srcset="img/fotos/fachada-480.webp 480w, img/fotos/fachada-800.webp 800w, img/fotos/fachada-927.webp 927w" sizes="(max-width: 899px) 100vw, 46vw"><img src="img/fotos/fachada-800.jpg" srcset="img/fotos/fachada-480.jpg 480w, img/fotos/fachada-800.jpg 800w, img/fotos/fachada-927.jpg 927w" sizes="(max-width: 899px) 100vw, 46vw" width="927" height="927" alt="La casa grande, de piedra, con balcones de forja y tejado de teja, y a la derecha otro edificio de piedra con lamas de madera, sobre el patio enlosado y un trozo de césped, al atardecer" loading="lazy" decoding="async"></picture></button>
+          <figcaption>La casa grande y el patio de piedra, de tarde.</figcaption>
+        </figure>
+        <figure class="casa__f casa__f--casita rev">
+          <button type="button" class="foto-btn" data-visor="casita" aria-label="Ver más grande: la casita de la piscina"><picture data-foto="casita"><source type="image/avif" srcset="img/fotos/casita-480.avif 480w, img/fotos/casita-800.avif 800w, img/fotos/casita-1024.avif 1024w, img/fotos/casita-1080.avif 1080w" sizes="(max-width: 899px) 50vw, 24vw"><source type="image/webp" srcset="img/fotos/casita-480.webp 480w, img/fotos/casita-800.webp 800w, img/fotos/casita-1024.webp 1024w, img/fotos/casita-1080.webp 1080w" sizes="(max-width: 899px) 50vw, 24vw"><img src="img/fotos/casita-800.jpg" srcset="img/fotos/casita-480.jpg 480w, img/fotos/casita-800.jpg 800w, img/fotos/casita-1024.jpg 1024w, img/fotos/casita-1080.jpg 1080w" sizes="(max-width: 899px) 50vw, 24vw" width="1080" height="809" alt="La casita de la piscina, blanca, con dos puertas de madera y un camino de piedra delante" loading="lazy" decoding="async"></picture></button>
+          <figcaption>La casita de la piscina, que era el gallinero.</figcaption>
+        </figure>
+        <figure class="casa__f casa__f--flor rev">
+          <button type="button" class="foto-btn" data-visor="flores-hortensia" aria-label="Ver más grande: una hortensia"><picture data-foto="flores-hortensia"><source type="image/avif" srcset="img/fotos/flores-hortensia-480.avif 480w, img/fotos/flores-hortensia-720.avif 720w" sizes="(max-width: 899px) 50vw, 24vw"><source type="image/webp" srcset="img/fotos/flores-hortensia-480.webp 480w, img/fotos/flores-hortensia-720.webp 720w" sizes="(max-width: 899px) 50vw, 24vw"><img src="img/fotos/flores-hortensia-720.jpg" srcset="img/fotos/flores-hortensia-480.jpg 480w, img/fotos/flores-hortensia-720.jpg 720w" sizes="(max-width: 899px) 50vw, 24vw" width="720" height="720" alt="Una hortensia blanca en un jarrón de cristal verde junto a un grifo antiguo" loading="lazy" decoding="async"></picture></button>
+          <figcaption>Flores frescas en los rincones.</figcaption>
+        </figure>
+      </div>
+
+      <ul class="cifras rev" aria-label="La casa en cifras">
+        <li><b class="cifra">XIX</b><span>el siglo de la casa</span></li>
+        <li><b class="cifra">2</b><span>edificios: la casa grande y la casita de la piscina</span></li>
+        <li><b class="cifra">6</b><span>habitaciones, cada una con su baño</span></li>
+        <li><b class="cifra">12</b><span>personas <i class="sup">hasta 16 con camas supletorias, por confirmar</i></span></li>
+        <li><b class="cifra">1</b><span>piscina de agua salada, vallada</span></li>
+        <li><b class="cifra">10 <small>min</small></b><span>de la playa de Malpica</span></li>
+      </ul>
+
+      <div class="voces rev">
+        <blockquote class="voz"><p>Me encanta tener flores frescas en los rincones de la casa, la hortensia es una de mis favoritas.</p><footer><span class="num">Casa Entremuros, en Instagram · marzo de 2019</span></footer></blockquote>
+        <blockquote class="voz"><p>Me encanta cuidar hasta el mínimo detalle.</p><footer><span class="num">Casa Entremuros, en Instagram · diciembre de 2015</span></footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLO EN LA SOBRIA (mando ?revision): la casa de un vistazo ===== -->
+  <section class="vistazo s-lino2" id="vistazo" aria-labelledby="vistazo-tit">
+    <div class="env">
+      <h2 class="vistazo__tit" id="vistazo-tit">Casa Entremuros, de un vistazo</h2>
+      <table class="vistazo__tabla">
+        <tbody>
+          <tr><th scope="row">Se alquila</th><td>La casa entera, hasta 12 personas (hasta 16 con camas supletorias) <i class="sup">por confirmar</i></td></tr>
+          <tr><th scope="row">Edificios</th><td>La casa grande (cocina, salón con lareira y cuatro habitaciones dobles) y la casita de la piscina, antiguo gallinero (dos habitaciones)</td></tr>
+          <tr><th scope="row">Habitaciones y camas</th><td>Seis, cada una con baño. En la casa grande: Río Anllóns, Refuxo de Verdes (cama con dosel), Ponte Lubiáns (cama de 1,80) y Fervenza de San Paio (dos camas de 0,90). En la casita: Razo (cama de 1,50) y Baldaio. La cama de Río Anllóns y la de Baldaio, <i class="sup">por confirmar</i></td></tr>
+          <tr><th scope="row">Baños</th><td>Seis, uno por habitación, «todos diferentes»</td></tr>
+          <tr><th scope="row">Accesibilidad</th><td>Una de las dos habitaciones de la casita está adaptada para movilidad reducida</td></tr>
+          <tr><th scope="row">Piscina</th><td>De agua salada, vallada, con porche</td></tr>
+          <tr><th scope="row">Alpendre</th><td>Barbacoa cubierta con mesas, una pía antigua con agua, futbolín y cama elástica</td></tr>
+          <tr><th scope="row">Fuera</th><td>Jardín amplio, huerto, cabaña con juguetes, campo de fútbol y baloncesto, columpios y aparcamiento privado</td></tr>
+          <tr><th scope="row">Dentro</th><td>Cocina totalmente equipada, lavadora y secadora, wifi gratis, cuna gratis para menores de 3 años. No se fuma dentro de la casa</td></tr>
+          <tr><th scope="row">Mascotas</th><td>10 € <i class="sup">supuesto: las fuentes se contradicen</i></td></tr>
+          <tr><th scope="row">Entrada y salida</th><td>Entrada desde las 15:00; salida antes de las 11:00 <i class="sup">por confirmar</i></td></tr>
+          <tr><th scope="row">Fianza y reserva</th><td>Fianza de 200 €, que se devuelve a las 72 horas de la salida. Al reservar, el 30 % por transferencia y el resto el día de entrada</td></tr>
+          <tr><th scope="row">Temporadas y precios</th><td>Por noche, IVA incluido, de la web antigua <i class="sup">supuesto</i>. Temporada baja: 290 € hasta 8 personas y 340 € hasta 12. Alta (1 de julio al 1 de septiembre, Navidad, Semana Santa y puentes): julio 430 €, agosto 450 €, Semana Santa y puentes 400 €. Cama supletoria, 20 €. Una sola noche, con coste adicional: consultar</td></tr>
+          <tr><th scope="row">Distancias</th><td>Malpica, 10 min · Refuxo de Verdes, 10 min · Razo y Baldaio, 15 min · faro de Punta Nariga, 20 min · Ponte Maceira, 40 min · Coruña y Santiago, muy cerca (en coche, según la casa)</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ 5. «Seis lugares bajo un techo» (módulo lugares, js/lugares.js). El HTML de dentro es el respaldo ============ -->
+  <section class="sec habitaciones s-lino2" id="habitaciones" aria-labelledby="hab-tit">
+    <div class="env">
+      <header class="sec-cab rev">
+        <p class="eyebrow">Seis lugares bajo un techo</p>
+        <h2 id="hab-tit">Seis habitaciones, y cada una lleva el nombre <em>de un lugar de la comarca</em><span class="rama" data-rama="2" aria-hidden="true"></span></h2>
+        <p class="sec-cab__txt">Cuatro están en la casa grande y dos en la casita de la piscina. Todas tienen baño y, según la casa, «todos son diferentes».</p>
+      </header>
+      <div class="habitaciones__modulo" data-modulo="lugares">
+        <!-- Respaldo de «Seis lugares bajo un techo»: lo generó scripts/lugares.mjs; se queda si el JS falla. -->
+<ul class="lg-resp" data-respaldo="lugares">
+    <li class="lg-resp-item" data-lugar="rio-anllons">
+      <figure><picture><source type="image/avif" srcset="img/lugares/lg-rio-anllons-hab-480.avif 480w, img/lugares/lg-rio-anllons-hab-791.avif 791w" sizes="(max-width: 700px) 92vw, 380px"><source type="image/webp" srcset="img/lugares/lg-rio-anllons-hab-480.webp 480w, img/lugares/lg-rio-anllons-hab-791.webp 791w" sizes="(max-width: 700px) 92vw, 380px"><img src="img/lugares/lg-rio-anllons-hab-791.jpg" srcset="img/lugares/lg-rio-anllons-hab-480.jpg 480w, img/lugares/lg-rio-anllons-hab-791.jpg 791w" sizes="(max-width: 700px) 92vw, 380px" width="791" height="593" alt="La habitación Río Anllóns: cama doble con colcha dorada, pared de piedra vista, lámpara de cristal y tocador blanco" loading="lazy" decoding="async"></picture><figcaption></figcaption></figure>
+      <h3>Río Anllóns</h3>
+      <p class="lg-resp-dato">Casa grande · río: Río Anllóns</p>
+      <blockquote>«con vistas a la parte delantera de la casa y al jardín» <cite>IG 28 · jul 2023</cite></blockquote>
+      <p class="lg-resp-dist">a unos 3,0 km en línea recta</p>
+    </li>
+    <li class="lg-resp-item" data-lugar="refuxo-de-verdes">
+      <figure><picture><source type="image/avif" srcset="img/lugares/lg-refuxo-de-verdes-hab-480.avif 480w, img/lugares/lg-refuxo-de-verdes-hab-800.avif 800w" sizes="(max-width: 700px) 92vw, 380px"><source type="image/webp" srcset="img/lugares/lg-refuxo-de-verdes-hab-480.webp 480w, img/lugares/lg-refuxo-de-verdes-hab-800.webp 800w" sizes="(max-width: 700px) 92vw, 380px"><img src="img/lugares/lg-refuxo-de-verdes-hab-800.jpg" srcset="img/lugares/lg-refuxo-de-verdes-hab-480.jpg 480w, img/lugares/lg-refuxo-de-verdes-hab-800.jpg 800w" sizes="(max-width: 700px) 92vw, 380px" width="800" height="600" alt="La habitación Refuxo de Verdes: cama con dosel de hierro y cortinas blancas, pared de piedra y suelo de madera" loading="lazy" decoding="async"></picture><figcaption></figcaption></figure>
+      <h3>Refuxo de Verdes</h3>
+      <p class="lg-resp-dato">Casa grande · espacio natural: Refuxo de Verdes</p>
+      <blockquote>«cama con dosel» <cite>IG 101 · ago 2020</cite></blockquote>
+      <p class="lg-resp-dist">a 10 minutos en coche</p>
+    </li>
+    <li class="lg-resp-item" data-lugar="ponte-lubians">
+      <figure><picture><source type="image/avif" srcset="img/lugares/lg-ponte-lubians-hab-480.avif 480w, img/lugares/lg-ponte-lubians-hab-753.avif 753w" sizes="(max-width: 700px) 92vw, 380px"><source type="image/webp" srcset="img/lugares/lg-ponte-lubians-hab-480.webp 480w, img/lugares/lg-ponte-lubians-hab-753.webp 753w" sizes="(max-width: 700px) 92vw, 380px"><img src="img/lugares/lg-ponte-lubians-hab-753.jpg" srcset="img/lugares/lg-ponte-lubians-hab-480.jpg 480w, img/lugares/lg-ponte-lubians-hab-753.jpg 753w" sizes="(max-width: 700px) 92vw, 380px" width="753" height="565" alt="La habitación Ponte Lubiáns: la más grande de la casa, cama de 1,80 con cabecero blanco, vigas de madera y pared de piedra" loading="lazy" decoding="async"></picture><figcaption></figcaption></figure>
+      <h3>Ponte Lubiáns</h3>
+      <p class="lg-resp-dato">Casa grande · la más grande · cama de 1,80 · puente: Ponte Lubiáns</p>
+      <blockquote>«la habitación más grande de la casa con una cama de 1.80 y con vistas al frente de la casa y por el lateral al valle de Cances por donde entra toda la luz de la mañana» <cite>IG 66 · abr 2021</cite></blockquote>
+      <p class="lg-resp-dist">a unos 8,0 km por carretera</p>
+    </li>
+    <li class="lg-resp-item" data-lugar="fervenza-de-san-paio">
+      <figure><picture><source type="image/avif" srcset="img/lugares/lg-fervenza-de-san-paio-hab-480.avif 480w, img/lugares/lg-fervenza-de-san-paio-hab-800.avif 800w" sizes="(max-width: 700px) 92vw, 380px"><source type="image/webp" srcset="img/lugares/lg-fervenza-de-san-paio-hab-480.webp 480w, img/lugares/lg-fervenza-de-san-paio-hab-800.webp 800w" sizes="(max-width: 700px) 92vw, 380px"><img src="img/lugares/lg-fervenza-de-san-paio-hab-800.jpg" srcset="img/lugares/lg-fervenza-de-san-paio-hab-480.jpg 480w, img/lugares/lg-fervenza-de-san-paio-hab-800.jpg 800w" sizes="(max-width: 700px) 92vw, 380px" width="800" height="600" alt="La habitación Fervenza de San Paio: dos camas de 90 cm con ropa de cama de plumas grises, pared de piedra picada y espejo antiguo" loading="lazy" decoding="async"></picture><figcaption></figcaption></figure>
+      <h3>Fervenza de San Paio</h3>
+      <p class="lg-resp-dato">Casa grande · dos camas de 90 cm · cascada: Fervenza de San Paio</p>
+      <blockquote>«dos camas de 0.90 cm, en su transformación picamos la pared que tiene de piedra, pintamos en un color neutro y le dimos un toque con muebles antiguos y restaurados» <cite>IG 99 · ago 2020</cite></blockquote>
+      <p class="lg-resp-dist">a unos 17,6 km por carretera</p>
+    </li>
+    <li class="lg-resp-item" data-lugar="razo">
+      <figure><picture><source type="image/avif" srcset="img/lugares/lg-razo-hab-480.avif 480w, img/lugares/lg-razo-hab-800.avif 800w" sizes="(max-width: 700px) 92vw, 380px"><source type="image/webp" srcset="img/lugares/lg-razo-hab-480.webp 480w, img/lugares/lg-razo-hab-800.webp 800w" sizes="(max-width: 700px) 92vw, 380px"><img src="img/lugares/lg-razo-hab-800.jpg" srcset="img/lugares/lg-razo-hab-480.jpg 480w, img/lugares/lg-razo-hab-800.jpg 800w" sizes="(max-width: 700px) 92vw, 380px" width="800" height="600" alt="La habitación Razo, en la casita de la piscina: cama con cabecero de madera clara y cojines con borlas" loading="lazy" decoding="async"></picture><figcaption></figcaption></figure>
+      <h3>Razo</h3>
+      <p class="lg-resp-dato">Casita de la piscina · cama de 1,50 · playa: Praia de Razo</p>
+      <blockquote>«sencilla, cálida, con luz natural y unas vistas al jardín y a la piscina» <cite>IG 50 · jul 2021</cite></blockquote>
+      <p class="lg-resp-dist">a 15 minutos en coche</p>
+    </li>
+    <li class="lg-resp-item" data-lugar="baldaio">
+      <figure><picture><source type="image/avif" srcset="img/lugares/lg-baldaio-hab-480.avif 480w, img/lugares/lg-baldaio-hab-720.avif 720w" sizes="(max-width: 700px) 92vw, 380px"><source type="image/webp" srcset="img/lugares/lg-baldaio-hab-480.webp 480w, img/lugares/lg-baldaio-hab-720.webp 720w" sizes="(max-width: 700px) 92vw, 380px"><img src="img/lugares/lg-baldaio-hab-720.jpg" srcset="img/lugares/lg-baldaio-hab-480.jpg 480w, img/lugares/lg-baldaio-hab-720.jpg 720w" sizes="(max-width: 700px) 92vw, 380px" width="720" height="540" alt="La puerta de madera de la habitación Baldaio, con su rótulo" loading="lazy" decoding="async"></picture><figcaption>Solo el rótulo de la puerta: falta la foto de la habitación.</figcaption></figure>
+      <h3>Baldaio</h3>
+      <p class="lg-resp-dato">Casita de la piscina · playa: Praia de Baldaio</p>
+      <blockquote>«la habitación Baldaio que está en la casita de la piscina» <cite>IG 135 · jun 2019</cite></blockquote>
+      <p class="lg-resp-dist">a 15 minutos en coche</p>
+    </li>
+</ul>
+<p class="lg-resp-nota">En la casita de la piscina, una de las dos habitaciones está adaptada para movilidad reducida. La casa lo dice de Razo (IG 85) y de Baldaio (IG 135), así que no se señala cuál: por confirmar. Las distancias por carretera están calculadas con OSRM desde el núcleo de Cances Grande, no medidas. Donde la casa da su propio tiempo, manda el de la casa. Mapa y datos: © colaboradores de OpenStreetMap (ODbL). Rutas: OSRM (routing.openstreetmap.de, perfil coche). Textos de lugares: Galipedia (CC BY-SA).</p>
+      </div>
+      <p class="habitaciones__nota">Una de las dos habitaciones de la casita está adaptada para personas con movilidad reducida.</p>
+    </div>
+  </section>
+
+  <!-- ============ 6. dentro y fuera (composición de revista; galería con visor abierto por NOMBRE) ============ -->
+  <section class="sec dentro s-granito" id="dentro" aria-labelledby="dentro-tit">
+    <div class="env">
+      <header class="sec-cab rev">
+        <p class="eyebrow">Dentro y fuera</p>
+        <h2 id="dentro-tit">Con la piedra al aire, la lareira encendida <em>y el jardín para todos</em><span class="rama" data-rama="3" aria-hidden="true"></span></h2>
+      </header>
+
+      <h3 class="dentro__sub rev">Dentro</h3>
+      <div class="revista revista--dentro">
+        <div class="revista__txt rev">
+          <p>El salón tiene la antigua lareira, donde se enciende el fuego los días fríos de invierno. La cocina es amplia y está totalmente equipada con el menaje necesario para preparar todo lo que se quiera, y alrededor de su mesa de pino, hecha a medida, cabe el grupo entero.</p>
+          <p>Lo primero que se hizo en la reforma fue picar la pared hasta dejar la piedra a la vista. <q>El horno antiguo estaba tapado y lo descubrimos y la sorpresa fue que estaba intacto por dentro, es precioso</q>, contaba la casa en septiembre de 2020: hoy sigue ahí, en la pared de piedra de la cocina.</p>
+        </div>
+        <figure class="rf rf--salon rev">
+          <button type="button" class="foto-btn" data-visor="salon" aria-label="Ver más grande: el salón con la lareira"><picture data-foto="salon"><source type="image/avif" srcset="img/fotos/salon-480.avif 480w, img/fotos/salon-800.avif 800w, img/fotos/salon-1024.avif 1024w, img/fotos/salon-1080.avif 1080w" sizes="(max-width: 899px) 100vw, 40vw"><source type="image/webp" srcset="img/fotos/salon-480.webp 480w, img/fotos/salon-800.webp 800w, img/fotos/salon-1024.webp 1024w, img/fotos/salon-1080.webp 1080w" sizes="(max-width: 899px) 100vw, 40vw"><img src="img/fotos/salon-800.jpg" srcset="img/fotos/salon-480.jpg 480w, img/fotos/salon-800.jpg 800w, img/fotos/salon-1024.jpg 1024w, img/fotos/salon-1080.jpg 1080w" sizes="(max-width: 899px) 100vw, 40vw" width="1080" height="1350" alt="El salón de piedra con la lareira encendida y, delante, una mesa con un candelabro y un jarrón" loading="lazy" decoding="async"></picture></button>
+          <figcaption>El salón, con la antigua lareira encendida.</figcaption>
+        </figure>
+        <figure class="rf rf--cocina rev">
+          <button type="button" class="foto-btn" data-visor="cocina" aria-label="Ver más grande: la cocina"><picture data-foto="cocina"><source type="image/avif" srcset="img/fotos/cocina-480.avif 480w, img/fotos/cocina-800.avif 800w, img/fotos/cocina-1025.avif 1025w" sizes="(max-width: 899px) 100vw, 58vw"><source type="image/webp" srcset="img/fotos/cocina-480.webp 480w, img/fotos/cocina-800.webp 800w, img/fotos/cocina-1025.webp 1025w" sizes="(max-width: 899px) 100vw, 58vw"><img src="img/fotos/cocina-800.jpg" srcset="img/fotos/cocina-480.jpg 480w, img/fotos/cocina-800.jpg 800w, img/fotos/cocina-1025.jpg 1025w" sizes="(max-width: 899px) 100vw, 58vw" width="1025" height="683" alt="La cocina, con las paredes de piedra vista, las vigas de madera en el techo, una isla central y, al fondo, el horno antiguo en la pared" loading="lazy" decoding="async"></picture></button>
+          <figcaption><b>La cocina</b>Piedra a la vista, vigas en el techo y el horno antiguo.</figcaption>
+        </figure>
+        <figure class="rf rf--bano rev">
+          <button type="button" class="foto-btn" data-visor="bano-rio-anllons-2" aria-label="Ver más grande: el baño de Río Anllóns"><picture data-foto="bano-rio-anllons-2"><source type="image/avif" srcset="img/fotos/bano-rio-anllons-2-480.avif 480w, img/fotos/bano-rio-anllons-2-800.avif 800w, img/fotos/bano-rio-anllons-2-1024.avif 1024w, img/fotos/bano-rio-anllons-2-1080.avif 1080w" sizes="(max-width: 899px) 50vw, 26vw"><source type="image/webp" srcset="img/fotos/bano-rio-anllons-2-480.webp 480w, img/fotos/bano-rio-anllons-2-800.webp 800w, img/fotos/bano-rio-anllons-2-1024.webp 1024w, img/fotos/bano-rio-anllons-2-1080.webp 1080w" sizes="(max-width: 899px) 50vw, 26vw"><img src="img/fotos/bano-rio-anllons-2-800.jpg" srcset="img/fotos/bano-rio-anllons-2-480.jpg 480w, img/fotos/bano-rio-anllons-2-800.jpg 800w, img/fotos/bano-rio-anllons-2-1024.jpg 1024w, img/fotos/bano-rio-anllons-2-1080.jpg 1080w" sizes="(max-width: 899px) 50vw, 26vw" width="1080" height="1080" alt="Un baño con un lavabo de piedra sobre un mueble blanco, un espejo blanco y la pared de piedra restaurada" loading="lazy" decoding="async"></picture></button>
+          <figcaption>«Nuestros baños son todos diferentes.»<span class="num"> Instagram, agosto de 2020</span></figcaption>
+        </figure>
+        <figure class="rf rf--lavanda rev">
+          <button type="button" class="foto-btn" data-visor="detalle-lavanda-1" aria-label="Ver más grande: lavanda en el alféizar"><picture data-foto="detalle-lavanda-1"><source type="image/avif" srcset="img/fotos/detalle-lavanda-1-480.avif 480w, img/fotos/detalle-lavanda-1-800.avif 800w, img/fotos/detalle-lavanda-1-1024.avif 1024w, img/fotos/detalle-lavanda-1-1280.avif 1280w, img/fotos/detalle-lavanda-1-1440.avif 1440w" sizes="(max-width: 899px) 50vw, 20vw"><source type="image/webp" srcset="img/fotos/detalle-lavanda-1-480.webp 480w, img/fotos/detalle-lavanda-1-800.webp 800w, img/fotos/detalle-lavanda-1-1024.webp 1024w, img/fotos/detalle-lavanda-1-1280.webp 1280w, img/fotos/detalle-lavanda-1-1440.webp 1440w" sizes="(max-width: 899px) 50vw, 20vw"><img src="img/fotos/detalle-lavanda-1-800.jpg" srcset="img/fotos/detalle-lavanda-1-480.jpg 480w, img/fotos/detalle-lavanda-1-800.jpg 800w, img/fotos/detalle-lavanda-1-1024.jpg 1024w, img/fotos/detalle-lavanda-1-1280.jpg 1280w, img/fotos/detalle-lavanda-1-1440.jpg 1440w" sizes="(max-width: 899px) 50vw, 20vw" width="1440" height="1440" alt="Lavanda en un cubo esmaltado sobre el alféizar de piedra de una ventana, junto a una lechera antigua" loading="lazy" decoding="async"></picture></button>
+          <figcaption>Un rincón entre piedra, luz y calma.</figcaption>
+        </figure>
+      </div>
+
+      <h3 class="dentro__sub rev">Fuera</h3>
+      <div class="revista revista--fuera">
+        <div class="revista__txt rev">
+          <p>El jardín es amplio, con arces que se ponen rojizos en otoño y focos para las noches de verano. La piscina es de agua salada, vallada y con su porche. Enfrente de la casa está el alpendre, con la barbacoa cubierta, mesas, una pía antigua con agua y el futbolín: una zona que sirve igual en verano que en invierno.</p>
+          <p>Los niños tienen la cabaña con juguetes, la cama elástica, los columpios y un campo de césped para fútbol y baloncesto. Desde 2023 hay también un huerto del que pueden disfrutar los huéspedes.</p>
+        </div>
+        <figure class="rf rf--jardin rev">
+          <button type="button" class="foto-btn" data-visor="jardin-0144-1" aria-label="Ver más grande: el jardín con el arce rojo"><picture data-foto="jardin-0144-1"><source type="image/avif" srcset="img/fotos/jardin-0144-1-480.avif 480w, img/fotos/jardin-0144-1-800.avif 800w, img/fotos/jardin-0144-1-1024.avif 1024w, img/fotos/jardin-0144-1-1080.avif 1080w" sizes="(max-width: 899px) 100vw, 56vw"><source type="image/webp" srcset="img/fotos/jardin-0144-1-480.webp 480w, img/fotos/jardin-0144-1-800.webp 800w, img/fotos/jardin-0144-1-1024.webp 1024w, img/fotos/jardin-0144-1-1080.webp 1080w" sizes="(max-width: 899px) 100vw, 56vw"><img src="img/fotos/jardin-0144-1-800.jpg" srcset="img/fotos/jardin-0144-1-480.jpg 480w, img/fotos/jardin-0144-1-800.jpg 800w, img/fotos/jardin-0144-1-1024.jpg 1024w, img/fotos/jardin-0144-1-1080.jpg 1080w" sizes="(max-width: 899px) 100vw, 56vw" width="1080" height="1080" alt="El jardín con un arce de hojas rojas, el césped bien cortado, una piedra de paso y, al fondo, el muro y los árboles" loading="lazy" decoding="async"></picture></button>
+          <figcaption><b>El jardín</b>Rehecho en 2019: «me encanta el cambio de nuestro jardín». <span class="num">Instagram, mayo de 2019</span></figcaption>
+        </figure>
+        <figure class="rf rf--piscina rev">
+          <button type="button" class="foto-btn" data-visor="piscina" aria-label="Ver más grande: la piscina"><picture data-foto="piscina"><source type="image/avif" srcset="img/fotos/piscina-480.avif 480w, img/fotos/piscina-800.avif 800w, img/fotos/piscina-1024.avif 1024w, img/fotos/piscina-1080.avif 1080w" sizes="(max-width: 899px) 50vw, 30vw"><source type="image/webp" srcset="img/fotos/piscina-480.webp 480w, img/fotos/piscina-800.webp 800w, img/fotos/piscina-1024.webp 1024w, img/fotos/piscina-1080.webp 1080w" sizes="(max-width: 899px) 50vw, 30vw"><img src="img/fotos/piscina-800.jpg" srcset="img/fotos/piscina-480.jpg 480w, img/fotos/piscina-800.jpg 800w, img/fotos/piscina-1024.jpg 1024w, img/fotos/piscina-1080.jpg 1080w" sizes="(max-width: 899px) 50vw, 30vw" width="1080" height="1080" alt="La piscina de agua salada, de un azul intenso, con su valla de madera y el valle verde detrás" loading="lazy" decoding="async"></picture></button>
+          <figcaption>La piscina, de agua salada.</figcaption>
+        </figure>
+        <figure class="rf rf--alpendre rev">
+          <button type="button" class="foto-btn" data-visor="alpendre" aria-label="Ver más grande: el alpendre"><picture data-foto="alpendre"><source type="image/avif" srcset="img/fotos/alpendre-480.avif 480w, img/fotos/alpendre-800.avif 800w, img/fotos/alpendre-1024.avif 1024w, img/fotos/alpendre-1080.avif 1080w" sizes="(max-width: 899px) 50vw, 26vw"><source type="image/webp" srcset="img/fotos/alpendre-480.webp 480w, img/fotos/alpendre-800.webp 800w, img/fotos/alpendre-1024.webp 1024w, img/fotos/alpendre-1080.webp 1080w" sizes="(max-width: 899px) 50vw, 26vw"><img src="img/fotos/alpendre-800.jpg" srcset="img/fotos/alpendre-480.jpg 480w, img/fotos/alpendre-800.jpg 800w, img/fotos/alpendre-1024.jpg 1024w, img/fotos/alpendre-1080.jpg 1080w" sizes="(max-width: 899px) 50vw, 26vw" width="1080" height="1350" alt="El alpendre: un porche de vigas de madera y pilares de piedra, con un sofá de mimbre, una mesa baja y la piscina al fondo" loading="lazy" decoding="async"></picture></button>
+          <figcaption>El alpendre, con la barbacoa cubierta.</figcaption>
+        </figure>
+        <figure class="rf rf--campo rev">
+          <button type="button" class="foto-btn" data-visor="campo" aria-label="Ver más grande: el campo de césped"><picture data-foto="campo"><source type="image/avif" srcset="img/fotos/campo-480.avif 480w, img/fotos/campo-800.avif 800w, img/fotos/campo-1024.avif 1024w, img/fotos/campo-1080.avif 1080w" sizes="(max-width: 899px) 50vw, 26vw"><source type="image/webp" srcset="img/fotos/campo-480.webp 480w, img/fotos/campo-800.webp 800w, img/fotos/campo-1024.webp 1024w, img/fotos/campo-1080.webp 1080w" sizes="(max-width: 899px) 50vw, 26vw"><img src="img/fotos/campo-800.jpg" srcset="img/fotos/campo-480.jpg 480w, img/fotos/campo-800.jpg 800w, img/fotos/campo-1024.jpg 1024w, img/fotos/campo-1080.jpg 1080w" sizes="(max-width: 899px) 50vw, 26vw" width="1080" height="1080" alt="El campo de césped con una canasta de baloncesto sobre una pared de listones de madera y la sombra de una estructura en primer plano" loading="lazy" decoding="async"></picture></button>
+          <figcaption>El campo de fútbol y baloncesto.</figcaption>
+        </figure>
+        <figure class="rf rf--cabana rev">
+          <button type="button" class="foto-btn" data-visor="cabana" aria-label="Ver más grande: la cabaña de los niños"><picture data-foto="cabana"><source type="image/avif" srcset="img/fotos/cabana-480.avif 480w, img/fotos/cabana-800.avif 800w, img/fotos/cabana-1024.avif 1024w, img/fotos/cabana-1080.avif 1080w" sizes="(max-width: 899px) 50vw, 26vw"><source type="image/webp" srcset="img/fotos/cabana-480.webp 480w, img/fotos/cabana-800.webp 800w, img/fotos/cabana-1024.webp 1024w, img/fotos/cabana-1080.webp 1080w" sizes="(max-width: 899px) 50vw, 26vw"><img src="img/fotos/cabana-800.jpg" srcset="img/fotos/cabana-480.jpg 480w, img/fotos/cabana-800.jpg 800w, img/fotos/cabana-1024.jpg 1024w, img/fotos/cabana-1080.jpg 1080w" sizes="(max-width: 899px) 50vw, 26vw" width="1080" height="689" alt="La cabaña de los niños, con forma de tipi, sobre el césped, con árboles detrás" loading="lazy" decoding="async"></picture></button>
+          <figcaption>La cabaña con juguetes.</figcaption>
+        </figure>
+        <figure class="rf rf--noche rev">
+          <button type="button" class="foto-btn" data-visor="jardin-noche-0120" aria-label="Ver más grande: el jardín iluminado de noche"><picture data-foto="jardin-noche-0120"><source type="image/avif" srcset="img/fotos/jardin-noche-0120-480.avif 480w, img/fotos/jardin-noche-0120-800.avif 800w, img/fotos/jardin-noche-0120-1024.avif 1024w, img/fotos/jardin-noche-0120-1080.avif 1080w" sizes="(max-width: 899px) 100vw, 56vw"><source type="image/webp" srcset="img/fotos/jardin-noche-0120-480.webp 480w, img/fotos/jardin-noche-0120-800.webp 800w, img/fotos/jardin-noche-0120-1024.webp 1024w, img/fotos/jardin-noche-0120-1080.webp 1080w" sizes="(max-width: 899px) 100vw, 56vw"><img src="img/fotos/jardin-noche-0120-800.jpg" srcset="img/fotos/jardin-noche-0120-480.jpg 480w, img/fotos/jardin-noche-0120-800.jpg 800w, img/fotos/jardin-noche-0120-1024.jpg 1024w, img/fotos/jardin-noche-0120-1080.jpg 1080w" sizes="(max-width: 899px) 100vw, 56vw" width="1080" height="577" alt="El jardín de noche, con focos que iluminan un olivo y los arbustos entre muros de piedra" loading="lazy" decoding="async"></picture></button>
+          <figcaption>«Por fin le hemos puesto los focos al jardín.» <span class="num">Instagram, junio de 2020</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 7. «Antes y después» (módulo obra, js/obra.js). El HTML de dentro es el respaldo: cada pareja, lado a lado ============ -->
+  <section class="sec obra s-lino" id="antes-y-despues" aria-labelledby="obra-tit">
+    <div class="env">
+      <header class="sec-cab rev">
+        <p class="eyebrow">Antes y después</p>
+        <h2 id="obra-tit">La casa se fue destapando: <em>primero la piedra, luego todo lo demás</em><span class="rama" data-rama="4" aria-hidden="true"></span></h2>
+        <p class="sec-cab__txt">«Este año en marzo hizo 10 años que nos metimos en esta aventura del turismo rural», contaba la casa en julio de 2020. Son sus fotos de antes y de después, tal como las publicó.</p>
+      </header>
+      <div class="obra__modulo" data-modulo="obra">
+        <!-- Generado por scripts/obra.mjs: respaldo de «Antes y después». Si obra.js monta, lo oculta. -->
+<div class="obra-respaldo">
+<h3>La fachada en cinco tiempos</h3>
+<p>Cinco fotos de la misma fachada, hechas desde casi el mismo sitio y alineadas para que la casa se rehaga en el mismo encuadre mientras bajas.</p>
+<ol class="obra-respaldo__tiempos">
+<li><figure><picture><source type="image/avif" srcset="img/obra/fachada-1-441.avif 441w, img/obra/fachada-1-588.avif 588w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fachada-1-441.webp 441w, img/obra/fachada-1-588.webp 588w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fachada-1-588.jpg" srcset="img/obra/fachada-1-441.jpg 441w, img/obra/fachada-1-588.jpg 588w" sizes="(min-width: 900px) 40vw, 92vw" width="588" height="552" alt="Antes, tiempo 1 de 5: la fachada en obra, con los muros revocados y agrietados, sin tejado, montones blancos de material y un coche rojo delante." loading="lazy" decoding="async"></picture><figcaption><b>Sin tejado y con un coche rojo delante.</b> Los muros revocados y agrietados, sin tejado, con montones blancos de material delante de la puerta.</figcaption></figure></li>
+<li><figure><picture><source type="image/avif" srcset="img/obra/fachada-2-441.avif 441w, img/obra/fachada-2-588.avif 588w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fachada-2-441.webp 441w, img/obra/fachada-2-588.webp 588w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fachada-2-588.jpg" srcset="img/obra/fachada-2-441.jpg 441w, img/obra/fachada-2-588.jpg 588w" sizes="(min-width: 900px) 40vw, 92vw" width="588" height="552" alt="Antes, tiempo 2 de 5: la fachada con la piedra vista, el tejado nuevo, ventanas blancas y puerta de madera; un poste cruza la foto por la derecha." loading="lazy" decoding="async"></picture><figcaption><b>La piedra al aire.</b> El revoco quitado, el tejado nuevo y las ventanas y la puerta puestas. Un poste tapa parte de la foto.</figcaption></figure></li>
+<li><figure><picture><source type="image/avif" srcset="img/obra/fachada-3-441.avif 441w, img/obra/fachada-3-588.avif 588w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fachada-3-441.webp 441w, img/obra/fachada-3-588.webp 588w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fachada-3-588.jpg" srcset="img/obra/fachada-3-441.jpg 441w, img/obra/fachada-3-588.jpg 588w" sizes="(min-width: 900px) 40vw, 92vw" width="588" height="552" alt="Antes, tiempo 3 de 5: la fachada de piedra con un tejadillo sobre la puerta, escalera con barandilla de hierro, césped y el patio de grava." loading="lazy" decoding="async"></picture><figcaption><b>La entrada con tejadillo.</b> El tejadillo sobre la puerta, la escalera con barandilla y el césped delante, con la grava del patio.</figcaption></figure></li>
+<li><figure><picture><source type="image/avif" srcset="img/obra/fachada-4-441.avif 441w, img/obra/fachada-4-588.avif 588w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fachada-4-441.webp 441w, img/obra/fachada-4-588.webp 588w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fachada-4-588.jpg" srcset="img/obra/fachada-4-441.jpg 441w, img/obra/fachada-4-588.jpg 588w" sizes="(min-width: 900px) 40vw, 92vw" width="588" height="552" alt="Antes, tiempo 4 de 5, el de cuando cogieron la casa: la fachada de piedra con ventanas blancas, el tejadillo de la puerta y una sombrilla verde; el patio ya está enlosado." loading="lazy" decoding="async"></picture><figcaption><b>Cuando la cogimos.</b> «cuando la cogimos era como en la foto 4», dice Mónica. Es la más pequeña de las cinco y se ve más blanda.</figcaption></figure></li>
+<li><figure><picture><source type="image/avif" srcset="img/obra/fachada-5-441.avif 441w, img/obra/fachada-5-588.avif 588w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fachada-5-441.webp 441w, img/obra/fachada-5-588.webp 588w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fachada-5-588.jpg" srcset="img/obra/fachada-5-441.jpg 441w, img/obra/fachada-5-588.jpg 588w" sizes="(min-width: 900px) 40vw, 92vw" width="588" height="552" alt="Después, tiempo 5 de 5, el último de la serie: la fachada de piedra limpia con ventanas de madera y balcones de hierro, tejadillo sobre la puerta y el patio enlosado." loading="lazy" decoding="async"></picture><figcaption><b>Ventanas de madera y balcones.</b> La piedra limpia, las ventanas de madera con balcón de hierro y el patio enlosado. Es el último tiempo de la serie.</figcaption></figure></li>
+</ol>
+<p><small>La casa no dice en qué año se hizo cada foto. Solo dice que la cuarta es la de «cuando la cogimos». Fotos del carrusel de Instagram del 2 de julio de 2020 (IG 116), en el orden en que Mónica las publicó.</small></p>
+<section class="obra-respaldo__parada"><h3><span>2010</span> Se meten en la aventura</h3><p>La casa ya llevaba trece años funcionando como turismo rural cuando la cogieron. Después le hicieron «muchos cambios».</p><blockquote><p>«Este año en Marzo hizo 10 años que nos metimos en esta aventura del turismo rural sin contar y aunque los comienzos nunca son fáciles ahora estamos muy contentos.»</p><footer>IG 116 · 2 de julio de 2020</footer></blockquote>
+</section>
+<section class="obra-respaldo__parada"><h3><span>2011</span> Antes de las reformas</h3><p>Lo cuenta Mónica en un vídeo que publicó en diciembre de 2025.</p><blockquote><p>«Aquí empezó el viaje de nuestra casa rural, antes de las reformas, antes de los sueños hechos realidad… cada rincón está lleno de historia y se transformó sin perder su esencia»</p><footer>IG 5 (vídeo) · 18 de diciembre de 2025</footer></blockquote>
+</section>
+<section class="obra-respaldo__parada"><h3><span>Sin año</span> Lo primero: picar las paredes</h3><p>Estas reformas las cuenta Mónica sin decir el año. En la cocina, lo primero fue picar la pared hasta dejar la piedra a la vista, y apareció un horno antiguo que estaba tapado.</p><blockquote><p>«En la restauración lo primero que hicimos fue: Picar la pared toda y dejar al descubierto la piedra tan bonita que tiene. El horno antiguo estaba tapado y lo descubrimos y la sorpresa fue que estaba intacto por dentro, es precioso.»</p><footer>IG 81 · 20 de septiembre de 2020</footer></blockquote>
+<div class="obra-respaldo__figura"><h4>El horno antiguo</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/cocina-horno-480.avif 480w, img/obra/cocina-horno-800.avif 800w, img/obra/cocina-horno-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/cocina-horno-480.webp 480w, img/obra/cocina-horno-800.webp 800w, img/obra/cocina-horno-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/cocina-horno-1080.jpg" srcset="img/obra/cocina-horno-480.jpg 480w, img/obra/cocina-horno-800.jpg 800w, img/obra/cocina-horno-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="724" alt="Después: el horno antiguo en su hueco de piedra, con una pieza de barro dentro, y la pared de piedra a su alrededor." loading="lazy" decoding="async"></picture></figure></div><p><small>El yeso que se desprende es un dibujo, no una foto: no hay foto del horno tapado. El horno es el de la foto de Mónica.</small></p><blockquote><p>«conserva el horno antiguo que me encanta»</p><footer>IG 104 · 27 de julio de 2020</footer></blockquote></div>
+<div class="obra-respaldo__figura"><h4>La cocina</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/cocina-antes-480.avif 480w, img/obra/cocina-antes-800.avif 800w, img/obra/cocina-antes-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/cocina-antes-480.webp 480w, img/obra/cocina-antes-800.webp 800w, img/obra/cocina-antes-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/cocina-antes-1080.jpg" srcset="img/obra/cocina-antes-480.jpg 480w, img/obra/cocina-antes-800.jpg 800w, img/obra/cocina-antes-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="719" alt="Antes: la cocina con las paredes verdes, armarios de madera, una campana blanca sobre la isla y el suelo de baldosa roja." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/cocina-despues-480.avif 480w, img/obra/cocina-despues-800.avif 800w, img/obra/cocina-despues-1025.avif 1025w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/cocina-despues-480.webp 480w, img/obra/cocina-despues-800.webp 800w, img/obra/cocina-despues-1025.webp 1025w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/cocina-despues-1025.jpg" srcset="img/obra/cocina-despues-480.jpg 480w, img/obra/cocina-despues-800.jpg 800w, img/obra/cocina-despues-1025.jpg 1025w" sizes="(min-width: 900px) 40vw, 92vw" width="1025" height="683" alt="Después: la cocina con la pared de piedra a la vista, vigas en el techo, la isla blanca con dos taburetes y el horno antiguo en la pared." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Las dos fotos están hechas desde sitios distintos de la cocina, así que no se superponen: van lado a lado.</small></p></div>
+<div class="obra-respaldo__figura"><h4>El comedor de la cocina</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/comedor-antes-623.avif 623w, img/obra/comedor-antes-831.avif 831w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/comedor-antes-623.webp 623w, img/obra/comedor-antes-831.webp 831w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/comedor-antes-831.jpg" srcset="img/obra/comedor-antes-623.jpg 623w, img/obra/comedor-antes-831.jpg 831w" sizes="(min-width: 900px) 40vw, 92vw" width="831" height="537" alt="Antes: el comedor de la cocina con la pared verde, la ventana con marco de piedra y una mesa de madera con sillas." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/comedor-despues-623.avif 623w, img/obra/comedor-despues-831.avif 831w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/comedor-despues-623.webp 623w, img/obra/comedor-despues-831.webp 831w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/comedor-despues-831.jpg" srcset="img/obra/comedor-despues-623.jpg 623w, img/obra/comedor-despues-831.jpg 831w" sizes="(min-width: 900px) 40vw, 92vw" width="831" height="537" alt="Después: el mismo comedor con la pared de piedra a la vista, la ventana con marco de madera, vigas en el techo y la mesa puesta." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Las fotos se han alineado por la ventana, que es lo único que coincide en las dos; el resto de la sala se ve distinto porque la segunda foto está hecha desde otro lado.</small></p><blockquote><p>«Esta ha sido la evolución de la cocina en la zona de comedor, ¿Que os parece como ha ido cambiando?»</p><footer>IG 32 · 19 de junio de 2023</footer></blockquote></div>
+<div class="obra-respaldo__figura"><h4>El alpendre</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/alpendre-antes-480.avif 480w, img/obra/alpendre-antes-800.avif 800w, img/obra/alpendre-antes-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/alpendre-antes-480.webp 480w, img/obra/alpendre-antes-800.webp 800w, img/obra/alpendre-antes-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/alpendre-antes-1080.jpg" srcset="img/obra/alpendre-antes-480.jpg 480w, img/obra/alpendre-antes-800.jpg 800w, img/obra/alpendre-antes-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="538" alt="Antes: el alpendre con el tejado viejo y el interior a oscuras, hierba delante y un poste de la luz." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/alpendre-obra-1-480.avif 480w, img/obra/alpendre-obra-1-800.avif 800w, img/obra/alpendre-obra-1-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/alpendre-obra-1-480.webp 480w, img/obra/alpendre-obra-1-800.webp 800w, img/obra/alpendre-obra-1-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/alpendre-obra-1-1080.jpg" srcset="img/obra/alpendre-obra-1-480.jpg 480w, img/obra/alpendre-obra-1-800.jpg 800w, img/obra/alpendre-obra-1-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="538" alt="Durante: el alpendre en obra, con los muros de piedra a medio hacer y sin tejado." loading="lazy" decoding="async"></picture><figcaption>Durante</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/alpendre-obra-2-480.avif 480w, img/obra/alpendre-obra-2-800.avif 800w, img/obra/alpendre-obra-2-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/alpendre-obra-2-480.webp 480w, img/obra/alpendre-obra-2-800.webp 800w, img/obra/alpendre-obra-2-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/alpendre-obra-2-1080.jpg" srcset="img/obra/alpendre-obra-2-480.jpg 480w, img/obra/alpendre-obra-2-800.jpg 800w, img/obra/alpendre-obra-2-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="538" alt="Durante: las vigas nuevas del tejado puestas sobre los muros del alpendre." loading="lazy" decoding="async"></picture><figcaption>Durante</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/alpendre-despues-480.avif 480w, img/obra/alpendre-despues-800.avif 800w, img/obra/alpendre-despues-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/alpendre-despues-480.webp 480w, img/obra/alpendre-despues-800.webp 800w, img/obra/alpendre-despues-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/alpendre-despues-1080.jpg" srcset="img/obra/alpendre-despues-480.jpg 480w, img/obra/alpendre-despues-800.jpg 800w, img/obra/alpendre-despues-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="538" alt="Después: el alpendre con el tejado nuevo de teja y la piedra limpia." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Las cuatro fotos salen de dos collages de Mónica, partidos por la mitad; el sitio desde el que se hicieron no es exactamente el mismo.</small></p><blockquote><p>«En la reforma le cambiamos el tejado y las maderas ya que estaba muy deteriorado y limpiamos la piedra.»</p><footer>IG 54 · 18 de junio de 2021</footer></blockquote></div>
+<div class="obra-respaldo__figura"><h4>La piscina y el porche</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/piscina-antes-480.avif 480w, img/obra/piscina-antes-500.avif 500w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/piscina-antes-480.webp 480w, img/obra/piscina-antes-500.webp 500w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/piscina-antes-500.jpg" srcset="img/obra/piscina-antes-480.jpg 480w, img/obra/piscina-antes-500.jpg 500w" sizes="(min-width: 900px) 40vw, 92vw" width="500" height="375" alt="Antes: la casa y los edificios de piedra con tejados viejos, y la piscina al fondo a la derecha. Foto pequeña, de 500 píxeles." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/piscina-despues-480.avif 480w, img/obra/piscina-despues-800.avif 800w, img/obra/piscina-despues-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/piscina-despues-480.webp 480w, img/obra/piscina-despues-800.webp 800w, img/obra/piscina-despues-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/piscina-despues-1080.jpg" srcset="img/obra/piscina-despues-480.jpg 480w, img/obra/piscina-despues-800.jpg 800w, img/obra/piscina-despues-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="810" alt="Después: el porche nuevo, con un tejado grande, junto a la piscina rodeada de una valla de madera." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Fotos hechas desde sitios distintos: van lado a lado.</small></p><blockquote><p>«En las mejoras de la casa otra zona que rehabilitamos fue la de la piscina y el porche, os enseño el antes y después»</p><footer>IG 57 · 28 de mayo de 2021</footer></blockquote></div>
+</section>
+<section class="obra-respaldo__parada"><h3><span>2019</span> Varios meses de obras</h3><p>A principios de 2019 la casa estuvo cerrada por obras. Las fotos de esta parada las enseñó Mónica ese año o al siguiente.</p><blockquote><p>«llevamos varios meses cerrados por obras y mejoras»</p><footer>IG 163 · 19 de marzo de 2019</footer></blockquote>
+<div class="obra-respaldo__figura"><h4>Durante las obras</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/obras-2-480.avif 480w, img/obra/obras-2-800.avif 800w, img/obra/obras-2-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/obras-2-480.webp 480w, img/obra/obras-2-800.webp 800w, img/obra/obras-2-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/obras-2-1080.jpg" srcset="img/obra/obras-2-480.jpg 480w, img/obra/obras-2-800.jpg 800w, img/obra/obras-2-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Durante las obras: un hueco abierto en un muro de piedra, con azulejos al lado, cables y escombro en el suelo." loading="lazy" decoding="async"></picture><figcaption>Obra</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/obras-3-480.avif 480w, img/obra/obras-3-800.avif 800w, img/obra/obras-3-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/obras-3-480.webp 480w, img/obra/obras-3-800.webp 800w, img/obra/obras-3-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/obras-3-1080.jpg" srcset="img/obra/obras-3-480.jpg 480w, img/obra/obras-3-800.jpg 800w, img/obra/obras-3-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Durante las obras: tierra removida en el jardín, con la cabaña de paja al fondo, una pequeña excavadora amarilla y una furgoneta blanca." loading="lazy" decoding="async"></picture><figcaption>Obra</figcaption></figure></div><p><small>Dos de las tres fotos del post de marzo de 2019; la tercera es la misma del muro abierto que sale en la habitación Fervenza de San Paio.</small></p></div>
+<div class="obra-respaldo__figura"><h4>La casita de la piscina, antes gallinero</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/casita-antes-351.avif 351w, img/obra/casita-antes-468.avif 468w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/casita-antes-351.webp 351w, img/obra/casita-antes-468.webp 468w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/casita-antes-468.jpg" srcset="img/obra/casita-antes-351.jpg 351w, img/obra/casita-antes-468.jpg 468w" sizes="(min-width: 900px) 40vw, 92vw" width="468" height="517" alt="Antes: la casita de la piscina, el antiguo gallinero, con las paredes de color ocre, dos ventanas con marco de piedra y el porche en el centro." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/casita-obra-351.avif 351w, img/obra/casita-obra-468.avif 468w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/casita-obra-351.webp 351w, img/obra/casita-obra-468.webp 468w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/casita-obra-468.jpg" srcset="img/obra/casita-obra-351.jpg 351w, img/obra/casita-obra-468.jpg 468w" sizes="(min-width: 900px) 40vw, 92vw" width="468" height="517" alt="Durante: la casita con las paredes ya blancas y las ventanas y puertas nuevas, con restos de obra delante." loading="lazy" decoding="async"></picture><figcaption>Durante</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/casita-despues-351.avif 351w, img/obra/casita-despues-468.avif 468w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/casita-despues-351.webp 351w, img/obra/casita-despues-468.webp 468w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/casita-despues-468.jpg" srcset="img/obra/casita-despues-351.jpg 351w, img/obra/casita-despues-468.jpg 468w" sizes="(min-width: 900px) 40vw, 92vw" width="468" height="517" alt="Después: la casita blanca con ventanas y puerta de madera, el farol junto a la puerta y el patio enlosado." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Tres fotos alineadas por las ventanas y los faroles de la pared.</small></p><blockquote><p>«la casita de la piscina que antiguamente era el galliñero»</p><footer>IG 113 · 8 de julio de 2020</footer></blockquote><blockquote><p>«la hemos reformado toda completamente y además ahora una de las habitaciones es adaptada»</p><footer>IG 159 · 28 de marzo de 2019</footer></blockquote></div>
+<div class="obra-respaldo__figura"><h4>La habitación Río Anllóns</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/anllons-antes-480.avif 480w, img/obra/anllons-antes-800.avif 800w, img/obra/anllons-antes-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/anllons-antes-480.webp 480w, img/obra/anllons-antes-800.webp 800w, img/obra/anllons-antes-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/anllons-antes-1080.jpg" srcset="img/obra/anllons-antes-480.jpg 480w, img/obra/anllons-antes-800.jpg 800w, img/obra/anllons-antes-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Antes: la habitación Río Anllóns con las paredes de color marrón, el cabecero blanco y una ventana a la derecha." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/anllons-despues-480.avif 480w, img/obra/anllons-despues-791.avif 791w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/anllons-despues-480.webp 480w, img/obra/anllons-despues-791.webp 791w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/anllons-despues-791.jpg" srcset="img/obra/anllons-despues-480.jpg 480w, img/obra/anllons-despues-791.jpg 791w" sizes="(min-width: 900px) 40vw, 92vw" width="791" height="791" alt="Después: la habitación Río Anllóns con la pared de piedra a la vista, una cama con colcha beige y tonos neutros." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Las dos fotos están hechas desde distinto sitio y con distinta lente: no encajan y van lado a lado.</small></p><blockquote><p>«os enseño el cambio que le dimos el año pasado, picamos la piedra de las paredes que es preciosa y la puse en tonos neutros que le da más luz y amplitud»</p><footer>IG 105 · 22 de julio de 2020</footer></blockquote></div>
+<div class="obra-respaldo__figura"><h4>El baño de Río Anllóns</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/bano-antes-491.avif 491w, img/obra/bano-antes-655.avif 655w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/bano-antes-491.webp 491w, img/obra/bano-antes-655.webp 655w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/bano-antes-655.jpg" srcset="img/obra/bano-antes-491.jpg 491w, img/obra/bano-antes-655.jpg 655w" sizes="(min-width: 900px) 40vw, 92vw" width="655" height="599" alt="Antes: el baño con azulejos blancos y una cenefa naranja, una ventana de madera sobre el lavabo, un radiador y una cortina naranja." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/bano-despues-491.avif 491w, img/obra/bano-despues-655.avif 655w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/bano-despues-491.webp 491w, img/obra/bano-despues-655.webp 655w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/bano-despues-655.jpg" srcset="img/obra/bano-despues-491.jpg 491w, img/obra/bano-despues-655.jpg 655w" sizes="(min-width: 900px) 40vw, 92vw" width="655" height="599" alt="Después: el mismo baño con la pared de piedra restaurada, la ventana de madera con marco de granito, un lavabo de piedra y una bañera exenta." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Alineadas por la ventana. Los sanitarios y el radiador son otros, y la foto de después está hecha desde un poco más cerca.</small></p><blockquote><p>«El baño de la habitación Río Anllóns en su reforma restauramos una pared que tenía de piedra, los revestimientos en tonos neutros para que aportara luminosidad y además ahora cuenta con bañera para los que les guste un baño relajante y una amplia ducha.»</p><footer>IG 145 · 10 de mayo de 2019</footer></blockquote></div>
+<div class="obra-respaldo__figura"><h4>La habitación Fervenza de San Paio</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/fervenza-antes-474.avif 474w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fervenza-antes-474.webp 474w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fervenza-antes-474.jpg" srcset="img/obra/fervenza-antes-474.jpg 474w" sizes="(min-width: 900px) 40vw, 92vw" width="474" height="474" alt="Antes: la habitación Fervenza de San Paio con las paredes amarillas, dos camas y una ventana con contraventanas de madera." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/fervenza-obra-1-480.avif 480w, img/obra/fervenza-obra-1-800.avif 800w, img/obra/fervenza-obra-1-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fervenza-obra-1-480.webp 480w, img/obra/fervenza-obra-1-800.webp 800w, img/obra/fervenza-obra-1-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fervenza-obra-1-1080.jpg" srcset="img/obra/fervenza-obra-1-480.jpg 480w, img/obra/fervenza-obra-1-800.jpg 800w, img/obra/fervenza-obra-1-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1081" alt="Durante: el muro de piedra al descubierto, con un hueco abierto y una escalera de tijera." loading="lazy" decoding="async"></picture><figcaption>Durante</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/fervenza-obra-2-480.avif 480w, img/obra/fervenza-obra-2-800.avif 800w, img/obra/fervenza-obra-2-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fervenza-obra-2-480.webp 480w, img/obra/fervenza-obra-2-800.webp 800w, img/obra/fervenza-obra-2-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fervenza-obra-2-1080.jpg" srcset="img/obra/fervenza-obra-2-480.jpg 480w, img/obra/fervenza-obra-2-800.jpg 800w, img/obra/fervenza-obra-2-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1081" alt="Durante: la ventana con marco de granito y, debajo, la pared todavía con yeso verde." loading="lazy" decoding="async"></picture><figcaption>Durante</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/fervenza-despues-480.avif 480w, img/obra/fervenza-despues-800.avif 800w, img/obra/fervenza-despues-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/fervenza-despues-480.webp 480w, img/obra/fervenza-despues-800.webp 800w, img/obra/fervenza-despues-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/fervenza-despues-1080.jpg" srcset="img/obra/fervenza-despues-480.jpg 480w, img/obra/fervenza-despues-800.jpg 800w, img/obra/fervenza-despues-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1081" alt="Después: la pared de piedra picada con un espejo de marco de madera, y las dos camas." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Antes, durante y después, como las enseñó Mónica. La foto del antes es la más pequeña de todas.</small></p><blockquote><p>«en su transformación picamos la pared que tiene de piedra, pintamos en un color neutro y le dimos un toque con muebles antiguos y restaurados.»</p><footer>IG 99 · 10 de agosto de 2020</footer></blockquote></div>
+<div class="obra-respaldo__figura"><h4>El jardín</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/jardin-antes-480.avif 480w, img/obra/jardin-antes-800.avif 800w, img/obra/jardin-antes-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/jardin-antes-480.webp 480w, img/obra/jardin-antes-800.webp 800w, img/obra/jardin-antes-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/jardin-antes-1080.jpg" srcset="img/obra/jardin-antes-480.jpg 480w, img/obra/jardin-antes-800.jpg 800w, img/obra/jardin-antes-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Antes: el terreno del jardín, de tierra y piedras, con un muro curvo al fondo y el tejado de una casa." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/jardin-obra-480.avif 480w, img/obra/jardin-obra-800.avif 800w, img/obra/jardin-obra-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/jardin-obra-480.webp 480w, img/obra/jardin-obra-800.webp 800w, img/obra/jardin-obra-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/jardin-obra-1080.jpg" srcset="img/obra/jardin-obra-480.jpg 480w, img/obra/jardin-obra-800.jpg 800w, img/obra/jardin-obra-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Durante: la tierra removida y un borde de piedra que dibuja una curva." loading="lazy" decoding="async"></picture><figcaption>Durante</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/jardin-despues-480.avif 480w, img/obra/jardin-despues-800.avif 800w, img/obra/jardin-despues-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/jardin-despues-480.webp 480w, img/obra/jardin-despues-800.webp 800w, img/obra/jardin-despues-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/jardin-despues-1080.jpg" srcset="img/obra/jardin-despues-480.jpg 480w, img/obra/jardin-despues-800.jpg 800w, img/obra/jardin-despues-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Después: el mismo rincón con césped, bolas de boj y una valla de madera sobre el muro." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure></div><p><small>Del terreno de tierra y piedras al césped. Hecho, según Mónica, con el trabajo de Jardinería Varan.</small></p><blockquote><p>«me encanta el cambio de nuestro jardín gracias al trabajo de Jardineria Varan»</p><footer>IG 144 · 12 de mayo de 2019</footer></blockquote></div>
+<div class="obra-respaldo__figura"><h4>Los muebles que restaura Mónica</h4><div class="obra-respaldo__fotos"><figure><picture><source type="image/avif" srcset="img/obra/tocador-antes-480.avif 480w, img/obra/tocador-antes-747.avif 747w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/tocador-antes-480.webp 480w, img/obra/tocador-antes-747.webp 747w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/tocador-antes-747.jpg" srcset="img/obra/tocador-antes-480.jpg 480w, img/obra/tocador-antes-747.jpg 747w" sizes="(min-width: 900px) 40vw, 92vw" width="747" height="747" alt="Antes: un tocador de madera oscura con espejo de tres hojas, sin pintar." loading="lazy" decoding="async"></picture><figcaption>Antes</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/tocador-despues-480.avif 480w, img/obra/tocador-despues-800.avif 800w, img/obra/tocador-despues-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/tocador-despues-480.webp 480w, img/obra/tocador-despues-800.webp 800w, img/obra/tocador-despues-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/tocador-despues-1080.jpg" srcset="img/obra/tocador-despues-480.jpg 480w, img/obra/tocador-despues-800.jpg 800w, img/obra/tocador-despues-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Después: el mismo tocador pintado de blanco, con su taburete." loading="lazy" decoding="async"></picture><figcaption>Después</figcaption></figure><figure><picture><source type="image/avif" srcset="img/obra/mesilla-480.avif 480w, img/obra/mesilla-800.avif 800w, img/obra/mesilla-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/mesilla-480.webp 480w, img/obra/mesilla-800.webp 800w, img/obra/mesilla-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/mesilla-1080.jpg" srcset="img/obra/mesilla-480.jpg 480w, img/obra/mesilla-800.jpg 800w, img/obra/mesilla-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Collage de Mónica: a la izquierda, «Antes», una mesilla de madera oscura con cuatro cajones; a la derecha, «Después», la misma mesilla pintada de blanco con la tapa natural." loading="lazy" decoding="async"></picture></figure><figure><picture><source type="image/avif" srcset="img/obra/cabecero-480.avif 480w, img/obra/cabecero-800.avif 800w, img/obra/cabecero-1080.avif 1080w" sizes="(min-width: 900px) 40vw, 92vw"><source type="image/webp" srcset="img/obra/cabecero-480.webp 480w, img/obra/cabecero-800.webp 800w, img/obra/cabecero-1080.webp 1080w" sizes="(min-width: 900px) 40vw, 92vw"><img src="img/obra/cabecero-1080.jpg" srcset="img/obra/cabecero-480.jpg 480w, img/obra/cabecero-800.jpg 800w, img/obra/cabecero-1080.jpg 1080w" sizes="(min-width: 900px) 40vw, 92vw" width="1080" height="1080" alt="Collage de Mónica: arriba, «Después», un cabecero blanco con el respaldo tapizado; abajo, «Antes», el mismo cabecero de madera." loading="lazy" decoding="async"></picture></figure></div><p><small>Dos de las fotos son collages hechos por ella, con su «Antes» y su «Después» escritos encima.</small></p><blockquote><p>«Soy una apasionada de la decoración y me encanta buscar ideas»</p><footer>IG 160 · 22 de marzo de 2019</footer></blockquote></div>
+</section>
+<section class="obra-respaldo__parada"><h3><span>Hoy</span> La casa, entera</h3><p>Hoy se alquila entera: la casa grande y la casita de la piscina, seis habitaciones con baño.</p>
+</section>
+</div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- ============ 8. cada estación, una mesa (franja corta; main.js la ordena empezando por la de ahora, o la de ?fecha=) ============ -->
+  <section class="sec estaciones s-lino" id="estaciones" aria-labelledby="est-tit">
+    <div class="env">
+      <header class="sec-cab rev">
+        <p class="eyebrow">Cada estación, una mesa</p>
+        <h2 id="est-tit" class="estaciones__tit">La casa se viste distinta cada vez, <em>con las flores y la mesa de la temporada</em></h2>
+      </header>
+      <ol class="estaciones__fila" id="estaciones-fila">
+        <li class="estacion rev" data-estacion="primavera">
+          <figure>
+            <button type="button" class="foto-btn" data-visor="mesa-jardin-0011" aria-label="Ver más grande: primavera"><picture data-foto="mesa-jardin-0011"><source type="image/avif" srcset="img/fotos/mesa-jardin-0011-480.avif 480w, img/fotos/mesa-jardin-0011-800.avif 800w, img/fotos/mesa-jardin-0011-1024.avif 1024w, img/fotos/mesa-jardin-0011-1280.avif 1280w, img/fotos/mesa-jardin-0011-1440.avif 1440w" sizes="(max-width: 699px) 50vw, 24vw"><source type="image/webp" srcset="img/fotos/mesa-jardin-0011-480.webp 480w, img/fotos/mesa-jardin-0011-800.webp 800w, img/fotos/mesa-jardin-0011-1024.webp 1024w, img/fotos/mesa-jardin-0011-1280.webp 1280w, img/fotos/mesa-jardin-0011-1440.webp 1440w" sizes="(max-width: 699px) 50vw, 24vw"><img src="img/fotos/mesa-jardin-0011-800.jpg" srcset="img/fotos/mesa-jardin-0011-480.jpg 480w, img/fotos/mesa-jardin-0011-800.jpg 800w, img/fotos/mesa-jardin-0011-1024.jpg 1024w, img/fotos/mesa-jardin-0011-1280.jpg 1280w, img/fotos/mesa-jardin-0011-1440.jpg 1440w" sizes="(max-width: 699px) 50vw, 24vw" width="1440" height="1800" alt="Una mesita con mantel claro sobre el césped, bajo un árbol, con una cesta y un libro" loading="lazy" decoding="async"></picture></button>
+            <figcaption><b>Primavera<span class="ahora"> · ahora</span></b>«Días de primavera, sol, relax, el cantar de los pajaritos.» <span class="num">Instagram, abril de 2025</span></figcaption>
+          </figure>
+        </li>
+        <li class="estacion rev" data-estacion="verano">
+          <figure>
+            <button type="button" class="foto-btn" data-visor="limonada" aria-label="Ver más grande: verano"><picture data-foto="limonada"><source type="image/avif" srcset="img/fotos/limonada-480.avif 480w, img/fotos/limonada-800.avif 800w, img/fotos/limonada-1024.avif 1024w, img/fotos/limonada-1215.avif 1215w" sizes="(max-width: 699px) 50vw, 24vw"><source type="image/webp" srcset="img/fotos/limonada-480.webp 480w, img/fotos/limonada-800.webp 800w, img/fotos/limonada-1024.webp 1024w, img/fotos/limonada-1215.webp 1215w" sizes="(max-width: 699px) 50vw, 24vw"><img src="img/fotos/limonada-800.jpg" srcset="img/fotos/limonada-480.jpg 480w, img/fotos/limonada-800.jpg 800w, img/fotos/limonada-1024.jpg 1024w, img/fotos/limonada-1215.jpg 1215w" sizes="(max-width: 699px) 50vw, 24vw" width="1215" height="2160" alt="Dos vasos de limonada con una rodaja de limón junto al borde de la piscina" loading="lazy" decoding="async"></picture></button>
+            <figcaption><b>Verano<span class="ahora"> · ahora</span></b>«Imagina comer aquí sin prisas, darte un baño, escuchando la naturaleza, respirando calma y viviendo el momento.» <span class="num">Instagram, mayo de 2026</span></figcaption>
+          </figure>
+        </li>
+        <li class="estacion rev" data-estacion="otono">
+          <figure>
+            <button type="button" class="foto-btn" data-visor="mesa-larga-otono-b" aria-label="Ver más grande: otoño"><picture data-foto="mesa-larga-otono-b"><source type="image/avif" srcset="img/fotos/mesa-larga-otono-b-480.avif 480w, img/fotos/mesa-larga-otono-b-800.avif 800w, img/fotos/mesa-larga-otono-b-1024.avif 1024w, img/fotos/mesa-larga-otono-b-1080.avif 1080w" sizes="(max-width: 699px) 50vw, 24vw"><source type="image/webp" srcset="img/fotos/mesa-larga-otono-b-480.webp 480w, img/fotos/mesa-larga-otono-b-800.webp 800w, img/fotos/mesa-larga-otono-b-1024.webp 1024w, img/fotos/mesa-larga-otono-b-1080.webp 1080w" sizes="(max-width: 699px) 50vw, 24vw"><img src="img/fotos/mesa-larga-otono-b-800.jpg" srcset="img/fotos/mesa-larga-otono-b-480.jpg 480w, img/fotos/mesa-larga-otono-b-800.jpg 800w, img/fotos/mesa-larga-otono-b-1024.jpg 1024w, img/fotos/mesa-larga-otono-b-1080.jpg 1080w" sizes="(max-width: 699px) 50vw, 24vw" width="1080" height="1080" alt="La mesa larga de pino con un centro de mesa otoñal de hojas verdes, platos azul grisáceo y velas" loading="lazy" decoding="async"></picture></button>
+            <figcaption><b>Otoño<span class="ahora"> · ahora</span></b>«Centro de mesa otoñal. Mesas bonitas.» <span class="num">Instagram, octubre de 2023</span></figcaption>
+          </figure>
+        </li>
+        <li class="estacion rev" data-estacion="invierno">
+          <figure>
+            <button type="button" class="foto-btn" data-visor="aparador-1" aria-label="Ver más grande: invierno"><picture data-foto="aparador-1"><source type="image/avif" srcset="img/fotos/aparador-1-480.avif 480w, img/fotos/aparador-1-800.avif 800w, img/fotos/aparador-1-1024.avif 1024w, img/fotos/aparador-1-1280.avif 1280w, img/fotos/aparador-1-1440.avif 1440w" sizes="(max-width: 699px) 50vw, 24vw"><source type="image/webp" srcset="img/fotos/aparador-1-480.webp 480w, img/fotos/aparador-1-800.webp 800w, img/fotos/aparador-1-1024.webp 1024w, img/fotos/aparador-1-1280.webp 1280w, img/fotos/aparador-1-1440.webp 1440w" sizes="(max-width: 699px) 50vw, 24vw"><img src="img/fotos/aparador-1-800.jpg" srcset="img/fotos/aparador-1-480.jpg 480w, img/fotos/aparador-1-800.jpg 800w, img/fotos/aparador-1-1024.jpg 1024w, img/fotos/aparador-1-1280.jpg 1280w, img/fotos/aparador-1-1440.jpg 1440w" sizes="(max-width: 699px) 50vw, 24vw" width="1440" height="1440" alt="Un aparador blanco con la vajilla de Navidad: tazas, figuras de casitas y adornos rojos y verdes, con una vela encendida" loading="lazy" decoding="async"></picture></button>
+            <figcaption><b>Invierno<span class="ahora"> · ahora</span></b>«Hemos decorado con mucho mimo nuestra casa por Navidad para que cuando entres por su puerta te sientas a gusto.» <span class="num">Instagram, diciembre de 2025</span></figcaption>
+          </figure>
+        </li>
+      </ol>
+      <p class="estaciones__nota rev">En la casa también se han celebrado comuniones y un bautizo, con catering de fuera, entre 2015 y 2019, según su Instagram.</p>
+    </div>
+  </section>
+
+  <!-- ============ 9. «Los faros de la costa» (módulo faros, js/faros.js; el panel de noche es lo único de noche). El HTML de dentro es el respaldo ============ -->
+  <section class="sec alrededores s-lino2" id="alrededores" aria-labelledby="alr-tit">
+    <div class="env">
+      <header class="sec-cab rev">
+        <p class="eyebrow">Los faros de la costa</p>
+        <h2 id="alr-tit">A diez minutos de Malpica empieza <em>O Camiño dos Faros</em></h2>
+        <p class="sec-cab__txt">Ocho etapas y 200 kilómetros que recorren la costa desde Malpica hasta Fisterra. Por la noche, desde esa costa se ven los faros.</p>
+      </header>
+      <div class="alrededores__modulo" data-modulo="faros">
+        <div class="faros-panel s-noche">
+        <table class="faros-tabla">
+          <caption>Lo que cuenta la casa de los faros de su costa</caption>
+          <thead><tr><th scope="col">Faro o ruta</th><th scope="col">Lo que dice la casa</th></tr></thead>
+          <tbody>
+            <tr><th scope="row">Punta Nariga</th><td>«El faro más moderno, diseñado por Cesar Portela […]. La base triangular del faro es un mirador y recuerda a la proa de un barco.» A veinte minutos de la casa. <span class="num">Instagram, agosto de 2020</span></td></tr>
+            <tr><th scope="row">Islas Sisargas</th><td>«Atardeceres con las Islas Sisargas de fondo», vistas desde Malpica. <span class="num">Instagram, agosto de 2016</span></td></tr>
+            <tr><th scope="row">O Camiño dos Faros</th><td>«Son 8 etapas en 200 km que recorren toda la costa desde Malpica hasta Finisterre.» <span class="num">Instagram, septiembre de 2021</span></td></tr>
+          </tbody>
+        </table>
+        </div>
+        <div class="recomienda">
+          <h3>Lo que la casa recomienda, de día</h3>
+          <ul>
+            <li><b>Malpica y las Sisargas.</b> «A diez minutos de nuestra casa.» <span class="num">IG, mayo de 2020</span></li>
+            <li><b>Playa de Seaia.</b> Un merendero con mesas de piedra y barbacoa. <span class="num">IG, julio de 2020</span></li>
+            <li><b>Seiruga, en Barizo.</b> «Tiene una ría para que los más pequeños se puedan bañar tranquilamente.» <span class="num">IG, julio de 2020</span></li>
+            <li><b>San Miro.</b> «Una playa pequeña y rodeada de montaña, con arena blanca y fina.» <span class="num">IG, mayo de 2021</span></li>
+            <li><b>Laxe y la capilla de Santa Rosa.</b> Un mirador sobre el pueblo, el puerto y la playa. <span class="num">IG, julio de 2023</span></li>
+            <li><b>Refuxo de Verdes.</b> «Solo 10 minutos en coche», con molinos y senderos con puentes. <span class="num">IG, junio de 2020</span></li>
+            <li><b>Ponte Maceira.</b> «Desde nuestra casa llegas en 40 minutos.» <span class="num">IG, mayo de 2019</span></li>
+            <li><b>Monte Pindo, Ézaro, Buño y Fisterra.</b> Más lejos, con vistas, cascada, olería y la bota del peregrino.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 10. lo que dicen (citas literales con su fuente; la nota de Google, con la fecha de lectura) ============ -->
+  <section class="sec opiniones s-lino" id="opiniones" aria-labelledby="op-tit">
+    <div class="env">
+      <header class="sec-cab rev">
+        <p class="eyebrow">Lo que dicen</p>
+        <h2 id="op-tit">Una casa «de 10», dicen los que <em>han estado</em></h2>
+      </header>
+      <div class="citas">
+        <figure class="cita cita--grande rev">
+          <blockquote><p>La casa es una maravilla, muy bonita y bien decorada pero sobre todo muy bien mantenida y muy cómoda. […] Los dos porches, tanto el de la barbacoa como el de la piscina son un lujo […]. Los niños se lo han pasado en grande con todas las diversiones que tenían a su alcance, fútbol, baloncesto, cama elástica, piscina, etc.</p></blockquote>
+          <figcaption><b>Ana</b><span class="num">Reseña en Google, leída el 25 de octubre de 2026</span></figcaption>
+        </figure>
+        <figure class="cita rev">
+          <blockquote><p>Casa rural Entremuros es una casa de 10. […] El espacio exterior está muy cuidado y pensado para pequeños y mayores. […] Mónica es una anfitriona estupenda que está pendiente de todo y cuida cada detalle.</p></blockquote>
+          <figcaption><b>David</b><span class="num">Reseña en Google, leída el 25 de octubre de 2026</span></figcaption>
+        </figure>
+        <figure class="cita rev">
+          <blockquote><p>Fantástica casa. Todo está al detalle y con mucho gusto. Atención inmejorable a cargo de Mónica, la dueña, siempre disponible y solícita para todo aquello que pudiésemos necesitar […]</p></blockquote>
+          <figcaption><b>Ángel</b><span class="num">Reseña en Google, leída el 25 de octubre de 2026</span></figcaption>
+        </figure>
+        <figure class="cita rev">
+          <blockquote><p>Un lugar precioso para disfrutar de un maravilloso fin de semana. Fuimos en familia, la casa tiene todas las comodidades, conserva todo lo antiguo y se mezcla con lo moderno, una conjunción con muy buen gusto.</p></blockquote>
+          <figcaption><b>Carmen</b><span class="num">Reseña en Google, leída el 25 de octubre de 2026</span></figcaption>
+        </figure>
+        <figure class="cita rev">
+          <blockquote><p>Estuvimos el pasado fin de semana, 5 adultos y 6 niños. Disfrutamos muchísimo de la casa, los niños no se aburrieron ni un momento entre la cama elástica, futbolín, pista de baloncesto… no pararon. Tiene todo lo necesario para pasar unos días perfectos. Sin duda volveremos.</p></blockquote>
+          <figcaption><b>Nuria</b><span class="num">Opinión en la web antigua de la casa, captura del 12 de julio de 2026</span></figcaption>
+        </figure>
+      </div>
+      <div class="opiniones__pie rev">
+        <p class="opiniones__nota"><span class="num">En Google, leída el 25 de octubre de 2026</span><b class="cifra">4,7</b> sobre 5, con 141 reseñas</p>
+        <a class="btn btn--hueco" href="https://www.google.com/maps/search/Casa+Entremuros+Cances+Grande+77+Carballo" rel="noopener" target="_blank">Ver las reseñas en Google</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ reservar · «La mesa para…» (módulo Reserva, js/reserva.js; DEMOSTRACIÓN). El HTML de dentro es el respaldo ============ -->
+<section class="sec reservar s-lino" id="reservar" aria-labelledby="reservar-tit">
+  <div class="env">
+    <header class="sec-cab">
+      <p class="eyebrow">Reservar</p>
+      <h2 id="reservar-tit">La mesa para… <em>los que seáis</em><span class="rama" data-rama="5" aria-hidden="true"></span></h2>
+      <p class="sec-cab__txt">Elige las fechas y cuántos sois: se pone un cubierto por cada uno y, al final, una tarjeta con tu nombre en el plato, como las de Mónica. Si lo prefieres, llama al <a class="enlace" href="tel:+34627777074">627 777 074</a> o escribe a <a class="enlace" href="mailto:info@casaentremuros.com">info@casaentremuros.com</a>.</p>
+    </header>
+    <div class="reservar__modulo" data-modulo="reserva">
+      <div class="reservar__respaldo">
+        <p class="demo" role="note"><b>Demostración.</b> Así funcionará la reserva directa: las noches libres son de ejemplo, los precios son supuestos y no se envía, se guarda ni se cobra nada.</p>
+        <dl class="datos">
+          <div><dt>Se alquila</dt><dd>La casa entera, hasta 12 personas <span class="sup">supuesto</span></dd></div>
+          <div><dt>Temporada baja</dt><dd>Desde <b class="cifra">290 €</b> la noche (hasta 8 personas) · 340 € hasta 12 <span class="sup">por confirmar</span></dd></div>
+          <div><dt>Temporada alta</dt><dd>Julio <b class="cifra">430 €</b> · agosto 450 € · Semana Santa y puentes 400 € <span class="sup">por confirmar</span></dd></div>
+          <div><dt>Entrada y salida</dt><dd>Desde las 15:00 · antes de las 11:00 <span class="sup">por confirmar</span></dd></div>
+          <div><dt>Fianza</dt><dd>200 €, que se devuelve a las 72 horas de la salida</dd></div>
+          <div><dt>Para reservar</dt><dd>El 30 % por transferencia; el resto, el día de entrada</dd></div>
+        </dl>
+        <p class="reservar__acc"><a class="btn btn--marca" href="tel:+34627777074">Llamar al 627 777 074</a> <a class="btn btn--hueco" href="mailto:info@casaentremuros.com">Escribir</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+  <!-- ============ cómo llegar ============ -->
+<section class="sec llegar s-granito" id="llegar" aria-labelledby="llegar-tit">
+  <div class="env llegar__in">
+    <div class="llegar__txt">
+      <p class="eyebrow">Cómo llegar</p>
+      <h2 id="llegar-tit">En el valle de Cances, <em>entre Carballo y Malpica</em></h2>
+      <address class="llegar__dir">
+        Casa Entremuros<br>
+        Cances Grande nº 77<br>
+        15107 Carballo (A Coruña)
+      </address>
+      <ul class="como">
+        <li><b>En coche.</b> La playa de Malpica está a diez minutos; las de Razo y Baldaio, a quince; el Refuxo de Verdes, a diez; el faro de Punta Nariga, a veinte. Coruña y Santiago de Compostela, muy cerca. Hay aparcamiento privado para los huéspedes.</li>
+        <li><b>Por aquí pasa</b> O Camiño dos Faros, la ruta de 8 etapas y 200 km que une Malpica con Fisterra por el borde del mar. <a class="enlace" href="#alrededores">Mira la costa</a>.</li>
+      </ul>
+      <ul class="contacto">
+        <li><a href="tel:+34627777074"><b class="num">627 777 074</b><span>Teléfono</span></a></li>
+        <li><a href="https://wa.me/34627777074" rel="noopener" target="_blank"><b>WhatsApp</b><span>Al mismo número</span></a></li>
+        <li><a href="mailto:info@casaentremuros.com"><b>info@casaentremuros.com</b><span>Correo</span></a></li>
+        <li><a href="https://www.google.com/maps/search/?api=1&amp;query=Casa+Entremuros+Cances+Grande+77+Carballo" rel="noopener" target="_blank"><b>Abrir en Google Maps</b><span>Para ir en coche</span></a></li>
+      </ul>
+    </div>
+    <div class="mapa" id="mapa">
+      <div class="map-consent" id="mapa-consent">
+        <p>El mapa es de Google y, al cargarlo, Google puede guardar cookies en tu navegador.</p>
+        <button type="button" class="btn btn--marca" id="mapa-btn">Ver el mapa</button>
+        <p class="map-consent__coord num">Cances Grande nº 77 · 15107 Carballo</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== franja pequeña y quitable: el apartamento de la familia en Malpica (para quitarla, borrar de aquí al comentario «fin de la franja de Malpica»; nada más depende de ella) ===== -->
+  <div class="env">
+    <aside class="malpica" id="malpica" aria-labelledby="malpica-tit">
+      <p class="eyebrow">Y frente al mar, en Malpica</p>
+      <h3 id="malpica-tit">Apartamento Area Maior</h3>
+      <p>En primera línea de playa, en el paseo marítimo de Malpica, con vistas a las Islas Sisargas. Dos dormitorios dobles (4 plazas), un baño, salón-cocina y una terraza con vistas al mar. <b>No se alquila en julio y agosto.</b></p>
+      <p class="malpica__datos"><span>Desde 80 € la noche para dos personas <i class="sup">precio de la web antigua, por confirmar</i></span> <span>Registro VUT-CO-006176</span></p>
+      <p><a class="enlace" href="https://www.instagram.com/apartamento_areamaior/" rel="noopener" target="_blank">Su Instagram, @apartamento_areamaior</a></p>
+    </aside>
+  </div>
+  <!-- ===== fin de la franja de Malpica ===== -->
+</section>
+</main>
+
+<!-- ============ pie · la mesa completa (la monta Mesa, js/mesa.js, módulo mesa-pie); la web pone el hueco, la placa, el lema y los legales ============ -->
+<footer class="pie s-lino2" id="pie">
+  <div class="pie__mesa" data-modulo="mesa-pie">
+    <!-- respaldo: una de sus mesas puestas (si el JS de Mesa no llega) -->
+    <picture data-foto="mesa-larga-otono-b"><source type="image/avif" srcset="img/fotos/mesa-larga-otono-b-480.avif 480w, img/fotos/mesa-larga-otono-b-800.avif 800w, img/fotos/mesa-larga-otono-b-1024.avif 1024w, img/fotos/mesa-larga-otono-b-1080.avif 1080w" sizes="(max-width: 899px) 100vw, 1240px"><source type="image/webp" srcset="img/fotos/mesa-larga-otono-b-480.webp 480w, img/fotos/mesa-larga-otono-b-800.webp 800w, img/fotos/mesa-larga-otono-b-1024.webp 1024w, img/fotos/mesa-larga-otono-b-1080.webp 1080w" sizes="(max-width: 899px) 100vw, 1240px"><img src="img/fotos/mesa-larga-otono-b-800.jpg" srcset="img/fotos/mesa-larga-otono-b-480.jpg 480w, img/fotos/mesa-larga-otono-b-800.jpg 800w, img/fotos/mesa-larga-otono-b-1024.jpg 1024w, img/fotos/mesa-larga-otono-b-1080.jpg 1080w" sizes="(max-width: 899px) 100vw, 1240px" width="1080" height="1080" alt="Una de las mesas de la casa, de pino, puesta con platos azul grisáceo y una guirnalda verde con velas" loading="lazy" decoding="async"></picture>
+  </div>
+  <div class="env">
+    <div class="pie__placa-fila">
+      <div class="pie__placa"><img class="pie__placa-img" src="marca/placa.svg" width="320" height="320" alt="El letrero de piedra de la entrada: «Casa Entremuros», con una vieira en el centro y dos abanicos" loading="lazy" decoding="async"></div>
+      <p class="pie__lema"><q>No esperes tenerlo todo para disfrutar de la vida, ya tienes la vida para disfrutar de todo</q><span>El lema de la casa</span></p>
+    </div>
+    <div class="pie__cols">
+      <div>
+        <h2 class="pie__tit">Casa Entremuros</h2>
+        <p>Casa rural de piedra del siglo XIX en el valle de Cances, entre Carballo y Malpica. Se alquila entera, para hasta 12 personas.</p>
+        <p>Cances Grande nº 77<br>15107 Carballo (A Coruña)</p>
+      </div>
+      <div>
+        <h2 class="pie__tit">Reservar</h2>
+        <p><a href="tel:+34627777074" class="num">627 777 074</a><br><a href="https://wa.me/34627777074" rel="noopener" target="_blank">WhatsApp</a><br><a href="mailto:info@casaentremuros.com">info@casaentremuros.com</a></p>
+        <a class="btn btn--marca" href="#reservar">Ver fechas</a>
+      </div>
+      <div>
+        <h2 class="pie__tit">Por aquí</h2>
+        <p><a href="#casa">La casa</a><br><a href="#habitaciones">Habitaciones</a><br><a href="#antes-y-despues">Antes y después</a><br><a href="#alrededores">Alrededores</a><br><a href="#llegar">Cómo llegar</a><br><a href="https://www.instagram.com/casaentremuros/" rel="noopener" target="_blank">Instagram</a></p>
+      </div>
+    </div>
+    <div class="pie__legal">
+      <nav aria-label="Legal"><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad</a><a href="cookies.html">Cookies</a><a href="accesibilidad.html">Accesibilidad</a><button type="button" id="abrir-cookies">Preferencias de cookies</button></nav>
+      <p>© <span id="anno">2026</span> Casa Entremuros · Cances Grande, Carballo</p>
+    </div>
+  </div>
+</footer>
+
+<div class="cookies" id="cookies" role="region" aria-label="Aviso de cookies" hidden>
+  <p>Esta web no usa cookies de análisis ni de publicidad. Guarda en tu navegador que has visto este aviso. Las letras vienen de Google Fonts y el mapa de Google solo se carga si lo pides. <a href="cookies.html">Más información</a></p>
+  <div class="cookies__acc">
+    <button class="btn btn--marca" type="button" id="ck-si">Entendido</button>
+    <button class="btn btn--hueco" type="button" id="ck-no">Solo lo necesario</button>
+  </div>
+</div>
+
+<!-- MANDO DE MAQUETA (no viaja al cliente): solo con ?revision -->
+<div class="mando" id="mando" role="group" aria-label="Dos versiones de la misma web" hidden>
+  <span class="mando__eti">Versión</span>
+  <button type="button" data-densidad="mesa" aria-pressed="true">Mesa puesta</button>
+  <button type="button" data-densidad="sobria" aria-pressed="false">Sobria</button>
+</div>
+<!-- fin del MANDO DE MAQUETA -->
+
+<span id="foco-rama" aria-hidden="true"></span>
+
+<!-- visor de fotos: se abre por el NOMBRE de la foto, no por su puesto -->
+<dialog class="visor" id="visor" aria-label="Foto">
+  <figure class="visor__fig">
+    <img id="visor-img" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" alt="" width="1024" height="768">
+    <figcaption id="visor-pie"></figcaption>
+  </figure>
+  <button type="button" class="visor__btn visor__btn--ant" id="visor-ant" aria-label="Foto anterior">‹</button>
+  <button type="button" class="visor__btn visor__btn--sig" id="visor-sig" aria-label="Foto siguiente">›</button>
+  <button type="button" class="visor__cerrar" id="visor-cerrar">Cerrar</button>
+  <p class="visor__n num" id="visor-n" aria-live="polite"></p>
+</dialog>
+
+<!-- librerías (jsDelivr, con versión fija: cdnjs devuelve 404 a Lenis): Lenis suaviza el scroll; GSAP y ScrollTrigger los usan los módulos -->
+<script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
+<!-- los módulos (cada uno en su archivo; si falta alguno, construir.mjs quita su etiqueta y se queda el respaldo del HTML) -->
+<script src="js/cortina.js?v=92903557" defer></script>
+<script src="js/mesa.js?v=73f14b45" defer></script>
+<script src="js/lugares.js?v=0d9dd2bb" defer></script>
+<script src="js/obra.js?v=33d28264" defer></script>
+<script src="js/faros.js?v=a3871aa5" defer></script>
+<script src="js/reserva.js?v=50687607" defer></script>
+<!-- la web -->
+<script src="js/main.js?v=488af0a2" defer></script>
+</body>
+</html>

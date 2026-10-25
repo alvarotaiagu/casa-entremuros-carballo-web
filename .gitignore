@@ -1,0 +1,35 @@
+# solo en local: material de origen (fotos originales, páginas copiadas de portales), pruebas y notas internas
+ref/
+pruebas/
+node_modules/
+PENDIENTES.md
+ENCARGO.md
+scripts/*-cache/
+img/faros/fuentes/
+
+# fotos generadas: solo se suben las que usa la página (regenerar esta lista si se añaden)
+img/fotos/*
+!img/fotos/fotos.json
+!img/fotos/placa-*
+!img/fotos/placa-recorte-*
+!img/fotos/fachada-*
+!img/fotos/casita-*
+!img/fotos/mesa-larga-otono-*
+!img/fotos/mesa-larga-otono-b-*
+!img/fotos/mesa-jardin-0011-*
+!img/fotos/salon-*
+!img/fotos/cocina-*
+!img/fotos/comedor-*
+!img/fotos/detalle-lavanda-1-*
+!img/fotos/aparador-1-*
+!img/fotos/flores-hortensia-*
+!img/fotos/tocador-*
+!img/fotos/bano-rio-anllons-2-*
+!img/fotos/alpendre-*
+!img/fotos/piscina-*
+!img/fotos/limonada-*
+!img/fotos/jardin-0144-1-*
+!img/fotos/jardin-noche-0120-*
+!img/fotos/huerto-*
+!img/fotos/cabana-*
+!img/fotos/campo-*

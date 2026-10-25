@@ -1,0 +1,766 @@
+{
+ "version": 1,
+ "generado": "2026-10-25",
+ "origen": {
+  "lat": 43.2473,
+  "lon": -8.73401,
+  "fuente": "OSM, place=hamlet «Cances Grande» (DATOS-ENTREMUROS.md); punto exacto de la casa pendiente",
+  "nota": "Las distancias salen de aquí: del lugar «Cances Grande» de OSM, no de la casa (el punto exacto está pendiente)."
+ },
+ "atribucion": "© colaboradores de OpenStreetMap (ODbL). Rutas: OSRM (routing.openstreetmap.de, perfil coche). Textos de lugares: Galipedia (CC BY-SA).",
+ "lamina": {
+  "ancho": 1000,
+  "alto": 1094,
+  "caja": {
+   "S": 43.095,
+   "W": -8.935,
+   "N": 43.362,
+   "E": -8.6
+  },
+  "kmPorUnidad": 0.02717,
+  "casa": {
+   "x": 600,
+   "y": 469.9
+  },
+  "rosa": {
+   "cx": 905,
+   "cy": 96,
+   "R": 50
+  },
+  "escala": {
+   "x0": 777.9880087795975,
+   "y0": 1054,
+   "u5": 184.01199122040242
+  },
+  "rotulos": [
+   {
+    "t": "Casa Entremuros",
+    "x": 574,
+    "y": 455.9,
+    "clase": "casa",
+    "anchor": "end"
+   },
+   {
+    "t": "Cances Grande",
+    "x": 574,
+    "y": 478.9,
+    "clase": "sec",
+    "anchor": "end"
+   },
+   {
+    "t": "Río Anllóns",
+    "x": 528.4,
+    "y": 602.2,
+    "clase": "lugar",
+    "id": "rio-anllons",
+    "anchor": "end"
+   },
+   {
+    "t": "Refuxo de Verdes",
+    "x": 408.7,
+    "y": 541.7,
+    "clase": "lugar",
+    "id": "refuxo-de-verdes",
+    "anchor": "end"
+   },
+   {
+    "t": "Ponte Lubiáns",
+    "x": 652.6,
+    "y": 690,
+    "clase": "lugar",
+    "id": "ponte-lubians",
+    "anchor": "end"
+   },
+   {
+    "t": "Fervenza de San Paio",
+    "x": 756.8,
+    "y": 971.9,
+    "clase": "lugar",
+    "id": "fervenza-de-san-paio",
+    "anchor": "end"
+   },
+   {
+    "t": "Razo",
+    "x": 653,
+    "y": 275.9,
+    "clase": "lugar",
+    "id": "razo",
+    "anchor": "end"
+   },
+   {
+    "t": "Baldaio",
+    "x": 769.5,
+    "y": 251.8,
+    "clase": "lugar",
+    "id": "baldaio",
+    "anchor": "start"
+   },
+   {
+    "t": "Carballo",
+    "x": 759.9,
+    "y": 614.7,
+    "clase": "pob",
+    "esencial": true,
+    "anchor": "start"
+   },
+   {
+    "t": "Malpica",
+    "x": 371.1,
+    "y": 197.3,
+    "clase": "pob",
+    "esencial": true,
+    "anchor": "middle"
+   },
+   {
+    "t": "Ponteceso",
+    "x": 103,
+    "y": 468.3,
+    "clase": "pob",
+    "esencial": false,
+    "anchor": "middle"
+   },
+   {
+    "t": "San Roque",
+    "x": 582.7,
+    "y": 730.3,
+    "clase": "pob",
+    "esencial": false,
+    "anchor": "end"
+   },
+   {
+    "t": "Buño",
+    "x": 468.6,
+    "y": 391.3,
+    "clase": "sec",
+    "esencial": false,
+    "anchor": "start"
+   },
+   {
+    "t": "OCÉANO ATLÁNTICO",
+    "x": 700,
+    "y": 62,
+    "clase": "mar",
+    "anchor": "middle",
+    "tracking": 5,
+    "rot": -2
+   },
+   {
+    "t": "Illas Sisargas",
+    "x": 322,
+    "y": 46,
+    "clase": "agua",
+    "anchor": "start"
+   },
+   {
+    "t": "Ría de Corme e Laxe",
+    "x": 26,
+    "y": 598,
+    "clase": "agua",
+    "anchor": "start"
+   },
+   {
+    "t": "COSTA DA MORTE",
+    "x": 760,
+    "y": 130,
+    "clase": "mar",
+    "anchor": "middle",
+    "tracking": 4,
+    "rot": -4
+   },
+   {
+    "t": "Lagoa de Baldaio",
+    "x": 770,
+    "y": 330,
+    "clase": "agua",
+    "anchor": "start"
+   },
+   {
+    "t": "Bergantiños",
+    "x": 40,
+    "y": 78,
+    "clase": "titulo",
+    "anchor": "start"
+   },
+   {
+    "t": "a pluma, desde la casa",
+    "x": 42,
+    "y": 108,
+    "clase": "subtitulo",
+    "anchor": "start"
+   },
+   {
+    "t": "N",
+    "x": 905,
+    "y": 40,
+    "clase": "sec",
+    "anchor": "middle"
+   },
+   {
+    "t": "0 · 2,5 · 5 km",
+    "x": 869.9940043897988,
+    "y": 1042,
+    "clase": "sec",
+    "anchor": "middle"
+   },
+   {
+    "t": "© colaboradores de OpenStreetMap (ODbL)",
+    "x": 32,
+    "y": 1066,
+    "clase": "cred",
+    "anchor": "start"
+   }
+  ]
+ },
+ "notas": {
+  "adaptada": "En la casita de la piscina, una de las dos habitaciones está adaptada para movilidad reducida. La casa lo dice de Razo (IG 85) y de Baldaio (IG 135), así que no se señala cuál: por confirmar.",
+  "distancias": "Las distancias por carretera están calculadas con OSRM desde el núcleo de Cances Grande, no medidas. Donde la casa da su propio tiempo, manda el de la casa."
+ },
+ "lugares": [
+  {
+   "id": "rio-anllons",
+   "habitacion": "Río Anllóns",
+   "edificio": "casa",
+   "dato": "Casa grande",
+   "tipoLugar": "río",
+   "lugar": "Río Anllóns",
+   "lat": 43.223786,
+   "lon": -8.75197,
+   "osm": {
+    "tipo": "way",
+    "id": null,
+    "nota": "el punto del río Anllóns más cercano a la casa (OSM, waterway=river «Río Anllóns»)"
+   },
+   "casaDice": [
+    {
+     "t": "con vistas a la parte delantera de la casa y al jardín",
+     "ig": 28,
+     "fecha": "2023-07-26"
+    },
+    {
+     "t": "es una de las que más gusta a nuestros huéspedes",
+     "ig": 90,
+     "fecha": "2020-08-30"
+    },
+    {
+     "t": "picamos la piedra de las paredes que es preciosa y la puse en tonos neutros que le da más luz y amplitud",
+     "ig": 105,
+     "fecha": "2020-07-22"
+    }
+   ],
+   "lugarDice": "El río de Carballo. Nace en los montes do Xalo y desemboca en la ría de Corme e Laxe; 54,4 km (Galipedia). La casa lo enseña desde el mirador de Monte Branco, «la desembocadura del río Anllóns» (IG 89).",
+   "lugarFuente": "Galipedia, «Río Anllóns»; OSM; IG 89",
+   "distancia": {
+    "texto": "a unos 3,0 km en línea recta",
+    "detalle": "Hasta el punto del río más cercano a la casa; la línea recta se mide desde el núcleo de Cances Grande (OSM). El río no es un punto.",
+    "rectaKm": 3,
+    "carreteraKm": null,
+    "carreteraMin": null,
+    "casa": null
+   },
+   "foto": {
+    "hab": {
+     "nombre": "lg-rio-anllons-hab",
+     "anchos": [
+      480,
+      791
+     ],
+     "ancho": 791,
+     "alto": 593,
+     "origen": "0105_CC9N1WljfAb_1.jpg",
+     "origenAncho": 791,
+     "origenAlto": 791,
+     "recorte": {
+      "x": 0,
+      "y": 60,
+      "w": 791,
+      "h": 593
+     },
+     "ig": 105,
+     "alt": "La habitación Río Anllóns: cama doble con colcha dorada, pared de piedra vista, lámpara de cristal y tocador blanco",
+     "nota": "IG 105 (2020): la habitación después del cambio de 2019",
+     "credito": null,
+     "soloRotulo": false
+    },
+    "lugar": {
+     "nombre": "lg-rio-anllons-lugar",
+     "anchos": [
+      480,
+      753
+     ],
+     "ancho": 753,
+     "alto": 565,
+     "origen": "0089_CEl1P4hDSH9_1.jpg",
+     "origenAncho": 1080,
+     "origenAlto": 565,
+     "recorte": {
+      "x": 100,
+      "y": 0,
+      "w": 753,
+      "h": 565
+     },
+     "ig": 89,
+     "alt": "La ría de Corme e Laxe con la desembocadura del Anllóns, vista desde el mirador de Monte Branco",
+     "nota": "IG 89 (2020): mirador de Monte Branco",
+     "credito": null,
+     "soloRotulo": false
+    }
+   },
+   "pendiente": "El río no es un punto: la línea va a su tramo más cercano a la casa.",
+   "lamina": {
+    "x": 546.4,
+    "y": 566.2,
+    "glifo": "rio",
+    "linea": "M600 467.9C599.6 468.7 598.4 471.6 597.6 472.8C596.8 474.1 595.9 474.7 595 475.6C594.2 476.5 593.3 477.4 592.5 478.4C591.7 479.3 590.8 480.2 590 481.1C589.1 482 588.3 483 587.5 483.9C586.7 484.9 585.9 485.9 585.2 486.8C584.4 487.8 583.7 488.8 583 489.8C582.3 490.8 581.6 491.8 580.8 492.8C580.1 493.8 579.4 494.8 578.6 495.8C577.9 496.8 577.2 497.8 576.5 498.9C575.8 499.9 575.1 500.9 574.4 501.9C573.7 502.9 573 503.9 572.4 505C571.7 506 571.1 507.1 570.4 508.1C569.8 509.1 569.1 510.2 568.4 511.2C567.8 512.3 567.1 513.3 566.5 514.4C565.9 515.4 565.3 516.5 564.8 517.6C564.2 518.7 563.7 519.9 563.2 521C562.7 522.1 562.2 523.2 561.7 524.3C561.2 525.5 560.7 526.6 560.2 527.7C559.7 528.8 559.2 530 558.8 531.1C558.3 532.3 557.8 533.4 557.3 534.5C556.8 535.6 556.3 536.8 555.8 537.9C555.3 539 554.8 540.1 554.3 541.3C553.8 542.4 553.3 543.6 552.8 544.7C552.4 545.9 552 547 551.6 548.2C551.1 549.4 550.7 550.6 550.3 551.7C549.8 552.9 549.3 554 548.8 555.2C548.3 556.3 547.7 557.5 547.3 558.6C546.9 559.8 546.4 561 546.2 562.3C546.1 563.5 546.3 565.6 546.4 566.2",
+    "linea2": "M601 467.9C600.4 468.7 598.4 471.4 597.4 472.7C596.4 473.9 595.6 474.5 594.8 475.4C593.9 476.2 592.9 477.1 592.1 478C591.2 478.9 590.3 479.8 589.5 480.8C588.8 481.7 588.1 482.8 587.4 483.8C586.7 484.9 585.9 485.9 585.3 486.9C584.6 487.9 584.1 489.1 583.4 490.1C582.8 491.2 582.1 492.2 581.4 493.2C580.7 494.3 580 495.3 579.3 496.3C578.6 497.3 577.9 498.3 577.1 499.3C576.3 500.2 575.4 501.1 574.7 502.1C574 503.1 573.4 504.2 572.8 505.3C572.2 506.3 571.7 507.5 571.1 508.5C570.6 509.6 570 510.7 569.4 511.8C568.9 512.9 568.3 514 567.8 515.1C567.2 516.2 566.7 517.3 566.2 518.4C565.6 519.5 565.2 520.6 564.7 521.7C564.2 522.9 563.7 524 563.3 525.1C562.8 526.2 562.4 527.4 561.9 528.5C561.4 529.6 560.9 530.7 560.3 531.8C559.8 532.9 559.3 534 558.7 535.1C558.2 536.2 557.5 537.3 556.9 538.4C556.3 539.4 555.7 540.5 555 541.6C554.4 542.7 553.6 543.7 553 544.8C552.4 545.9 551.8 547 551.3 548.1C550.9 549.3 550.9 550.6 550.6 551.8C550.3 553 550 554.2 549.6 555.4C549.3 556.7 549 557.9 548.6 559.1C548.3 560.3 547.9 561.4 547.6 562.7C547.3 563.9 547.1 566.1 547 566.7",
+    "etiqueta": {
+     "t": "Río Anllóns",
+     "x": 528.4,
+     "y": 602.2,
+     "anchor": "end"
+    }
+   }
+  },
+  {
+   "id": "refuxo-de-verdes",
+   "habitacion": "Refuxo de Verdes",
+   "edificio": "casa",
+   "dato": "Casa grande",
+   "tipoLugar": "espacio natural",
+   "lugar": "Refuxo de Verdes",
+   "lat": 43.225386,
+   "lon": -8.792711,
+   "osm": {
+    "tipo": "way",
+    "id": 96730657,
+    "nota": "OSM way 96730657, tourism=picnic_site «Refuxio de Verdes» (Verdes, Coristanco); el río, relación 1392812"
+   },
+   "casaDice": [
+    {
+     "t": "cama con dosel",
+     "ig": 101,
+     "fecha": "2020-08-06"
+    },
+    {
+     "t": "caracterizada por su cama con dosel que le da un aire romántico",
+     "ig": 131,
+     "fecha": "2019-08-07"
+    }
+   ],
+   "lugarDice": "Un «espacio natural que tiene varios molinos y senderos con puentes por los que puedes pasear y por donde pasa el río Anllóns que se divide en varios ramales formando caídas de augas», dice la casa (IG 121).",
+   "lugarFuente": "IG 121 (2020), IG 229 (2016); OSM",
+   "distancia": {
+    "texto": "a 10 minutos en coche",
+    "detalle": "Lo dice la casa (IG 121: «solo 10 minutos en coche»). Por carretera son 6,0 km según OSRM (5,3 km en línea recta), medidos desde el núcleo de Cances Grande.",
+    "rectaKm": 5.35,
+    "carreteraKm": 6.02,
+    "carreteraMin": 10,
+    "casa": "IG 121: «solo 10 minutos en coche»"
+   },
+   "foto": {
+    "hab": {
+     "nombre": "lg-refuxo-de-verdes-hab",
+     "anchos": [
+      480,
+      800
+     ],
+     "ancho": 800,
+     "alto": 600,
+     "origen": "0131_B031XPuC3Rq_1.jpg",
+     "origenAncho": 1080,
+     "origenAlto": 755,
+     "recorte": {
+      "x": 40,
+      "y": 0,
+      "w": 1007,
+      "h": 755
+     },
+     "ig": 131,
+     "alt": "La habitación Refuxo de Verdes: cama con dosel de hierro y cortinas blancas, pared de piedra y suelo de madera",
+     "nota": "IG 131 (2019)",
+     "credito": null,
+     "soloRotulo": false
+    },
+    "lugar": {
+     "nombre": "lg-refuxo-de-verdes-lugar",
+     "anchos": [
+      480,
+      800
+     ],
+     "ancho": 800,
+     "alto": 600,
+     "origen": "0121_CBIcXvJjo5J_1.jpg",
+     "origenAncho": 1080,
+     "origenAlto": 1080,
+     "recorte": {
+      "x": 0,
+      "y": 270,
+      "w": 1080,
+      "h": 810
+     },
+     "ig": 121,
+     "alt": "El Refuxo de Verdes: pasarela de madera con barandilla sobre el río Anllóns, entre árboles",
+     "nota": "IG 121 (2020), foto de @viajocomoquiero",
+     "credito": "@viajocomoquiero",
+     "soloRotulo": false
+    }
+   },
+   "pendiente": null,
+   "lamina": {
+    "x": 424.7,
+    "y": 559.7,
+    "glifo": "molino",
+    "linea": "M600 467.9C599.2 469.1 596.9 472.9 595.2 474.8C593.6 476.7 591.9 477.8 590.2 479.4C588.5 480.9 587 482.5 585.2 483.9C583.5 485.4 581.6 486.5 579.8 487.9C578.1 489.3 576.4 490.9 574.7 492.3C573 493.7 571.4 495.2 569.5 496.5C567.7 497.8 565.7 498.8 563.8 500C562 501.2 560.2 502.5 558.3 503.7C556.5 504.9 554.6 506 552.7 507.2C550.9 508.4 549 509.5 547.1 510.7C545.3 511.9 543.5 513.2 541.6 514.3C539.8 515.5 537.9 516.7 536 517.8C534.1 518.9 532.2 519.9 530.3 521C528.4 522 526.5 523.1 524.5 524.1C522.6 525.2 520.6 526.1 518.7 527.1C516.7 528 514.7 529 512.7 529.9C510.7 530.7 508.6 531.5 506.6 532.3C504.6 533.1 502.5 533.9 500.5 534.6C498.4 535.4 496.3 536.1 494.3 537C492.3 537.8 490.3 538.7 488.3 539.6C486.3 540.5 484.3 541.4 482.3 542.4C480.3 543.3 478.3 544.2 476.3 545.2C474.3 546.1 472.4 547.2 470.3 548C468.3 548.9 466.1 549.5 464 550.1C461.8 550.7 459.6 551.1 457.5 551.6C455.3 552.1 453.1 552.7 450.9 553.1C448.8 553.6 446.5 553.9 444.3 554.4C442.2 554.9 440 555.5 437.8 556.1C435.6 556.6 433.5 557.2 431.3 557.8C429.1 558.4 425.8 559.4 424.7 559.7",
+    "linea2": "M601 467.9C600 469.1 597.2 473 595.4 475C593.6 476.9 591.9 477.8 590.2 479.4C588.6 480.9 587.3 482.9 585.6 484.3C583.8 485.7 581.7 486.7 579.7 487.8C577.8 488.9 575.6 489.8 573.7 490.9C571.8 492.1 569.9 493.3 568.2 494.6C566.4 496 564.8 497.5 563 498.8C561.2 500.1 559.4 501.4 557.6 502.6C555.8 503.9 553.9 505 552.1 506.2C550.2 507.4 548.4 508.7 546.6 509.9C544.8 511.1 543 512.3 541.1 513.5C539.2 514.6 537.3 515.7 535.4 516.7C533.5 517.8 531.5 518.6 529.5 519.7C527.6 520.7 525.8 522 524 523.1C522.1 524.2 520.1 525.2 518.2 526.2C516.3 527.2 514.2 528 512.3 529C510.3 529.9 508.4 531 506.5 532C504.5 533 502.6 534.2 500.7 535.1C498.7 536 496.5 536.5 494.5 537.5C492.6 538.4 490.8 539.8 488.8 540.7C486.8 541.6 484.7 542.4 482.6 543C480.4 543.6 478.1 543.7 476 544.3C473.9 544.9 472 546.1 469.9 546.8C467.8 547.5 465.6 548 463.5 548.5C461.3 549.1 459.1 549.5 457 550.1C454.9 550.7 452.8 551.5 450.7 552.2C448.6 552.9 446.5 553.7 444.4 554.5C442.3 555.4 440.2 556.3 438 557C435.9 557.7 433.6 558.4 431.5 558.9C429.4 559.4 426.4 560 425.3 560.2",
+    "etiqueta": {
+     "t": "Refuxo de Verdes",
+     "x": 408.7,
+     "y": 541.7,
+     "anchor": "end"
+    }
+   }
+  },
+  {
+   "id": "ponte-lubians",
+   "habitacion": "Ponte Lubiáns",
+   "edificio": "casa",
+   "dato": "Casa grande · la más grande · cama de 1,80",
+   "tipoLugar": "puente",
+   "lugar": "Ponte Lubiáns",
+   "lat": 43.197482,
+   "lon": -8.711012,
+   "osm": {
+    "tipo": "way",
+    "id": 368154510,
+    "nota": "OSM way 368154510, bridge=yes, name «Ponte Lubiáns» (alt. «A Ponte Vella»), wikidata Q9064357"
+   },
+   "casaDice": [
+    {
+     "t": "la habitación más grande de la casa con una cama de 1.80 y con vistas al frente de la casa y por el lateral al valle de Cances por donde entra toda la luz de la mañana",
+     "ig": 66,
+     "fecha": "2021-04-10"
+    }
+   ],
+   "lugarDice": "Un puente sobre el río Rosende, entre las parroquias de Oca (Coristanco) y Carballo (Galipedia). En OSM figura también como «A Ponte Vella». La casa no lo cuenta en Instagram: va a pendientes.",
+   "lugarFuente": "Galipedia, «Ponte Lubiáns»; OSM",
+   "distancia": {
+    "texto": "a unos 8,0 km por carretera",
+    "detalle": "Unos 13 minutos en coche según OSRM (calculado, no medido), desde el núcleo de Cances Grande; 5,9 km en línea recta.",
+    "rectaKm": 5.85,
+    "carreteraKm": 8.01,
+    "carreteraMin": 13,
+    "casa": null
+   },
+   "foto": {
+    "hab": {
+     "nombre": "lg-ponte-lubians-hab",
+     "anchos": [
+      480,
+      753
+     ],
+     "ancho": 753,
+     "alto": 565,
+     "origen": "0066_CNevQ_tjPf9_1.jpg",
+     "origenAncho": 1080,
+     "origenAlto": 565,
+     "recorte": {
+      "x": 190,
+      "y": 0,
+      "w": 753,
+      "h": 565
+     },
+     "ig": 66,
+     "alt": "La habitación Ponte Lubiáns: la más grande de la casa, cama de 1,80 con cabecero blanco, vigas de madera y pared de piedra",
+     "nota": "IG 66 (2021)",
+     "credito": null,
+     "soloRotulo": false
+    },
+    "lugar": null
+   },
+   "pendiente": null,
+   "lamina": {
+    "x": 668.6,
+    "y": 674,
+    "glifo": "puente",
+    "linea": "M600 467.9C599.9 469.6 600 474.9 599.6 477.8C599.3 480.8 598.4 483 597.9 485.5C597.5 488.1 597.1 490.7 596.9 493.2C596.8 495.8 597 498.4 597 500.9C596.9 503.5 596.9 506 596.8 508.5C596.8 511 596.6 513.6 596.7 516.1C596.8 518.6 597.2 521 597.5 523.5C597.7 526 598.1 528.4 598.3 530.9C598.6 533.3 598.6 535.8 598.9 538.2C599.3 540.6 599.8 543 600.2 545.4C600.7 547.8 601.2 550.2 601.8 552.5C602.3 554.9 603 557.2 603.7 559.5C604.4 561.8 605.3 564.1 605.9 566.4C606.6 568.7 606.8 571.1 607.5 573.4C608.2 575.7 609.1 577.9 610 580.1C610.9 582.4 611.8 584.6 612.6 586.8C613.5 589 614.3 591.3 615.2 593.5C616.2 595.7 617.3 597.8 618.2 600C619.2 602.2 620.1 604.4 621.1 606.6C622.1 608.8 623.1 611 624.2 613.2C625.3 615.3 626.5 617.4 627.6 619.6C628.8 621.7 629.9 623.9 631 626.1C632.1 628.3 633.2 630.5 634.4 632.7C635.6 634.9 636.9 637 638.4 639.1C639.8 641.1 641.4 643.1 642.9 645.1C644.4 647.1 646 649.1 647.5 651.1C649.1 653.1 650.7 655 652.4 657C654.1 658.9 656 660.7 657.8 662.6C659.5 664.5 661.4 666.4 663.2 668.3C665 670.2 667.7 673 668.6 674",
+    "linea2": "M601 467.9C600.7 469.6 600 474.9 599.6 477.8C599.2 480.8 598.8 483 598.6 485.6C598.3 488.2 598.3 490.7 598.2 493.3C598.2 495.9 598.1 498.4 598.2 500.9C598.2 503.5 598.5 506 598.5 508.5C598.5 511 598.4 513.5 598.2 516C598 518.5 597.4 521 597.4 523.5C597.3 526 597.6 528.5 597.8 530.9C598.1 533.4 598.5 535.8 599 538.2C599.4 540.6 600.1 543 600.6 545.4C601 547.7 601.2 550.2 601.7 552.5C602.2 554.9 602.6 557.3 603.3 559.6C604 561.9 605.1 564.1 605.9 566.4C606.7 568.7 607.2 571 608 573.2C608.8 575.5 609.9 577.6 610.8 579.9C611.6 582.1 612.2 584.4 612.9 586.7C613.6 589 614.1 591.4 614.9 593.6C615.7 595.9 616.7 598.1 617.6 600.3C618.6 602.5 619.5 604.7 620.4 607C621.4 609.2 622.3 611.4 623.4 613.6C624.5 615.8 625.8 617.8 626.9 620C627.9 622.2 628.7 624.6 629.9 626.8C631.1 628.9 632.5 631 634 633C635.4 635 637 636.9 638.5 638.9C640 640.9 641.5 643 643 645C644.4 647.1 645.7 649.3 647.3 651.2C649 653.2 650.9 654.9 652.6 656.8C654.3 658.7 655.9 660.8 657.7 662.7C659.5 664.6 661.4 666.2 663.3 668.2C665.2 670.1 668.2 673.4 669.2 674.5",
+    "etiqueta": {
+     "t": "Ponte Lubiáns",
+     "x": 652.6,
+     "y": 690,
+     "anchor": "end"
+    }
+   }
+  },
+  {
+   "id": "fervenza-de-san-paio",
+   "habitacion": "Fervenza de San Paio",
+   "edificio": "casa",
+   "dato": "Casa grande · dos camas de 90 cm",
+   "tipoLugar": "cascada",
+   "lugar": "Fervenza de San Paio",
+   "lat": 43.12356,
+   "lon": -8.675776,
+   "osm": {
+    "tipo": "node",
+    "id": 2723719421,
+    "nota": "OSM node 2723719421, waterway=waterfall «Fervenza de San Paio» (alt. «Fervenza de Entrecruces»), wikidata Q25512158"
+   },
+   "casaDice": [
+    {
+     "t": "dos camas de 0.90 cm, en su transformación picamos la pared que tiene de piedra, pintamos en un color neutro y le dimos un toque con muebles antiguos y restaurados",
+     "ig": 99,
+     "fecha": "2020-08-10"
+    },
+    {
+     "t": "tiene una ducha y una bañera retro que no me puede gustar más",
+     "ig": 110,
+     "fecha": "2020-07-13",
+     "nota": "el baño"
+    }
+   ],
+   "lugarDice": "La fervenza de Entrecruces, «tamén coñecida como […] fervenza de San Paio», está en la parroquia de Entrecruces (Carballo), en el río Outón, cerca de su desembocadura en el río Grande (Galipedia). La casa la enseña como «Fervenza de Entrecruces» (IG 76).",
+   "lugarFuente": "Galipedia, «Fervenza de Entrecruces»; OSM; IG 76",
+   "distancia": {
+    "texto": "a unos 17,6 km por carretera",
+    "detalle": "Unos 26 minutos en coche según OSRM (calculado, no medido), desde el núcleo de Cances Grande; 14,6 km en línea recta.",
+    "rectaKm": 14.56,
+    "carreteraKm": 17.65,
+    "carreteraMin": 26,
+    "casa": null
+   },
+   "foto": {
+    "hab": {
+     "nombre": "lg-fervenza-de-san-paio-hab",
+     "anchos": [
+      480,
+      800
+     ],
+     "ancho": 800,
+     "alto": 600,
+     "origen": "0099_CDs3uwsA8R4_2.jpg",
+     "origenAncho": 1080,
+     "origenAlto": 807,
+     "recorte": {
+      "x": 2,
+      "y": 0,
+      "w": 1076,
+      "h": 807
+     },
+     "ig": 99,
+     "alt": "La habitación Fervenza de San Paio: dos camas de 90 cm con ropa de cama de plumas grises, pared de piedra picada y espejo antiguo",
+     "nota": "IG 99 (2020): después de la reforma",
+     "credito": null,
+     "soloRotulo": false
+    },
+    "lugar": {
+     "nombre": "lg-fervenza-de-san-paio-lugar",
+     "anchos": [
+      480,
+      747
+     ],
+     "ancho": 747,
+     "alto": 560,
+     "origen": "0076_CGfGMeYD8Zc_4.jpg",
+     "origenAncho": 1080,
+     "origenAlto": 1350,
+     "recorte": {
+      "x": 100,
+      "y": 0,
+      "w": 747,
+      "h": 560
+     },
+     "ig": 76,
+     "alt": "La fervenza de Entrecruces, entre rocas y helechos, con un hilo de agua que baja por la garganta",
+     "nota": "IG 76 (2020): «Fervenza de Entrecruces»",
+     "credito": null,
+     "soloRotulo": false
+    }
+   },
+   "pendiente": null,
+   "lamina": {
+    "x": 773.8,
+    "y": 976.9,
+    "glifo": "cascada",
+    "linea": "M600 467.9C602 470.7 607.7 479.8 611.9 484.9C616 490.1 620.7 494.1 624.8 498.9C629 503.6 633 508.5 636.7 513.5C640.4 518.6 643.6 524 646.9 529.2C650.3 534.4 653.5 539.7 656.8 544.9C660.1 550.1 663.3 555.4 666.8 560.4C670.2 565.5 674.4 570.1 677.6 575.3C680.8 580.4 683.3 586.1 686.1 591.4C688.9 596.8 691.5 602.3 694.3 607.6C697.2 612.9 700.7 617.9 703.4 623.2C706.1 628.6 708.2 634.3 710.6 639.7C713 645.2 715.6 650.6 718 656.1C720.3 661.6 722.6 667.1 725 672.6C727.4 678 730.1 683.4 732.1 689C734.1 694.6 735.3 700.5 737 706.2C738.7 711.9 740.5 717.6 742.4 723.2C744.2 728.9 746.5 734.4 748.3 740.1C750.1 745.8 751.6 751.5 753.2 757.3C754.7 763.1 756.5 768.8 757.6 774.7C758.7 780.6 758.8 786.7 759.9 792.6C761 798.5 763.2 804.2 764.3 810.1C765.5 816.1 766.2 822.1 766.9 828.1C767.6 834.1 767.9 840.2 768.6 846.2C769.4 852.3 770.6 858.3 771.2 864.4C771.8 870.4 772.1 876.6 772.5 882.7C772.9 888.9 773 895.1 773.5 901.2C773.9 907.4 775 913.6 775.2 919.9C775.5 926.1 775 932.4 775 938.7C775 945 775.4 951.4 775.2 957.7C775 964.1 774 973.7 773.8 976.9",
+    "linea2": "M601 467.9C603.1 470.5 609.6 478.3 613.6 483.5C617.5 488.7 621.2 493.7 624.7 499C628.2 504.2 631.2 509.8 634.7 515C638.2 520.2 641.8 525.2 645.7 530.1C649.6 534.9 654.4 539.1 657.9 544.2C661.4 549.3 663.4 555.3 666.7 560.5C670 565.7 674.3 570.2 677.5 575.4C680.7 580.5 683 586.2 686.1 591.4C689.1 596.7 692.8 601.6 695.6 606.9C698.4 612.2 700.4 618 702.9 623.5C705.4 628.9 708.1 634.3 710.5 639.8C713 645.2 715.1 650.8 717.5 656.3C720 661.7 722.7 667 725.2 672.5C727.6 677.9 729.9 683.4 732.1 689C734.4 694.5 736.7 700 738.5 705.7C740.3 711.4 741.6 717.2 743.1 723C744.6 728.8 746.3 734.5 747.7 740.3C749 746.1 749.7 752 751.3 757.8C752.8 763.6 755 769.2 756.8 774.9C758.5 780.6 760.9 786.3 761.8 792.2C762.8 798.2 761.6 804.5 762.6 810.5C763.5 816.4 766.5 822.1 767.4 828C768.4 834 767.8 840.2 768.5 846.2C769.2 852.3 770.9 858.2 771.6 864.3C772.3 870.4 772.4 876.6 772.8 882.7C773.1 888.9 773.3 895 773.6 901.2C773.9 907.4 774.2 913.7 774.6 919.9C775 926.1 776 932.4 775.9 938.7C775.9 945 774.3 951.3 774.1 957.7C773.8 964.1 774.3 974.1 774.4 977.4",
+    "etiqueta": {
+     "t": "Fervenza de San Paio",
+     "x": 756.8,
+     "y": 971.9,
+     "anchor": "end"
+    }
+   }
+  },
+  {
+   "id": "razo",
+   "habitacion": "Razo",
+   "edificio": "casita",
+   "dato": "Casita de la piscina · cama de 1,50",
+   "tipoLugar": "playa",
+   "lugar": "Praia de Razo",
+   "lat": 43.29027,
+   "lon": -8.710885,
+   "osm": {
+    "tipo": "way",
+    "id": 39473257,
+    "nota": "OSM way 39473257, natural=beach «Praia de Razo» (centro del polígono)"
+   },
+   "casaDice": [
+    {
+     "t": "sencilla, cálida, con luz natural y unas vistas al jardín y a la piscina",
+     "ig": 50,
+     "fecha": "2021-07-06"
+    },
+    {
+     "t": "cama de 1.50, TV, calefacción",
+     "ig": 85,
+     "fecha": "2020-09-11"
+    }
+   ],
+   "lugarDice": "Playa abierta de 1.300 m, casi unida a la de Baldaio (OSM). «Precioso día para visitar la playa de Razo, muy cerquita de Casa Entremuros», dice la casa (IG 189, 2017).",
+   "lugarFuente": "OSM; IG 189",
+   "distancia": {
+    "texto": "a 15 minutos en coche",
+    "detalle": "Lo dice la casa (web antigua de la casa: «Razo y Baldaio a quince minutos»). Por carretera son 8,1 km según OSRM (5,1 km en línea recta), medidos desde el núcleo de Cances Grande.",
+    "rectaKm": 5.14,
+    "carreteraKm": 8.06,
+    "carreteraMin": 15,
+    "casa": "web antigua de la casa: «Razo y Baldaio a quince minutos»"
+   },
+   "foto": {
+    "hab": {
+     "nombre": "lg-razo-hab",
+     "anchos": [
+      480,
+      800
+     ],
+     "ancho": 800,
+     "alto": 600,
+     "origen": "0050_CQ-tTXmsA5N_1.jpg",
+     "origenAncho": 1080,
+     "origenAlto": 1351,
+     "recorte": {
+      "x": 0,
+      "y": 250,
+      "w": 1080,
+      "h": 810
+     },
+     "ig": 50,
+     "alt": "La habitación Razo, en la casita de la piscina: cama con cabecero de madera clara y cojines con borlas",
+     "nota": "IG 50 (2021)",
+     "credito": null,
+     "soloRotulo": false
+    },
+    "lugar": {
+     "nombre": "lg-razo-lugar",
+     "anchos": [
+      480,
+      705
+     ],
+     "ancho": 705,
+     "alto": 529,
+     "origen": "0189_BVHMkXmDlFz_1.jpg",
+     "origenAncho": 720,
+     "origenAlto": 529,
+     "recorte": {
+      "x": 0,
+      "y": 0,
+      "w": 705,
+      "h": 529
+     },
+     "ig": 189,
+     "alt": "La playa de Razo: arena clara, hierbas de duna y el mar al fondo",
+     "nota": "IG 189 (2017)",
+     "credito": null,
+     "soloRotulo": false
+    }
+   },
+   "pendiente": null,
+   "lamina": {
+    "x": 669,
+    "y": 293.9,
+    "glifo": "playa",
+    "linea": "M600 467.9C600.2 467.2 601.3 465.4 601.6 463.6C602 461.8 601.9 459.3 602 457.2C602.2 455 602.4 452.9 602.7 450.7C602.9 448.6 603.1 446.5 603.5 444.4C603.9 442.3 604.4 440.2 605 438.1C605.7 436.1 606.5 434.1 607.1 432.1C607.8 430 608.4 428 609 426C609.6 424 610.3 421.9 610.8 419.9C611.4 417.9 611.9 415.8 612.3 413.8C612.7 411.7 613 409.6 613.4 407.5C613.8 405.4 614.2 403.3 614.7 401.3C615.3 399.2 616.1 397.3 616.8 395.3C617.4 393.3 617.9 391.2 618.5 389.2C619.2 387.2 620 385.2 620.7 383.3C621.5 381.3 622.3 379.4 623.2 377.4C624 375.5 624.9 373.6 625.8 371.7C626.7 369.8 627.5 367.8 628.3 365.9C629.2 364 630.1 362.1 631 360.2C631.9 358.3 632.9 356.4 633.8 354.5C634.8 352.7 635.7 350.8 636.7 348.9C637.7 347 638.6 345.2 639.6 343.3C640.5 341.4 641.5 339.5 642.4 337.6C643.3 335.7 644.3 333.8 645.2 331.9C646.1 330 646.7 327.9 647.7 326C648.7 324.1 649.9 322.4 651 320.5C652.1 318.7 653.3 317 654.4 315.1C655.6 313.3 656.6 311.5 657.7 309.6C658.8 307.8 659.9 305.9 661 304C662.1 302.2 663.1 300.3 664.4 298.6C665.8 296.9 668.2 294.7 669 293.9",
+    "linea2": "M601 467.9C601 467.2 601.2 465.4 601.2 463.6C601.2 461.7 600.8 459.1 601 457C601.1 454.8 601.7 452.7 602.2 450.7C602.7 448.6 603.4 446.5 604 444.5C604.5 442.4 605.2 440.4 605.8 438.3C606.4 436.3 607.1 434.2 607.6 432.2C608.2 430.2 608.7 428.1 609.3 426.1C609.8 424 610.2 421.9 610.7 419.9C611.2 417.8 611.9 415.8 612.4 413.8C612.9 411.7 613 409.6 613.6 407.6C614.2 405.5 615.4 403.7 616 401.7C616.7 399.7 616.9 397.6 617.4 395.5C618 393.5 618.6 391.5 619.1 389.4C619.6 387.4 620 385.2 620.6 383.2C621.1 381.2 621.8 379.2 622.6 377.2C623.4 375.3 624.3 373.4 625.2 371.4C626 369.5 626.9 367.6 627.7 365.7C628.6 363.7 629.3 361.7 630.2 359.9C631.2 358 632.4 356.2 633.5 354.4C634.6 352.6 635.7 350.7 636.7 348.9C637.8 347.1 638.9 345.3 639.9 343.5C640.9 341.6 641.9 339.8 642.8 337.8C643.7 335.9 644.4 333.9 645.3 332C646.2 330 647.2 328.2 648.2 326.3C649.2 324.4 650.2 322.5 651.2 320.7C652.2 318.8 653.3 316.9 654.4 315.1C655.5 313.3 656.5 311.4 657.8 309.6C659 307.9 660.4 306.3 661.9 304.7C663.4 303.1 665.4 301.8 666.6 300.1C667.9 298.4 669.1 295.3 669.6 294.4",
+    "etiqueta": {
+     "t": "Razo",
+     "x": 653,
+     "y": 275.9,
+     "anchor": "end"
+    }
+   }
+  },
+  {
+   "id": "baldaio",
+   "habitacion": "Baldaio",
+   "edificio": "casita",
+   "dato": "Casita de la piscina",
+   "tipoLugar": "playa",
+   "lugar": "Praia de Baldaio",
+   "lat": 43.296144,
+   "lon": -8.682582,
+   "osm": {
+    "tipo": "way",
+    "id": 303157404,
+    "nota": "OSM way 303157404, natural=beach «Praia de Baldaio - As Saíñas» (centro del polígono)"
+   },
+   "casaDice": [
+    {
+     "t": "la habitación Baldaio que está en la casita de la piscina",
+     "ig": 135,
+     "fecha": "2019-06-28"
+    }
+   ],
+   "lugarDice": "Playa abierta de 3.600 m de arena fina, con un gran complejo dunar y laguna (OSM). La casa no ha publicado fotos de esta playa: va a pendientes.",
+   "lugarFuente": "OSM",
+   "distancia": {
+    "texto": "a 15 minutos en coche",
+    "detalle": "Lo dice la casa (web antigua de la casa: «Razo y Baldaio a quince minutos»). Por carretera son 9,9 km según OSRM (6,9 km en línea recta), medidos desde el núcleo de Cances Grande.",
+    "rectaKm": 6.85,
+    "carreteraKm": 9.88,
+    "carreteraMin": 20,
+    "casa": "web antigua de la casa: «Razo y Baldaio a quince minutos»"
+   },
+   "foto": {
+    "hab": {
+     "nombre": "lg-baldaio-hab",
+     "anchos": [
+      480,
+      720
+     ],
+     "ancho": 720,
+     "alto": 540,
+     "origen": "0135_BzPr0_OjrTr_1.jpg",
+     "origenAncho": 720,
+     "origenAlto": 720,
+     "recorte": {
+      "x": 0,
+      "y": 0,
+      "w": 720,
+      "h": 540
+     },
+     "ig": 135,
+     "alt": "La puerta de madera de la habitación Baldaio, con su rótulo",
+     "nota": "IG 135 (2019, miniatura del vídeo): solo el rótulo de la puerta; falta la foto de la habitación",
+     "credito": null,
+     "soloRotulo": true
+    },
+    "lugar": null
+   },
+   "pendiente": null,
+   "lamina": {
+    "x": 753.5,
+    "y": 269.8,
+    "glifo": "playa",
+    "linea": "M600 467.9C601 467.3 604.1 465.6 606.4 464.2C608.7 462.7 611.3 461.1 613.7 459.4C616 457.8 618.4 456.2 620.6 454.2C622.7 452.3 624.5 450 626.4 448C628.4 445.9 630.3 443.8 632.3 441.8C634.3 439.7 636.4 437.9 638.4 435.8C640.4 433.8 642.2 431.6 644.2 429.6C646.1 427.5 648.1 425.6 650.1 423.6C652.2 421.6 654.3 419.8 656.2 417.7C658.2 415.7 659.8 413.4 661.6 411.2C663.4 409.1 665.2 406.9 667 404.7C668.8 402.5 670.5 400.3 672.3 398.2C674.1 396.1 676 394 677.8 391.9C679.7 389.8 681.7 387.8 683.6 385.8C685.5 383.7 687.4 381.6 689.2 379.4C691 377.2 692.6 375 694.3 372.7C695.9 370.4 697.5 368.1 699.2 365.9C700.8 363.6 702.6 361.4 704.1 359.1C705.7 356.8 707.3 354.4 708.8 352C710.2 349.6 711.6 347.1 713 344.7C714.4 342.3 715.9 339.9 717.3 337.4C718.8 335 720.3 332.7 721.8 330.3C723.3 327.9 724.8 325.5 726.3 323.1C727.8 320.7 729.3 318.3 730.8 315.9C732.3 313.5 733.8 311.1 735.1 308.6C736.4 306 737.4 303.3 738.6 300.8C739.8 298.2 741 295.6 742.2 293C743.5 290.4 744.8 287.9 746 285.3C747.2 282.7 748.3 280.1 749.5 277.5C750.7 274.9 752.8 271.1 753.5 269.8",
+    "linea2": "M601 467.9C602 467.4 605 466.5 607.1 465C609.1 463.4 611.1 460.8 613.2 458.8C615.3 456.9 617.5 455.1 619.7 453.3C621.9 451.4 624.1 449.6 626.2 447.7C628.3 445.8 630.4 443.9 632.4 441.9C634.5 439.9 636.4 437.9 638.5 435.9C640.5 433.9 642.6 432 644.6 430C646.6 428.1 648.6 426 650.6 424.1C652.7 422.1 654.9 420.4 656.8 418.3C658.8 416.2 660.4 413.9 662.1 411.7C663.9 409.5 665.6 407.3 667.4 405.1C669.2 402.9 670.9 400.7 672.8 398.6C674.6 396.5 676.6 394.5 678.4 392.3C680.2 390.2 681.8 387.9 683.5 385.6C685.1 383.4 686.8 381.1 688.4 378.8C690 376.5 691.5 374.1 693.1 371.8C694.7 369.5 696.2 367.2 697.8 364.9C699.5 362.6 701.3 360.5 702.9 358.2C704.5 355.9 706 353.5 707.5 351.1C708.9 348.7 710.1 346.1 711.6 343.8C713.1 341.4 714.8 339.2 716.5 336.9C718.3 334.7 720.4 332.7 722.1 330.5C723.8 328.2 725.3 325.8 726.9 323.4C728.4 321 729.9 318.6 731.2 316.2C732.6 313.7 733.9 311.2 735.1 308.5C736.2 305.9 737 303.1 738 300.4C739 297.8 740 295.1 741.2 292.5C742.5 289.9 744.2 287.6 745.4 285C746.6 282.4 747.1 279.5 748.6 277C750 274.6 753.2 271.4 754.1 270.3",
+    "etiqueta": {
+     "t": "Baldaio",
+     "x": 769.5,
+     "y": 251.8,
+     "anchor": "start"
+    }
+   }
+  }
+ ]
+}
